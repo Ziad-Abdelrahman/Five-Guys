@@ -1,4 +1,4 @@
-import "./Button.css";
+import "./Buttons.css";
 import arrow from "../../assets/left-arrow.png";
 
 function BackButton() {

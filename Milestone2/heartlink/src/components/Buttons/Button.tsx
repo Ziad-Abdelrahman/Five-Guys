@@ -1,10 +1,10 @@
-import "./Button.css";
+import "./Buttons.css";
 
-interface NextProps {
+interface ButtonProps {
   text: string;
 }
 
-function Button({ text }: NextProps) {
+function Button({ text }: ButtonProps) {
   const styles = {
     fontSize: "20px",
     fontWeight: "bold",
