@@ -41,8 +41,9 @@
 
 
 }
-.accept,
-.reject {
+.card.accept,
+.card.reject,
+.card.delete{
   display: flex;
   flex-direction: column;
   justify-content: center;
