@@ -1,7 +1,7 @@
 import LeftPanel from "./LeftPanel.tsx";
 import RightPanel from "./RightPanel.tsx";
 import "./createPost.css";
-import Food from "./Food.tsx";
+import MedicalSupplies from "./MedicalSupplies.tsx";
 function CreatePost() {
   return (
     <div className="main">
@@ -12,7 +12,7 @@ function CreatePost() {
         </div>
       </LeftPanel>
       <RightPanel text={"Post"} hasBackButton={true}>
-        <Food />
+        <MedicalSupplies />
       </RightPanel>
     </div>
   );
