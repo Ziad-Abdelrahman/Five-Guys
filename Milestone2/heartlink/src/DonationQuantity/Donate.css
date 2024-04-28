@@ -1,0 +1,101 @@
+body {
+    background-color: #FAF8F6; /* Replace with any color you prefer */
+    margin: 0; /* Ensure there are no default margins */
+    height: 100vh; /* Ensures the background covers the entire visible part of the webpage */
+    overflow: hidden; /* Optional: Prevents scrolling if the content is larger than the viewport */
+}
+
+.range-container {
+    border-radius: 10px;
+    width: 50%;  /* Set width to 100% to cover the full width of the page */
+    height: 80vh;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(1, 169, 93, 0.17);
+    padding: 0px 60px;  /* Simplified padding, sets 50px on top and 20px on sides */
+    position: absolute;  /* Position it absolutely within its positioned container */
+    top: 55%;            /* Center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Offset the position for exact centering */
+    background-color: #ffffff; /* Ensures the range container has a distinct color, e.g., white */
+}
+
+.range-container .form-label {
+    text-align: left;  /* Ensures the label text is left-aligned */
+    display: block;    /* Makes the label take up the full width, aiding proper alignment */
+    margin-bottom: 10px; /* Adds a little space below the label */
+
+
+}
+.range-container .form-range{
+    width: 80%;
+    text-align: left;  /* Ensures the label text is left-aligned */
+    display: block;  /* Makes the label take up the full width, aiding proper alignment */
+    margin-top: 30px;
+    outline: none; /* Removes default focus outline */
+
+
+
+}
+.range-container .form-range::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Important to override default styles */
+    appearance: none;
+
+    border-radius: 50%; /* Makes the thumb circular */
+    background: #2F9A6A; /* Set your desired thumb color here */
+
+    cursor: pointer; /* Changes the cursor to a pointer when hovering the thumb */
+    border: none; /* Removes any border */
+}
+range-container .form-range:focus::-webkit-slider-thumb {
+    outline-color: #01A95D;
+}
+
+.form-label{
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.scroller-container{
+    height: 30%;
+    overflow-y: auto;
+    margin-top: 10%;
+
+
+}
+.header{
+    margin-top: 10px;
+    height: 40%;
+    padding: 30px 60px;  /* Simplified padding, sets 50px on top and 20px on sides */
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.value-display {
+    position: absolute;  /* Allow absolute positioning within the scroller-container */
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;  /* Use flex to align children inline */
+    justify-content: center;  /* Center children horizontally */
+    align-items: center;  /* Center children vertically */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden; /* Keeps the contents within the button */
+    text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
+    font-size: 15px;
+}
+img{
+    width: 20%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the frame without distorting the image */
+    border-radius: 8px; /* Rounds the corners of the image */
+    margin-right: 20px; /* Adds space between the image and the text */
+    margin-left: 15px;
+}
+
+
