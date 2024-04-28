@@ -1,0 +1,49 @@
+.request-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    align-items: center; /* Centers the items vertically */
+    margin: 10px; /* Adds some margin around the container */
+    border-radius: 10px;
+    width: 45%;
+    height: 17vh;
+    background-color: #f8f8f8;
+}
+
+.request-container:hover {
+    box-shadow: 0 0 15px rgba(1, 169, 93, 0.4);
+}
+
+.request-card-image {
+    width: 30%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the frame without distorting the image */
+    border-radius: 8px; /* Rounds the corners of the image */
+    margin-right: 20px; /* Adds space between the image and the text */
+    margin-left: 15px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%; /* Takes remaining space */
+    padding-top: 0;  /* Remove padding at the top */
+    padding-bottom: 0;  /* Remove padding at the bottom */
+}
+
+.text-container h2, .text-container p {
+    margin-top: 5px;  /* Reduced margin-top for a tighter layout */
+    margin-bottom: 5px;  /* Reduced margin-bottom to bring elements closer */
+}
+
+.two-request-holder{
+        display: flex;
+    padding-left: 15% /* Evenly spaces the two cards */
+ }
+
+.two-buttons-holder{
+    display: flex;
+    align-items: center; /* Keeps items aligned in the center horizontally */
+
+    flex-direction: column; /* Stacks items vertically */
+}
