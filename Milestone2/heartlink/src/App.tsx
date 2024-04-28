@@ -1,5 +1,7 @@
+import CreatePost2 from "./createPost/CreatePost2.tsx";
+
 function App() {
-  return <div>App</div>;
+  return <CreatePost2 />;
 }
 
 export default App;
