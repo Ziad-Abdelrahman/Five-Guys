@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.leftPart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10em;
+
+}
+
+
+.logo {
+    width: 50px;
+
+}
+.logo-container {
+    position: relative;
+    bottom: 16em;
+    width: 100%;
+}
+
+.leftText{
+
+    position: relative;
+    bottom: 10em;
+}

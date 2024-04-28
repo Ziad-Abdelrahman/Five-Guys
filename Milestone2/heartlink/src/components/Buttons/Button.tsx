@@ -5,15 +5,6 @@ interface ButtonProps {
 }
 
 function Button({ text }: ButtonProps) {
-  const styles = {
-    fontSize: "20px",
-    fontWeight: "bold",
-  };
-
-  return (
-    <button style={styles} className="nextButton">
-      {text}
-    </button>
-  );
+  return <button>{text}</button>;
 }
 export default Button;

@@ -53,13 +53,12 @@
     src: url('./assets/fonts/ProductSans-MediumItalic.ttf');
     font-weight: 500;
     font-style: italic;
-
-    @font-face {
-        font-family: Font;
-        src: url('./assets/fonts/ProductSans-Regular.ttf');
-        font-weight: normal;
-        font-style: normal;
-    }
+}
+@font-face {
+    font-family: Font;
+    src: url('./assets/fonts/ProductSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: Font;

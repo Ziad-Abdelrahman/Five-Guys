@@ -1,0 +1,64 @@
+.app{
+    padding: 5em;
+    height: 1000px;
+    background-color: white;
+    border-radius: 50px 50px 0 0;
+}
+
+.app h1{
+    font-size: 2em;
+    color: #012D19;
+    margin: 1.5em 0;
+}
+
+.app p{
+    font-size: 1.5em;
+    color: #012D19;
+    margin: 1em 0;
+}
+
+
+.partners{
+    max-width: 100%;
+    overflow: hidden;
+    mask: linear-gradient(90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent);
+}
+.scroller{
+    padding-block: 1rem;
+    width: fit-content;
+    display: flex;
+    gap:10rem;
+    animation: scroll 20s linear infinite;
+}
+
+.partner{
+    width: 128px;
+}
+
+@keyframes scroll {
+    to{
+        transform: translateX(calc(-50% - 5rem));
+    }
+
+}
+
+.app h2{
+    font-size: 1em;
+    color: #012D19;
+    margin: 1.5em 0;
+}
+
+.app li{
+    font-size: 1.2em;
+    color: #012D19;
+    margin: 1em 0;
+}
+.app ul{
+    padding-left: 0;
+    margin-left: 0;
+}
+
