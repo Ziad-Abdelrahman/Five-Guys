@@ -1,6 +1,6 @@
 import DonationParent from "./DonationParent.tsx";
 import './Donate.css';
-import DonationPic from "../assets/DonationGeneral.jpeg";
+import DonationPic from "../../assets/DonationGeneral.jpeg";
 function ClothesDonation(){
 
     return(
