@@ -11,7 +11,7 @@ function CreatePost() {
           <p> Almost Done.. </p>
         </div>
       </LeftPanel>
-      <RightPanel text={"Post"}>
+      <RightPanel text={"Post"} hasBackButton={true}>
         <Food />
       </RightPanel>
     </div>

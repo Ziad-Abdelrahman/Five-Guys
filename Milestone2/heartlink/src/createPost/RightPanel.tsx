@@ -5,16 +5,17 @@ import "./RightPanel.css";
 interface RightPanelProps {
   text: string;
   children: React.ReactNode;
+  hasBackButton?: boolean;
 }
 
-function RightPanel({ children, text }: RightPanelProps) {
+function RightPanel({ children, text, hasBackButton }: RightPanelProps) {
   return (
     <div className="rightPanel-container">
       {children}
       <div className="footer">
         <div className="footerButtons-container">
-          <BackButton />
           <Button text={text} />
+          {hasBackButton && <BackButton />}
         </div>
       </div>
     </div>
