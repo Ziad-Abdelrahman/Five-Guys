@@ -1,0 +1,50 @@
+.navigation-bar{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    padding: 0 4em;
+    margin: 2em 6em;
+    height: 80px;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.navigation-bar.scrolled {
+    transition: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    z-index: 2;
+    box-shadow: 0 1.375rem 1.875rem #0000001a;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+}
+
+.leftDiv, .rightDiv {
+    position: absolute;
+}
+
+.leftDiv {
+    left: 3em;
+}
+
+.rightDiv {
+    right: 3em;
+}
+
+.middleDiv {
+    width: 80px;
+    margin: 0 auto;
+}
