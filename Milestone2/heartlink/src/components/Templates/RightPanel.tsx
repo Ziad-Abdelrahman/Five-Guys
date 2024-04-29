@@ -1,10 +1,11 @@
-import BackButton from "../components/Buttons/BackButton.tsx";
-import Button from "../components/Buttons/Button.tsx";
+import BackButton from "../Buttons/BackButton.tsx";
+import Button from "../Buttons/Button.tsx";
 import "./RightPanel.css";
+import { ReactNode } from "react";
 
 interface RightPanelProps {
   text: string;
-  children: React.ReactNode;
+  children: ReactNode;
   hasBackButton?: boolean;
 }
 

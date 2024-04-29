@@ -1,7 +1,9 @@
 import DropDown from "../components/DropDown/DropDown.tsx";
 import { useState } from "react";
 import DisabledDropDown from "../components/DropDown/DisabledDropDown.tsx";
-function SchoolSupplies() {
+import NumberInputBox from "../components/InputBox/NumberInputBox.tsx";
+import hashSet from "../hashSet";
+function Stationary() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSupply, setSelectedSupply] = useState("");
 
@@ -9,10 +11,8 @@ function SchoolSupplies() {
     setSelectedCategory(category);
     setSelectedSupply("");
   };
-  type SSOptionsType = {
-    [category: string]: string[];
-  };
-  const categoryExamplles: SSOptionsType = {
+
+  const categoryExamples: hashSet = {
     "Art Supplies": [
       "Sketchbooks",
       "Paintbrushes",
@@ -40,13 +40,6 @@ function SchoolSupplies() {
       "Colored pencils",
       "Coloring books",
       "WaterColor paints",
-    ],
-    "Educational Resources": [
-      "Textbooks",
-      "Reference books (dictionaries, thesauruses)",
-      "Educational posters",
-      "Globe or world map",
-      "Classroom timers",
     ],
     "Notebooks and Paper": [
       "Spiral notebooks",
@@ -84,25 +77,10 @@ function SchoolSupplies() {
       </div>
       <div className="rest-container" style={{ top: "12em" }}>
         <h4 style={{ marginBottom: "15px" }}>
-          Which age group is the school supplies needed for?
-        </h4>
-        <DropDown
-          options={[
-            "Preschool",
-            "Elementary School",
-            "Middle School",
-            "High School",
-          ]}
-          selected={"Specify age group"}
-          width={"280px"}
-        />
-        <br />
-        <br />
-        <h4 style={{ marginBottom: "15px" }}>
           What category of school supplies do you need?
         </h4>
         <DropDown
-          options={Object.keys(categoryExamplles)}
+          options={Object.keys(categoryExamples)}
           selected={"Specify category"}
           width={"280px"}
           onChange={handleCategoryChange}
@@ -115,7 +93,7 @@ function SchoolSupplies() {
         </h6>
         {selectedCategory ? (
           <DropDown
-            options={categoryExamplles[selectedCategory]}
+            options={categoryExamples[selectedCategory]}
             selected={selectedSupply || "Select supply"}
             width={"280px"}
             onChange={(supply) => setSelectedSupply(supply)}
@@ -123,9 +101,13 @@ function SchoolSupplies() {
         ) : (
           <DisabledDropDown selected={"Select supply"} width={"280px"} />
         )}
+        <br />
+        <br />
+        <h4> How many pieces do you need?</h4>
+        <NumberInputBox label={"Quantity"} width={"280px"} />
       </div>
     </>
   );
 }
 
-export default SchoolSupplies;
+export default Stationary;
