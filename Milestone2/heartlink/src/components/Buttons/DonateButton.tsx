@@ -1,5 +1,5 @@
 
-import './buttons.css'; // This imports the styles
+import './Button.css'; // This imports the styles
 function DonateButton(){
 
     const styles = {

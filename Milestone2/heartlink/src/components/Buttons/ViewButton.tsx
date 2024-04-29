@@ -1,5 +1,7 @@
-import './buttons.css'
-import arrow from '../assets/right-arrow.png'
+import './Buttons.css'
+import arrow from '../../assets/right-arrow.png'
+
+
 function ViewButton(){
 
 
