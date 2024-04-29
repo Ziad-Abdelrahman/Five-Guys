@@ -1,7 +1,3 @@
-import CreatePost2 from "./createPost/CreatePost2.tsx";
-
-function App() {
-  return <CreatePost2 />;
-}
+function App() {}
 
 export default App;
