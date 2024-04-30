@@ -5,7 +5,7 @@ import food from '../assets/Food.jpeg';
 import SchoolsSupplies from '../assets/School.jpeg';
 import Toys from '../assets/Toys.jpeg';
 import blood from '../assets/blood.jpeg'
-import DonorNavigationBar from "../components/NavigationBar/DonorNavigationBar.tsx";
+import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
 import HeadOfSection from "../components/header/headerofsection.tsx";
 import './DonorCategories.css'
 
@@ -13,8 +13,7 @@ function CategoriesPage(){
 
     return(
        <>
-
-       <DonorNavigationBar  />
+           <DonorNavigationBar />
        <HeadOfSection title="Donation Categories" />
                 <div className="card-container">
 
