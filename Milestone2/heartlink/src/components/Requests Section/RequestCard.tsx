@@ -1,7 +1,7 @@
 import DonateButton from "../Buttons/DonateButton.tsx";
 import ViewButton from "../Buttons/ViewButton.tsx";
 import './request.css';
-import'../Buttons/Button.css';
+import'../Buttons/Buttons.css';
 import'../Categories Section/Categories.css';
 
 interface RequestCardProps {
