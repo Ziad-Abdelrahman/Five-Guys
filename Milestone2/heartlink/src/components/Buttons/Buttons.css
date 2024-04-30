@@ -50,6 +50,7 @@ button:focus {
     margin: 5px;
 }
 
+
 .signupButton{
     font-Size: 15px;
     background-Color: #A0A0A0;
@@ -98,6 +99,8 @@ button:focus {
 .view-button:hover .arrow-in-button {
     transform: rotate(360deg); /* Rotates the arrow 360 degrees when the button is hovered */
 }
+
+
 
 /*-----------------------------------------------*/
 
