@@ -1,0 +1,21 @@
+.btn-outline-success {
+    border-radius: 15px;
+    border: 1px solid #989898;
+    background-color: #fff; /* Set the default background color */
+    color: #000000; /* Set the default text color */
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    margin: 5px;
+}
+
+.btn-outline-success:hover {
+    background-color: #989898; /* Change background color on hover */
+    color: #000000; /* Change text color on hover */
+}
+
+
+/* Styling for when the radio button is checked */
+input[type="radio"]:checked + .btn-outline-success {
+    background-color: #f0fce9; /* Set the background color when selected */
+    color: #000000; /* Set the default text color */
+
+}
