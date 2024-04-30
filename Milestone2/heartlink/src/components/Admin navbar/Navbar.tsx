@@ -1,20 +1,21 @@
 import React from 'react'
 import NavigationBar from '../NavigationBar/NavigationBar';
 import AcceptRejectButton from '../Buttons/AcceptRejectButton';
+import { Link } from 'react-router-dom';
 import "./Navbar.css";
 const left = (
   <div className="right">
     <div className='listItems'>
-    <a href="/Donors">Donors</a>
-    <a href="/Organizations">Organizations</a>
-    <a href="/Requests">Requests</a>
+    <Link to="/Donors">Donors</Link>
+    <Link to="/Organizations">Organizations</Link>
+    <Link to="/Requests">Requests</Link>
   
     </div>
 
   </div>);
   const right = (<div className="left">
    <div className='listItems'>
-   <a href="/changePassword">Change Password</a>
+   <Link to="/changePassword">Change Password</Link>
    </div>
     <AcceptRejectButton text = "Logout"/>
   </div>);
