@@ -1,16 +1,25 @@
-import InputBox from "../components/InputBox/InputBox.tsx";
+import ImageUploader from "../components/FileUploader/ImageUploader.tsx";
 
 function BooksPt2() {
+  let shift = { top: "10em" };
   return (
     <>
       <div className="header-container">
         <h1>Book Donation</h1>
       </div>
-      <div className="rest-container" style={{ top: "12em" }}>
-        <h4> What are the book's details?</h4>
-        <div style={{ display: "flex" }}>
-          <InputBox type={"text"} label={"Book name"} width={"280px"} />
-          <InputBox type={"text"} label={"Author name"} width={"280px"} />
+      <div className="rest-container" style={shift}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "600px",
+          }}
+        >
+          <h5 style={{ position: "relative", marginTop: "10%" }}>
+            {" "}
+            Please upload the book's photo
+          </h5>
+          <ImageUploader />
         </div>
         <div className="mb-3" style={{ width: "600px" }}>
           <label htmlFor="exampleFormControlTextarea1" className="form-label">
@@ -20,7 +29,7 @@ function BooksPt2() {
             className="form-control"
             id="exampleFormControlTextarea1"
             rows={9}
-            style={{ height: "270px" }}
+            style={{ height: "270px", borderColor: "#01A95D" }}
           ></textarea>
         </div>
       </div>
