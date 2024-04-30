@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App.tsx";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+import ClothesDonation from "./components/DonationQuantity/ClothesDonation.tsx";
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <ClothesDonation />
   </React.StrictMode>,
-);
+)
