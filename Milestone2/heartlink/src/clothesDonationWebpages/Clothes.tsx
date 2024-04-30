@@ -1,4 +1,3 @@
-import NumberInputBox from "../components/InputBox/NumberInputBox.tsx";
 import DropDown from "../components/DropDown/DropDown.tsx";
 import RadioButton from "../components/RadioButton/RadioButton.tsx";
 function Clothes() {
@@ -19,9 +18,10 @@ function Clothes() {
           <RadioButton text={"Male"} />
           <RadioButton text={"Female"} />
         </form>
-        <p />
-
-        <h4> What kind of clothes do you need?</h4>
+        <p style={{ marginTop: "10px" }}> </p>
+        <h4 style={{ marginBottom: "15px" }}>
+          What kind of clothes do you need?
+        </h4>
         <DropDown
           options={[
             "Belts",
@@ -50,15 +50,42 @@ function Clothes() {
           width={"280px"}
         />
         <p />
-        <h6>Please specify size</h6>
+        <h6>Please specify clothing season</h6>
         <form method="get">
-          <RadioButton text={"Small"} />
-          <RadioButton text={"Medium"} />
-          <RadioButton text={"Large"} />
+          <RadioButton text={"Summer"} />
+          <RadioButton text={"Spring"} />
+          <RadioButton text={"Fall"} />
+          <RadioButton text={"Winter"} />
         </form>
         <p />
-        <h4> How many pieces do you need?</h4>
-        <NumberInputBox label={"Quantity"} width={"280px"} />
+        <h6 style={{ marginBottom: "15px" }}>
+          Please specify clothing material
+        </h6>
+        <DropDown
+          options={[
+            "Cashmere",
+            "Chiffon",
+            "Corduroy",
+            "Cotton",
+            "Denim",
+            "Fleece",
+            "Flannel",
+            "Leather",
+            "Linen",
+            "Lycra",
+            "Nylon",
+            "Polyester",
+            "Rayon",
+            "Silk",
+            "Satin",
+            "Spandex",
+            "Tweed",
+            "Velvet",
+            "Wool",
+          ]}
+          selected={"Specify a material"}
+          width={"280px"}
+        />
       </div>
     </div>
   );

@@ -96,8 +96,15 @@ button:focus {
 
 }
 
+.dropbtn .arrow-in-button{
+    transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
+}
+
 .view-button:hover .arrow-in-button {
     transform: rotate(360deg); /* Rotates the arrow 360 degrees when the button is hovered */
+}
+.dropbtn:hover .arrow-in-button {
+    transform: rotate(90deg); /* Rotates the arrow 360 degrees when the button is hovered */
 }
 
 

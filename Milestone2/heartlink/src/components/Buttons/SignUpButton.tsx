@@ -1,10 +1,7 @@
-import './Buttons.css'
+import "./Buttons.css";
 
-function SignUpButton(){
-   return (
-       <button className="signupButton" >Sign up</button>
-   );
+function SignUpButton() {
+  return <button className="signupButton">Sign up</button>;
 }
 
 export default SignUpButton;
-

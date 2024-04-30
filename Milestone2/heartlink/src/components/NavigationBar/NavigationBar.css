@@ -10,19 +10,19 @@
     position: relative;
     transition: 0.3s ease-in-out;
 }
+.donor-navigation-bar{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.navigation-bar.scrolled {
-    transition: none;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-radius: 0;
-    z-index: 2;
+    padding: 0 4em;
+    height: 80px;
+    position: relative;
+    transition: 0.3s ease-in-out;
     box-shadow: 0 1.375rem 1.875rem #0000001a;
 }
+
 
 .logo {
     display: flex;
@@ -37,14 +37,15 @@
 }
 
 .leftDiv {
-    left: 3em;
+    left: 10em;
 }
 
 .rightDiv {
-    right: 3em;
+    right: 10em;
 }
 
 .middleDiv {
     width: 80px;
     margin: 0 auto;
 }
+

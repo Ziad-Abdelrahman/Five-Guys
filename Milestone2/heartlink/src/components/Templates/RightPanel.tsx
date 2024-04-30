@@ -1,20 +1,22 @@
-import BackButton from "../components/Buttons/BackButton.tsx";
-import Button from "../components/Buttons/Button.tsx";
+import BackButton from "../Buttons/BackButton.tsx";
+import Button from "../Buttons/Button.tsx";
 import "./RightPanel.css";
+import { ReactNode } from "react";
 
 interface RightPanelProps {
   text: string;
-  children: React.ReactNode;
+  children: ReactNode;
+  hasBackButton?: boolean;
 }
 
-function RightPanel({ children, text }: RightPanelProps) {
+function RightPanel({ children, text, hasBackButton }: RightPanelProps) {
   return (
     <div className="rightPanel-container">
       {children}
       <div className="footer">
         <div className="footerButtons-container">
-          <BackButton />
           <Button text={text} />
+          {hasBackButton && <BackButton />}
         </div>
       </div>
     </div>
