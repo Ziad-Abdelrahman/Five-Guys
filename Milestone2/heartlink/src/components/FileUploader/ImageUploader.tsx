@@ -28,6 +28,19 @@ function ImageUploader() {
     setImagePreview(undefined);
   };
 
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    setSelectedImage(file);
+    if (file) {
+      setImagePreview(URL.createObjectURL(file));
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
       {/* Hidden file input element */}
@@ -40,24 +53,31 @@ function ImageUploader() {
           style={{ display: "none" }}
         />
       )}
-      {imagePreview ? (
-        <button
-          className="file-btn"
-          style={{ overflow: "hidden" }}
-          onClick={onChooseFile}
-        >
-          <img
-            src={imagePreview}
-            alt="Preview"
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </button>
-      ) : (
-        <button className="file-btn" onClick={onChooseFile}>
-          <img src={iconImg} alt="iconImage" style={{ width: "40px" }} />
-          Upload Image
-        </button>
-      )}
+      <div
+        className="drag-drop-area"
+        onClick={onChooseFile}
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+      >
+        {imagePreview ? (
+          <button
+            className="file-btn"
+            style={{ overflow: "hidden" }}
+            onClick={onChooseFile}
+          >
+            <img
+              src={imagePreview}
+              alt="Preview"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+          </button>
+        ) : (
+          <button className="file-btn" onClick={onChooseFile}>
+            <img src={iconImg} alt="iconImage" style={{ width: "40px" }} />
+            Upload Image
+          </button>
+        )}
+      </div>
       {selectedImage && (
         <div className="selected-file">
           <p>{selectedImage.name}</p>
