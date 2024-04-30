@@ -1,6 +1,3 @@
-.form-floating{
-    margin: 10px;
-}
 .form-control{
     transition: box-shadow 0.3s ease-in-out;
     cursor: pointer;
@@ -10,11 +7,8 @@
 .form-control:hover {
     border-color: #01A95D; /* Blue border color */
     box-shadow: 0 0 0 0.25rem rgba(1, 169, 93, 0.4);
-    margin-right: 10px;
-
 }
 .form-control:focus {
     border-color: #01A95D; /* Blue border color */
     box-shadow: 0 0 0 0.25rem rgba(1, 169, 93, 0.4);
-
 }
