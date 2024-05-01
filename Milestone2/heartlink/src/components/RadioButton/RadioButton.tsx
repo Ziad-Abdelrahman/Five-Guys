@@ -2,8 +2,12 @@ import "./RadioButton.css";
 
 interface RadioButtonProps {
   text: string;
+  height?: string;
 }
-function RadioButton({ text }: RadioButtonProps) {
+function RadioButton({ text, height }: RadioButtonProps) {
+  const customStyle = {
+    height: height, // Apply the height to both the input and label if specified
+  };
   return (
     <>
       <input
@@ -13,7 +17,11 @@ function RadioButton({ text }: RadioButtonProps) {
         id={text}
         autoComplete="off"
       />
-      <label className="btn btn-outline-success" htmlFor={text}>
+      <label
+        className="btn btn-outline-success"
+        htmlFor={text}
+        style={customStyle}
+      >
         {text}
       </label>
     </>
