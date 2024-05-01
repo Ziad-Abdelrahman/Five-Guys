@@ -5,3 +5,20 @@
     margin-top: 20px;
 
 }
+.filters-container {
+    display: flex;
+    align-items: center; /* Centers the items vertically */
+    justify-content: flex-start; /* Aligns children elements at the start of the container */
+    flex-direction: row; /* Sets the flex direction to row, which is default and could be omitted */
+    width: 50%;
+    margin-left: auto; /* Centers the .filters-container horizontally */
+    margin-right: auto; /* Centers the .filters-container horizontally */
+}
+.filter-icon{
+    margin-right: 4px; /* Adds space between the icon and the text */
+    width: 24px; /* Example size, adjust as needed */
+    height: 24px; /* Example size, adjust as needed */
+}
+.filters-label{
+    margin-right: 10px; /* Adds space between the icon and the text */
+}
