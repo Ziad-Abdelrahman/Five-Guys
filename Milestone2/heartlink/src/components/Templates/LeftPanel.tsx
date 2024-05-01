@@ -1,8 +1,9 @@
-import logo from "../assets/minilogo.png";
+import logo from "../../assets/minilogo.png";
 import "./LeftPanel.css";
+import { ReactNode } from "react";
 
 interface CreateProcessStepsProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 function LeftPanel({ children }: CreateProcessStepsProps) {

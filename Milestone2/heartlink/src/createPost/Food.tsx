@@ -2,11 +2,10 @@ import NumberInputBox from "../components/InputBox/NumberInputBox.tsx";
 import DropDown from "../components/DropDown/DropDown.tsx";
 import { useState } from "react";
 import DisabledDropDown from "../components/DropDown/DisabledDropDown.tsx";
+import hashSet from "../hashSet";
+
 function Food() {
-  type FoodOptionsType = {
-    [category: string]: string[];
-  };
-  const foodOptions: FoodOptionsType = {
+  const foodOptions: hashSet = {
     Bakery: ["Bagels", "Bread", "Croissants", "Muffins", "Pastries"],
     Beverages: ["Coffee", "Juice", "Soda", "Tea", "Water"],
     "Canned Goods": ["Beans", "Soup", "Tomatoes", "Tuna", "Vegetables"],
@@ -65,8 +64,17 @@ function Food() {
         )}
         <br />
         <br />
-        <h4> How much food do you need?</h4>
-        <NumberInputBox label={"Quantity"} width={"280px"} />
+        {selectedCategory === "Fruits" || selectedCategory === "Vegetables" ? (
+          <>
+            <h4> How much {selectedCategory.toLowerCase()} do you need?</h4>
+            <NumberInputBox label={"Quantity (in KG)"} width={"280px"} />{" "}
+          </>
+        ) : (
+          <>
+            <h4> How much food do you need?</h4>
+            <NumberInputBox label={"Quantity"} width={"280px"} />{" "}
+          </>
+        )}
       </div>
     </div>
   );
