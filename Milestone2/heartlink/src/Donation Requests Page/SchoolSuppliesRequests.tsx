@@ -2,15 +2,26 @@ import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar
 import Headerofsection from "../components/header/headerofsection.tsx";
 import RequestCard from "../components/Requests Section/RequestCard.tsx";
 import Clothingbank from "../assets/Clothingbank.png";
+import filtericon from "../assets/filter-icon.png";
 import Orman from "../assets/Orman.png";
 import Turin from "../assets/Turin.jpg";
 import ResalaLogo from "../assets/Resala.png";
+import SchoolSuppliesFilter from "../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
+import "./AllDonationRequests.css";
 
 function SchoolSuppliesRequests() {
   return (
     <>
       <DonorNavigationBar />
       <Headerofsection title={"School Supplies Requests"} />
+      <div className="filters-container">
+        <div className="filters-label">
+          <img src={filtericon} alt="Filter Icon" className="filter-icon" />
+          <strong>Filters</strong>
+        </div>
+        <SchoolSuppliesFilter />
+      </div>
+
       <div className="requests-conainer">
         <RequestCard
           image={Clothingbank}
