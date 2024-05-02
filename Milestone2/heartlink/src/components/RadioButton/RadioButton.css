@@ -5,6 +5,8 @@
     color: #000000; /* Set the default text color */
     padding: 0.5rem 1rem; /* Adjust padding as needed */
     margin: 5px;
+    display: flex;
+    align-items: center; /* Align items center in the flex container */
 }
 
 .btn-outline-success:hover {
