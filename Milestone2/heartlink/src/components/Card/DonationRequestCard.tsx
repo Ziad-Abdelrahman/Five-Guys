@@ -16,6 +16,7 @@ function DonationRequestCard(props: DonationRequestPopUpProps) {
         <img
           className="request-card-image"
           src={props.image}
+          alt={props.description}
           style={{ width: "12%" }}
         />
         <div className="text-container">
