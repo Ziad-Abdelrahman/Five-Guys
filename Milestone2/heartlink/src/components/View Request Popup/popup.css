@@ -1,0 +1,39 @@
+.popup-container {
+    position: fixed; /* Fixed position to cover the whole screen */
+    top: 0; /* Align to the top edge of the viewport */
+    left: 0; /* Align to the left edge of the viewport */
+    display: flex; /* Use flexbox for easy centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    background-color: rgba(0,0,0,0.2); /* Semi-transparent background */
+    z-index: 1000; /* High z-index to be on top of other content */
+    padding: 0; /* No padding to interfere with inner alignment */
+    margin: 0; /* No margin to affect positioning */
+}
+
+.popup-inner {
+    padding: 32px; /* Spacing inside the popup */
+    width: 70%; /* Width relative to the container */
+    height: 60%; /* Height relative to the container */
+    background-color: #f1f1f1; /* Light grey background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    position: relative; /* Relative for positioning children absolutely within it */
+}
+
+.popup-inner .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer; /* Change cursor to pointer on hover over button */
+}
+
+.close-btn{
+    background-color: transparent;
+    width: 5%;
+}
+.close-btn img{
+    width:100%
+
+}
