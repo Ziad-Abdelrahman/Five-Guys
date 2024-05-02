@@ -13,7 +13,11 @@ function ProBonoCard(props: ViewdetailsProps) {
   return (
     <RequestCard style={{ height: "200px", width: "900px" }}>
       <>
-        <img className="request-card-image" src={props.image} />
+        <img
+          className="request-card-image"
+          src={props.image}
+          alt={props.description}
+        />
 
         <div className="text-container">
           <h2 style={{ fontSize: "18px" }}>{props.description}</h2>
