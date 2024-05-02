@@ -63,7 +63,7 @@ button:focus {
 
 /*-----------------Nannas part--------------------*/
 .donation-button:hover {
-    transform: scale(1.1); /* Added transform effect on hover */
+    transform: scale(1.05); /* Added transform effect on hover */
 }
 .donation-button{
     transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out; /* Smooth transition */
@@ -81,18 +81,24 @@ button:focus {
     text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
     transition-duration: 0.8s;
     transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out; /* Smooth transition */
+    width: 125px;
+    height: 39px;
 }
 
 .view-button:hover {
     transform: scale(1.05); /* Added transform effect on hover */
 
 }
+.donation-button{
+    width: 125px;
+    height: 40px;
+}
 
 .arrow-in-button {
-    width: 30%;
+    width: 20%;
     object-fit: contain; /* Ensures the image aspect ratio is preserved */
     margin-left: 5px;
-    transition: transform 0.8s ease-in-out; /* Smooth transition for rotation */
+    transition: transform 0.35s ease-in-out; /* Smooth transition for rotation */
 
 }
 
@@ -101,7 +107,7 @@ button:focus {
 }
 
 .view-button:hover .arrow-in-button {
-    transform: rotate(360deg); /* Rotates the arrow 360 degrees when the button is hovered */
+    transform: rotate(90deg); /* Rotates the arrow 360 degrees when the button is hovered */
 }
 .dropbtn:hover .arrow-in-button {
     transform: rotate(90deg); /* Rotates the arrow 360 degrees when the button is hovered */
