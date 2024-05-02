@@ -9,12 +9,11 @@
     display: flex;
     align-items: center; 
   }
-  
-  
+
   .searchIcon {
     color: #01a95d; 
     margin-right: 5px; 
-    width: 10;
+    width: 25px;
     height: auto;
     size: 5px;
   }
