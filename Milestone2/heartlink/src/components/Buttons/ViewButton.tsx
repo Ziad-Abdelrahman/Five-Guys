@@ -2,13 +2,19 @@ import "./Buttons.css";
 import arrow from "../../assets/right-arrow.png";
 
 interface ViewButtonProps {
-  buttonid: string;
+  buttonID?: string;
   handleClick?: (id: string) => void;
 }
 
 function ViewButton(props: ViewButtonProps) {
   return (
-    <button id={props.buttonid} className="view-button">
+    <button
+      id={props.buttonID}
+      className="view-button"
+      onClick={(e) =>
+        props.handleClick && props.handleClick(e.currentTarget.id)
+      }
+    >
       Learn More
       <img className="arrow-in-button" src={arrow} alt="arrow" />
     </button>
