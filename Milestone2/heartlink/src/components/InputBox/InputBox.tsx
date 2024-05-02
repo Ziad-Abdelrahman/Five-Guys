@@ -4,9 +4,10 @@ interface InputBoxProps {
   type: string;
   label: string;
   width: string;
+  disabled?: boolean;
 }
 
-function InputBox({ type, label, width }: InputBoxProps) {
+function InputBox({ type, label, width, disabled = false }: InputBoxProps) {
   return (
     <div className="form-floating mb-3" style={{ width: width }}>
       <input
@@ -14,6 +15,7 @@ function InputBox({ type, label, width }: InputBoxProps) {
         className="form-control"
         id="floatingInput"
         placeholder="name@example.com"
+        disabled={disabled}
       />
       <label>{label}</label>
     </div>

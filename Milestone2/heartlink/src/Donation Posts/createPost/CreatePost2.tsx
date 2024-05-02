@@ -1,6 +1,6 @@
-import Template1 from "../components/Templates/Template1.tsx";
+import Template1 from "../../components/Templates/Template1.tsx";
 import "./createPost.css";
-import BooksPt2 from "../bookDonationWebpages/BooksPt2.tsx";
+import BloodDonation from "../Blood Donation Webpages/BloodDonation.tsx";
 
 function CreatePost() {
   return (
@@ -11,7 +11,7 @@ function CreatePost() {
           <p> Almost Done.. </p>
         </div>
       }
-      rightPanelDiv={<BooksPt2 />}
+      rightPanelDiv={<BloodDonation />}
       rightPanelButtonText={"Post"}
       hasButton={true}
     />

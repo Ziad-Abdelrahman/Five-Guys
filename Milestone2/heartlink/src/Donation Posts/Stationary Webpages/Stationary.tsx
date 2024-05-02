@@ -1,8 +1,8 @@
-import DropDown from "../components/DropDown/DropDown.tsx";
+import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
-import DisabledDropDown from "../components/DropDown/DisabledDropDown.tsx";
-import NumberInputBox from "../components/InputBox/NumberInputBox.tsx";
-import hashSet from "../hashSet";
+import DisabledDropDown from "../../components/DropDown/DisabledDropDown.tsx";
+import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
+import hashSet from "../../hashSet";
 function Stationary() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSupply, setSelectedSupply] = useState("");

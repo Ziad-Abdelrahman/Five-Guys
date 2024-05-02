@@ -1,5 +1,4 @@
 import NavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import RequestCard from "../components/Requests Section/RequestCard.tsx";
 import HeaderOfSection from "../components/header/headerofsection.tsx";
 import "./AllDonationRequests.css";
 import ResalaLogo from "../assets/Resala.png";
@@ -11,6 +10,7 @@ import Misrelkheir from "../assets/Misrelkheir.jpeg";
 import Turin from "../assets/Turin.jpg";
 import ClothingBank from "../assets/Clothingbank.png";
 import MagdyYakoub from "../assets/MagdyYakoub.png";
+import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 
 function AllDonationRequests() {
   return (
@@ -18,61 +18,61 @@ function AllDonationRequests() {
       <NavigationBar />
       <HeaderOfSection title="All Donation Requests" />
       <div className="requests-conainer">
-        <RequestCard
+        <DonationRequestCard
           image={ResalaLogo}
           description="Clothes Supplies"
           postedby="Resala Charity Foundation"
           postdate={"25/4/2024"}
-        />
-        <RequestCard
+        ></DonationRequestCard>
+        <DonationRequestCard
           image={FoodBank}
           description="Food Supplies"
           postedby="Food Bank"
           postdate={"20/3/2023"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Misrelkheir}
           description="Clothes"
           postedby="Misr El Kheir"
           postdate={"29/3/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={RedCresent}
           description="Medicine Supplies"
           postedby="Red Cresent"
           postdate={"20/3/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={ChildrenCancer}
           description="Toys "
           postedby="57357"
           postdate={"20/4/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Orman}
           description="Food Supplies"
           postedby="EL Orman"
           postdate={"27/3/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Turin}
           description="Clothes"
           postedby="Turin Organization"
           postdate={"27/3/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={RedCresent}
           description="Blood Donation"
           postedby="Red Cresent"
           postdate={"29/3/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={MagdyYakoub}
           description="Medical Supplies"
           postedby="Magdy Yakoub Heart Foundation"
           postdate={"29/3/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={ClothingBank}
           description="Clothes Donation"
           postedby="Egyptain Clothing Bank"

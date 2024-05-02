@@ -1,28 +1,23 @@
-import DonateButton from "../Buttons/DonateButton.tsx";
+import RequestCard from "./RequestCard.tsx";
 import ViewButton from "../Buttons/ViewButton.tsx";
-import "./request.css";
-import "../Buttons/Buttons.css";
-import "../Categories Section/Categories.css";
+import DonateButton from "../Buttons/DonateButton.tsx";
 
-interface RequestCardProps {
-  buttonid: string;
+interface DonationRequestPopUpProps {
   image: string;
   description: string;
   postedby: string;
   postdate: string;
-  onClick?: () => void; // Define onClick as a function that returns void
 }
 
-function RequestCard(props: RequestCardProps) {
+function DonationRequestCard(props: DonationRequestPopUpProps) {
   return (
-    <>
-      <div className="request-container">
-        {" "}
-        {/* Attach onClick to the container */}
+    <RequestCard>
+      <>
         <img
           className="request-card-image"
           src={props.image}
           alt={props.description}
+          style={{ width: "12%" }}
         />
         <div className="text-container">
           <h2 style={{ fontSize: "22px" }}>{props.description}</h2>
@@ -30,12 +25,12 @@ function RequestCard(props: RequestCardProps) {
           <p>Post Date: {props.postdate}</p>
         </div>
         <div className="two-buttons-holder">
-          <ViewButton buttonid={props.buttonid} />
+          <ViewButton />
           <DonateButton />
         </div>
-      </div>
-    </>
+      </>
+    </RequestCard>
   );
 }
 
-export default RequestCard;
+export default DonationRequestCard;
