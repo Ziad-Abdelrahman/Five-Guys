@@ -3,8 +3,9 @@ import "./RadioButton.css";
 interface RadioButtonProps {
   text: string;
   height?: string;
+  handleFilterChange?: (filter: string) => void;
 }
-function RadioButton({ text, height }: RadioButtonProps) {
+function RadioButton({ text, height, handleFilterChange }: RadioButtonProps) {
   const customStyle = {
     height: height, // Apply the height to both the input and label if specified
   };
@@ -16,6 +17,7 @@ function RadioButton({ text, height }: RadioButtonProps) {
         name="options-outlined"
         id={text}
         autoComplete="off"
+        onChange={() => handleFilterChange && handleFilterChange(text)}
       />
       <label
         className="btn btn-outline-success"
