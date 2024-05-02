@@ -1,8 +1,8 @@
-import NumberInputBox from "../components/InputBox/NumberInputBox.tsx";
-import DropDown from "../components/DropDown/DropDown.tsx";
+import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
+import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
-import DisabledDropDown from "../components/DropDown/DisabledDropDown.tsx";
-import hashSet from "../hashSet";
+import DisabledDropDown from "../../components/DropDown/DisabledDropDown.tsx";
+import hashSet from "../../hashSet";
 
 function Food() {
   const foodOptions: hashSet = {
