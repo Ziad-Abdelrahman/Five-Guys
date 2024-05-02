@@ -15,12 +15,14 @@
 
 .popup-inner {
     padding: 32px; /* Spacing inside the popup */
-    width: 70%; /* Width relative to the container */
-    height: 60%; /* Height relative to the container */
+    width: 40%; /* Width relative to the container */
+    height: 50%; /* Height relative to the container */
     background-color: #f1f1f1; /* Light grey background */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     position: relative; /* Relative for positioning children absolutely within it */
 }
+
+
 
 .popup-inner .close-btn {
     position: absolute;
@@ -29,11 +31,19 @@
     cursor: pointer; /* Change cursor to pointer on hover over button */
 }
 
+
 .close-btn{
     background-color: transparent;
-    width: 5%;
+    width: 7%;
 }
 .close-btn img{
     width:100%
 
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-left: 5%;
 }

@@ -3,6 +3,7 @@ import close from "../../assets/close-icon.png";
 interface ViewPopupProps {
   trigger: boolean;
   children?: React.ReactNode; // This makes the children optional
+  handleClick: () => void;
 }
 
 function viewPopup({ trigger, children }: ViewPopupProps) {
@@ -12,7 +13,12 @@ function viewPopup({ trigger, children }: ViewPopupProps) {
         <button className="close-btn">
           <img src={close} />{" "}
         </button>
-        {children}
+
+        <div>
+          <h3>Info</h3>
+        </div>
+        <hr />
+        <div className="info-container">{children}</div>
       </div>
     </div>
   ) : null;
