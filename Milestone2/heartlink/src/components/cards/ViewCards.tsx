@@ -13,9 +13,7 @@ const ViewCards: React.FC<ViewCardsProps> = (props) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleDeleteClick = () => {
-    // Show an alert before deleting the card
     if (window.confirm('Are you sure you want to delete this card?')) {
-      // If user confirms deletion, hide the card by setting isVisible to false
       setIsVisible(false);
     }
   };
