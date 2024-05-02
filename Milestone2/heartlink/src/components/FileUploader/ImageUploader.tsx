@@ -3,7 +3,17 @@ import "./ImageUploader.css";
 import iconImg from "../../assets/uploadiconBG.png";
 import bin from "../../assets/bin.svg";
 
-function ImageUploader() {
+let number = 0;
+
+interface imageUploaderProps {
+  width?: string;
+  height?: string;
+}
+
+function ImageUploader({
+  width = "250px",
+  height = "150px",
+}: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
   const [imagePreview, setImagePreview] = useState<string | undefined>();
@@ -19,8 +29,10 @@ function ImageUploader() {
   }
 
   const onChooseFile = () => {
-    // @ts-ignore
-    inputRef.current.click();
+    if (number == 0) {
+      // @ts-ignore
+      inputRef.current.click();
+    }
   };
 
   const removeFile = () => {
@@ -59,27 +71,26 @@ function ImageUploader() {
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
-        {imagePreview ? (
-          <button
-            className="file-btn"
-            style={{ overflow: "hidden" }}
-            onClick={onChooseFile}
-          >
-            <img
-              src={imagePreview}
-              alt="Preview"
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
-          </button>
-        ) : (
-          <button className="file-btn" onClick={onChooseFile}>
-            <img src={iconImg} alt="iconImage" style={{ width: "40px" }} />
-            Upload Image
-          </button>
-        )}
+        <button className="file-btn" style={{ width: width, height: height }}>
+          {imagePreview ? (
+            <>
+              <img
+                src={imagePreview}
+                alt="Preview"
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              />
+            </>
+          ) : (
+            <>
+              {" "}
+              <img src={iconImg} alt="iconImage" style={{ width: "40px" }} />
+              Upload Image
+            </>
+          )}
+        </button>
       </div>
       {selectedImage && (
-        <div className="selected-file">
+        <div className="selected-file" style={{ width: width }}>
           <p>{selectedImage.name}</p>
 
           <button onClick={removeFile}>
