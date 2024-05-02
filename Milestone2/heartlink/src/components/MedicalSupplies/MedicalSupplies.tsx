@@ -1,7 +1,6 @@
 import InputBox from "../InputBox/InputBox.tsx";
 import NumberInputBox from "../InputBox/NumberInputBox.tsx";
 import { ReactNode } from "react";
-import DisabledInputBox from "../InputBox/DisabledInputBox.tsx";
 
 interface medicalSuppliesProps {
   children: ReactNode;
@@ -31,19 +30,13 @@ function MedicalSupplies({
         <br />
         <h4>What's the name of the {name}?</h4>
         <h6 style={{ marginBottom: "15px" }}>(if "Others" is chosen)</h6>
-        {disabled ? (
-          <DisabledInputBox
-            type={"text"}
-            label={FirstLetterUpper + " name"}
-            width={"280px"}
-          />
-        ) : (
-          <InputBox
-            type={"text"}
-            label={FirstLetterUpper + " name"}
-            width={"280px"}
-          />
-        )}
+        <InputBox
+          type={"text"}
+          label={FirstLetterUpper + " name"}
+          width={"280px"}
+          disabled={disabled}
+        />
+
         <h4 style={{ marginBottom: "15px" }}>
           Please specify the quantity needed
         </h4>
