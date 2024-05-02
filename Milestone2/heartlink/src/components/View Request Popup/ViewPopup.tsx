@@ -6,11 +6,11 @@ interface ViewPopupProps {
   handleClick: () => void;
 }
 
-function viewPopup({ trigger, children }: ViewPopupProps) {
+function viewPopup({ trigger, children, handleClick }: ViewPopupProps) {
   return trigger ? (
     <div className="popup-container">
       <div className="popup-inner">
-        <button className="close-btn">
+        <button className="close-btn" onClick={handleClick}>
           <img src={close} />{" "}
         </button>
 
