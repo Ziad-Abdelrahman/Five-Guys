@@ -1,0 +1,15 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .pageTitle {
+    color: #01A95D;
+    text-align: center;
+  }
+  .searchIcon{
+    color: #01A95D;
+    width: 60px;
+    height: auto;
+  }
