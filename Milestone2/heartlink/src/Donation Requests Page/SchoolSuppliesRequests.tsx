@@ -1,13 +1,13 @@
-import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/headerofsection.tsx";
-import RequestCard from "../components/Requests Section/RequestCard.tsx";
 import Clothingbank from "../assets/Clothingbank.png";
 import filtericon from "../assets/filter-icon.png";
 import Orman from "../assets/Orman.png";
 import Turin from "../assets/Turin.jpg";
 import ResalaLogo from "../assets/Resala.png";
-import SchoolSuppliesFilter from "../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
 import "./AllDonationRequests.css";
+import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
+import Headerofsection from "../components/header/headerofsection.tsx";
+import SchoolSuppliesFilter from "../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
+import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 
 function SchoolSuppliesRequests() {
   return (
@@ -23,61 +23,61 @@ function SchoolSuppliesRequests() {
       </div>
 
       <div className="requests-conainer">
-        <RequestCard
+        <DonationRequestCard
           image={Clothingbank}
           description=" School Supplies Donation"
           postedby="Dar Al Orman "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Orman}
           description="School Supplies Donation"
           postedby="Dar Al Orman "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Turin}
           description="School Supplies Donation"
           postedby="Turin "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={ResalaLogo}
           description="School Supplies Donation"
           postedby="Resala"
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Turin}
           description="School Supplies Donation"
           postedby="Turin "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Orman}
           description="School Supplies Donation"
           postedby="Dar Al Orman "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Orman}
           description="School Supplies Donation"
           postedby="Dar Al Orman "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={ResalaLogo}
           description="School Supplies Donation"
           postedby="Resala "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={ResalaLogo}
           description="School Supplies Donation"
           postedby="Resala "
           postdate={"5/1/2024"}
         />
-        <RequestCard
+        <DonationRequestCard
           image={Clothingbank}
           description="School Supplies Donation"
           postedby="Resala "
