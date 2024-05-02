@@ -4,13 +4,12 @@ import Organizations from "./Admin/Organizations/Organizations.tsx";
 import Navbar from "./components/Admin navbar/Navbar";
 import ChangePass from "./Admin/change password/ChangePass.tsx";
 import { Routes, Route } from "react-router-dom";
-import "./Admin/admin.css";
 
 function App() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="container">
+      <div style={{ marginTop: "8.5%" }}>
         <Routes>
           <Route path="/Donors" element={<Donors />} />
           <Route path="/Organizations" element={<Organizations />} />
