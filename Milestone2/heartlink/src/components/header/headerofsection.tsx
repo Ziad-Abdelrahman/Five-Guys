@@ -9,7 +9,7 @@ function headerofsection(props:headerofsectionProps){
 
     return(
         <div className="header-container">
-            <h2>{props.title}</h2>
+            <title>{props.title}</title>
             <hr/>
         </div>
 
