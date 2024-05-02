@@ -1,0 +1,19 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures that cards can wrap onto the next line */
+    justify-content: space-evenly; /* Distributes spacing evenly between items */
+    align-items: flex-start; /* Aligns items to the start of the flex container */
+    padding: 10px; /* Adds some padding inside the container */
+    margin-left: 10em;
+    margin-right: 10em
+;
+
+
+}
+
+.three-cards-holder{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 3%;
+}

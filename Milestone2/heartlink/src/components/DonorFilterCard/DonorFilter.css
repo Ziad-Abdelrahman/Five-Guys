@@ -1,0 +1,7 @@
+.filter-radio-buttons{
+    display: flex;
+    justify-content: space-evenly;
+   flex-direction: row;
+    width: 20%;
+
+}

@@ -1,0 +1,14 @@
+.form-control{
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    font-family: myFirstFont, sans-serif;
+
+}
+.form-control:not([disabled]):hover {
+    border-color: #01A95D; /* Blue border color */
+    box-shadow: 0 0 0 0.25rem rgba(1, 169, 93, 0.4);
+}
+.form-control:not([disabled]):focus {
+    border-color: #01A95D; /* Blue border color */
+    box-shadow: 0 0 0 0.25rem rgba(1, 169, 93, 0.4);
+}
