@@ -1,7 +1,7 @@
 import "./Buttons.css"; // This imports the styles
 function DonateButton() {
   const styles = {
-    fontSize: "15px",
+    fontSize: "16px",
     fontWeight: "bold",
   };
 

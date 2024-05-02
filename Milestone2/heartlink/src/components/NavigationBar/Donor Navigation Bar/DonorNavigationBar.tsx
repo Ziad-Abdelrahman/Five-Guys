@@ -1,20 +1,12 @@
-import img from "../../../assets/logo.png";
 import "../NavigationBar.css";
 import DonorLeftDiv from "./DonorLeftDiv";
 import DonorRightDiv from "./DonorRightDiv";
+import NavigationBar from "../NavigationBar.tsx";
 
-
-
-function NavigationBar() {
+function DonorNavigationBar() {
   return (
-    <nav className="donor-navigation-bar">
-      <div className="leftDiv"><DonorLeftDiv/></div>
-      <div className="middleDiv">
-        <img src={img} draggable="false" className="logo" alt={"icon"} />
-      </div>
-      <div className="rightDiv"><DonorRightDiv/></div>
-    </nav>
+    <NavigationBar leftDiv={<DonorLeftDiv />} rightDiv={<DonorRightDiv />} />
   );
 }
 
-export default NavigationBar;
+export default DonorNavigationBar;

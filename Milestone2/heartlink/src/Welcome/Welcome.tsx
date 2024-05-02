@@ -19,9 +19,9 @@ function Welcome() {
       var currentScrollPosition = window.scrollY;
       if (navbar) {
         if (currentScrollPosition !== 0) {
-          navbar.classList.add("scrolled");
-        } else {
           navbar.classList.remove("scrolled");
+        } else {
+          navbar.classList.add("scrolled");
         }
       }
     });
