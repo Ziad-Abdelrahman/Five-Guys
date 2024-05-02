@@ -1,15 +1,21 @@
 import Headerofsection from "../components/header/headerofsection.tsx";
-import teacher1 from "../assets/teacher1.jpeg"
-import Viewdetails from "../components/ViewDetailsCard/Viewdetails.tsx";
+import teacher1 from "../assets/teacher1.jpeg";
+import ProBonoCard from "../components/Card/ProBonoCard.tsx";
 import teacher2 from "../assets/teacher2.jpeg";
-//import NavigationBar from "../components/NavigationBar/NavigationBar.tsx";
-function Proteacher() {
+function ProBonoTeacher() {
   return (
     <>
-      
       <Headerofsection title={"Probonos"} />
-      <div className="info-conainer">
-        <Viewdetails
+      <div
+        className="info-conainer"
+        style={{
+          justifyContent: "flex",
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <ProBonoCard
           image={teacher1}
           description="Teacher"
           postedby="Ahmed Mohamed "
@@ -17,7 +23,7 @@ function Proteacher() {
           subject="English"
           area="Cairo"
         />
-          <Viewdetails
+        <ProBonoCard
           image={teacher2}
           description="Teacher"
           postedby="Lina Ahmed "
@@ -25,7 +31,7 @@ function Proteacher() {
           subject="Math"
           area="Cairo"
         />
-          <Viewdetails
+        <ProBonoCard
           image={teacher2}
           description="Teacher"
           postedby="Lina Ahmed "
@@ -33,7 +39,7 @@ function Proteacher() {
           subject="Math"
           area="Cairo"
         />
-          <Viewdetails
+        <ProBonoCard
           image={teacher2}
           description="Teacher"
           postedby="Lina Ahmed "
@@ -41,7 +47,7 @@ function Proteacher() {
           subject="Math"
           area="Cairo"
         />
-          <Viewdetails
+        <ProBonoCard
           image={teacher2}
           description="Teacher"
           postedby="Lina Ahmed "
@@ -49,7 +55,7 @@ function Proteacher() {
           subject="Math"
           area="Cairo"
         />
-          <Viewdetails
+        <ProBonoCard
           image={teacher2}
           description="Teacher"
           postedby="Lina Ahmed "
@@ -57,11 +63,9 @@ function Proteacher() {
           subject="Math"
           area="Cairo"
         />
-   
-          
       </div>
     </>
   );
 }
 
-export default Proteacher;
+export default ProBonoTeacher;
