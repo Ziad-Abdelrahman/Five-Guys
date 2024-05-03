@@ -10,8 +10,7 @@ function ThankYouButton({ email }: ThankYouButtonProps) {
     const subject = "Donation Appreciation";
     const body =
       "Thank you for donating your time and effort, wishing you the best in your life";
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
