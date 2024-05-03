@@ -1,0 +1,31 @@
+.right,
+.left {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+  }
+  
+  .listItems {
+    display: flex; 
+  }
+  
+  .listItems a {
+    display: inline-block; 
+    padding: 10px; 
+    text-decoration: none; 
+    color: #333; 
+    margin-right: 10px; 
+    font-weight: bold;
+    color: #01A95D;
+  }
+  .listItems :hover{
+    background-color: #F0FCE9;
+  }
+  .listItems :active{
+    background-color: #2F9A6A;
+    color: white;
+  }
+.listItems button{
+    background-color: white;
+    color: #01A95D;
+}
