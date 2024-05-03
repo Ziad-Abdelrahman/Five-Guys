@@ -7,7 +7,7 @@ interface headerofsectionProps {
   style?: React.CSSProperties;
 }
 
-function headerofsection(props: headerofsectionProps) {
+function headerOfSection(props: headerofsectionProps) {
   return (
     <div className="header-container" style={props.style}>
       <div style={props.smallDivStyle}>
@@ -19,4 +19,4 @@ function headerofsection(props: headerofsectionProps) {
   );
 }
 
-export default headerofsection;
+export default headerOfSection;
