@@ -1,5 +1,6 @@
 import LeftPanel from "./LeftPanel.tsx";
 import RightPanel from "./RightPanel.tsx";
+import "./Template1.css";
 import React from "react";
 
 interface templateProps {

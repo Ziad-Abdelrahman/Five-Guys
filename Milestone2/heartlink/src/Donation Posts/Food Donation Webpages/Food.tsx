@@ -1,7 +1,6 @@
 import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
 import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
-import DisabledDropDown from "../../components/DropDown/DisabledDropDown.tsx";
 import hashSet from "../../hashSet";
 
 function Food() {
@@ -52,16 +51,13 @@ function Food() {
         <br />
         <h4>What specific food do you need?</h4>
         <h6> (Please select a category first)</h6>
-        {selectedCategory ? (
-          <DropDown
-            options={foodOptions[selectedCategory]}
-            selected={selectedFood || "Select food"}
-            width={"280px"}
-            onChange={(food) => setSelectedFood(food)}
-          />
-        ) : (
-          <DisabledDropDown selected={"Select food"} width={"280px"} />
-        )}
+        <DropDown
+          options={selectedCategory ? foodOptions[selectedCategory] : []}
+          selected={selectedFood || "Select food"}
+          width={"280px"}
+          onChange={(food) => setSelectedFood(food)}
+          disabled={!selectedCategory}
+        />
         <br />
         <br />
         {selectedCategory === "Fruits" || selectedCategory === "Vegetables" ? (

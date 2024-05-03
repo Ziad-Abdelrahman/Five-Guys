@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ViewCards from "../../components/Card/ViewCards.tsx";
+import ViewCards from "../../components/Card/Admin Cards/ViewCards.tsx";
 import Org1 from "../../assets/57357.jpeg";
 import Org2 from "../../assets/EgyptianFoodBank.png";
 import Org3 from "../../assets/Misrelkheir.jpeg";
@@ -97,10 +97,11 @@ const Organizations = () => {
           justifyContent: "space-between",
           width: "100%",
         }}
-        style={{ marginLeft: "5%", width: "90%" }}
+        style={{ marginLeft: "10em", width: "80%" }}
       >
         <Search handleSearch={handleSearch} />
       </Headerofsection>
+
       <div className={"organizations-container"}>
         {cardData
           .filter((cardData) => cardData.title.toLowerCase().includes(search))

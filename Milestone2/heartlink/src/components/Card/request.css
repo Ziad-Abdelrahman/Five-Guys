@@ -15,7 +15,7 @@
 }
 
 .request-card-image {
-    width: 17%;
+    width: 15%;
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Cover the frame without distorting the image */
     border-radius: 8px; /* Rounds the corners of the image */

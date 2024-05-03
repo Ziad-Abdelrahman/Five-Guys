@@ -1,5 +1,5 @@
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/header/HeaderOfSection.tsx";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import ChildrenCancer from "../assets/57357.jpeg";
 import RedCresent from "../assets/Redcrescent.png";

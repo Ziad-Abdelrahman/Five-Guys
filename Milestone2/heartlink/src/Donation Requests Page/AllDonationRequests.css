@@ -22,4 +22,7 @@
 .filters-label{
     margin-right: 10px; /* Adds space between the icon and the text */
 }
+.org-filters-container{
+    margin-left: 15.5em;
+}
 
