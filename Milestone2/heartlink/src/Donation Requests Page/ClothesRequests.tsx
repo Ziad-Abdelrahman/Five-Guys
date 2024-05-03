@@ -27,13 +27,118 @@ function ClothesRequests() {
     "12": ["Jeans", "Infants", "Female", "Fall", "Denim", "20"],
     "13": ["Skirt", "Adults", "Female", "Summer", "Cotton", "20"],
   };
+  const cardData = [
+    {
+      buttonID: "1",
+      image: Clothingbank,
+      description: "Clothes Donation",
+      postedby: "Egyptian Clothing Bank ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "2",
+      image: Orman,
+      description: "Clothes Donation",
+      postedby: "Dar Al Orman ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "3",
+      image: Turin,
+      description: "Clothes Donation",
+      postedby: "Turin ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "4",
+      image: ResalaLogo,
+      description: "Clothes Donation",
+      postedby: "Resala",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "5",
+      image: Turin,
+      description: "Clothes Donation",
+      postedby: "Turin ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "6",
+      image: Orman,
+      description: "Clothes Donation",
+      postedby: "Dar Al Orman ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "7",
+      image: Orman,
+      description: "Clothes Donation",
+      postedby: "Dar Al Orman ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "8",
+      image: ResalaLogo,
+      description: "Clothes Donation",
+      postedby: "Resala ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "9",
+      image: ResalaLogo,
+      description: "Clothes Donation",
+      postedby: "Resala ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "10",
+      image: Clothingbank,
+      description: "Clothes",
+      postedby: "Egyptian Clothing Bank ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "11",
+      image: Orman,
+      description: "Clothes",
+      postedby: "Al Orman ",
+      postdate: "5/5/2023",
+    },
+    {
+      buttonID: "12",
+      image: Clothingbank,
+      description: "Clothes",
+      postedby: "Egyptian Clothing Bank ",
+      postdate: "5/1/2024",
+    },
+    {
+      buttonID: "13",
+      image: Turin,
+      description: "Clothes",
+      postedby: "Turin ",
+      postdate: "5/1/2024",
+    },
+  ];
 
   //learn more functionality
   const [selectedID, setSelectedID] = useState("");
+  const [selectedAge, setSelectedAge] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedSeason, setSelectedSeason] = useState("");
   //responsible for getting the id of the request to view its details
   function handleLearnMoreClick(id: string) {
     setSelectedID(id);
   }
+  const handleAgeFilter = (age: string) => {
+    age === "Age" ? setSelectedAge("") : setSelectedAge(age);
+  };
+  const handleGenderFilter = (gender: string) => {
+    gender === "Gender" ? setSelectedGender("") : setSelectedGender(gender);
+  };
+  const handleSeasonFilter = (season: string) => {
+    season === "Season" ? setSelectedSeason("") : setSelectedSeason(season);
+  };
 
   //responsible for closing the popup
   function handleClosePopUp() {
@@ -64,112 +169,33 @@ function ClothesRequests() {
       </ViewPopup>
       <Headerofsection title={"Clothes Requests"} />
 
-      <ClothesFilter />
+      <ClothesFilter
+        handleAgeFilter={handleAgeFilter}
+        handleGenderFilter={handleGenderFilter}
+        handleSeasonFilter={handleSeasonFilter}
+      />
       <div className="requests-conainer">
-        <DonationRequestCard
-          buttonID={"1"}
-          handleClick={handleLearnMoreClick}
-          image={Clothingbank}
-          description="Clothes Donation"
-          postedby="Egyptian Clothing Bank "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"2"}
-          handleClick={handleLearnMoreClick}
-          image={Orman}
-          description="Clothes Donation"
-          postedby="Dar Al Orman "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"3"}
-          handleClick={handleLearnMoreClick}
-          image={Turin}
-          description="Clothes Donation"
-          postedby="Turin "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"4"}
-          handleClick={handleLearnMoreClick}
-          image={ResalaLogo}
-          description="Clothes Donation"
-          postedby="Resala"
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"5"}
-          handleClick={handleLearnMoreClick}
-          image={Turin}
-          description="Clothes Donation"
-          postedby="Turin "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"6"}
-          handleClick={handleLearnMoreClick}
-          image={Orman}
-          description="Clothes Donation"
-          postedby="Dar Al Orman "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"7"}
-          handleClick={handleLearnMoreClick}
-          image={Orman}
-          description="Clothes Donation"
-          postedby="Dar Al Orman "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"8"}
-          handleClick={handleLearnMoreClick}
-          image={ResalaLogo}
-          description="Clothes Donation"
-          postedby="Resala "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"9"}
-          handleClick={handleLearnMoreClick}
-          image={ResalaLogo}
-          description="Clothes Donation"
-          postedby="Resala "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"10"}
-          handleClick={handleLearnMoreClick}
-          image={Clothingbank}
-          description="Clothes"
-          postedby="Egyptian Clothing Bank "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"11"}
-          handleClick={handleLearnMoreClick}
-          image={Orman}
-          description="Clothes"
-          postedby="Al Orman "
-          postdate={"5/5/2023"}
-        />
-        <DonationRequestCard
-          buttonID={"12"}
-          handleClick={handleLearnMoreClick}
-          image={Clothingbank}
-          description="Clothes"
-          postedby="Egyptian Clothing Bank "
-          postdate={"5/1/2024"}
-        />
-        <DonationRequestCard
-          buttonID={"13"}
-          handleClick={handleLearnMoreClick}
-          image={Turin}
-          description="Clothes"
-          postedby="Turin "
-          postdate={"5/1/2024"}
-        />
+        {cardData
+          .filter(
+            (card) =>
+              (detailsList[card.buttonID][1] === selectedAge ||
+                selectedAge === "") &&
+              (detailsList[card.buttonID][2] === selectedGender ||
+                selectedGender === "") &&
+              (detailsList[card.buttonID][3] === selectedSeason ||
+                selectedSeason === ""),
+          )
+          .map((card) => (
+            <DonationRequestCard
+              key={card.buttonID}
+              buttonID={card.buttonID}
+              handleClick={handleLearnMoreClick}
+              image={card.image}
+              description={card.description}
+              postedby={card.postedby}
+              postdate={card.postdate}
+            />
+          ))}
       </div>
     </>
   );

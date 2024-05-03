@@ -1,7 +1,13 @@
 import "./DonorFilter.css";
 import filtericon from "../../assets/filter-icon.png";
 
-function ClothesFilter() {
+interface ClothesFilterProps {
+  handleAgeFilter: (age: string) => void;
+  handleGenderFilter: (gender: string) => void;
+  handleSeasonFilter: (season: string) => void;
+}
+
+function ClothesFilter(props: ClothesFilterProps) {
   return (
     <>
       <div className="three-categories-filter">
@@ -10,25 +16,49 @@ function ClothesFilter() {
           <strong>Filters</strong>
         </div>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Age</option>
-          <option value="1">Infants</option>
-          <option value="2">Kids</option>
-          <option value="3">Adults</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => {
+            props.handleAgeFilter(e.target.value);
+          }}
+        >
+          <option selected value="Age">
+            Age
+          </option>
+          <option value="Infants">Infants</option>
+          <option value="Kids">Kids</option>
+          <option value="Adults">Adults</option>
         </select>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Gender</option>
-          <option value="1">Male</option>
-          <option value="2">Female</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => {
+            props.handleGenderFilter(e.target.value);
+          }}
+        >
+          <option selected value="Gender">
+            Gender
+          </option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Season</option>
-          <option value="1">Summer</option>
-          <option value="2">Winter</option>
-          <option value="3">Autumn</option>
-          <option value="4">Fall</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => {
+            props.handleSeasonFilter(e.target.value);
+          }}
+        >
+          <option selected value="Season">
+            Season
+          </option>
+          <option value="Summer">Summer</option>
+          <option value="Winter">Winter</option>
+          <option value="Autumn">Autumn</option>
+          <option value="Fall">Fall</option>
         </select>
       </div>
     </>
