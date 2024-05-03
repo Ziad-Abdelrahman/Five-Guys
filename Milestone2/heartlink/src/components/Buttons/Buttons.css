@@ -43,6 +43,13 @@ button:focus {
     font-size: 16px;
     margin: 10px;
 }
+.accept, .reject{
+    height: 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin: 5px;
+}
+
 
 .signupButton{
     font-Size: 15px;
@@ -105,6 +112,8 @@ button:focus {
 .dropbtn:hover .arrow-in-button {
     transform: rotate(90deg); /* Rotates the arrow 360 degrees when the button is hovered */
 }
+
+
 
 /*-----------------------------------------------*/
 
