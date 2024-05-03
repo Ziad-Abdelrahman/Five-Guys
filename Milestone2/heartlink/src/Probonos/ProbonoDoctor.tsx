@@ -1,8 +1,8 @@
 import Headerofsection from "../components/header/headerofsection.tsx";
 import teacher1 from "../assets/teacher1.jpeg";
 import ProBonoCard from "../components/Card/ProBonoCard.tsx";
-import teacher2 from '../assets/teacher2.jpeg';
-function ProBonoTeacher() {
+import teacher2 from "../assets/teacher2.jpeg";
+function ProbonoDoctor() {
   return (
     <>
       <Headerofsection title={"Probonos"} />
@@ -20,7 +20,7 @@ function ProBonoTeacher() {
           description="Teacher"
           postedby="Ahmed Mohamed "
           email="ahmed.mohamed@yahoo.com"
-          subject="English"
+          speciality="Cardiology"
           contact="Cairo"
         />
         <ProBonoCard
@@ -28,7 +28,7 @@ function ProBonoTeacher() {
           description="Teacher"
           postedby="Lina Ahmed "
           email="lina.helmy@yahoo.com"
-          subject="Math"
+          speciality="Dermatology"
           contact="Cairo"
         />
         <ProBonoCard
@@ -36,7 +36,7 @@ function ProBonoTeacher() {
           description="Teacher"
           postedby="Lina Ahmed "
           email="lina.helmy@yahoo.com"
-          subject="Math"
+          speciality="Neurology"
           contact="Cairo"
         />
         <ProBonoCard
@@ -44,7 +44,7 @@ function ProBonoTeacher() {
           description="Teacher"
           postedby="Lina Ahmed "
           email="lina.helmy@yahoo.com"
-          subject="Math"
+          speciality="Otolaryngology"
           contact="Cairo"
         />
         <ProBonoCard
@@ -52,7 +52,7 @@ function ProBonoTeacher() {
           description="Teacher"
           postedby="Lina Ahmed "
           email="lina.helmy@yahoo.com"
-          subject="Math"
+          speciality="Psychiatry"
           contact="Cairo"
         />
         <ProBonoCard
@@ -60,7 +60,7 @@ function ProBonoTeacher() {
           description="Teacher"
           postedby="Lina Ahmed "
           email="lina.helmy@yahoo.com"
-          subject="Math"
+          speciality="Pediatrics"
           contact="Cairo"
         />
       </div>
@@ -68,4 +68,4 @@ function ProBonoTeacher() {
   );
 }
 
-export default ProBonoTeacher;
+export default ProbonoDoctor;
