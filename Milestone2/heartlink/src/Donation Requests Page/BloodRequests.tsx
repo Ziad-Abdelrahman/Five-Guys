@@ -3,14 +3,16 @@ import MagdyYakoub from "../assets/MagdyYakoub.png";
 import ChildrenCancer from "../assets/57357.jpeg";
 import "./AllDonationRequests.css";
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/header/HeaderOfSection.tsx";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
+import BloodDonationFilter from "../components/DonorFilterCard/BloodDonationFilter.tsx";
 
 function BloodRequests() {
   return (
     <>
       <DonorNavigationBar />
       <Headerofsection title={"Blood Requests"} />
+      <BloodDonationFilter />
       <div className="requests-conainer">
         <DonationRequestCard
           image={ChildrenCancer}
