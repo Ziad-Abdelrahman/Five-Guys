@@ -110,7 +110,9 @@ function AllDonationRequests() {
 
       <div className="requests-conainer">
         {viewData
-          .filter((item) => item.description.toLowerCase().includes(search))
+          .filter((item) =>
+            item.description.toLowerCase().includes(search.toLowerCase()),
+          )
           .map((viewData) => (
             <DonationRequestCard
               key={viewData.id}
