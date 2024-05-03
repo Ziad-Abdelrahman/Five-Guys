@@ -16,9 +16,10 @@
 .navigation-bar.scrolled {
     height: 80px;
     border-radius: 100px;
+    width: 90%;
     position: relative;
     transition: 0.3s ease-in-out;
-    margin: 2em 6em;
+    margin: 0em 6em;
 }
 
 
