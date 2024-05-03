@@ -1,4 +1,5 @@
 import { BsSearchHeart } from "react-icons/bs";
+import "./searchbar.css";
 
 interface SearchProps {
   handleSearch: (written: string) => void;
