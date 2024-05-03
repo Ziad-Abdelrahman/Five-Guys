@@ -4,12 +4,13 @@ import Turin from "../assets/Turin.jpg";
 import Orman from "../assets/Orman.png";
 import Clothingbank from "../assets/Clothingbank.png";
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/HeaderOfSection.tsx";
+
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import ClothesFilter from "../components/DonorFilterCard/ClothesFilter.tsx";
 import hashSet from "../hashSet";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 import { useState } from "react";
+import HeaderOfSection from "../components/Header/HeaderOfSection.tsx";
 
 function ClothesRequests() {
   const detailsList: hashSet = {
@@ -167,7 +168,7 @@ function ClothesRequests() {
           )}
         </div>
       </ViewPopup>
-      <Headerofsection title={"Clothes Requests"} />
+      <HeaderOfSection title={"Clothes Requests"} />
 
       <ClothesFilter
         handleAgeFilter={handleAgeFilter}
