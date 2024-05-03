@@ -1,5 +1,5 @@
-import DropDown from "../components/DropDown/DropDown.tsx";
-import RadioButton from "../components/RadioButton/RadioButton.tsx";
+import DropDown from "../../components/DropDown/DropDown.tsx";
+import RadioButton from "../../components/RadioButton/RadioButton.tsx";
 function Clothes() {
   return (
     <div className="bloodDonation-container">
