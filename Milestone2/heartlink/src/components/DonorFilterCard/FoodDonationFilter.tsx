@@ -9,7 +9,12 @@ function FoodDonationFilter(props: SchoolSuppliesFilterProps) {
     <>
       <div className="filter-radio-buttons">
         <RadioButton
-          text={"Filter"}
+          text={"All"}
+          height="30px"
+          handleFilterChange={props.filterChange}
+        />
+        <RadioButton
+          text={"Fruits"}
           height="30px"
           handleFilterChange={props.filterChange}
         />
