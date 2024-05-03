@@ -1,4 +1,4 @@
-import RequestCard from "./RequestCard.tsx";
+import RequestCard from "../RequestCard.tsx";
 import { ReactNode } from "react";
 
 interface ViewdetailsProps {
