@@ -4,6 +4,9 @@ import { BsThreeDots } from "react-icons/bs";
 interface DonationPostCardProps {
   typeOfRequest: string;
   datePosted: string;
+  status: string;
+  children: React.ReactNode;
+  //complete the rest of the data
 }
 
 function DonationPostCard(props: DonationPostCardProps) {
@@ -30,7 +33,10 @@ function DonationPostCard(props: DonationPostCardProps) {
               <BsThreeDots size={30} onClick={() => console.log("nanna")} />
             </div>
             <div style={{ padding: "5px" }}>
-              <p>Date Posted: </p>
+              <p>Date Posted: {props.datePosted} </p>
+              {props.children}
+              <p>Status:</p>
+              //complete the rest of the data
             </div>
           </div>
         </div>
