@@ -11,7 +11,7 @@ import Org8 from "../../assets/Redcrescent.png";
 import Org9 from "../../assets/EgyptianFoodBank.png";
 import "./organizations.css";
 import "../../components/Search/searchbar.css";
-import Headerofsection from "../../components/header/headerofsection.tsx";
+import Headerofsection from "../../components/Header/HeaderOfSection.tsx";
 import Search from "../../components/Search/Search.tsx";
 
 const Organizations = () => {

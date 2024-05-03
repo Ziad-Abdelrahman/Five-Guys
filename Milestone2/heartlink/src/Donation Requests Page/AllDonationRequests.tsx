@@ -11,7 +11,7 @@ import ClothingBank from "../assets/Clothingbank.png";
 import MagdyYakoub from "../assets/MagdyYakoub.png";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import Search from "../components/Search/Search.tsx";
-import Headerofsection from "../components/header/HeaderOfSection.tsx";
+import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import { useState } from "react";
 
 function AllDonationRequests() {

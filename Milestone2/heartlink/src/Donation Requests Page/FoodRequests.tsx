@@ -1,6 +1,6 @@
 import "./AllDonationRequests.css";
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/HeaderOfSection.tsx";
+import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import FoodBank from "../assets/EgyptianFoodBank.png";
 import Misrelkheir from "../assets/Misrelkheir.jpeg";
 import Turin from "../assets/Turin.jpg";

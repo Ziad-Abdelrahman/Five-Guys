@@ -1,7 +1,17 @@
 import "./DonorFilter.css";
 import filtericon from "../../assets/filter-icon.png";
 
-function BloodDonationFilter() {
+interface BloodDonationFilterProps {
+  handleHospitalFilter: (hospital: string) => void;
+  handleGovernmentFilter: (government: string) => void;
+  handleAreaFilter: (area: string) => void;
+}
+
+function BloodDonationFilter({
+  handleHospitalFilter,
+  handleGovernmentFilter,
+  handleAreaFilter,
+}: BloodDonationFilterProps) {
   return (
     <>
       <div className="three-categories-filter">
@@ -10,28 +20,46 @@ function BloodDonationFilter() {
           <strong>Filters</strong>
         </div>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Hospital</option>
-          <option value="1">57357</option>
-          <option value="2">Magdy Yakoub</option>
-          <option value="3">Red Cresent</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => handleHospitalFilter(e.target.value)}
+        >
+          <option selected value={"Hospital"}>
+            Hospital
+          </option>
+          <option value="57357">57357</option>
+          <option value="Magdi Yacoub">Magdi Yacoub</option>
+          <option value="Red Cresent">Red Cresent</option>
         </select>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Government</option>
-          <option value="1">Cairo</option>
-          <option value="2">Giza</option>
-          <option value="3">Sharqia</option>
-          <option value="4">Alexandria</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => handleGovernmentFilter(e.target.value)}
+        >
+          <option selected value={"Government"}>
+            Government
+          </option>
+          <option value="Cairo">Cairo</option>
+          <option value="Giza">Giza</option>
+          <option value="Sharqia">Sharqia</option>
+          <option value="Alexandria">Alexandria</option>
         </select>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Area</option>
-          <option value="1">6th Of October</option>
-          <option value="2">Sheikh Zayed</option>
-          <option value="3">Zagazig</option>
-          <option value="4">Maadi</option>
-          <option value="5">Miami</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => handleAreaFilter(e.target.value)}
+        >
+          <option selected value={"Area"}>
+            Area
+          </option>
+          <option value="6th Of October">6th Of October</option>
+          <option value="Sheikh Zayed">Sheikh Zayed</option>
+          <option value="Zagazig">Zagazig</option>
+          <option value="Maadi">Maadi</option>
+          <option value="Miami">Miami</option>
         </select>
       </div>
     </>
