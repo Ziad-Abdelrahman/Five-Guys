@@ -1,4 +1,4 @@
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import ProBonoCard from "../components/Card/Organization Cards/ProBonoCard.tsx";
 import ThankYouButton from "../components/Buttons/ThankYouButton.tsx";
 import { FaChalkboardTeacher } from "react-icons/fa";

@@ -5,7 +5,7 @@ import Turin from "../assets/Turin.jpg";
 import ResalaLogo from "../assets/Resala.png";
 import "./AllDonationRequests.css";
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import SchoolSuppliesFilter from "../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
