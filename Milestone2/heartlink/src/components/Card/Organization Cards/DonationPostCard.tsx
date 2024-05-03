@@ -1,4 +1,5 @@
 import RequestCard from "../RequestCard.tsx";
+import { BsThreeDots } from "react-icons/bs";
 
 interface DonationPostCardProps {
   typeOfRequest: string;
@@ -24,7 +25,10 @@ function DonationPostCard(props: DonationPostCardProps) {
           }}
         >
           <div>
-            <h3>{props.typeOfRequest} Post</h3>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <h3>{props.typeOfRequest} Post</h3>
+              <BsThreeDots size={30} onClick={() => console.log("nanna")} />
+            </div>
             <div style={{ padding: "5px" }}>
               <p>Date Posted: </p>
             </div>

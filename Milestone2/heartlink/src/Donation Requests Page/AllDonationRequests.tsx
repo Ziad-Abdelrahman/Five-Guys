@@ -1,5 +1,5 @@
 import NavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import HeaderOfSection from "../components/Header/HeaderOfSection.tsx";
+import HeaderOfSection from "../components/Header/headerofsection.tsx";
 import "./AllDonationRequests.css";
 import ResalaLogo from "../assets/Resala.png";
 import ChildrenCancer from "../assets/57357.jpeg";
@@ -12,7 +12,7 @@ import ClothingBank from "../assets/Clothingbank.png";
 import MagdyYakoub from "../assets/MagdyYakoub.png";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import Search from "../components/Search/Search.tsx";
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/Header/headerofsection.tsx";
 import { useState } from "react";
 
 function AllDonationRequests() {
