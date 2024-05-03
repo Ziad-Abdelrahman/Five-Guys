@@ -28,7 +28,18 @@ function ViewDonationPostsWebpage() {
           buttonName3={"Fulfilled"}
         />
       </div>
-      <DonationPostCard typeOfRequest={"Clothes"} />
+      <DonationPostCard
+        typeOfRequest={"Clothes"}
+        datePosted={"12/04/2024"}
+        children={
+          <>
+            <p>Items: 5</p>
+            <p> Size: 5</p>
+            <p> Color: Blue</p>
+          </>
+        }
+        status={"fulfilled"}
+      />
     </div>
   );
 }
