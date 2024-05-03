@@ -1,5 +1,5 @@
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import ChildrenHospital from "../assets/57357.jpeg";
 import Turin from "../assets/Turin.jpg";
 import ResalaLogo from "../assets/Resala.png";

@@ -3,7 +3,7 @@ import MagdyYakoub from "../assets/MagdyYakoub.png";
 import ChildrenCancer from "../assets/57357.jpeg";
 import "./AllDonationRequests.css";
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 
 function BloodRequests() {

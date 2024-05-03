@@ -1,6 +1,6 @@
+import React from "react";
 import LeftPanel from "./LeftPanel.tsx";
 import RightPanel from "./RightPanel.tsx";
-import React from "react";
 
 interface templateProps {
   leftPanelDiv: React.ReactNode;

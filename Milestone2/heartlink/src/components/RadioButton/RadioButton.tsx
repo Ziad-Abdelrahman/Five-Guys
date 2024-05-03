@@ -3,11 +3,14 @@ import "./RadioButton.css";
 interface RadioButtonProps {
   text: string;
   height?: string;
+  margin?: string;
 }
-function RadioButton({ text, height }: RadioButtonProps) {
+function RadioButton({ text, height, margin }: RadioButtonProps) {
   const customStyle = {
     height: height, // Apply the height to both the input and label if specified
+    margin: margin,
   };
+
   return (
     <>
       <input

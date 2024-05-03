@@ -1,4 +1,4 @@
-import Headerofsection from "../components/header/headerofsection.tsx";
+import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import teacher1 from "../assets/teacher1.jpeg";
 import ProBonoCard from "../components/Card/ProBonoCard.tsx";
 import teacher2 from "../assets/teacher2.jpeg";
