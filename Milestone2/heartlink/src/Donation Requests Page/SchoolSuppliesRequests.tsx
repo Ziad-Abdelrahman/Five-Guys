@@ -69,7 +69,12 @@ function SchoolSuppliesRequests() {
         </div>
 
         {/*filter component*/}
-        <SchoolSuppliesFilter filterChange={handleFilterChange} />
+        <SchoolSuppliesFilter
+          filterChange={handleFilterChange}
+          buttonName1={"All"}
+          buttonName2={"Stationary"}
+          buttonName3={"Books"}
+        />
       </div>
 
       <div className="requests-conainer">
