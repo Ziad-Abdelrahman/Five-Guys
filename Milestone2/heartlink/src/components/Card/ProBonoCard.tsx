@@ -5,7 +5,8 @@ interface ViewdetailsProps {
   description: string;
   postedby: string;
   email: string;
-  subject: string;
+  subject?: string; // Make subject optional
+  speciality?: string; 
   area: string;
 }
 
@@ -23,7 +24,7 @@ function ProBonoCard(props: ViewdetailsProps) {
           <h2 style={{ fontSize: "18px" }}>{props.description}</h2>
           <p>Posted By: {props.postedby}</p>
           <p>Email: {props.email}</p>
-          <p>Subject: {props.subject}</p>
+          {props.speciality ? <p>Speciality: {props.speciality}</p> : <p>Subject: {props.subject}</p>}
           <p>Area: {props.area}</p>
         </div>
       </>
