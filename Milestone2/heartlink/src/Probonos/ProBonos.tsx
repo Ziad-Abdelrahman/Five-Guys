@@ -1,5 +1,5 @@
 import Headerofsection from "../components/header/headerofsection.tsx";
-import ProBonoCard from "../components/Card/ProBonoCard.tsx";
+import ProBonoCard from "../components/Card/Organization Cards/ProBonoCard.tsx";
 import ThankYouButton from "../components/Buttons/ThankYouButton.tsx";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
