@@ -1,8 +1,8 @@
 import NavigationBar from "../../components/NavigationBar/NavigationBar.tsx";
-import HeaderOfSection from "../../components/header/HeaderOfSection.tsx";
 import DonationPostCard from "../../components/Card/Organization Cards/DonationPostCard.tsx";
 import SchoolSuppliesFilter from "../../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
 import filtericon from "../../assets/filter-icon.png";
+import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
 import "../../Donation Requests Page/AllDonationRequests.css";
 
 function ViewDonationPostsWebpage() {
@@ -24,8 +24,8 @@ function ViewDonationPostsWebpage() {
         {/*filter component*/}
         <SchoolSuppliesFilter
           buttonName1={"All"}
-          buttonName2={"Stationary"}
-          buttonName3={"Books"}
+          buttonName2={"Pending"}
+          buttonName3={"Fulfilled"}
         />
       </div>
       <DonationPostCard typeOfRequest={"Clothes"} />
