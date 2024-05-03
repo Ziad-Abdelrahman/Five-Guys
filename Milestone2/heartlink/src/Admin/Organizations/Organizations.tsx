@@ -97,10 +97,11 @@ const Organizations = () => {
           justifyContent: "space-between",
           width: "100%",
         }}
-        style={{ marginLeft: "5%", width: "90%" }}
+        style={{ marginLeft: "10em", width: "80%" }}
       >
         <Search handleSearch={handleSearch} />
       </Headerofsection>
+
       <div className={"organizations-container"}>
         {cardData
           .filter((cardData) => cardData.title.toLowerCase().includes(search))

@@ -13,6 +13,12 @@
       flex-wrap: wrap; /* Ensures that cards can wrap onto the next line */
       justify-content: center; /* Distributes spacing evenly between items */
       align-items: flex-start; /* Aligns items to the start of the flex container */
+      margin:0 10em;
+      width: 80%;
+  }
 
-      width: 100%;
+  .header-div{
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
