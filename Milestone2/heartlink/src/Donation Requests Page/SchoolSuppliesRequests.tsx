@@ -76,7 +76,7 @@ function SchoolSuppliesRequests() {
         <DonationRequestCard
           image={Clothingbank}
           description=" School Supplies Donation"
-          postedby="Dar Al Orman "
+          postedby="Egyptian Clothing Bank "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
           buttonID={"1"}
@@ -157,7 +157,7 @@ function SchoolSuppliesRequests() {
         <DonationRequestCard
           image={Clothingbank}
           description="School Supplies Donation"
-          postedby="Resala "
+          postedby="Egyptian Clothing Bank "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
           buttonID={"10"}
