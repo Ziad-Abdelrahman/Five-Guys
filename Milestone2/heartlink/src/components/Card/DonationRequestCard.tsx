@@ -3,14 +3,18 @@ import ViewButton from "../Buttons/ViewButton.tsx";
 import DonateButton from "../Buttons/DonateButton.tsx";
 
 interface DonationRequestPopUpProps {
-  image: string;
-  description: string;
-  postedby: string;
-  postdate: string;
+  trigger?: boolean;
+  buttonID?: string;
+  image?: string;
+  description?: string;
+  postedby?: string;
+  postdate?: string;
+  handleClick?: (id: string) => void;
 }
 
 function DonationRequestCard(props: DonationRequestPopUpProps) {
-  return (
+  const shouldRender = props.trigger !== undefined ? props.trigger : true;
+  return shouldRender ? (
     <RequestCard>
       <>
         <img
@@ -25,12 +29,15 @@ function DonationRequestCard(props: DonationRequestPopUpProps) {
           <p>Post Date: {props.postdate}</p>
         </div>
         <div className="two-buttons-holder">
-          <ViewButton />
+          <ViewButton
+            buttonID={props.buttonID}
+            handleClick={props.handleClick}
+          />
           <DonateButton />
         </div>
       </>
     </RequestCard>
-  );
+  ) : null;
 }
 
 export default DonationRequestCard;
