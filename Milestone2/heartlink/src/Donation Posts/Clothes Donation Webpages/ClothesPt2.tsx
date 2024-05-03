@@ -1,5 +1,5 @@
-import NumberInputBox from "../components/InputBox/NumberInputBox.tsx";
-import RadioButton from "../components/RadioButton/RadioButton.tsx";
+import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
+import RadioButton from "../../components/RadioButton/RadioButton.tsx";
 function ClothesPt2() {
   return (
     <div className="bloodDonation-container">
