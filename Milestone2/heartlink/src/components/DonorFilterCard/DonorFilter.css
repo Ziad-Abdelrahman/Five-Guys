@@ -5,3 +5,28 @@
     width: 20%;
 
 }
+.three-categories-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-left: 10em;
+
+}
+.clothes-filter-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-select{
+    width: 100%;
+    margin: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    cursor: pointer;
+    height: 33px;
+    font-size: 14px;
+}
+
