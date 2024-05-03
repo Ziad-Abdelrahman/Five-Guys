@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ViewCards from "../../components/Card/ViewCards.tsx";
+import ViewCards from "../../components/Card/Admin Cards/ViewCards.tsx";
 import Org1 from "../../assets/57357.jpeg";
 import Org2 from "../../assets/EgyptianFoodBank.png";
 import Org3 from "../../assets/Misrelkheir.jpeg";
@@ -11,7 +11,7 @@ import Org8 from "../../assets/Redcrescent.png";
 import Org9 from "../../assets/EgyptianFoodBank.png";
 import "./organizations.css";
 import "../../components/Search/searchbar.css";
-import Headerofsection from "../../components/header/headerofsection.tsx";
+import Headerofsection from "../../components/Header/HeaderOfSection.tsx";
 import Search from "../../components/Search/Search.tsx";
 
 const Organizations = () => {

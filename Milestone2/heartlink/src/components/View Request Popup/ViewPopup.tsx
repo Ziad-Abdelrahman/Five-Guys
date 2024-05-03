@@ -1,9 +1,9 @@
 import "./popup.css";
 import close from "../../assets/close-icon.png";
 interface ViewPopupProps {
-  trigger: boolean;
+  trigger?: boolean;
   children?: React.ReactNode; // This makes the children optional
-  handleClick: () => void;
+  handleClick?: () => void;
 }
 
 function viewPopup({ trigger, children, handleClick }: ViewPopupProps) {

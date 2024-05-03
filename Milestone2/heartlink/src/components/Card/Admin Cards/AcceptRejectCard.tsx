@@ -1,4 +1,4 @@
-import AcceptRejectButton from "../Buttons/AcceptRejectButton.tsx";
+import AcceptRejectButton from "../../Buttons/AcceptRejectButton.tsx";
 import "./cards.css";
 interface AcceptRejectCard {
   image: string;

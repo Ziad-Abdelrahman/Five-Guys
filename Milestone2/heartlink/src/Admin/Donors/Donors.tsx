@@ -1,12 +1,8 @@
-import React from 'react'
-import HeadOfSection from '../../components/header/headerofsection.tsx'
+import React from "react";
+import HeadOfSection from "../../components/Header/HeaderOfSection.tsx";
 
 const Donors = () => {
-  return (
-    <div>
-      Donors
-    </div>
-  )
-}
+  return <div>Donors</div>;
+};
 
-export default Donors
+export default Donors;

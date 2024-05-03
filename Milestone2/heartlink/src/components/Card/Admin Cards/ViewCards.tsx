@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AcceptRejectButton from "../Buttons/AcceptRejectButton.tsx";
+import AcceptRejectButton from "../../Buttons/AcceptRejectButton.tsx";
 import "./cards.css";
 
 interface ViewCardsProps {

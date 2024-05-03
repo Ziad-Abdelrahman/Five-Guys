@@ -3,26 +3,33 @@ import RadioButton from "../RadioButton/RadioButton.tsx";
 
 interface SchoolSuppliesFilterProps {
   filterChange?: (filter: string) => void;
-  buttonName1: string;
-  buttonName2: string;
-  buttonName3: string;
 }
-function SchoolSuppliesFilter(props: SchoolSuppliesFilterProps) {
+function FoodDonationFilter(props: SchoolSuppliesFilterProps) {
   return (
     <>
       <div className="filter-radio-buttons">
         <RadioButton
-          text={props.buttonName1}
+          text={"Filter"}
           height="30px"
           handleFilterChange={props.filterChange}
         />
         <RadioButton
-          text={props.buttonName2}
+          text={"Vegetables"}
           height="30px"
           handleFilterChange={props.filterChange}
         />
         <RadioButton
-          text={props.buttonName3}
+          text={"Canned"}
+          height="30px"
+          handleFilterChange={props.filterChange}
+        />
+        <RadioButton
+          text={"FreshMeals"}
+          height="30px"
+          handleFilterChange={props.filterChange}
+        />
+        <RadioButton
+          text={"BakedGoods"}
           height="30px"
           handleFilterChange={props.filterChange}
         />
@@ -30,4 +37,4 @@ function SchoolSuppliesFilter(props: SchoolSuppliesFilterProps) {
     </>
   );
 }
-export default SchoolSuppliesFilter;
+export default FoodDonationFilter;
