@@ -6,7 +6,6 @@ interface DonationPostCardProps {
   datePosted: string;
   status: string;
   children: React.ReactNode;
-  //complete the rest of the data
 }
 
 function DonationPostCard(props: DonationPostCardProps) {
@@ -14,7 +13,7 @@ function DonationPostCard(props: DonationPostCardProps) {
     <>
       <RequestCard
         style={{
-          height: "500px",
+          height: "auto",
           width: "1000px",
           padding: "20px",
           alignItems: "normal",
@@ -30,13 +29,12 @@ function DonationPostCard(props: DonationPostCardProps) {
           <div>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <h3>{props.typeOfRequest} Post</h3>
-              <BsThreeDots size={30} onClick={() => console.log("nanna")} />
+              <BsThreeDots size={30} />
             </div>
             <div style={{ padding: "5px" }}>
               <p>Date Posted: {props.datePosted} </p>
               {props.children}
-              <p>Status:</p>
-              //complete the rest of the data
+              <p>Status: {props.status}</p>
             </div>
           </div>
         </div>
