@@ -59,3 +59,27 @@
 .notification-icon {
     animation: notificationBounce 0.4s infinite; /* Runs every 15 seconds indefinitely */
 }
+
+.notifications-dropdown {
+    position: absolute;
+    margin-top: 5px;
+    min-width: 300px;
+    height: 80px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    list-style-type: "none";
+    padding: 10px;
+    right: 90px;
+    z-index: 1000;
+}
+.notification-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Ensures vertical centering */
+    height: 80%;
+}
+
+.notification-container p {
+    margin: 0; /* Removes default margins */
+}
