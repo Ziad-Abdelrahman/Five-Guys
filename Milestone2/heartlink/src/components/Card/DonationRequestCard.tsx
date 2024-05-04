@@ -10,10 +10,14 @@ interface DonationRequestPopUpProps {
   postedby?: string;
   postdate?: string;
   handleClick?: (id: string) => void;
+  showDonateButton?: boolean;
+  donateButtonText?: String; // Optional prop to control the visibility of the Donate button
 }
 
 function DonationRequestCard(props: DonationRequestPopUpProps) {
   const shouldRender = props.trigger !== undefined ? props.trigger : true;
+  const showDonateButton =
+    props.showDonateButton !== undefined ? props.showDonateButton : true;
   return shouldRender ? (
     <RequestCard>
       <>
@@ -33,7 +37,7 @@ function DonationRequestCard(props: DonationRequestPopUpProps) {
             buttonID={props.buttonID}
             handleClick={props.handleClick}
           />
-          <DonateButton />
+          {showDonateButton && <DonateButton text={props.donateButtonText} />}
         </div>
       </>
     </RequestCard>
