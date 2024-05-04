@@ -139,10 +139,6 @@ function TeacherPosts() {
             <iframe
               width="400"
               height="120"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight={0}
-              marginWidth={0}
               src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=Albashaer+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               title="Children Cancer Hospital Location"
             >

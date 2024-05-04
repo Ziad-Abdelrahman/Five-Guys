@@ -28,7 +28,7 @@ function TeacherFilter(props: TeacherFilterProps) {
           <option value="Physics">Physics</option>
           <option value="Biology">Biology</option>
           <option value="Arabic">Arabic</option>
-          <option value="Englis">English</option>
+          <option value="English">English</option>
         </select>
 
         <select
