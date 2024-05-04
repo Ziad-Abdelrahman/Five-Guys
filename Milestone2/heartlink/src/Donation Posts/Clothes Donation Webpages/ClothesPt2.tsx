@@ -8,7 +8,7 @@ function ClothesPt2() {
       </div>
       <div className="rest-container" style={{ top: "16em" }}>
         <h4>What size of clothing are you looking for?</h4>
-        <form method="get">
+        <form className="radioButtons-form" method="get">
           <RadioButton text={"Small"} />
           <RadioButton text={"Medium"} />
           <RadioButton text={"Large"} />

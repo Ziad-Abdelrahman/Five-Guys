@@ -14,7 +14,7 @@ function Clothes() {
           width={"280px"}
         />
         <p />
-        <form method="get">
+        <form className="radioButtons" method="get">
           <RadioButton text={"Male"} />
           <RadioButton text={"Female"} />
         </form>
@@ -51,7 +51,7 @@ function Clothes() {
         />
         <p />
         <h6>Please specify clothing season</h6>
-        <form method="get">
+        <form className="radioButtons-form" method="get">
           <RadioButton text={"Summer"} />
           <RadioButton text={"Spring"} />
           <RadioButton text={"Fall"} />
