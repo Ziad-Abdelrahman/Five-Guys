@@ -1,5 +1,7 @@
 import RequestCard from "../RequestCard.tsx";
 import { BsThreeDots } from "react-icons/bs";
+import "./DonationPostCard.css";
+import { useState } from "react";
 
 interface DonationPostCardProps {
   typeOfRequest: string;
@@ -9,12 +11,19 @@ interface DonationPostCardProps {
 }
 
 function DonationPostCard(props: DonationPostCardProps) {
-  return (
+  const [isVisible, setVisible] = useState(true);
+
+  function handleDeleteClick() {
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      setVisible(false);
+    }
+  }
+  return isVisible ? (
     <>
       <RequestCard
         style={{
           height: "auto",
-          width: "1000px",
+          width: "800px",
           padding: "20px",
           alignItems: "normal",
         }}
@@ -29,7 +38,13 @@ function DonationPostCard(props: DonationPostCardProps) {
           <div>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <h3>{props.typeOfRequest} Post</h3>
-              <BsThreeDots size={30} />
+              <div className="card-dropdown">
+                <BsThreeDots size={30} />
+                <div className="card-dropdown-content">
+                  <a href="#">Edit</a>
+                  <a onClick={handleDeleteClick}>Delete</a>
+                </div>
+              </div>
             </div>
             <div style={{ padding: "5px" }}>
               <p>Date Posted: {props.datePosted} </p>
@@ -40,6 +55,7 @@ function DonationPostCard(props: DonationPostCardProps) {
         </div>
       </RequestCard>
     </>
-  );
+  ) : null;
 }
+
 export default DonationPostCard;

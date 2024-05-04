@@ -1,0 +1,38 @@
+.card-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.card-dropdown-content {
+    right: 0;
+    display: none;
+    position: absolute;
+    background-color: #fFfFfF;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: opacity 1s ease;  /* Smooth transition for opacity */
+    border-radius: 7px;
+
+}
+
+/* Links inside the card-dropdown */
+.card-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of card-dropdown links on hover */
+.card-dropdown-content a:hover {background-color: #ddd; border-radius: 7px}
+
+/* Show the card-dropdown menu on hover */
+.card-dropdown:hover .card-dropdown-content {display: block;}
+
+/* Change the background color of the card-dropdown button when the card-dropdown content is shown and on hover */
+.card-dropdown:hover .dropbtn {
+    background-color: #f8f8f8; /* Light grey background on hover */
+
+}
