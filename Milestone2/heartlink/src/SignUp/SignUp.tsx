@@ -6,11 +6,13 @@ import InputBox from "../components/InputBox/InputBox.tsx";
 import RadioButton from "../components/RadioButton/RadioButton.tsx";
 import BackButton from "../components/Buttons/BackButton.tsx";
 import DropDown from "../components/DropDown/DropDown.tsx";
+import { useState } from "react";
 
 var animationInProgress = false;
-var toggleSignUp = true; // true for donor, false for organization
-const slideRightToLeft = () => {
-  toggleSignUp = false;
+const slideRightToLeft = (
+  setToggleSignUp: React.Dispatch<React.SetStateAction<boolean>>,
+) => {
+  setToggleSignUp(false);
   if (animationInProgress) return;
   animationInProgress = true;
   var rightPanel = document.querySelector(".rightPanelSignUpA") as HTMLElement;
@@ -33,8 +35,10 @@ const slideRightToLeft = () => {
   }
 };
 
-const slideLeftToRight = () => {
-  toggleSignUp = true;
+const slideLeftToRight = (
+  setToggleSignUp: React.Dispatch<React.SetStateAction<boolean>>,
+) => {
+  setToggleSignUp(true);
   if (animationInProgress) return;
   animationInProgress = true;
   var rightPanel = document.querySelector(".rightPanelSignUpA") as HTMLElement;
@@ -118,9 +122,9 @@ const hideDonor = () => {
       if (rightPanel) {
         rightPanel.classList.remove("hide");
         if (rightTextProgress && rightTextFirst && rightTextSecond) {
-          rightTextProgress.innerHTML = "2 of 2";
+          rightTextProgress.innerHTML = "1 of 2";
           rightTextFirst.innerHTML = "Sign up as an Organization!";
-          rightTextSecond.innerHTML = " Almost done ..";
+          rightTextSecond.innerHTML = " Only few steps ahead ..";
         }
       }
       animationInProgress = false;
@@ -154,7 +158,7 @@ const hideOrg = () => {
     animationInProgress = false;
   }, 1000);
 };
-const toggleBoth = () => {
+const toggleBoth = (toggleSignUp: boolean) => {
   if (toggleSignUp) {
     showDonor();
   } else {
@@ -163,6 +167,7 @@ const toggleBoth = () => {
 };
 
 function SignUp() {
+  const [toggleSignUp, setToggleSignUp] = useState(true); // true for donor, false for organization
   return (
     <>
       <div className="signUpMain">
@@ -172,7 +177,9 @@ function SignUp() {
               src={logo}
               className="logo"
               alt="logo"
-              onClick={slideRightToLeft}
+              onClick={() => {
+                slideRightToLeft(setToggleSignUp);
+              }}
             />
           </div>
           <div className="leftText">
@@ -188,7 +195,9 @@ function SignUp() {
               src={logo}
               className="logo"
               alt="logo"
-              onClick={slideLeftToRight}
+              onClick={() => {
+                slideLeftToRight(setToggleSignUp);
+              }}
             />
           </div>
           <div className="righText">
@@ -246,7 +255,12 @@ function SignUp() {
           </div>
           <div className="footer">
             <div className="footerButtons-container">
-              <Button text={"Next"} handleClick={toggleBoth} />
+              <Button
+                text={"Next"}
+                handleClick={() => {
+                  toggleBoth(toggleSignUp);
+                }}
+              />
             </div>
           </div>
         </div>
