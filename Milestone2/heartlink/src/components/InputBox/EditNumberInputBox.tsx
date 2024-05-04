@@ -21,7 +21,6 @@ function EditNumberInputBox({
         type="number"
         className="form-control"
         id="floatingInput"
-        placeholder="name@example.com"
         min="0"
         value={text}
         onChange={() => setChecked("")}
@@ -34,7 +33,6 @@ function EditNumberInputBox({
         type="number"
         className="form-control"
         id="floatingInput"
-        placeholder="name@example.com"
         min="0"
       />
       <label>{label}</label>
