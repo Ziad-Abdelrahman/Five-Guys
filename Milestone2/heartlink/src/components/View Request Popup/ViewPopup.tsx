@@ -4,12 +4,20 @@ interface ViewPopupProps {
   trigger?: boolean;
   children?: React.ReactNode; // This makes the children optional
   handleClick?: () => void;
+  width?: string; // Optional width for the popup
+  height?: string; // Optional height for the popup
 }
 
-function viewPopup({ trigger, children, handleClick }: ViewPopupProps) {
+function viewPopup({
+  trigger,
+  children,
+  handleClick,
+  width,
+  height,
+}: ViewPopupProps) {
   return trigger ? (
     <div className="popup-container">
-      <div className="popup-inner">
+      <div className="popup-inner" style={{ width: width, height: height }}>
         <button className="close-btn" onClick={handleClick}>
           <img src={close} />{" "}
         </button>
