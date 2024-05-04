@@ -1,6 +1,6 @@
 import "./Welcome.css";
 import NavigationBar from "../components/NavigationBar/NavigationBar.tsx";
-import BackgroundPhoto from "./BackgroundPhoto.tsx";
+import { BackgroundPhoto, hideLogin } from "./BackgroundPhoto.tsx";
 import { useEffect } from "react";
 import SignUpButton from "../components/Buttons/SignUpButton.tsx";
 import LoginButton from "../components/Buttons/LoginButton.tsx";
@@ -10,11 +10,12 @@ import image3 from "../assets/Misrelkheir.jpeg";
 import image4 from "../assets/Orman.png";
 import image5 from "../assets/Redcrescent.png";
 import image6 from "../assets/Turin.jpg";
+import Login from "./Login.tsx";
 
 function Welcome() {
   useEffect(() => {
     var navbar = document.querySelector(".navigation-bar");
-
+    if (navbar) navbar.classList.add("scrolled");
     window.addEventListener("scroll", function () {
       var currentScrollPosition = window.scrollY;
       if (navbar) {
@@ -26,29 +27,22 @@ function Welcome() {
       }
     });
   }, []);
-  useEffect(() => {
-    window.addEventListener("scroll", function () {
-      var appDiv = document.querySelector(".app") as HTMLElement;
-      var scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        appDiv.style.transform = "translateY(-" + scrollPosition + "px)";
-      } else {
-        appDiv.style.transform = "translateY(0)";
-      }
-    });
-  }, []);
+
   return (
-    <>
-      <NavigationBar
-        rightDiv={
-          <>
-            <SignUpButton />
-            <LoginButton />
-          </>
-        }
-      />
+    <div className="welcomeDashboard">
+      <div className="navBarHolder">
+        <NavigationBar
+          rightDiv={
+            <>
+              <SignUpButton />
+              <LoginButton />
+            </>
+          }
+        />
+      </div>
+      <Login />
       <BackgroundPhoto />
-      <div className="app">
+      <div className="app" onClick={hideLogin}>
         <h1 id="about"> Connecting Hearts, Changing Lives</h1>
         <p>
           {" "}
@@ -184,7 +178,7 @@ function Welcome() {
           donation platform.
         </p>
       </div>
-    </>
+    </div>
   );
 }
 
