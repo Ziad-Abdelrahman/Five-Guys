@@ -1,11 +1,15 @@
 import "./DonorFilter.css";
 import RadioButton from "../RadioButton/RadioButton.tsx";
+import DropDown from "../DropDown/DropDown.tsx";
 
 interface SchoolSuppliesFilterProps {
   filterChange?: (filter: string) => void;
   buttonName1: string;
   buttonName2: string;
   buttonName3: string;
+  buttonAll?: string;
+  hasMoreFilters?: boolean;
+  handleMedicationFilter?: (filter: string) => void;
 }
 function SchoolSuppliesFilter(props: SchoolSuppliesFilterProps) {
   return (
