@@ -11,6 +11,13 @@ function SchoolSuppliesFilter(props: SchoolSuppliesFilterProps) {
   return (
     <>
       <div className="filter-radio-buttons">
+        {props.buttonAll && (
+          <RadioButton
+            text={props.buttonAll}
+            height="30px"
+            handleFilterChange={props.filterChange}
+          />
+        )}
         <RadioButton
           text={props.buttonName1}
           height="30px"
@@ -26,8 +33,36 @@ function SchoolSuppliesFilter(props: SchoolSuppliesFilterProps) {
           height="30px"
           handleFilterChange={props.filterChange}
         />
+        {props.hasMoreFilters && (
+          <div style={{ marginLeft: "80px" }}>
+            <DropDown
+              options={[
+                "All",
+                "Analgesics",
+                "Antibiotics",
+                "Anticoagulants",
+                "Antidepressants",
+                "Antidiabetics",
+                "Antiemetics",
+                "Antihistamines",
+                "Bronchodilators",
+                "Diuretics",
+                "Eye drops",
+                "Laxatives",
+                "Muscle relaxants",
+                "Topical medications",
+                "Vitamins",
+                "First Aid Kit",
+              ]}
+              selected={"Filter Med"}
+              width={"150px"}
+              onChange={props.handleMedicationFilter}
+            />
+          </div>
+        )}
       </div>
     </>
   );
 }
+
 export default SchoolSuppliesFilter;
