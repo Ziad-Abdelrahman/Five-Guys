@@ -47,7 +47,7 @@
     border-radius: 70px 70px 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     align-items: center;
-    right: -6em;
+    right: -5%;
 }
 
 @keyframes slideRightToLeft {
@@ -55,27 +55,9 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-77%);
+        transform: translateX(-69%);
     }
 }
-@keyframes hideDono {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-@keyframes showDono {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
 
 
 .animateRightToLeft {
@@ -87,7 +69,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(77%);
+        transform: translateX(69%);
     }
 }
 
@@ -160,7 +142,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition:0.3s ease-in-out;
     align-items: center;
-    left: -55em;
+    left: -70%;
 }
 
 .signUpORG{
@@ -172,65 +154,65 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition:0.3s ease-in-out;
     align-items: center;
-    right: -55em;
+    right: -70%;
 }
 .signUpDONO button{
     margin: 0;
 }
-.showDono{
+.show{
     animation: showDono 1s forwards;
 }
-.hideDono{
+.hide{
     animation: hideDono 1s forwards;
 }
-.showSignUpDono{
-    animation: showSignUpDONO 1s forwards;
+.show{
+    animation: showS 1s forwards;
 }
-.hideSignUpDono{
-    animation: hideSignUpDONO 1s forwards;
+.hide{
+    animation: hideS 1s forwards;
 }
-@keyframes showSignUpDONO {
+@keyframes showS {
     from{
         transform: translateX(0);
     }
     to {
-        transform: translateX(95%);
+        transform: translateX(100%);
     }
 }
 
-@keyframes hideSignUpDONO {
+@keyframes hideS {
     from{
-        transform: translateX(95%);
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.showE{
+    animation: showEE 1s forwards;
+}
+.hideE{
+    animation: hideEE 1s forwards;
+}
+@keyframes hideEE{
+    from{
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes showEE{
+    from{
+        transform: translateX(-100%);
     }
     to {
         transform: translateX(0);
     }
 }
 
-
-@keyframes marginAddButton{
-    from{
-        transform: translateX(100%);
-    }
-    to{
-        transform: translateX(0);
-    }
-}
-
-@keyframes marginRemoveButton {
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(100%);
-    }
-}
-
-.marginsAdd{
-    animation: marginAddButton 1s forwards;
-}
-
-.marginsRemove{
-    animation: marginRemoveButton 1s forwards;
+.signUpORG .form-select{
+    margin-bottom : 4%;
 }
 

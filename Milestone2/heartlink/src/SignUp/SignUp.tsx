@@ -5,6 +5,7 @@ import Button from "../components/Buttons/Button.tsx";
 import InputBox from "../components/InputBox/InputBox.tsx";
 import RadioButton from "../components/RadioButton/RadioButton.tsx";
 import BackButton from "../components/Buttons/BackButton.tsx";
+import DropDown from "../components/DropDown/DropDown.tsx";
 
 var animationInProgress = false;
 var toggleSignUp = true; // true for donor, false for organization
@@ -19,12 +20,12 @@ const slideRightToLeft = () => {
   if (rightPanel) {
     rightPanel.classList.add("animateRightToLeft");
     rightPanel.classList.remove("animateLeftToRight");
-    button.classList.add("marginsRemove");
-    button.classList.remove("marginsAdd");
+    button.classList.add("show");
+    button.classList.remove("hide");
     setTimeout(() => {
       if (rightPanel) {
         rightPanel.style.right = "";
-        rightPanel.style.left = "-6em";
+        rightPanel.style.left = "-5%";
         rightPanel.classList.remove("animateRightToLeft");
         animationInProgress = false;
       }
@@ -44,12 +45,12 @@ const slideLeftToRight = () => {
   if (rightPanel) {
     rightPanel.classList.add("animateLeftToRight");
     rightPanel.classList.remove("animateRightToLeft");
-    button.classList.add("marginsAdd");
-    button.classList.remove("marginsRemove");
+    button.classList.add("hide");
+    button.classList.remove("show");
     setTimeout(() => {
       if (rightPanel) {
         rightPanel.style.left = "";
-        rightPanel.style.right = "-6em";
+        rightPanel.style.right = "-5%";
         rightPanel.classList.remove("animateLeftToRight");
       }
       animationInProgress = false;
@@ -66,19 +67,39 @@ const showDonor = () => {
   var rightTextFirst = document.querySelector(".rightTextFirst");
   var rightTextSecond = document.querySelector(".rightTextSecond");
   if (donor && rightPanel) {
-    donor.classList.add("showSignUpDono");
-    donor.classList.remove("hideSignUpDono");
-    rightPanel.classList.add("hideDono");
-    rightPanel.classList.remove("showDono");
+    donor.classList.add("show");
+    donor.classList.remove("hide");
+    rightPanel.classList.add("show");
+    rightPanel.classList.remove("hide");
     if (rightTextProgress && rightTextFirst && rightTextSecond) {
       rightTextProgress.innerHTML = "2 of 2";
-      rightTextFirst.innerHTML = "Signing up as a Donor!";
+      rightTextFirst.innerHTML = "Sign up as a Donor!";
       rightTextSecond.innerHTML = " Almost done ..";
     }
   }
   animationInProgress = false;
 };
-
+const showOrg = () => {
+  if (animationInProgress) return;
+  animationInProgress = true;
+  var org = document.querySelector(".signUpORG");
+  var rightPanel = document.querySelector(".rightPanelSignUpA");
+  var leftTextProgress = document.querySelector(".leftTextProgress");
+  var leftTextFirst = document.querySelector(".leftTextFirst");
+  var leftTextSecond = document.querySelector(".leftTextSecond");
+  if (org && rightPanel) {
+    org.classList.add("hideE");
+    org.classList.remove("showE");
+    rightPanel.classList.add("hideE");
+    rightPanel.classList.remove("showE");
+    if (leftTextProgress && leftTextFirst && leftTextSecond) {
+      leftTextProgress.innerHTML = "2 of 2";
+      leftTextFirst.innerHTML = "Sign up as a Organization!";
+      leftTextSecond.innerHTML = " Almost done ..";
+    }
+  }
+  animationInProgress = false;
+};
 const hideDonor = () => {
   if (animationInProgress) return;
   animationInProgress = true;
@@ -88,18 +109,18 @@ const hideDonor = () => {
   var rightTextFirst = document.querySelector(".rightTextFirst");
   var rightTextSecond = document.querySelector(".rightTextSecond");
   if (donor && rightPanel) {
-    donor.classList.add("hideSignUpDono");
-    donor.classList.remove("showSignUpDono");
-    rightPanel.classList.add("showDono");
-    rightPanel.classList.remove("hideDono");
+    donor.classList.add("hide");
+    donor.classList.remove("show");
+    rightPanel.classList.add("hide");
+    rightPanel.classList.remove("show");
 
     setTimeout(() => {
       if (rightPanel) {
-        rightPanel.classList.remove("showDono");
+        rightPanel.classList.remove("hide");
         if (rightTextProgress && rightTextFirst && rightTextSecond) {
-          rightTextProgress.innerHTML = "1 of 2";
-          rightTextFirst.innerHTML = "Signing up as an Organization!";
-          rightTextSecond.innerHTML = " Only few steps ahead ..";
+          rightTextProgress.innerHTML = "2 of 2";
+          rightTextFirst.innerHTML = "Sign up as an Organization!";
+          rightTextSecond.innerHTML = " Almost done ..";
         }
       }
       animationInProgress = false;
@@ -107,7 +128,39 @@ const hideDonor = () => {
   }
 };
 
-const showOrg = () => {};
+const hideOrg = () => {
+  if (animationInProgress) return;
+  animationInProgress = true;
+  var org = document.querySelector(".signUpORG");
+  var rightPanel = document.querySelector(".rightPanelSignUpA");
+  var leftTextProgress = document.querySelector(".leftTextProgress");
+  var leftTextFirst = document.querySelector(".leftTextFirst");
+  var leftTextSecond = document.querySelector(".leftTextSecond");
+  if (org && rightPanel) {
+    org.classList.add("showE");
+    org.classList.remove("hideE");
+    rightPanel.classList.add("showE");
+    rightPanel.classList.remove("hideE");
+  }
+  setTimeout(() => {
+    if (rightPanel) {
+      rightPanel.classList.remove("showE");
+      if (leftTextProgress && leftTextFirst && leftTextSecond) {
+        leftTextProgress.innerHTML = "1 of 2";
+        leftTextFirst.innerHTML = "Sign up as a Donor!";
+        leftTextSecond.innerHTML = " Only few steps ahead ..";
+      }
+    }
+    animationInProgress = false;
+  }, 1000);
+};
+const toggleBoth = () => {
+  if (toggleSignUp) {
+    showDonor();
+  } else {
+    showOrg();
+  }
+};
 
 function SignUp() {
   return (
@@ -124,7 +177,7 @@ function SignUp() {
           </div>
           <div className="leftText">
             <p className="leftTextProgress"> 1 of 2 </p>
-            <h2 className="leftTextFirst">Signing up as a Donor!</h2>
+            <h2 className="leftTextFirst">Sign up as a Donor!</h2>
             <p className="leftTextSecond"> Only few steps ahead .. </p>
           </div>
         </div>
@@ -140,7 +193,7 @@ function SignUp() {
           </div>
           <div className="righText">
             <p className="rightTextProgress"> 1 of 2 </p>
-            <h2 className="rightTextFirst">Signing up as an Organization!</h2>
+            <h2 className="rightTextFirst">Sign up as an Organization!</h2>
             <p className="rightTextSecond"> Only few steps ahead .. </p>
           </div>
         </div>
@@ -193,10 +246,7 @@ function SignUp() {
           </div>
           <div className="footer">
             <div className="footerButtons-container">
-              <Button
-                text={"Next"}
-                handleClick={toggleSignUp ? showDonor : showOrg}
-              />
+              <Button text={"Next"} handleClick={toggleBoth} />
             </div>
           </div>
         </div>
@@ -205,7 +255,7 @@ function SignUp() {
           <div className="rightPanel-containerS">
             <h2 style={{ position: "relative", bottom: "1em" }}>
               {" "}
-              Provide us with your account details
+              Provide us with your address details
             </h2>
             <div className="twoInputHolderS">
               <InputBox type={"text"} label={"Governerate"} width={"200px"} />
@@ -229,7 +279,57 @@ function SignUp() {
         </div>
 
         <div className="signUpORG">
-          <div className="rightPanel-containerS"></div>
+          <div className="rightPanel-containerS">
+            <h2 style={{ position: "relative", bottom: "1em" }}>
+              {" "}
+              Provide us with your organization details
+            </h2>
+            <DropDown
+              options={[
+                "Animal welfare groups",
+                "Arts associations",
+                "Childcare organisations",
+                "Community sheds",
+                "Environmental groups",
+                "Health Promotion Charities",
+                "Hospitals and other healthcare providers",
+                "Housing providers",
+                "Medical research Institutions",
+                "Private and public ancillary funds",
+                "Public benevolent institutions",
+                "Social clubs",
+                "Sporting clubs and associations",
+                "Schools and other educational providers",
+                "Self-help groups",
+              ]}
+              selected={"Specify Organization type"}
+              width={"430px"}
+            />
+            <InputBox
+              type={"text"}
+              label={"Organization Name"}
+              width={"430px"}
+            />
+            <div className="twoInputHolderS">
+              <InputBox type={"text"} label={"Governorate"} width={"200px"} />
+              <InputBox
+                type={"text"}
+                label={"Organization Area"}
+                width={"200px"}
+              />
+            </div>
+            <InputBox
+              type={"text"}
+              label={"Organization Address (Street Name,Home Number)"}
+              width={"430px"}
+            />
+          </div>
+          <div className="footer">
+            <div className="footerButtons-container">
+              <Button text={"Sign Up"} />
+              <BackButton style={{ marginLeft: "5em" }} handleClick={hideOrg} />
+            </div>
+          </div>
         </div>
       </div>
     </>
