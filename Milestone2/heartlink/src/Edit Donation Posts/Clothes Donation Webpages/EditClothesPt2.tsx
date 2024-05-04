@@ -1,6 +1,6 @@
-import EditRadioButton from "../../../components/RadioButton/EditRadioButton.tsx";
+import EditRadioButton from "../../components/RadioButton/EditRadioButton.tsx";
 import { useState } from "react";
-import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
+import EditNumberInputBox from "../../components/InputBox/EditNumberInputBox.tsx";
 
 interface ClothesPt2Props {
   size: string;

@@ -1,6 +1,6 @@
-import EditDropDown from "../../../components/DropDown/EditDropDown.tsx";
+import EditDropDown from "../../components/DropDown/EditDropDown.tsx";
 import { useState } from "react";
-import EditRadioButton from "../../../components/RadioButton/EditRadioButton.tsx";
+import EditRadioButton from "../../components/RadioButton/EditRadioButton.tsx";
 
 interface ClothesProps {
   ageGroup: string;
