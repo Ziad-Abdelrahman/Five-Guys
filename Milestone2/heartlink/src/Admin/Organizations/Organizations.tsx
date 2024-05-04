@@ -35,7 +35,7 @@ const Organizations = () => {
       image: Org3,
       img_alt: "Misr elkheir logo",
       title: "Misr elkheir",
-      text: "Misr El Kheir is established with the objective of developing the Egyptian individual in a comprehensive manner.",
+      text: "Misr El Kheir aims to develop the Egyptian individual in a comprehensive manner.",
     },
     {
       id: "4",
@@ -49,7 +49,7 @@ const Organizations = () => {
       image: Org5,
       img_alt: "Resala logo",
       title: "Resala",
-      text: "The goal of the founding team was to spread volunteerism and positivity in society, and cultivate belonging.",
+      text: "Spreading volunteerism and positivity in society, and cultivate belonging.",
     },
     {
       id: "6",
@@ -78,7 +78,7 @@ const Organizations = () => {
       image: Org9,
       img_alt: "Red",
       title: "Egyptian Food Bank",
-      text: "Food Bank is a non-profit organization that aims to provide a decent life for the poor and needy.",
+      text: "Food is the basis of life",
     },
   ];
 

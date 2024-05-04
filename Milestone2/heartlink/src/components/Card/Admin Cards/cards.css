@@ -29,14 +29,10 @@
 
 }
 .card .title{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0;
-    color: #2F9A6A;
-    font-weight: bold;
+    margin: 10px 0;
+
 }
 .card .text{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #2F9A6A;
     margin: 10px 0;
 
 }
@@ -56,6 +52,16 @@
   align-items: center;
 }
 
+.card .logo-container{
+    display: flex;
+    align-items: center;
+    width: 208px;
+    height: 124.8px;
+}
 
+.card .view-cards-text-container{
+    width: 208px;
+    height: 155px;
+}
 
 
