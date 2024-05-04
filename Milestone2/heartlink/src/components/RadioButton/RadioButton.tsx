@@ -4,8 +4,14 @@ interface RadioButtonProps {
   text: string;
   height?: string;
   handleFilterChange?: (filter: string) => void;
+  checked?: boolean;
 }
-function RadioButton({ text, height, handleFilterChange }: RadioButtonProps) {
+function RadioButton({
+  text,
+  height,
+  handleFilterChange,
+  checked,
+}: RadioButtonProps) {
   const customStyle = {
     height: height, // Apply the height to both the input and label if specified
   };
@@ -18,6 +24,7 @@ function RadioButton({ text, height, handleFilterChange }: RadioButtonProps) {
         id={text}
         autoComplete="off"
         onChange={() => handleFilterChange && handleFilterChange(text)}
+        checked={checked}
       />
       <label
         className="btn btn-outline-success"
