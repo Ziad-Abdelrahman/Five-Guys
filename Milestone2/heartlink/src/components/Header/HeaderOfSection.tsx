@@ -1,13 +1,19 @@
 import "./header.css";
 
-interface HeaderOfSectionProps {
+interface headerofsectionProps {
   title: string;
+  children?: React.ReactNode;
+  smallDivStyle?: React.CSSProperties;
+  style?: React.CSSProperties;
 }
 
-function headerOfSection(props: HeaderOfSectionProps) {
+function headerOfSection(props: headerofsectionProps) {
   return (
-    <div className="header-container">
-      <h2>{props.title}</h2>
+    <div className="header-container" style={props.style}>
+      <div style={props.smallDivStyle}>
+        <h2>{props.title}</h2>
+        {props.children}
+      </div>
       <hr />
     </div>
   );

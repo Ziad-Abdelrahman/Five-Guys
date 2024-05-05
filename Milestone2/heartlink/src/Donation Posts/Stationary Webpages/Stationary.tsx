@@ -1,6 +1,5 @@
 import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
-import DisabledDropDown from "../../components/DropDown/DisabledDropDown.tsx";
 import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
 import hashSet from "../../hashSet";
 function Stationary() {
@@ -91,16 +90,14 @@ function Stationary() {
         <h6 style={{ marginBottom: "15px" }}>
           (Please select a category first)
         </h6>
-        {selectedCategory ? (
-          <DropDown
-            options={categoryExamples[selectedCategory]}
-            selected={selectedSupply || "Select supply"}
-            width={"280px"}
-            onChange={(supply) => setSelectedSupply(supply)}
-          />
-        ) : (
-          <DisabledDropDown selected={"Select supply"} width={"280px"} />
-        )}
+        <DropDown
+          options={selectedCategory ? categoryExamples[selectedCategory] : []}
+          selected={selectedSupply || "Select supply"}
+          width={"280px"}
+          onChange={(supply) => setSelectedSupply(supply)}
+          disabled={!selectedCategory}
+        />
+
         <br />
         <br />
         <h4> How many pieces do you need?</h4>

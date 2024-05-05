@@ -1,0 +1,61 @@
+
+.card{
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    width: 250px;
+    height: 380px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    flex-direction: column; 
+    justify-content: center; 
+
+}
+.card:hover {
+    box-shadow: 0 0 15px rgba(1, 169, 93, 0.4);
+    cursor: pointer;
+}
+
+.card .logo{
+   width: 60%;
+   height: auto;
+   border-radius: 50%;
+   display: block;
+   margin: 0 auto;
+
+}
+.card .title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    color: #2F9A6A;
+    font-weight: bold;
+}
+.card .text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #2F9A6A;
+    margin: 10px 0;
+
+}
+
+.button{
+    align-items: center;
+    height: 20%;
+
+
+}
+.card.accept,
+.card.reject,
+.card.delete{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+

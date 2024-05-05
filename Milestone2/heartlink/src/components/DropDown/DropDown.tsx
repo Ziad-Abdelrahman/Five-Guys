@@ -4,9 +4,16 @@ interface DropDownProps {
   selected: string;
   width: string;
   onChange?: (selectedOption: string) => void;
+  disabled?: boolean;
 }
 
-function DropDown({ options, selected, width, onChange }: DropDownProps) {
+function DropDown({
+  options,
+  selected,
+  width,
+  onChange,
+  disabled = false,
+}: DropDownProps) {
   const renderedOptions = options.map((option) => {
     return (
       <option key={option} value={option}>
@@ -23,6 +30,7 @@ function DropDown({ options, selected, width, onChange }: DropDownProps) {
       onChange={(e) => {
         onChange && onChange(e.target.value);
       }}
+      disabled={disabled}
     >
       <option selected disabled={true}>
         {selected}
