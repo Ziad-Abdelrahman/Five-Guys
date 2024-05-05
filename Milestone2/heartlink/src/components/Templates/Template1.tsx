@@ -8,7 +8,8 @@ interface templateProps {
   rightPanelDiv: React.ReactNode;
   rightPanelButtonText: string;
   hasButton?: boolean;
-  path: string;
+  forwardPath: string;
+  backButtonPath?: string;
 }
 
 function Template1({
@@ -16,7 +17,8 @@ function Template1({
   rightPanelDiv,
   rightPanelButtonText,
   hasButton,
-  path,
+  forwardPath,
+  backButtonPath,
 }: templateProps) {
   return (
     <div className="main">
@@ -24,7 +26,8 @@ function Template1({
       <RightPanel
         text={rightPanelButtonText}
         hasBackButton={hasButton}
-        path={path}
+        forwardPath={forwardPath}
+        backwardPath={backButtonPath}
       >
         {rightPanelDiv}
       </RightPanel>

@@ -67,7 +67,7 @@ function Toys() {
             <br />
             <br />
             <h4>Would you like toys for boys or girls?</h4>
-            <form className="radioButtons" method="get">
+            <form className="radioButtons-form" method="get">
               <RadioButton text={"Boys"} />
               <RadioButton text={"Girls"} />
             </form>
