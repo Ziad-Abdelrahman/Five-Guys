@@ -1,10 +1,10 @@
-import NavigationBar from "../../components/NavigationBar/NavigationBar.tsx";
 import DonationPostCard from "../../components/Card/Organization Cards/DonationPostCard.tsx";
 import SchoolSuppliesFilter from "../../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
 import filtericon from "../../assets/filter-icon.png";
 import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
 import "../../Donation Requests Page/AllDonationRequests.css";
 import { useState } from "react";
+import OrgNavgBar from "../../components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
 
 function ViewDonationPostsWebpage() {
   const [selectedRadioButton, setSelectedRadioButton] = useState("");
@@ -176,7 +176,7 @@ function ViewDonationPostsWebpage() {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <NavigationBar />
+      <OrgNavgBar />
       <HeaderOfSection title={"Donation Posts"} style={{ width: "1050px" }} />
       <div
         className="filters-container"
