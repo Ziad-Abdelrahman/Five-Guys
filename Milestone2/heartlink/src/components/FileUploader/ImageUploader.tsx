@@ -3,8 +3,6 @@ import "./ImageUploader.css";
 import iconImg from "../../assets/uploadiconBG.png";
 import bin from "../../assets/bin.svg";
 
-let number = 0;
-
 interface imageUploaderProps {
   width?: string;
   height?: string;
@@ -29,10 +27,8 @@ function ImageUploader({
   }
 
   const onChooseFile = () => {
-    if (number == 0) {
-      // @ts-ignore
-      inputRef.current.click();
-    }
+    // @ts-ignore
+    inputRef.current.click();
   };
 
   const removeFile = () => {
