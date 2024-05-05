@@ -25,10 +25,10 @@ function DonorRightDiv() {
           />
           {showNotifications && (
             <div className="notifications-dropdown">
-              <div className="notification-container">
+              <div className="notification-container-inside-dropdown">
                 <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
                   <TbTruckDelivery style={{ fontSize: "30px" }} />
-                  <p>Your Driver Arrived!</p>
+                  <p>Driver Arrived!</p>
                 </div>
                 <div
                   style={{
@@ -41,6 +41,33 @@ function DonorRightDiv() {
                 </div>
               </div>
               <hr />
+              <div
+                className="notification-container-inside-dropdown"
+                style={{ cursor: "pointer" }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flex: 1,
+                    cursor: "pointer",
+                  }}
+                >
+                  <TbTruckDelivery style={{ fontSize: "30px" }} />
+
+                  <span>Driver Is On the Way!</span>
+                  <span className="tooltipText">ETA:10 Minutes</span>
+                </div>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    textAlign: "right",
+                    marginTop: "20px",
+                  }}
+                >
+                  20 min ago
+                </div>
+              </div>
             </div>
           )}
         </div>
