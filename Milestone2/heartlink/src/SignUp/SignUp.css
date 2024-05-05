@@ -160,12 +160,6 @@
     margin: 0;
 }
 .show{
-    animation: showDono 1s forwards;
-}
-.hide{
-    animation: hideDono 1s forwards;
-}
-.show{
     animation: showS 1s forwards;
 }
 .hide{
