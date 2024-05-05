@@ -30,7 +30,7 @@ function TransportationSelection() {
         </div>
 
         <div className="Donor-TimeSelection-container">
-          <ScheduleSelection />
+          <ScheduleSelection text={"Schedule the Donation Pickup"} />
         </div>
 
         <div className="button-container">

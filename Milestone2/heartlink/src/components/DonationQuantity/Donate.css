@@ -46,7 +46,7 @@ margin-top: 50px;
     cursor: pointer; /* Changes the cursor to a pointer when hovering the thumb */
     border: none; /* Removes any border */
 }
-range-container .form-range:focus::-webkit-slider-thumb {
+.range-container .form-range:focus::-webkit-slider-thumb {
     outline-color: #01A95D;
 }
 
