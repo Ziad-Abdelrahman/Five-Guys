@@ -30,13 +30,21 @@ function MedicalSupplies({
         <br />
         <h4>What's the name of the {name}?</h4>
         <h6 style={{ marginBottom: "15px" }}>(if "Others" is chosen)</h6>
-        <InputBox
-          type={"text"}
-          label={FirstLetterUpper + " name"}
-          width={"280px"}
-          disabled={disabled}
-        />
-
+        {disabled ? (
+          <InputBox
+            type={"text"}
+            label={FirstLetterUpper + " name"}
+            width={"280px"}
+            disabled={true}
+            value={""}
+          />
+        ) : (
+          <InputBox
+            type={"text"}
+            label={FirstLetterUpper + " name"}
+            width={"280px"}
+          />
+        )}
         <h4 style={{ marginBottom: "15px" }}>
           Please specify the quantity needed
         </h4>
