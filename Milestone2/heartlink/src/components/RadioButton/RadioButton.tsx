@@ -4,10 +4,17 @@ interface RadioButtonProps {
   text: string;
   height?: string;
   handleFilterChange?: (filter: string) => void;
+  margin?: string;
 }
-function RadioButton({ text, height, handleFilterChange }: RadioButtonProps) {
+function RadioButton({
+  text,
+  height,
+  handleFilterChange,
+  margin,
+}: RadioButtonProps) {
   const customStyle = {
     height: height, // Apply the height to both the input and label if specified
+    margin: margin,
   };
   return (
     <>
