@@ -6,6 +6,12 @@ import {
 } from "react-router-dom";
 import Welcome from "./Welcome/Welcome.tsx";
 import SignUp from "./SignUp/SignUp.tsx";
+import Toys from "./Donation Posts/Toys Donation Webpages/Toys.tsx";
+import ToysPt2 from "./Donation Posts/Toys Donation Webpages/ToysPt2.tsx";
+import Stationary from "./Donation Posts/Stationary Webpages/Stationary.tsx";
+import CreatePost from "./Donation Posts/createPost/CreatePost.tsx";
+import Medication from "./Donation Posts/Medication Webpages/Medication.tsx";
+import MedicationPt2 from "./Donation Posts/Medication Webpages/MedicationPt2.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>

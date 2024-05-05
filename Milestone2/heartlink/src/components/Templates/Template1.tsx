@@ -15,6 +15,7 @@ function Template1({
   rightPanelDiv,
   rightPanelButtonText,
   hasButton,
+  path,
 }: templateProps) {
   return (
     <div className="main">

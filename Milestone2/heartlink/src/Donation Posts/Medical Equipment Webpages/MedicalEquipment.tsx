@@ -4,7 +4,7 @@ import MedicalSupplies from "../../components/MedicalSupplies/MedicalSupplies.ts
 import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
 
-function CreatePost() {
+function MedicalEquipment() {
   const [disabled, setDisabled] = useState(true);
 
   function handleEquipChange(equip: string) {
@@ -46,4 +46,4 @@ function CreatePost() {
   );
 }
 
-export default CreatePost;
+export default MedicalEquipment;

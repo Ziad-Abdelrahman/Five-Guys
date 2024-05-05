@@ -3,7 +3,7 @@ import "../createPost/createPost.css";
 
 import MedicalSuppliesPt2 from "../../components/MedicalSupplies/MedicalSuppliesPt2.tsx";
 
-function CreatePost() {
+function MedicalEquipmentPt2() {
   return (
     <Template1
       leftPanelDiv={
@@ -19,4 +19,4 @@ function CreatePost() {
   );
 }
 
-export default CreatePost;
+export default MedicalEquipmentPt2;
