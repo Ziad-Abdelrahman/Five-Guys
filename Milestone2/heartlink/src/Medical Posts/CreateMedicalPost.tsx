@@ -9,7 +9,7 @@ function CreateMedicalPost() {
       leftPanelDiv={
         <div className="leftText">
           <p />1 of 2<h2> Creating your post!</h2>
-          <p> insert cute medical comment here .. </p>
+          <p> Few steps left.. </p>
         </div>
       }
       rightPanelDiv={

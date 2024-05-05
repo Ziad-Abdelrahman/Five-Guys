@@ -14,8 +14,8 @@ function MedicalTools() {
     <Template1
       leftPanelDiv={
         <div className="leftText">
-          <p /> 2 of 3<h2> Creating your post!</h2>
-          <p> Almost Done.. </p>
+          <p /> 1 of 2<h2> Creating your post!</h2>
+          <p> Few steps left.. </p>
         </div>
       }
       rightPanelDiv={
