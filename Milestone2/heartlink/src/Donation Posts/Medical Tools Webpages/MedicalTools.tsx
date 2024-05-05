@@ -4,7 +4,7 @@ import MedicalSupplies from "../../components/MedicalSupplies/MedicalSupplies.ts
 import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
 
-function CreatePost() {
+function MedicalTools() {
   const [disabled, setDisabled] = useState(true);
 
   function handleToolChange(tool: string) {
@@ -62,9 +62,9 @@ function CreatePost() {
           />
         </MedicalSupplies>
       }
-      rightPanelButtonText={"Post"}
+      rightPanelButtonText={"Next"}
     />
   );
 }
 
-export default CreatePost;
+export default MedicalTools;
