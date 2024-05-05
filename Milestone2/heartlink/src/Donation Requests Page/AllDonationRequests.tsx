@@ -13,13 +13,27 @@ import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import Search from "../components/Search/Search.tsx";
 import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import { useState } from "react";
+import hashSet from "../hashSet";
+import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 
 function AllDonationRequests() {
+  const detailsList: hashSet = {
+    "1": ["stationary", "Writing Tools", "Pens", "100"],
+    "2": ["Canned Food", "Beans", "100"],
+    "3": ["SwimSuit", "Adults", "Male", "Winter", "Cotton", "100"],
+    "4": ["Equipment", "Syringes", "1000"],
+    "5": ["Educational", "6-12", "Male", "Board Games", "50"],
+    "6": ["Vegetables", "Tomatoes", "100 KG"],
+    "7": ["Coat", "Kids", "Male", "Autumn", "Cotton", "10"],
+    "8": ["57357", "Cairo", "Maadi"],
+    "9": ["Equipment", "Masks", "1000"],
+    "10": ["Dress", "Infants", "Male", "Fall", "Cotton", "90"],
+  };
   const viewData = [
     {
       id: "1",
       image: ResalaLogo,
-      description: "Clothes Supplies",
+      description: "School Supplies",
       postedby: "Resala Charity Foundation",
       postdate: "25/ 4/2024",
     },
@@ -89,15 +103,41 @@ function AllDonationRequests() {
   ];
 
   const [search, setSearch] = useState("");
-
   const handleSearch = (written: string) => {
     setSearch(written);
   };
-  // @ts-ignore
+  //responsible for viewing the details of the request
+  const [selectedID, setSelectedID] = useState("");
+  //responsible for getting the id of the request to view its details
+  function handleLearnMoreClick(id: string) {
+    setSelectedID(id);
+  }
+  //responsible for closing the popup
+  function handleClosePopUp() {
+    setSelectedID("");
+  }
   return (
     <>
       <NavigationBar />
-
+      <ViewPopup trigger={selectedID !== ""} handleClick={handleClosePopUp}>
+        <div>
+          {detailsList[selectedID] && (
+            <ul>
+              {detailsList[selectedID].map((item, index) => {
+                if (item) {
+                  // Check if the item is not undefined or empty
+                  return (
+                    <p key={index}>
+                      {index + 1}. {item}
+                    </p>
+                  ); // Display with numbering
+                }
+                return null; // Return null for empty or undefined items
+              })}
+            </ul>
+          )}
+        </div>
+      </ViewPopup>
       <Headerofsection
         title="All Donation Requests"
         smallDivStyle={{
@@ -115,6 +155,8 @@ function AllDonationRequests() {
           )
           .map((viewData) => (
             <DonationRequestCard
+              handleClick={handleLearnMoreClick}
+              buttonID={viewData.id}
               key={viewData.id}
               description={viewData.description}
               postedby={viewData.postedby}
