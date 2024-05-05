@@ -1,9 +1,13 @@
 import "./Buttons.css";
 import arrow from "../../assets/left-arrow.png";
 
-function BackButton() {
+interface BackButtonProps {
+  style?: React.CSSProperties;
+  handleClick?: () => void;
+}
+function BackButton({ style, handleClick }: BackButtonProps) {
   return (
-    <button className="image-button">
+    <button className="image-button" style={style} onClick={handleClick}>
       <img src={arrow} alt="back" className="backImg" />
     </button>
   );

@@ -1,0 +1,212 @@
+.signUpMain{
+    position: relative;
+    background-color: #FAF8F6;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.leftPartSignupB{
+    margin: 0 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightPartSignupB{
+    margin: 0 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo {
+    width: 50px;
+
+}
+.logo-container {
+    display: flex;
+    position: relative;
+    top: -10em;
+    width: 100%;
+}
+
+.rightPartSignupB .logo-container{
+    flex-direction: row-reverse;
+}
+.rightPanelSignUpA{
+    position: absolute;
+    width: 65%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 70px 70px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    right: -5%;
+}
+
+@keyframes slideRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-69%);
+    }
+}
+
+
+.animateRightToLeft {
+    animation: slideRightToLeft 1s forwards;
+}
+
+@keyframes slideLeftToRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(69%);
+    }
+}
+
+.animateLeftToRight {
+    animation: slideLeftToRight 1s forwards;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 7em;
+    padding: 10px;
+    background-color: #ffffff; /* Set background color as needed */
+    border-top: 1px solid #dee2e6; /* Optional: Add a border at the top */
+}
+.twoInputHolderS{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2em;
+    margin: 1em 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightPanel-containerS{
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 1em;
+}
+.radioss{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.radioss .btn-outline-success{
+    height: 2em;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 4em;
+}
+.footerButtons-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 22px;
+}
+
+.footerButtons-container button{
+    margin-right: 5em;
+}
+
+.signUpDONO{
+    position: absolute;
+    width: 65%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 70px 70px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition:0.3s ease-in-out;
+    align-items: center;
+    left: -70%;
+}
+
+.signUpORG{
+    position: absolute;
+    width: 65%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 70px 70px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition:0.3s ease-in-out;
+    align-items: center;
+    right: -70%;
+}
+.signUpDONO button{
+    margin: 0;
+}
+.show{
+    animation: showS 1s forwards;
+}
+.hide{
+    animation: hideS 1s forwards;
+}
+@keyframes showS {
+    from{
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes hideS {
+    from{
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.showE{
+    animation: showEE 1s forwards;
+}
+.hideE{
+    animation: hideEE 1s forwards;
+}
+@keyframes hideEE{
+    from{
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes showEE{
+    from{
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.signUpORG .form-select{
+    margin-bottom : 4%;
+}
+
