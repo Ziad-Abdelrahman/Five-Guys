@@ -21,6 +21,18 @@ const router = createBrowserRouter(
         {/* <Route path="Dashboard" element={<DonorDashboard />} />*/}
       </Route>
       <Route path="Organization">
+        <Route path="CreateAPost">
+          <Route index element={<CreatePost />} />
+          <Route path="Toys">
+            <Route path="1" element={<Toys />} />
+            <Route path="2" element={<ToysPt2 />} />
+          </Route>
+          <Route path="Staitonary" element={<Stationary />} />
+          <Route path="Medication">
+            <Route path="1" element={<Medication />} />
+            <Route path="2" element={<MedicationPt2 />} />
+          </Route>
+        </Route>
         {/* <Route path="Dashboard" element={<OrganizationDashboard />} />*/}
       </Route>
       <Route path="Admin">

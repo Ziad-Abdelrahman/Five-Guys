@@ -75,6 +75,7 @@ function Toys() {
           </div>
         </div>
       }
+      path={"Organization/CreateAPost/Toys/2"}
       rightPanelButtonText={"Next"}
       hasButton={true}
     />
