@@ -55,7 +55,7 @@ function DonationParent(props: DonationQuantityProps) {
         {/* Display the current value in a box */}
       </div>
       <div className="button-container">
-        <DonateButton />
+        <DonateButton text={"Next"} />
       </div>
     </div>
   );
