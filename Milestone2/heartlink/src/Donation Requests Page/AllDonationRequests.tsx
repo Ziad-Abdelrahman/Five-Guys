@@ -18,16 +18,52 @@ import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 
 function AllDonationRequests() {
   const detailsList: hashSet = {
-    "1": ["stationary", "Writing Tools", "Pens", "100"],
-    "2": ["Canned Food", "Beans", "100"],
-    "3": ["SwimSuit", "Adults", "Male", "Winter", "Cotton", "100"],
-    "4": ["Equipment", "Syringes", "1000"],
-    "5": ["Educational", "6-12", "Male", "Board Games", "50"],
-    "6": ["Vegetables", "Tomatoes", "100 KG"],
-    "7": ["Coat", "Kids", "Male", "Autumn", "Cotton", "10"],
-    "8": ["57357", "Cairo", "Maadi"],
-    "9": ["Equipment", "Masks", "1000"],
-    "10": ["Dress", "Infants", "Male", "Fall", "Cotton", "90"],
+    "1": [
+      "Category: Stationary",
+      "Type: Writing Tools",
+      "Item: Pens",
+      "Quantity: 100",
+    ],
+    "2": ["Category: Canned Food", "Item: Beans", "Quantity: 100"],
+    "3": [
+      "Category: Swimwear",
+      "Type: SwimSuit",
+      "Gender: Male",
+      "Season: Winter",
+      "Material: Cotton",
+      "Quantity: 100",
+    ],
+    "4": ["Category: Medical Equipment", "Item: Syringes", "Quantity: 1000"],
+    "5": [
+      "Category: Educational",
+      "Age Group: 6-12",
+      "Gender: Male",
+      "Item: Board Games",
+      "Quantity: 50",
+    ],
+    "6": ["Category: Vegetables", "Item: Tomatoes", "Quantity: 100 KG"],
+    "7": [
+      "Category: Clothing",
+      "Type: Coat",
+      "Gender: Kids",
+      "Season: Autumn",
+      "Material: Cotton",
+      "Quantity: 10",
+    ],
+    "8": [
+      "Category: Charity Organization",
+      "Organization: 57357",
+      "Location: Cairo, Maadi",
+    ],
+    "9": ["Category: Medical Equipment", "Item: Masks", "Quantity: 1000"],
+    "10": [
+      "Category: Clothing",
+      "Type: Dress",
+      "Gender: Infants",
+      "Season: Fall",
+      "Material: Cotton",
+      "Quantity: 90",
+    ],
   };
   const viewData = [
     {
@@ -126,11 +162,7 @@ function AllDonationRequests() {
               {detailsList[selectedID].map((item, index) => {
                 if (item) {
                   // Check if the item is not undefined or empty
-                  return (
-                    <p key={index}>
-                      {index + 1}. {item}
-                    </p>
-                  ); // Display with numbering
+                  return <li key={index}>{item}</li>; // Display with numbering
                 }
                 return null; // Return null for empty or undefined items
               })}
