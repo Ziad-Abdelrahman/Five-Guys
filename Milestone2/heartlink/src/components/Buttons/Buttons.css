@@ -42,15 +42,7 @@ button:focus {
     border-radius: 15px;
     font-size: 16px;
     margin: 10px;
-}
-.accept, .reject{
-    height: 30px;
-    border-radius: 15px;
-    font-size: 16px;
-    margin: 5px;
-}
-
-
+}    
 .signupButton{
     font-Size: 15px;
     background-Color: #A0A0A0;
@@ -117,5 +109,19 @@ button:focus {
 
 /*-----------------------------------------------*/
 
+.adminButton{
+    height: 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+button.adminButton:hover {
+    box-shadow: 0 0 10px #9ac481;
+}
+    
+button.adminButton:active {
+    transform: scale(1.3);
+}
 
 
