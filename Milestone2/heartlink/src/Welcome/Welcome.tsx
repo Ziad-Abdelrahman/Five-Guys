@@ -4,12 +4,14 @@ import { BackgroundPhoto, hideLogin } from "./BackgroundPhoto.tsx";
 import { useEffect } from "react";
 import SignUpButton from "../components/Buttons/SignUpButton.tsx";
 import LoginButton from "../components/Buttons/LoginButton.tsx";
-import image1 from "../assets/57357.jpeg";
-import image2 from "../assets/EgyptianFoodBank.png";
-import image3 from "../assets/Misrelkheir.jpeg";
-import image4 from "../assets/Orman.png";
-import image5 from "../assets/Redcrescent.png";
-import image6 from "../assets/Turin.jpg";
+import image1 from "../assets/57357nobg.png";
+import image2 from "../assets/EgyptianFoodBanknobg.png";
+import image3 from "../assets/Misrelkheirnobg.png";
+import image4 from "../assets/Ormannobg.png";
+import image5 from "../assets/Redcrescentnobg.png";
+import image6 from "../assets/Turinnobg.png";
+import image7 from "../assets/Resalanobg.png";
+import image8 from "../assets/magdiYacoubFoundationnobg.png";
 import Login from "./Login.tsx";
 
 function Welcome() {
@@ -122,6 +124,8 @@ function Welcome() {
             <img src={image4} alt="partner" className="partner" />
             <img src={image5} alt="partner" className="partner" />
             <img src={image6} alt="partner" className="partner" />
+            <img src={image7} alt="partner" className="partner" />
+            <img src={image8} alt="partner" className="partner" />
 
             <img src={image1} alt="partner" className="partner" />
             <img src={image2} alt="partner" className="partner" />
@@ -129,6 +133,8 @@ function Welcome() {
             <img src={image4} alt="partner" className="partner" />
             <img src={image5} alt="partner" className="partner" />
             <img src={image6} alt="partner" className="partner" />
+            <img src={image7} alt="partner" className="partner" />
+            <img src={image8} alt="partner" className="partner" />
           </div>
         </div>
 

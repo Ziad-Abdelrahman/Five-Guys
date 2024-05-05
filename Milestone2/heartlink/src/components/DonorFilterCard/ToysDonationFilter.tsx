@@ -1,7 +1,12 @@
 import "./DonorFilter.css";
 import filtericon from "../../assets/filter-icon.png";
+interface ToysDonationFilterProps {
+  handleAgeFilter?: (age: string) => void;
+  handleGender?: (gender: string) => void;
+  handleCategory?: (category: string) => void;
+}
 
-function ToysDonationFilter() {
+function ToysDonationFilter(props: ToysDonationFilterProps) {
   return (
     <>
       <div className="three-categories-filter">
@@ -10,27 +15,51 @@ function ToysDonationFilter() {
           <strong>Filters</strong>
         </div>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Age</option>
-          <option value="1">0-2</option>
-          <option value="2">2-6</option>
-          <option value="3">6-12</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => {
+            props.handleAgeFilter(e.target.value);
+          }}
+        >
+          <option value="Age" selected>
+            Age
+          </option>
+          <option value="0-2">0-2</option>
+          <option value="2-6">2-6</option>
+          <option value="6-12">6-12</option>
         </select>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Gender</option>
-          <option value="1">Male</option>
-          <option value="2">Female</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => {
+            props.handleGender(e.target.value);
+          }}
+        >
+          <option value="Gender" selected>
+            Gender
+          </option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
 
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Category</option>
-          <option value="1">Board Games</option>
-          <option value="2">Stuffed Toys</option>
-          <option value="3">Dolls</option>
-          <option value="4">Sports</option>
-          <option value="4">Cars</option>
-          <option value="4">Outdoor</option>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => {
+            props.handleCategory(e.target.value);
+          }}
+        >
+          <option value="Category" selected>
+            Category
+          </option>
+          <option value="Board Games">Board Games</option>
+          <option value="Stuffed Toys">Stuffed Toys</option>
+          <option value="Dolls">Dolls</option>
+          <option value="Sports">Sports</option>
+          <option value="Cars">Cars</option>
+          <option value="Outdoor">Outdoor</option>
         </select>
       </div>
     </>

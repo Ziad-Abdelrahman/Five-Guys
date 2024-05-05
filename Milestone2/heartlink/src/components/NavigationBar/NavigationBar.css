@@ -19,11 +19,11 @@
     width: 90%;
     position: relative;
     transition: 0.3s ease-in-out;
-    margin: 0em 6em;
+    margin: 0 5%;
 }
 
 
-.logo {
+.logoNavBar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,3 +48,15 @@
     margin: 0 auto;
 }
 
+@keyframes notificationBounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(1.5px);  /* Example movement to the right */
+    }
+}
+
+.notification-icon {
+    animation: notificationBounce 0.4s infinite; /* Runs every 15 seconds indefinitely */
+}
