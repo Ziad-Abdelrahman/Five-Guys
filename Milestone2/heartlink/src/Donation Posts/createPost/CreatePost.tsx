@@ -23,7 +23,8 @@ function CreatePost() {
     <Template1
       leftPanelDiv={
         <div className="leftText">
-          <p /> 1 of 2<h2> Creating your post!</h2>
+          <br />
+          <h2> Creating your post!</h2>
           <p> Only few steps ahead .. </p>
         </div>
       }
