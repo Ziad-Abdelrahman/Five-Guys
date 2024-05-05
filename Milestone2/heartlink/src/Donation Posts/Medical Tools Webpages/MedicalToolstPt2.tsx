@@ -8,8 +8,9 @@ function CreatePost() {
     <Template1
       leftPanelDiv={
         <div className="leftText">
-          <p />3 of 3<h2> Creating your post!</h2>
-          <p>One last step.. </p>
+          <p />2 of 2<h2> Creating your post!</h2>
+          <p> Almost Done.. </p>
+          <br />
         </div>
       }
       rightPanelDiv={<MedicalSuppliesPt2 header={"Medical Tools"} />}
