@@ -9,7 +9,7 @@ interface headerofsectionProps {
 
 function headerOfSection(props: headerofsectionProps) {
   return (
-    <div className="header-container" style={props.style}>
+    <div className="headerOfSection-container" style={props.style}>
       <div style={props.smallDivStyle}>
         <h2>{props.title}</h2>
         {props.children}
