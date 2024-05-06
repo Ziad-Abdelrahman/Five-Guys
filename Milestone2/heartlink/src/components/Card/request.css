@@ -42,5 +42,6 @@
     display: flex;
    margin-right: 20px;
 
-    flex-direction: column; /* Stacks items vertically */
+
+    flex-direction: column;
 }
