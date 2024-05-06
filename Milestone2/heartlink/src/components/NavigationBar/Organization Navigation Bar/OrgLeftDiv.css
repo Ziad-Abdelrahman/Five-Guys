@@ -1,53 +1,115 @@
-/* Dropdown Button */
 .dropbtn {
-    background-color: #ffffff; /* Changed to white */
-    color: black; /* Changed to green text */
-    padding: 24px 28px; /* Reduced height by decreasing padding */
-    font-size: 13px;
-    border: none;
-    border-radius: 5px; /* Added border-radius */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth hover effect */
-    overflow: hidden; /* Prevents content from overflowing */
-    text-overflow: ellipsis; /* Truncates the text with an ellipsis if it overflows */
     white-space: nowrap; /* Ensures the text stays in one line */
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fFfFfF;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 12px;
-
-    transition: opacity 1s ease;  /* Smooth transition for opacity */
+.Submit {
+    position: fixed;
+    top:20%;
+    left:33%;
+    height: 500px;
+    width: 500px;
+    background-color: #f5f5f5;
+    z-index: 3;
+    border-radius: 10px; /* Adjust as needed */
+    box-shadow: 0 1.375rem 1.875rem #0000001a;
+    padding: 20px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.Submit h1 {
+    font-size: 20px;
+    margin-bottom: 20px; /* Adjust as needed */
+    margin-top: 20px;
+    text-align: center;
+    
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd; border-radius: 10px}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown and on hover */
-.dropdown:hover .dropbtn {
-    background-color: #f8f8f8; /* Light grey background on hover */
-
+.topOfSubmit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px; /* Adjust as needed */
+    border-bottom: 1px solid #ccc; /* Adjust as needed */
 }
+
+.topOfSubmit img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px; /* Adjust as needed */
+    margin-top: -5px;
+}
+
+.topOfSubmit .xSubmit {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.specify-timing{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10% 0;
+}
+
+.Submit form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0; /* Adjust as needed */
+}
+
+.Submit form button {
+    margin-top: 20px; /* Adjust as needed */
+}
+.confirm-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    margin: 10% 0; /* Adjust as needed */
+}
+
+.confirm-button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
+
+.confirmation-div{
+    display: flex;
+    height: 27px;
+}
+
+.confirmation-message {
+    background-color: #f8f8f8;
+    border: 1px solid green;
+    display: flex;
+    height: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    white-space: nowrap;
+    width:80%;
+    font-size: 18px;
+}
+
+.confirmation-message .p{
+    margin-bottom: 10px;
+}
+
+.confirmation-message .confirmation-icon {
+    margin-top: 0.5%;
+    margin-right: 2px;
+    font-size: 25px;
+    text-align: center;
+    color:green ;
+}
+
+

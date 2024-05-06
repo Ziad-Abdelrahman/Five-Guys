@@ -1,0 +1,27 @@
+.notifications-dropdown{
+    position: fixed;
+    top: 10%;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+
+.notification-container {
+    padding: 10px;
+    border-bottom: 0px solid #ccc;
+    border-radius: 10px; /* Add border radius to all notification containers */
+    display: flex;
+    margin-top: 7px;
+     
+  }
+  
+  .notification-container:last-child {
+    border-bottom:  0px solid #ccc;
+  }
+
+.envelope-icon {
+    font-size: 22px;
+}
+
+ 
