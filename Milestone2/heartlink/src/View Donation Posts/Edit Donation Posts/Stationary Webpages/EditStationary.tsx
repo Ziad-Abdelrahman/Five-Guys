@@ -79,50 +79,66 @@ function EditStationary(props: StationaryProps) {
     ],
   };
   return (
-    <>
-      <div className="header-container">
-        <h1>School Supplies</h1>
-      </div>
-      <div className="rest-container" style={{ top: "12em" }}>
-        <h4 style={{ marginBottom: "15px" }}>
-          What category of school supplies do you need?
-        </h4>
-        <EditDropDown
-          options={["Specify category"].concat(Object.keys(categoryExamples))}
-          selected={selectedCategory}
-          width={"280px"}
-          onChange={handleCategoryChange}
-        />
-        <br />
-        <br />
-        <h4>What supply do you specifically need?</h4>
-        <h6 style={{ marginBottom: "15px" }}>
-          (Please select a category first)
-        </h6>
-        <EditDropDown
-          options={
-            selectedCategory
-              ? ["Select supply"].concat(categoryExamples[selectedCategory])
-              : []
-          }
-          selected={selectedSupply}
-          width={"280px"}
-          onChange={(supply) => setSelectedSupply(supply)}
-          disabled={!selectedCategory}
-        />
+    <Template1
+      leftPanelDiv={
+        <div className="leftText">
+          <p /> 1 of 1<h2> Updating your post!</h2>
+          <br />
+        </div>
+      }
+      rightPanelDiv={
+        <>
+          <div className="header-container">
+            <h1>School Supplies</h1>
+          </div>
+          <div className="rest-container" style={{ top: "12em" }}>
+            <h4 style={{ marginBottom: "15px" }}>
+              What category of school supplies do you need?
+            </h4>
+            <EditDropDown
+              options={["Specify category"].concat(
+                Object.keys(categoryExamples),
+              )}
+              selected={selectedCategory}
+              width={"280px"}
+              onChange={handleCategoryChange}
+            />
+            <br />
+            <br />
+            <h4>What supply do you specifically need?</h4>
+            <h6 style={{ marginBottom: "15px" }}>
+              (Please select a category first)
+            </h6>
+            <EditDropDown
+              options={
+                selectedCategory
+                  ? ["Select supply"].concat(categoryExamples[selectedCategory])
+                  : []
+              }
+              selected={selectedSupply}
+              width={"280px"}
+              onChange={(supply) => setSelectedSupply(supply)}
+              disabled={!selectedCategory}
+            />
 
-        <br />
-        <br />
-        <h4> How many pieces do you need?</h4>
-        <EditNumberInputBox
-          label={"Quantity"}
-          width={"280px"}
-          text={quantity}
-          hasText={quantity != ""}
-          setChecked={setQuantity}
-        />
-      </div>
-    </>
+            <br />
+            <br />
+            <h4> How many pieces do you need?</h4>
+            <EditNumberInputBox
+              label={"Quantity"}
+              width={"280px"}
+              text={quantity}
+              hasText={quantity != ""}
+              setChecked={setQuantity}
+            />
+          </div>
+        </>
+      }
+      rightPanelButtonText={"Update"}
+      hasButton={true}
+      forwardPath={"../../ViewPosts"}
+      backButtonPath={"../../ViewPosts"}
+    />
   );
 }
 

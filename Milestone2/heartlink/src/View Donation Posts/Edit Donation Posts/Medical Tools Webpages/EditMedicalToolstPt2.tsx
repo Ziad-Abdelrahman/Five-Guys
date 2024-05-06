@@ -7,7 +7,7 @@ interface EditMedicalToolsPt2Props {
   use: string;
 }
 
-function EditMedicalToolsPt2({ use }: EditMedicalToolsPt2Props) {
+function EditMedicalToolsPt2({ use, id }: EditMedicalToolsPt2Props) {
   return (
     <Template1
       leftPanelDiv={

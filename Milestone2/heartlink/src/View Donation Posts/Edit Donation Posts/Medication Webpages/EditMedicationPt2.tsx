@@ -19,45 +19,59 @@ function EditMedicationPt2(props: EditMedicationPt2Props) {
     width: "600px",
   };
   return (
-    <>
-      <div className="header-container">
-        <h1>Medication</h1>
-      </div>
-      <div className="rest-container" style={{ top: "13em" }}>
-        <div style={divStyle}>
-          <h5 style={{ position: "relative", marginTop: "3%" }}>
-            What is the medication's name?
-          </h5>
-          <EditInputBox
-            type={"text"}
-            label={"Specify medication"}
-            width={"280px"}
-            text={medName}
-            hasText={medName !== ""}
-            setChecked={setMedName}
-          />
+    <Template1
+      leftPanelDiv={
+        <div className="leftText">
+          <p /> 1 of 2<h2> Updating your post!</h2>
+          <br />
         </div>
-        <div style={divStyle}>
-          <h5 style={{ position: "relative", marginTop: "3%" }}>
-            Please specify quantity needed
-          </h5>
-          <EditNumberInputBox
-            label={"Quantity"}
-            width={"280px"}
-            text={quantity}
-            hasText={quantity !== ""}
-            setChecked={setQuantity}
-          />
-        </div>
-        <div style={divStyle}>
-          <h5 style={{ position: "relative", marginTop: "13%" }}>
-            {" "}
-            Please upload the med's photo
-          </h5>
-          <ImageUploader width={"280px"} height={"180px"} />
-        </div>
-      </div>
-    </>
+      }
+      rightPanelDiv={
+        <>
+          <div className="header-container">
+            <h1>Medication</h1>
+          </div>
+          <div className="rest-container" style={{ top: "13em" }}>
+            <div style={divStyle}>
+              <h5 style={{ position: "relative", marginTop: "3%" }}>
+                What is the medication's name?
+              </h5>
+              <EditInputBox
+                type={"text"}
+                label={"Specify medication"}
+                width={"280px"}
+                text={medName}
+                hasText={medName !== ""}
+                setChecked={setMedName}
+              />
+            </div>
+            <div style={divStyle}>
+              <h5 style={{ position: "relative", marginTop: "3%" }}>
+                Please specify quantity needed
+              </h5>
+              <EditNumberInputBox
+                label={"Quantity"}
+                width={"280px"}
+                text={quantity}
+                hasText={quantity !== ""}
+                setChecked={setQuantity}
+              />
+            </div>
+            <div style={divStyle}>
+              <h5 style={{ position: "relative", marginTop: "13%" }}>
+                {" "}
+                Please upload the med's photo
+              </h5>
+              <ImageUploader width={"280px"} height={"180px"} />
+            </div>
+          </div>
+        </>
+      }
+      rightPanelButtonText={"Update"}
+      hasButton={true}
+      forwardPath={"../../ViewPosts"}
+      backButtonPath={"../" + props.id}
+    />
   );
 }
 

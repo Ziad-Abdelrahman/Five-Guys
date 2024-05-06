@@ -7,7 +7,7 @@ interface EditMedicationProps {
   med: string;
 }
 
-function EditMedication({ med }: EditMedicationProps) {
+function EditMedication({ id, med }: EditMedicationProps) {
   const [medication, setMedication] = useState(med);
   return (
     <Template1
