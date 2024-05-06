@@ -21,38 +21,43 @@ function OrgRightDiv() {
       >
         <div>
           <IoNotificationsOutline
-            className="notification-icon"
             style={{ fontSize: "28px", marginRight: "40px", cursor: "pointer" }}
+            className="notification-icon"
             onClick={toggleDropdown}
           />
           {showNotifications && (
-            <div className="notifications-dropdown">
-              <div className="notification-container">
+            <div className="org-notifications-dropdown">
+              <div className="org-notification-container-inside-dropdown">
                 <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
                   <BsEnvelopeOpenHeart className={"envelope-icon"} />
-                  <p>Toys Donation fulfilled!</p>
+                  <p style={{ marginTop: "17px" }}>Toys Donation fulfilled!</p>
                 </div>
                 <div
                   style={{
                     fontSize: "12px",
                     textAlign: "right",
-                    marginTop: "5px",
+                    marginTop: "30px",
+                    marginBottom: "10px",
                   }}
                 >
                   Just Now
                 </div>
               </div>
-              <div className="notification-container">
+              <hr />
+              <div
+                className="org-notification-container-inside-dropdown"
+                style={{ cursor: "pointer" }}
+              >
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
                     flex: 1,
-                    marginTop: "20px",
+                    cursor: "pointer",
                   }}
                 >
                   <TbTruckDelivery style={{ fontSize: "30px" }} />
-                  <p>Your Driver arrived!</p>
+                  <p style={{ marginTop: "17px" }}>Driver drop-off arrived!</p>
                 </div>
                 <div
                   style={{
@@ -65,29 +70,23 @@ function OrgRightDiv() {
                   10 min ago
                 </div>
               </div>
-              <div className="notification-container">
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    flex: 1,
-                    marginTop: "10px",
-                  }}
-                >
+              <hr />
+              <div className="org-notification-container-inside-dropdown">
+                <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
                   <BsEnvelopeOpenHeart className={"envelope-icon"} />
-                  <p>Blood Donation fulfilled!</p>
+                  <p style={{ marginTop: "17px" }}>Blood Donation fulfilled!</p>
                 </div>
                 <div
                   style={{
                     fontSize: "12px",
                     textAlign: "right",
-                    marginTop: "10px",
+                    marginTop: "30px",
+                    marginBottom: "10px",
                   }}
                 >
-                  5 min ago
+                  Just Now
                 </div>
               </div>
-              <hr />
             </div>
           )}
         </div>
