@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import close from "../../assets/close_icon.png";
+import close from "../../../assets/close_icon.png";
+import "./InfoPanel.css"
 import "./cards.css";
-import "../../components/InfoPanel/InfoPanel.css";
-import AdminButton from '../Buttons/AdminButton';
+import AdminButton from '../../Buttons/AdminButton';
 import jsPDF from 'jspdf';
 
 interface OrganizationCardPanelProps {

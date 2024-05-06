@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import close from "../../assets/close_icon.png";
 import "./cards.css";
-import "../../components/InfoPanel/InfoPanel.css";
+import close from "../../../assets/close_icon.png";
+import "./InfoPanel.css"
 
 
 interface ViewOrganizationPanelProps {

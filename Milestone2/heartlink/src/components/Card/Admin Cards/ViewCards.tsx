@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AcceptRejectButton from "../../Buttons/AcceptRejectButton.tsx";
+import AdminButton from '../../Buttons/AdminButton';
 import "./cards.css";
 
 interface ViewCardsProps {
@@ -26,7 +26,7 @@ const ViewCards: React.FC<ViewCardsProps> = (props) => {
       <h2 className="title">{props.title}</h2>
       <p className="text">{props.text}</p>
       <div className="delete" onClick={handleDeleteClick}>
-        <AcceptRejectButton text="Delete" />
+        <AdminButton text="Delete" />
       </div>
     </div>
   ) : null;

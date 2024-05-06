@@ -1,5 +1,5 @@
 import './cards.css';
-import AdminButton from '../Buttons/AdminButton';
+import AdminButton from '../../Buttons/AdminButton';
 import { useState } from 'react';
 interface AcceptRejectCard{
   image: string;
