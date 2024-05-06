@@ -15,7 +15,7 @@ function MedicalEquipment() {
       leftPanelDiv={
         <div className="leftText">
           <p /> 1 of 2<h2> Creating your post!</h2>
-          <p> Few steps left.. </p>
+          <p> Almost Done.. </p>
         </div>
       }
       rightPanelDiv={
@@ -42,6 +42,8 @@ function MedicalEquipment() {
       }
       rightPanelButtonText={"Next"}
       hasButton={true}
+      forwardPath={"../2"}
+      backButtonPath={"../.."}
     />
   );
 }

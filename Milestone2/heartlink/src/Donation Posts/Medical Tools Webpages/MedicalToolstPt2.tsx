@@ -9,13 +9,15 @@ function MedicalToolsPt2() {
       leftPanelDiv={
         <div className="leftText">
           <p />2 of 2<h2> Creating your post!</h2>
-          <p> Almost Done.. </p>
+          <p> One last step.. </p>
           <br />
         </div>
       }
       rightPanelDiv={<MedicalSuppliesPt2 header={"Medical Tools"} />}
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath={"/"}
+      backButtonPath={"../1"}
     />
   );
 }
