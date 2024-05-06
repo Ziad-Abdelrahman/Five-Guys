@@ -43,6 +43,20 @@ const router = createBrowserRouter(
       </Route>
       {/* <Route path="Dashboard" element={<RecipientDashboard />} />*/}
       <Route path="Organization">
+        <Route index element={<OrganizationDashboard />} />
+        <Route
+          path="ViewPosts"
+          element={<ViewDonationPostsWebpage />}
+          loader={AllDataLoader}
+        />
+        <Route path="EditPost">
+          <Route
+            path="cont/:id"
+            element={<EditorPt2 />}
+            loader={EditorLoader}
+          />
+          <Route path=":id" element={<Editor />} loader={EditorLoader} />
+        </Route>
         <Route path="CreateAPost">
           <Route index element={<CreatePost />} />
           <Route path="BloodDonation" element={<BloodDonation />} />
