@@ -13,13 +13,63 @@ import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import Search from "../components/Search/Search.tsx";
 import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import { useState } from "react";
+import hashSet from "../hashSet";
+import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 
 function AllDonationRequests() {
+  const detailsList: hashSet = {
+    "1": [
+      "Category: Stationary",
+      "Type: Writing Tools",
+      "Item: Pens",
+      "Quantity: 100",
+    ],
+    "2": ["Category: Canned Food", "Item: Beans", "Quantity: 100"],
+    "3": [
+      "Category: Swimwear",
+      "Type: SwimSuit",
+      "Gender: Male",
+      "Season: Winter",
+      "Material: Cotton",
+      "Quantity: 100",
+    ],
+    "4": ["Category: Medical Equipment", "Item: Syringes", "Quantity: 1000"],
+    "5": [
+      "Category: Educational",
+      "Age Group: 6-12",
+      "Gender: Male",
+      "Item: Board Games",
+      "Quantity: 50",
+    ],
+    "6": ["Category: Vegetables", "Item: Tomatoes", "Quantity: 100 KG"],
+    "7": [
+      "Category: Clothing",
+      "Type: Coat",
+      "Gender: Kids",
+      "Season: Autumn",
+      "Material: Cotton",
+      "Quantity: 10",
+    ],
+    "8": [
+      "Category: Charity Organization",
+      "Organization: 57357",
+      "Location: Cairo, Maadi",
+    ],
+    "9": ["Category: Medical Equipment", "Item: Masks", "Quantity: 1000"],
+    "10": [
+      "Category: Clothing",
+      "Type: Dress",
+      "Gender: Infants",
+      "Season: Fall",
+      "Material: Cotton",
+      "Quantity: 90",
+    ],
+  };
   const viewData = [
     {
       id: "1",
       image: ResalaLogo,
-      description: "Clothes Supplies",
+      description: "School Supplies",
       postedby: "Resala Charity Foundation",
       postdate: "25/ 4/2024",
     },
@@ -89,15 +139,37 @@ function AllDonationRequests() {
   ];
 
   const [search, setSearch] = useState("");
-
   const handleSearch = (written: string) => {
     setSearch(written);
   };
-  // @ts-ignore
+  //responsible for viewing the details of the request
+  const [selectedID, setSelectedID] = useState("");
+  //responsible for getting the id of the request to view its details
+  function handleLearnMoreClick(id: string) {
+    setSelectedID(id);
+  }
+  //responsible for closing the popup
+  function handleClosePopUp() {
+    setSelectedID("");
+  }
   return (
     <>
       <NavigationBar />
-
+      <ViewPopup trigger={selectedID !== ""} handleClick={handleClosePopUp}>
+        <div>
+          {detailsList[selectedID] && (
+            <ul>
+              {detailsList[selectedID].map((item, index) => {
+                if (item) {
+                  // Check if the item is not undefined or empty
+                  return <li key={index}>{item}</li>; // Display with numbering
+                }
+                return null; // Return null for empty or undefined items
+              })}
+            </ul>
+          )}
+        </div>
+      </ViewPopup>
       <Headerofsection
         title="All Donation Requests"
         smallDivStyle={{
@@ -115,6 +187,8 @@ function AllDonationRequests() {
           )
           .map((viewData) => (
             <DonationRequestCard
+              handleClick={handleLearnMoreClick}
+              buttonID={viewData.id}
               key={viewData.id}
               description={viewData.description}
               postedby={viewData.postedby}

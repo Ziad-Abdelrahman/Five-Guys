@@ -1,80 +1,102 @@
-import RedCresent from "../assets/Redcrescent.png";
-import MagdyYakoub from "../assets/MagdyYakoub.png";
-import ChildrenCancer from "../assets/57357.jpeg";
-import "./AllDonationRequests.css";
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
-import Headerofsection from "../components/Header/HeaderOfSection.tsx";
-import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
-import BloodDonationFilter from "../components/DonorFilterCard/BloodDonationFilter.tsx";
+import HeaderOfSection from "../components/Header/HeaderOfSection.tsx";
+import TeacherFilter from "../components/DonorFilterCard/TeacherFilter.tsx";
+import "./AllDonationRequests.css";
 import hashSet from "../hashSet";
-import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
+import ChildrenCancer from "../assets/57357.jpeg";
+import Turin from "../assets/Turin.jpg";
+import ResalaLogo from "../assets/Resala.png";
+import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import { useState } from "react";
+import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 
-function BloodRequests() {
+function TeacherPosts() {
   const detailsList: hashSet = {
-    "1": ["57357", "Cairo", "6th Of October"],
-    "2": ["Red Cresent", "Giza", "Sheikh Zayed"],
-    "3": ["57357", "Alexandria", "Miami"],
-    "4": ["57357", "Cairo", "Maadi"],
-    "5": ["Magdi Yacoub", "Sharkia", "Zagazig"],
-    "6": ["Magdi Yacoub", "Cairo", "Maadi"],
-    "7": ["Red Cresent", "Giza", "Sheikh Zayed"],
+    "1": ["Math", "Cairo", "Maadi", "30"],
+    "2": ["Physics", "Giza", "Sheikh Zayed", "40"],
+    "3": ["Biology", "Sharqia", "Zagazig", "50"],
+    "4": ["Arabic", "Alexandria", "Miami", "60"],
+    "5": ["English", "Cairo", "Nasr City", "10"],
+    "6": ["Relegion", "Giza", "6th Of October", "40"],
+    "7": ["Math", "Cairo", "Maadi", "30"],
+    "8": ["English", "Cairo", "Maadi", "20"],
+    "9": ["English", "Giza", "Sheikh Zayed", "40"],
+    "10": ["Arabic", "Cairo", "New Cairo", "40"],
   };
-
   const cardData = [
     {
       buttonID: "1",
       image: ChildrenCancer,
-      description: "Blood Donation",
+      description: "Teacher Needed",
       postedby: "57357 Hospital",
       postdate: "5/1/2024",
     },
     {
       buttonID: "2",
-      image: RedCresent,
-      description: "Blood Donation",
-      postedby: "Red Cresent",
+      image: ResalaLogo,
+      description: "Teacher Needed",
+      postedby: "Resala",
       postdate: "10/2/2024",
     },
     {
       buttonID: "3",
       image: ChildrenCancer,
-      description: "Blood Donation",
+      description: "Teacher Needed",
       postedby: "57357 Hospital",
       postdate: "25/4/2024",
     },
     {
       buttonID: "4",
       image: ChildrenCancer,
-      description: "Blood Donation",
+      description: "Teacher Needed",
       postedby: "57357 Hospital",
       postdate: "29/4/2024",
     },
     {
       buttonID: "5",
-      image: MagdyYakoub,
-      description: "Blood Donation",
-      postedby: "Magdi Yacoub Heart Foundation",
+      image: Turin,
+      description: "Teacher Needed",
+      postedby: "Turin",
       postdate: "15/4/2024",
     },
     {
       buttonID: "6",
-      image: MagdyYakoub,
-      description: "Blood Donation",
-      postedby: "Magdi Yacoub Heart Foundation",
+      image: ResalaLogo,
+      description: "Teacher Needed",
+      postedby: "Resala",
       postdate: "13/4/2024",
     },
     {
       buttonID: "7",
-      image: RedCresent,
-      description: "Blood Donation",
-      postedby: "Red Cresent",
+      image: Turin,
+      description: "Teacher Needed",
+      postedby: "Turin",
+      postdate: "12/3/2024",
+    },
+    {
+      buttonID: "8",
+      image: Turin,
+      description: "Teacher Needed",
+      postedby: "Turin",
+      postdate: "12/3/2024",
+    },
+    {
+      buttonID: "9",
+      image: Turin,
+      description: "Teacher Needed",
+      postedby: "Turin",
+      postdate: "12/3/2024",
+    },
+    {
+      buttonID: "10",
+      image: ChildrenCancer,
+      description: "Teacher Needed",
+      postedby: "57357 Hospital",
       postdate: "12/3/2024",
     },
   ];
-
   const [selectedID, setSelectedID] = useState("");
-  const [selectedHospital, setSelectedHospital] = useState("");
+  const [selectedSubject, setSelectedSubject] = useState("");
   const [selectedGovernment, setSelectedGovernment] = useState("");
   const [selectedArea, setSelectedArea] = useState("");
   //responsible for getting the id of the request to view its details
@@ -85,10 +107,10 @@ function BloodRequests() {
     setSelectedID("");
   }
 
-  function handleHospitalChange(hospital: string) {
-    hospital === "Hospital"
-      ? setSelectedHospital("")
-      : setSelectedHospital(hospital);
+  function handleSubjectChange(subject: string) {
+    subject === "Subject"
+      ? setSelectedSubject("")
+      : setSelectedSubject(subject);
   }
 
   function handleGovernmentChange(government: string) {
@@ -100,7 +122,6 @@ function BloodRequests() {
   function handleAreaChange(area: string) {
     area === "Area" ? setSelectedArea("") : setSelectedArea(area);
   }
-
   return (
     <>
       <DonorNavigationBar />
@@ -108,22 +129,17 @@ function BloodRequests() {
         <div>
           {detailsList[selectedID] && (
             <ul>
-              <li>Hospital: {detailsList[selectedID][0]}</li>
-              <br />
+              <li>Subject: {detailsList[selectedID][0]}</li>
               <li>Government: {detailsList[selectedID][1]}</li>
-              <br />
               <li>Area: {detailsList[selectedID][2]}</li>
+              <li>Quantity: {detailsList[selectedID][3]}</li>
             </ul>
           )}
           <div style={{ marginLeft: "40px" }}>
             <iframe
               width="400"
               height="120"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight={0}
-              marginWidth={0}
-              src="https://maps.google.com/maps?width=200&height=200&hl=en&q=57357%20hospital+(Children%20Cancer%20Hospital)&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+              src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=Albashaer+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               title="Children Cancer Hospital Location"
             >
               {/* The content inside iframe will not display if the iframe loads properly */}
@@ -132,9 +148,9 @@ function BloodRequests() {
           </div>
         </div>
       </ViewPopup>
-      <Headerofsection title={"Blood Requests"} />
-      <BloodDonationFilter
-        handleHospitalFilter={handleHospitalChange}
+      <HeaderOfSection title={"Teacher Posts"} />
+      <TeacherFilter
+        handleSubjectFilter={handleSubjectChange}
         handleAreaFilter={handleAreaChange}
         handleGovernmentFilter={handleGovernmentChange}
       />
@@ -142,8 +158,8 @@ function BloodRequests() {
         {cardData
           .filter(
             (card) =>
-              (detailsList[card.buttonID][0] === selectedHospital ||
-                selectedHospital === "") &&
+              (detailsList[card.buttonID][0] === selectedSubject ||
+                selectedSubject === "") &&
               (detailsList[card.buttonID][1] === selectedGovernment ||
                 selectedGovernment === "") &&
               (detailsList[card.buttonID][2] === selectedArea ||
@@ -157,11 +173,13 @@ function BloodRequests() {
               description={card.description}
               postedby={card.postedby}
               postdate={card.postdate}
-              showDonateButton={false}
+              showDonateButton={true}
+              donateButtonText={"Fulfill"}
             />
           ))}
       </div>
     </>
   );
 }
-export default BloodRequests;
+
+export default TeacherPosts;

@@ -8,12 +8,12 @@ body {
 .range-container {
     border-radius: 10px;
     width: 50%;  /* Set width to 100% to cover the full width of the page */
-    height: 80vh;
+    height: 100vh;
     text-align: center;
     box-shadow: 0 0 10px rgba(1, 169, 93, 0.17);
-    padding: 0px 60px;  /* Simplified padding, sets 50px on top and 20px on sides */
+    padding: 0 60px;  /* Simplified padding, sets 50px on top and 20px on sides */
     position: absolute;  /* Position it absolutely within its positioned container */
-    top: 55%;            /* Center vertically */
+    top: 50%;            /* Center vertically */
     left: 50%;
     transform: translate(-50%, -50%); /* Offset the position for exact centering */
     background-color: #ffffff; /* Ensures the range container has a distinct color, e.g., white */
@@ -23,11 +23,11 @@ body {
     text-align: left;  /* Ensures the label text is left-aligned */
     display: block;    /* Makes the label take up the full width, aiding proper alignment */
     margin-bottom: 10px; /* Adds a little space below the label */
-
+margin-top: 50px;
 
 }
 .range-container .form-range{
-    width: 80%;
+    width: 97%;
     text-align: left;  /* Ensures the label text is left-aligned */
     display: block;  /* Makes the label take up the full width, aiding proper alignment */
     margin-top: 30px;
@@ -46,7 +46,7 @@ body {
     cursor: pointer; /* Changes the cursor to a pointer when hovering the thumb */
     border: none; /* Removes any border */
 }
-range-container .form-range:focus::-webkit-slider-thumb {
+.range-container .form-range:focus::-webkit-slider-thumb {
     outline-color: #01A95D;
 }
 
@@ -61,7 +61,6 @@ range-container .form-range:focus::-webkit-slider-thumb {
     overflow-y: auto;
     margin-top: 10%;
 
-
 }
 .header{
     margin-top: 10px;
@@ -75,27 +74,46 @@ range-container .form-range:focus::-webkit-slider-thumb {
 
 }
 .value-display {
-    position: absolute;  /* Allow absolute positioning within the scroller-container */
-    padding: 8px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    display: flex;  /* Use flex to align children inline */
-    justify-content: center;  /* Center children horizontally */
-    align-items: center;  /* Center children vertically */
-    white-space: nowrap; /* Prevents the text from wrapping */
-    overflow: hidden; /* Keeps the contents within the button */
-    text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
-    font-size: 15px;
+    display: flex;
+    position: absolute; /* Absolute positioning within its container */
+   padding-top: 20px;
+    background-color: #fff; /* White background */
+    color: black; /* A contrasting color for the text */
+    border-radius: 10px; /* Slightly larger border-radius for a softer edge */
+    text-align: left;
+    justify-content: left;
+    align-items: flex-start;
+    font-size: 16px; /* Larger font size for better readability */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+/* Additional styling for the percentage text to further distinguish it */
+.value-display > span.percentage {
+    color: #01A95D; /* A different color for the percentage */
+    margin-left: 8px; /* Space between number and percentage */
 }
 img{
-    width: 20%; /* Adjust width as needed */
+    width: 50%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Cover the frame without distorting the image */
     border-radius: 8px; /* Rounds the corners of the image */
+    margin-top: 10px;
     margin-right: 20px; /* Adds space between the image and the text */
     margin-left: 15px;
 }
+
+.Donor-TimeSelection-container{
+    height: 30%;
+    overflow-y: auto;
+    margin-top: 10%;
+    padding-top: 5%;
+    padding-left: 1%;
+    text-align: left;
+    line-height: 35px;
+}
+
 
 
