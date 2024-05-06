@@ -78,7 +78,7 @@
 }
 
 
-.footer {
+.footerSignUp {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -129,7 +129,7 @@
     padding: 22px;
 }
 
-.footerButtons-container button{
+.footerButtons-containerSignUp button{
     margin-right: 5em;
 }
 

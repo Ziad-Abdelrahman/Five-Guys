@@ -253,8 +253,8 @@ function SignUp() {
               </div>
             </div>
           </div>
-          <div className="footer">
-            <div className="footerButtons-container">
+          <div className="footerSignUp">
+            <div className="footerButtons-containerSignUp">
               <Button
                 text={"Next"}
                 handleClick={() => {
