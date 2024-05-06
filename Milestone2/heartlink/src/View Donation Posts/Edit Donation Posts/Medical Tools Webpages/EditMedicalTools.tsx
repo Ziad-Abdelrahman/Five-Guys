@@ -1,10 +1,11 @@
-import "../../Donation Posts/createPost/createPost.css";
-import Template1 from "../../components/Templates/Template1.tsx";
+import "../../../Donation Posts/createPost/createPost.css";
 import { useState } from "react";
 import EditMedicalSupplies from "../Edit Medical Supplies/EditMedicalSupplies.tsx";
-import EditDropDown from "../../components/DropDown/EditDropDown.tsx";
+import Template1 from "../../../components/Templates/Template1.tsx";
+import EditDropDown from "../../../components/DropDown/EditDropDown.tsx";
 
 interface EditMedicalToolsProps {
+  id: string;
   category: string;
   value: string;
   quantity: string;
@@ -72,6 +73,9 @@ function EditMedicalTools(props: EditMedicalToolsProps) {
         </EditMedicalSupplies>
       }
       rightPanelButtonText={"Next"}
+      hasButton={true}
+      forwardPath={"../cont/" + props.id}
+      backButtonPath={"../../ViewPosts"}
     />
   );
 }

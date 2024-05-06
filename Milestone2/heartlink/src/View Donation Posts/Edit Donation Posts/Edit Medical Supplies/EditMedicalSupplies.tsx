@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
-import EditInputBox from "../../components/InputBox/EditInputBox.tsx";
-import EditNumberInputBox from "../../components/InputBox/EditNumberInputBox.tsx";
-import InputBox from "../../components/InputBox/InputBox.tsx";
+import InputBox from "../../../components/InputBox/InputBox.tsx";
+import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
+import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 
 interface medicalSuppliesProps {
   children: ReactNode;
@@ -42,7 +42,6 @@ function EditMedicalSupplies({
             type={"text"}
             label={FirstLetterUpper + " name"}
             width={"280px"}
-            value={""}
             disabled={true}
           />
         ) : (

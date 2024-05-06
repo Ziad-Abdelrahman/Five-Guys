@@ -1,8 +1,9 @@
-import "../../Donation Posts/createPost/createPost.css";
-import Template1 from "../../components/Templates/Template1.tsx";
+import "../../../Donation Posts/createPost/createPost.css";
 import EditMedicalSuppliesPt2 from "../Edit Medical Supplies/EditMedicalSuppliesPt2.tsx";
+import Template1 from "../../../components/Templates/Template1.tsx";
 
 interface EditMedicalToolsPt2Props {
+  id: string;
   use: string;
 }
 
@@ -20,6 +21,8 @@ function EditMedicalToolsPt2({ use }: EditMedicalToolsPt2Props) {
       }
       rightPanelButtonText={"Update"}
       hasButton={true}
+      forwardPath={"../../ViewPosts"}
+      backButtonPath={"../" + id}
     />
   );
 }

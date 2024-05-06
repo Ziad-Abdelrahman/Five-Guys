@@ -1,4 +1,4 @@
-import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
+import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
 
 interface medicalSuppliesProps {
   header: string;

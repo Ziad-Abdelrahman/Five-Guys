@@ -1,9 +1,11 @@
-import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
-import EditInputBox from "../../components/InputBox/EditInputBox.tsx";
 import { useState } from "react";
-import EditNumberInputBox from "../../components/InputBox/EditNumberInputBox.tsx";
+import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
+import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
+import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
+import Template1 from "../../../components/Templates/Template1.tsx";
 
 interface EditMedicationPt2Props {
+  id: string;
   medName: string;
   quantity: string;
 }
