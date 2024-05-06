@@ -39,6 +39,8 @@ function Books() {
       }
       rightPanelButtonText={"Next"}
       hasButton={true}
+      forwardPath="../2"
+      backButtonPath="../../"
     />
   );
 }

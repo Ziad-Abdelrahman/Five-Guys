@@ -37,6 +37,8 @@ function BloodDonation() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath="/"
+      backButtonPath="../"
     />
   );
 }

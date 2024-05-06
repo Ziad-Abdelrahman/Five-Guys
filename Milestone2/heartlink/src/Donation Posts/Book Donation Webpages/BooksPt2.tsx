@@ -49,6 +49,8 @@ function BooksPt2() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath={"/"}
+      backButtonPath={"../1"}
     />
   );
 }

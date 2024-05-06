@@ -7,7 +7,7 @@ function Clothes() {
       leftPanelDiv={
         <div className="leftText">
           <p /> 1 of 2<h2> Creating your post!</h2>
-          <p> Few steps left.. </p>
+          <p> Almost Done.. </p>
         </div>
       }
       rightPanelDiv={
@@ -23,7 +23,7 @@ function Clothes() {
               width={"280px"}
             />
             <p />
-            <form className="radioButtons" method="get">
+            <form className="radioButtons-form" method="get">
               <RadioButton text={"Male"} />
               <RadioButton text={"Female"} />
             </form>
@@ -100,6 +100,8 @@ function Clothes() {
       }
       rightPanelButtonText={"Next"}
       hasButton={true}
+      forwardPath={"../2"}
+      backButtonPath={"../../"}
     />
   );
 }

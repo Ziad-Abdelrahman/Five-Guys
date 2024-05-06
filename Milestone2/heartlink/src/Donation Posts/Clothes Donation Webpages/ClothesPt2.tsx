@@ -7,7 +7,7 @@ function ClothesPt2() {
       leftPanelDiv={
         <div className="leftText">
           <p /> 2 of 2<h2> Creating your post!</h2>
-          <p> Almost Done.. </p>
+          <p> One last step.. </p>
         </div>
       }
       rightPanelDiv={
@@ -30,6 +30,8 @@ function ClothesPt2() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath={"/"}
+      backButtonPath={"../1"}
     />
   );
 }
