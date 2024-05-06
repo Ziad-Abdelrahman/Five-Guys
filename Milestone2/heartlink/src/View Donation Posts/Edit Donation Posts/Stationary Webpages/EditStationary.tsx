@@ -1,7 +1,8 @@
 import { useState } from "react";
-import hashSet from "../../hashSet";
-import EditDropDown from "../../components/DropDown/EditDropDown.tsx";
-import EditNumberInputBox from "../../components/InputBox/EditNumberInputBox.tsx";
+import hashSet from "../../../hashSet";
+import EditDropDown from "../../../components/DropDown/EditDropDown.tsx";
+import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
+import Template1 from "../../../components/Templates/Template1.tsx";
 
 interface StationaryProps {
   category: string;

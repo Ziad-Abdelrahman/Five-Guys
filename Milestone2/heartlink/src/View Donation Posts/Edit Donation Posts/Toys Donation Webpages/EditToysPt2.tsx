@@ -1,7 +1,8 @@
-import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
-import EditInputBox from "../../components/InputBox/EditInputBox.tsx";
-import EditNumberInputBox from "../../components/InputBox/EditNumberInputBox.tsx";
 import { useState } from "react";
+import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
+import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
+import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
+import Template1 from "../../../components/Templates/Template1.tsx";
 
 interface ToysPt2Props {
   toyName: string;
