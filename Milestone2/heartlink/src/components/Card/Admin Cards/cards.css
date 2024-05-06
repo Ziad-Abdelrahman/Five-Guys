@@ -17,7 +17,6 @@
 }
 .card:hover {
     box-shadow: 0 0 15px rgba(1, 169, 93, 0.4);
-    cursor: pointer;
 }
 
 .card .logo{
@@ -66,3 +65,43 @@
 
 .admin-registered-organizations-logo-container
 
+.upload-icon-admin-card{
+    height: 100%;
+    display: flex;
+    padding: 1.5% 2% 0 0 ;
+    justify-content: start;
+    cursor: pointer;
+}
+.approve-reject-buttons-div{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+}
+.three-buttons-holder{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.learnmorejholder{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 25%;
+}
+.learnmorejholder button{
+    margin: 0;
+    display: inline-flex;
+    font-Size: 1em;
+    font-Weight: bold;
+    background-Color: transparent;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition-duration: 0.8s;
+    transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    width: 125px;
+    height: 39px;
+}

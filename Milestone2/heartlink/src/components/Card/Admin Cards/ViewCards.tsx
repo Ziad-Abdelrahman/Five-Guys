@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import AcceptRejectButton from "../../Buttons/AcceptRejectButton.tsx";
 import "./cards.css";
+import DeleteButton from "../../Buttons/DeleteButton.tsx";
 
 interface ViewCardsProps {
   image: string;
   img_alt: string;
   title: string;
   text: string;
+  height?: string;
 }
 
 const ViewCards: React.FC<ViewCardsProps> = (props) => {
@@ -19,7 +21,7 @@ const ViewCards: React.FC<ViewCardsProps> = (props) => {
   };
 
   return isVisible ? (
-    <div className="card">
+    <div className="card" style={{ height: props.height }}>
       <div className={"admin-registered-organizations-logo-container"}>
         <img className="logo" src={props.image} alt={props.img_alt} />
       </div>
@@ -27,8 +29,9 @@ const ViewCards: React.FC<ViewCardsProps> = (props) => {
         <h4 className="title">{props.title}</h4>
         <p className="text">{props.text}</p>
       </div>
-      <div className="delete" onClick={handleDeleteClick}>
-        <AcceptRejectButton text="Delete" />
+      <AcceptRejectButton text={"View Info"} />
+      <div className="delete">
+        <DeleteButton onClick={handleDeleteClick} />
       </div>
     </div>
   ) : null;

@@ -4,6 +4,7 @@ import arrow from "../../assets/right-arrow.png";
 interface ViewButtonProps {
   buttonID?: string;
   handleClick?: (id: string) => void;
+  buttonStyle?: React.CSSProperties;
 }
 
 function ViewButton(props: ViewButtonProps) {
@@ -11,6 +12,7 @@ function ViewButton(props: ViewButtonProps) {
     <button
       id={props.buttonID}
       className="view-button"
+      style={props.buttonStyle}
       onClick={(e) =>
         props.handleClick && props.handleClick(e.currentTarget.id)
       }

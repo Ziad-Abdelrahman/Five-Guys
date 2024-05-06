@@ -9,12 +9,12 @@ import Org6 from "../../assets/Turin.jpg";
 import Org7 from "../../assets/MagdyYakoub.png";
 import Org8 from "../../assets/Redcrescent.png";
 import Org9 from "../../assets/EgyptianFoodBank.png";
-import "./organizations.css";
+import "./DeleteOrganizations.css";
 import "../../components/Search/searchbar.css";
 import Headerofsection from "../../components/Header/HeaderOfSection.tsx";
 import Search from "../../components/Search/Search.tsx";
 
-const Organizations = () => {
+const DeleteOrganizations = () => {
   const cardData = [
     {
       id: "1",
@@ -112,6 +112,7 @@ const Organizations = () => {
               img_alt={cardData.img_alt}
               title={cardData.title}
               text={cardData.text}
+              height={"400px"}
             />
           ))}
       </div>
@@ -119,4 +120,4 @@ const Organizations = () => {
   );
 };
 
-export default Organizations;
+export default DeleteOrganizations;
