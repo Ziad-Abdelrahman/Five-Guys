@@ -5,8 +5,8 @@ import Org3 from '../../assets/Misrelkheir.jpeg';
 import Org4 from '../../assets/Orman.png';
 import Org5 from '../../assets/Resala.png';
 import '../AdminStyles.css';
-import ViewOrganizationPanel from '../../components/cards/ViewOrganizationPanel';
-import Headerofsection from '../../components/header/headerofsection';
+import ViewOrganizationPanel from '../../components/Card/Admin Cards/ViewOrganizationPanel';
+import Headerofsection from "../../components/Header/HeaderOfSection";
 import Search from '../../components/Search/Search';
 
 const ViewOrganization = () => {

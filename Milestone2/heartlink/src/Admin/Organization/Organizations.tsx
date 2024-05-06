@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import AccountCard from '../../components/cards/AccountCards';
+import AccountCard from '../../components/Card/Admin Cards/AccountCards';
 import Org1 from "../../assets/57357.jpeg";
 import Org2 from '../../assets/EgyptianFoodBank.png';
 import Org3 from '../../assets/Misrelkheir.jpeg';
 import Org4 from '../../assets/Orman.png';
 import Org5 from '../../assets/Resala.png';
 import '../AdminStyles.css';
-import Headerofsection from '../../components/header/headerofsection';
+import Headerofsection from "../../components/Header/HeaderOfSection";
 import Search from '../../components/Search/Search';
 
 const Organizations = () => {

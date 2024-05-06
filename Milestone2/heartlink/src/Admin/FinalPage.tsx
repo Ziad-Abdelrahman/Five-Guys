@@ -31,7 +31,6 @@ function FinalPage() {
         <Route path ="/Donors" element={<Donors/>}/>
         <Route path ="/Organizations" element={<Organizations/>}/>
         <Route path ="/ChangePass" element={<ChangePass/>}/>
-        <Route path ="/login" element={""}/>
 
 
 

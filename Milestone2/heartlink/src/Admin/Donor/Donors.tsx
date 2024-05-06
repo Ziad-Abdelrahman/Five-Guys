@@ -1,8 +1,8 @@
 import Pic from "../../assets/profilepic.jpg" 
 import { useState } from 'react';
-import ViewCards from '../../components/cards/AccountCards';
+import ViewCards from '../../components/Card/Admin Cards/AccountCards';
 import '../AdminStyles.css';
-import Headerofsection from "../../components/header/headerofsection";
+import Headerofsection from "../../components/Header/HeaderOfSection";
 import Search from "../../components/Search/Search";
 
 

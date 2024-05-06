@@ -1,6 +1,6 @@
 import Pic from "../../assets/profilepic.jpg";
-import AcceptRejectCard from "../../components/cards/AcceptRejectCard";
-import Headerofsection from "../../components/header/headerofsection";
+import AcceptRejectCard from "../../components/Card/Admin Cards/AcceptRejectCard";
+import Headerofsection from "../../components/Header/HeaderOfSection";
 import '../AdminStyles.css';
 
 const DonorRequests = () => {

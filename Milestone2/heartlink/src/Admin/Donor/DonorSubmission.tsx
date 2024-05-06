@@ -1,7 +1,7 @@
 import Pic from "../../assets/profilepic.jpg";
 import '../AdminStyles.css';
-import DonorCardPanel from "../../components/cards/DonorCardPanel";
-import Headerofsection from "../../components/header/headerofsection";
+import DonorCardPanel from "../../components/Card/Admin Cards/DonorCardPanel";
+import Headerofsection from "../../components/Header/HeaderOfSection";
 
 const DonorSubmission = () => {
   const cardData = [

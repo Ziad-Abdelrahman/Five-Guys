@@ -3,9 +3,9 @@ import Org2 from "../../assets/MagdyYakoub.png"
 import Org3 from "../../assets/baheya.png"
 import Org4 from "../../assets/Turin.jpg"
 import Org5 from "../../assets/Redcrescent.png"
-import AcceptRejectCard from '../../components/cards/AcceptRejectCard'
+import AcceptRejectCard from '../../components/Card/Admin Cards/AcceptRejectCard'
 import '../AdminStyles.css';
-import Headerofsection from '../../components/header/headerofsection';
+import Headerofsection from "../../components/Header/HeaderOfSection";
 
 
 const OrganizationRequests = () => {
