@@ -31,7 +31,7 @@ const DonorRequests = () => {
           img_alt={cardData.img_alt}
           title={cardData.title}
           text={cardData.text}
-          width={300}
+          width={1000}
           height={350}
           />
 

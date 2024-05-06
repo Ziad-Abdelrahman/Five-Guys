@@ -30,8 +30,10 @@ function AcceptRejectCard({image, img_alt, title, text, height, width }: AcceptR
     isVisible ? (
       <div className='card' style={cardStyle}>
       <img className='logo' src={image} alt={img_alt} />
+      <div className='text-container'>
       <h2 className='title'>{title}</h2>
       <p className='text'>{text}</p>
+      </div>
       <div className='buttonContainer'>
       <div className='accept' onClick={handleDeleteClick2}>
         <AdminButton text='Accept'/>

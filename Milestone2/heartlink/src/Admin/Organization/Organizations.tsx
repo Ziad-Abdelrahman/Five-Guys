@@ -46,8 +46,8 @@ const Organizations = () => {
             img_alt={cardData.img_alt}
             title={cardData.title}
             text={cardData.text}
-            width={250}
-            height={380}
+            width={1000}
+          height={350}
           />
         ))}
       </div>
