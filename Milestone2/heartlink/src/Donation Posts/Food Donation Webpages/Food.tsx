@@ -89,6 +89,8 @@ function Food() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath={"/"}
+      backButtonPath={"../"}
     />
   );
 }

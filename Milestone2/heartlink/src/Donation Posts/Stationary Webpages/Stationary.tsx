@@ -118,6 +118,8 @@ function Stationary() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath={"/"}
+      backButtonPath={"../"}
     />
   );
 }
