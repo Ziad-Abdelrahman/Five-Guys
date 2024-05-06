@@ -52,7 +52,7 @@
   align-items: center;
 }
 
-.card .logo-container{
+.card .admin-registered-organizations-logo-container{
     display: flex;
     align-items: center;
     width: 208px;
@@ -64,4 +64,5 @@
     height: 155px;
 }
 
+.admin-registered-organizations-logo-container
 

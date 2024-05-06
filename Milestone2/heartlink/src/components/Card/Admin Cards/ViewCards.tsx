@@ -20,7 +20,7 @@ const ViewCards: React.FC<ViewCardsProps> = (props) => {
 
   return isVisible ? (
     <div className="card">
-      <div className={"logo-container"}>
+      <div className={"admin-registered-organizations-logo-container"}>
         <img className="logo" src={props.image} alt={props.img_alt} />
       </div>
       <div className="view-cards-text-container">
