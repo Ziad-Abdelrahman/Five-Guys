@@ -5,6 +5,7 @@ interface AcceptRejectButton {
   color?: string;
   height?: string;
   width?: string;
+  onClick?: () => void;
 }
 function AcceptRejectButton(props: AcceptRejectButton) {
   return (
@@ -15,6 +16,7 @@ function AcceptRejectButton(props: AcceptRejectButton) {
         height: props.height,
         width: props.width,
       }}
+      onClick={props.onClick}
     >
       {props.text}
     </button>

@@ -4,6 +4,9 @@ import AcceptRejectButton from "../../Buttons/AcceptRejectButton.tsx";
 import DeleteButton from "../../Buttons/DeleteButton.tsx";
 import { FiDownload } from "react-icons/fi";
 import "./cards.css";
+import { useState } from "react";
+// @ts-ignore
+import jsPDF from "jspdf";
 
 interface AdminOrgRequestsCardProps {
   trigger?: boolean;
@@ -11,12 +14,28 @@ interface AdminOrgRequestsCardProps {
   image: string;
   text: string;
   name: string;
-  handleClick?: (id: string) => void;
+  handleClick?: () => void;
 }
 
 function AdminOrgRequestsCard(props: AdminOrgRequestsCardProps) {
-  const shouldRender = props.trigger !== undefined ? props.trigger : true;
-  return shouldRender ? (
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+    doc.text("Organization Info: ", 80, 10);
+    doc.save("Organization_Submission.pdf");
+  };
+  const handleDeleteClick1 = () => {
+    if (window.confirm("Are you sure you want to reject this request?")) {
+      setIsVisible(false);
+    }
+  };
+  const handleDeleteClick2 = () => {
+    if (window.confirm("Are you sure you want to accept this request?")) {
+      setIsVisible(false);
+    }
+  };
+  return isVisible ? (
     <RequestCard style={{ height: "220px" }}>
       <>
         <img
@@ -31,11 +50,15 @@ function AdminOrgRequestsCard(props: AdminOrgRequestsCardProps) {
         </div>
         <div className="three-buttons-holder">
           <div className="approve-reject-buttons-div">
-            <AcceptRejectButton text="Approve" width={"125px"} />
+            <AcceptRejectButton
+              text="Approve"
+              width={"125px"}
+              onClick={handleDeleteClick2}
+            />
             <DeleteButton
               text="Reject"
               width={"125px"}
-              onClick={() => console.log("Complete code here")}
+              onClick={handleDeleteClick1}
             />
           </div>
           <div className="learnmorejholder">
@@ -46,7 +69,7 @@ function AdminOrgRequestsCard(props: AdminOrgRequestsCardProps) {
           </div>
         </div>
         <div className="upload-icon-admin-card">
-          <FiDownload size={"30px"} />
+          <FiDownload size={"30px"} onClick={handleDownloadPDF} />
         </div>
       </>
     </RequestCard>

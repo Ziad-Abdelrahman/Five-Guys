@@ -13,6 +13,7 @@ import "./DeleteOrganizations.css";
 import "../../components/Search/searchbar.css";
 import Headerofsection from "../../components/Header/HeaderOfSection.tsx";
 import Search from "../../components/Search/Search.tsx";
+import OrganizationFilter from "../../components/DonorFilterCard/OrganizationFilter.tsx";
 
 const DeleteOrganizations = () => {
   const cardData = [
@@ -83,6 +84,9 @@ const DeleteOrganizations = () => {
   ];
 
   const [search, setSearch] = useState("");
+  const [type, setType] = useState("");
+  const [city, setCity] = useState("");
+  const [area, setArea] = useState("");
 
   const handleSearch = (written: string) => {
     setSearch(written);
@@ -101,7 +105,11 @@ const DeleteOrganizations = () => {
       >
         <Search handleSearch={handleSearch} />
       </Headerofsection>
-
+      <OrganizationFilter
+        handleTyoeFilter={setType}
+        handleGovernmentFilter={setCity}
+        handleAreaFilter={setArea}
+      />
       <div className={"organizations-container"}>
         {cardData
           .filter((cardData) => cardData.title.toLowerCase().includes(search))
