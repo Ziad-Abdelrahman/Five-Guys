@@ -12,19 +12,19 @@ import { useState } from "react";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 function FoodRequests() {
   const detailsList: hashSet = {
-    "1": ["Canned Food", "Beans", "100"],
-    "2": ["Canned Food", "Tomato Paste", "50"],
-    "3": ["Canned Food", "Corn", "200"],
-    "4": ["Fruits", "Apples", "50 KG"],
-    "5": ["Fruits", "Bananas", "100 KG"],
-    "6": ["Vegetables", "Tomatoes", "100 KG"],
-    "7": ["Vegetables", "Potatoes", "100 KG"],
-    "8": ["Fresh Meals", "Koshary", "500"],
-    "9": ["Fresh Meals", "Molokhia", "300"],
-    "10": ["Fresh Meals", "Fattah", "200"],
-    "11": ["Baked Goods", "Bread", "160"],
-    "12": ["Baked Goods", "Croissant", "50"],
-    "13": ["Baked Goods", "Cake", "100"],
+    "24": ["Canned Food", "Beans", "100"],
+    "25": ["Canned Food", "Tomato Paste", "50"],
+    "26": ["Canned Food", "Corn", "200"],
+    "27": ["Fruits", "Apples", "50 KG"],
+    "28": ["Fruits", "Bananas", "100 KG"],
+    "29": ["Vegetables", "Tomatoes", "100 KG"],
+    "30": ["Vegetables", "Potatoes", "100 KG"],
+    "31": ["Fresh Meals", "Koshary", "500"],
+    "32": ["Fresh Meals", "Molokhia", "300"],
+    "33": ["Fresh Meals", "Fattah", "200"],
+    "34": ["Baked Goods", "Bread", "160"],
+    "35": ["Baked Goods", "Croissant", "50"],
+    "36": ["Baked Goods", "Cake", "100"],
   };
   //responsible for filtering the requests
   let [filter, setFilter] = useState("All");
@@ -71,7 +71,7 @@ function FoodRequests() {
       <div className="requests-conainer">
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"1"}
+          buttonID={"24"}
           image={Turin}
           description="Food Donation"
           postedby="57357 Hospital"
@@ -80,7 +80,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"2"}
+          buttonID={"25"}
           image={Turin}
           description="Food Donation"
           postedby="57357 Hospital"
@@ -89,7 +89,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"3"}
+          buttonID={"26"}
           image={FoodBank}
           description="Food Donation"
           postedby="57357 Hospital"
@@ -98,7 +98,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"4"}
+          buttonID={"27"}
           image={Misrelkheir}
           description="Food Donation"
           postedby="57357 Hospital"
@@ -107,7 +107,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"5"}
+          buttonID={"28"}
           image={FoodBank}
           description="Food Donation"
           postedby="57357 Hospital"
@@ -116,7 +116,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"6"}
+          buttonID={"29"}
           image={Misrelkheir}
           description="Food Donation"
           postedby="57357 Hospital"
@@ -125,7 +125,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"7"}
+          buttonID={"30"}
           image={FoodBank}
           description="Food Donation"
           postedby="Egyptian Food Bank"
@@ -134,7 +134,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"8"}
+          buttonID={"31"}
           image={FoodBank}
           description="Food Donation"
           postedby="Egyptian Food Bank"
@@ -143,7 +143,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"9"}
+          buttonID={"32"}
           image={Turin}
           description="Food Donation"
           postedby="Turin"
@@ -152,7 +152,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"10"}
+          buttonID={"33"}
           image={Turin}
           description="Turin"
           postedby="57357 Hospital"
@@ -161,7 +161,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"11"}
+          buttonID={"34"}
           image={Turin}
           description="Food Donation"
           postedby="Turin"
@@ -170,7 +170,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"12"}
+          buttonID={"35"}
           image={Misrelkheir}
           description="Food Donation"
           postedby="MisrElkheir"
@@ -179,7 +179,7 @@ function FoodRequests() {
         />
         <DonationRequestCard
           handleClick={handleLearnMoreClick}
-          buttonID={"13"}
+          buttonID={"36"}
           image={Turin}
           description="Food Donation"
           postedby="Turin"

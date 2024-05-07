@@ -13,18 +13,18 @@ import toy from "../assets/toyexample.png";
 
 function ToysRequests() {
   const detailsList: hashSet = {
-    "1": ["Educational", "6-12", "Male", "Board Games", "50"],
-    "2": ["Interactive", "0-2", "Unisex", "Stuffed Toys", "30"],
-    "3": ["Traditional", "2-6", "Female", "Dolls", "40"],
-    "4": ["Musical", "0-2", "Unisex", "Stuffed Toys", "25"],
-    "5": ["Electronic", "6-12", "Male", "Cars", "20"],
-    "6": ["Interactive", "2-6", "Female", "Outdoor", "35"],
-    "7": ["Educational", "0-2", "Unisex", "Board Games", "15"],
-    "8": ["Musical", "2-6", "Male", "Sports", "22"],
-    "9": ["Traditional", "6-12", "Female", "Board Games", "18"],
-    "10": ["Electronic", "2-6", "Unisex", "Dolls", "12"],
-    "11": ["Interactive", "0-2", "Male", "Cars", "30"],
-    "12": ["Educational", "6-12", "Unisex", "Sports", "24"],
+    "70": ["Educational", "6-12", "Male", "Board Games", "50"],
+    "71": ["Interactive", "0-2", "Unisex", "Stuffed Toys", "30"],
+    "72": ["Traditional", "2-6", "Female", "Dolls", "40"],
+    "73": ["Musical", "0-2", "Unisex", "Stuffed Toys", "25"],
+    "74": ["Electronic", "6-12", "Male", "Cars", "20"],
+    "75": ["Interactive", "2-6", "Female", "Outdoor", "35"],
+    "76": ["Educational", "0-2", "Unisex", "Board Games", "15"],
+    "77": ["Musical", "2-6", "Male", "Sports", "22"],
+    "78": ["Traditional", "6-12", "Female", "Board Games", "18"],
+    "79": ["Electronic", "2-6", "Unisex", "Dolls", "12"],
+    "80": ["Interactive", "0-2", "Male", "Cars", "30"],
+    "81": ["Educational", "6-12", "Unisex", "Sports", "24"],
   };
   const cardData = [
     {

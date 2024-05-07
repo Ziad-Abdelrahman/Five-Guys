@@ -1,6 +1,8 @@
 import RequestCard from "./RequestCard.tsx";
 import ViewButton from "../Buttons/ViewButton.tsx";
 import DonateButton from "../Buttons/DonateButton.tsx";
+import React from "react";
+import { Link } from "react-router-dom";
 
 interface DonationRequestPopUpProps {
   trigger?: boolean;
@@ -37,7 +39,11 @@ function DonationRequestCard(props: DonationRequestPopUpProps) {
             buttonID={props.buttonID}
             handleClick={props.handleClick}
           />
-          {showDonateButton && <DonateButton text={props.donateButtonText} />}
+          {showDonateButton && (
+            <Link to={"../Quantity/" + props.buttonID}>
+              <DonateButton text={props.donateButtonText} />{" "}
+            </Link>
+          )}
         </div>
       </>
     </RequestCard>
