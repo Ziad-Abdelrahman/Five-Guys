@@ -32,14 +32,26 @@ import {
   AllDataLoader,
 } from "./View Donation Posts/ViewDonationPostsWebpage.tsx";
 import EditorPt2 from "./View Donation Posts/Edit Donation Posts/EditorPt2.tsx";
-import OrgNavgBar from "./components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
+import ClothesRequests from "./Donation Requests Page/ClothesRequests.tsx";
+import {
+  RequestLoader,
+  RequestQuantity,
+} from "./Donation Requests Page/Data_Extractor/RequestQuantity.tsx";
+import MedicalRequests from "./Donation Requests Page/MedicalRequests.tsx";
+import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index element={<Welcome />} />
       <Route path="Signup" element={<SignUp />} />
       <Route path="Donor">
-        {/* <Route path="Dashboard" element={<DonorDashboard />} />*/}
+        <Route
+          path="Quantity/:id"
+          element={<RequestQuantity />}
+          loader={RequestLoader}
+        />
+        <Route path={"ClothesDonation"} element={<ClothesRequests />} />
+        <Route path={"MedicalRequests"} element={<MedicalRequests />} />
       </Route>
       {/* <Route path="Dashboard" element={<RecipientDashboard />} />*/}
       <Route path="Organization">
@@ -87,8 +99,8 @@ const router = createBrowserRouter(
             <Route path="2" element={<MedicalToolsPt2 />} />
           </Route>
         </Route>
-        {/* <Route path="Dashboard" element={<OrganizationDashboard />} />*/}
       </Route>
+      <Route path={"test"} element={<DeleteOrganizations />} />
     </Route>,
   ),
 );
