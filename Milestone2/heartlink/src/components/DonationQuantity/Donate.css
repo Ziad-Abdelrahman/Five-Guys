@@ -1,4 +1,4 @@
-body {
+.beige-color-body {
     background-color: #FAF8F6; /* Replace with any color you prefer */
     margin: 0; /* Ensure there are no default margins */
     height: 100vh; /* Ensures the background covers the entire visible part of the webpage */
@@ -95,7 +95,7 @@ margin-top: 50px;
     color: #01A95D; /* A different color for the percentage */
     margin-left: 8px; /* Space between number and percentage */
 }
-img{
+.delivey-guy-img{
     width: 50%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Cover the frame without distorting the image */

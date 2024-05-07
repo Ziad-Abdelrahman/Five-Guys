@@ -6,6 +6,7 @@ interface DonationQuantityProps {
   maxValue?: number;
   type?: String;
   description?: String;
+  id?: string;
 }
 
 function DonationParent(props: DonationQuantityProps) {
@@ -27,35 +28,41 @@ function DonationParent(props: DonationQuantityProps) {
   const percentage = getPercentage();
 
   return (
-    <div className="range-container">
-      <div className="header">
-        <h1>{props.type}</h1>
-        <p> {props.description}</p>
-        <img src={DonationPic} alt="Donation box" />
-      </div>
+    <div className="beige-color-body">
+      <div className="range-container">
+        <div className="header">
+          <h1>{props.type}</h1>
+          <p> {props.description}</p>
+          <img
+            className={"delivey-guy-img"}
+            src={DonationPic}
+            alt="Donation box"
+          />
+        </div>
 
-      <div className="scroller-container">
-        <label htmlFor="customRange1" className="form-label">
-          Specify The Quantity
-        </label>
-        <input
-          type="range"
-          className="form-range"
-          id="customRange1"
-          value={rangeValue}
-          onChange={handleRangeChange}
-          min={minValue} // Set minimum range value
-          max={maxValue} // Set maximum range value
-        />
-        <div className="value-display">
-          <p>{rangeValue}</p>
-          <p>({percentage.toFixed(0)}%)</p>
-        </div>{" "}
-        {/* Display the current value and percentage in a box */}{" "}
-        {/* Display the current value in a box */}
-      </div>
-      <div className="button-container">
-        <DonateButton text={"Next"} />
+        <div className="scroller-container">
+          <label htmlFor="customRange1" className="form-label">
+            Specify The Quantity
+          </label>
+          <input
+            type="range"
+            className="form-range"
+            id="customRange1"
+            value={rangeValue}
+            onChange={handleRangeChange}
+            min={minValue} // Set minimum range value
+            max={maxValue} // Set maximum range value
+          />
+          <div className="value-display">
+            <p>{rangeValue}</p>
+            <p>({percentage.toFixed(0)}%)</p>
+          </div>{" "}
+          {/* Display the current value and percentage in a box */}{" "}
+          {/* Display the current value in a box */}
+        </div>
+        <div className="button-container">
+          <DonateButton text={"Next"} />
+        </div>
       </div>
     </div>
   );
