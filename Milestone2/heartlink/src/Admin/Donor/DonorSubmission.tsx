@@ -92,7 +92,7 @@ const DonorSubmission = () => {
           address={card.address}
           area={card.area}
           Governorate={card.Governorate}
-          width={1000}
+          width={300}
           height={350}
           />
 

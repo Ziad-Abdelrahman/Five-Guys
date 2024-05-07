@@ -93,8 +93,8 @@ const ViewOrganization = () => {
             img_alt={cardData.img_alt}
             title={cardData.title}
             text={cardData.text}
-            width={1000}
-            height={350}
+            width={250}
+            height={380} 
             phoneNumber={cardData.phoneNumber} 
             address={cardData.address} 
             email={cardData.email}          

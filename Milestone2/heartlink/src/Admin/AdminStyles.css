@@ -4,14 +4,23 @@
     justify-content: center;
     align-items: flex-start;
   }
-  .cards {
+  .pageTitle {
+    color: #01A95D;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .searchIcon{
+    color: #01A95D;
+    width: 40px;
+    height: auto;
+  }
+  .cards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     margin-top: 30px;
     margin-bottom: 200px;
-    flex-direction: column; /* Display cards in a column */
   }
   .dashboard {
     display: flex;

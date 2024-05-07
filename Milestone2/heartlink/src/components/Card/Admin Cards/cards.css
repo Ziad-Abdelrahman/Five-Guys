@@ -1,52 +1,70 @@
-  
-.card {
+
+.card{
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out;
+    width: 600px;
+    height:auto;
     display: flex;
-    align-items: center; /* Centers the items vertically */
-    margin: 10px; /* Adds some margin around the container */
-    border-radius: 10px;
-    width: 50%;
-    height: 17vh;
-    background-color: #f8f8f8;
-    height: "500px";
-    width: "1000px";
-    padding: "20px";
-    align-items: normal;
-    flex-direction: "column";
-    width: "100%";
-    justify-content: "space-between";
-    padding: 20px;
+    text-align: center;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    display: block;
+}
+.card:hover {
+    box-shadow: 0 0 15px rgba(1, 169, 93, 0.4);
+    cursor: pointer;
+}
+.card:active {
+    transform: translateY(2px); 
+    box-shadow: 0 0 10px rgba(1, 169, 93, 0.4);
 }
 
+.card .logo{
+   width: 60%;
+   height: auto;
+   border-radius: 50%;
+   display: block;
+   margin: 0 auto;
+
+}
+.card .title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    color: #2F9A6A;
+    font-weight: bold;
+}
+.card .text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #2F9A6A;
+    margin: 10px 0;
+
+}
+
+.button{
+    align-items: center;
+    height: 20%;
+
+
+}
+.card.accept,
+.card.reject,
+.card.delete{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteContainer {
+    margin-top: auto; /* Move delete button to the bottom */
+}
   
-.card .logo {
-    width: 15%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the frame without distorting the image */
-    border-radius: 8px; /* Rounds the corners of the image */
-    margin-right: 20px; /* Adds space between the image and the text */
-    margin-left: 15px;
-  }
 
-.button-container {
-    display: flex;
-    margin-right: 20px;
-    flex-direction: column; /* Stacks items vertically */  
-}
-  
 
-.text-container {
-    display: flex;
-    flex-direction: column;
-    width: 60%; /* Takes remaining space */
-    padding-top: 0;  /* Remove padding at the top */
-    padding-bottom: 0;  /* Remove padding at the bottom */
-}
 
-.text-container h2, .text-container p {
-    margin-top: 5px;  /* Reduced margin-top for a tighter layout */
-    margin-bottom: 5px;  /* Reduced margin-bottom to bring elements closer */
-}
 
-  
