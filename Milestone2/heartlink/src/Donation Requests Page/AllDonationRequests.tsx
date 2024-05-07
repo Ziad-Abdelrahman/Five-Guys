@@ -18,14 +18,14 @@ import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 
 function AllDonationRequests() {
   const detailsList: hashSet = {
-    "1": [
+    "14": [
       "Category: Stationary",
       "Type: Writing Tools",
       "Item: Pens",
       "Quantity: 100",
     ],
-    "2": ["Category: Canned Food", "Item: Beans", "Quantity: 100"],
-    "3": [
+    "15": ["Category: Canned Food", "Item: Beans", "Quantity: 100"],
+    "16": [
       "Category: Swimwear",
       "Type: SwimSuit",
       "Gender: Male",
@@ -33,16 +33,16 @@ function AllDonationRequests() {
       "Material: Cotton",
       "Quantity: 100",
     ],
-    "4": ["Category: Medical Equipment", "Item: Syringes", "Quantity: 1000"],
-    "5": [
+    "17": ["Category: Medical Equipment", "Item: Syringes", "Quantity: 1000"],
+    "18": [
       "Category: Educational",
       "Age Group: 6-12",
       "Gender: Male",
       "Item: Board Games",
       "Quantity: 50",
     ],
-    "6": ["Category: Vegetables", "Item: Tomatoes", "Quantity: 100 KG"],
-    "7": [
+    "19": ["Category: Vegetables", "Item: Tomatoes", "Quantity: 100 KG"],
+    "20": [
       "Category: Clothing",
       "Type: Coat",
       "Gender: Kids",
@@ -50,13 +50,13 @@ function AllDonationRequests() {
       "Material: Cotton",
       "Quantity: 10",
     ],
-    "8": [
+    "21": [
       "Category: Charity Organization",
-      "Organization: 57357",
+      "Organization: Red Crescent",
       "Location: Cairo, Maadi",
     ],
-    "9": ["Category: Medical Equipment", "Item: Masks", "Quantity: 1000"],
-    "10": [
+    "22": ["Category: Medical Equipment", "Item: Masks", "Quantity: 1000"],
+    "23": [
       "Category: Clothing",
       "Type: Dress",
       "Gender: Infants",
@@ -67,70 +67,70 @@ function AllDonationRequests() {
   };
   const viewData = [
     {
-      id: "1",
+      id: "14",
       image: ResalaLogo,
       description: "School Supplies",
       postedby: "Resala Charity Foundation",
       postdate: "25/ 4/2024",
     },
     {
-      id: "2",
+      id: "15",
       image: FoodBank,
       description: "Food Supplies",
       postedby: "Food Bank",
       postdate: "20/3/2023",
     },
     {
-      id: "3",
+      id: "16",
       image: Misrelkheir,
       description: "Clothes",
       postedby: "Misr El Kheir",
       postdate: "29/3/2024",
     },
     {
-      id: "4",
+      id: "17",
       image: RedCresent,
       description: "Medicine Supplies",
       postedby: "Red Cresent",
       postdate: "20/3/2024",
     },
     {
-      id: "5",
+      id: "18",
       image: ChildrenCancer,
       description: "Toys ",
       postedby: "57357",
       postdate: "20/4/2024",
     },
     {
-      id: "6",
+      id: "19",
       image: Orman,
       description: "Food Supplies",
       postedby: "EL Orman",
       postdate: "27/3/2024",
     },
     {
-      id: "7",
+      id: "20",
       image: Turin,
       description: "Clothes",
       postedby: "Turin Organization",
       postdate: "27/3/2024",
     },
     {
-      id: "8",
+      id: "21",
       image: RedCresent,
       description: "Blood Donation",
       postedby: "Red Cresent",
       postdate: "29/3/2024",
     },
     {
-      id: "9",
+      id: "22",
       image: MagdyYakoub,
       description: "Medical Supplies",
       postedby: "Magdy Yakoub Heart Foundation",
       postdate: "29/3/2024",
     },
     {
-      id: "10",
+      id: "23",
       image: ClothingBank,
       description: "Clothes Donation",
       postedby: "Egyptain Clothing Bank",
