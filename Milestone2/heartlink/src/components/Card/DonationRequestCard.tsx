@@ -11,7 +11,7 @@ interface DonationRequestPopUpProps {
   postdate?: string;
   handleClick?: (id: string) => void;
   showDonateButton?: boolean;
-  donateButtonText?: String; // Optional prop to control the visibility of the Donate button
+  donateButtonText?: string; // Optional prop to control the visibility of the Donate button
 }
 
 function DonationRequestCard(props: DonationRequestPopUpProps) {
