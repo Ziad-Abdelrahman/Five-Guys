@@ -136,7 +136,7 @@ button:focus {
     margin: 5px;
 }
 
-.change-button:hover {
+.delete-button:hover {
     background-color: red;
     color: white;
 }
