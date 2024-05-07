@@ -43,6 +43,11 @@ button:focus {
     font-size: 16px;
     margin: 10px;
 }
+.loginButton:hover {
+    background-color: #018448;
+}
+
+
 .accept, .reject{
     height: 30px;
     border-radius: 15px;
@@ -50,6 +55,9 @@ button:focus {
     margin: 5px;
 }
 
+.accept:hover{
+    background-color: #018448;
+}
 
 .signupButton{
     font-Size: 15px;
@@ -128,7 +136,7 @@ button:focus {
     margin: 5px;
 }
 
-.delete-button:hover {
+.change-button:hover {
     background-color: red;
     color: white;
 }
