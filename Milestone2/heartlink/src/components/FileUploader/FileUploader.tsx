@@ -1,6 +1,6 @@
 import React, { LegacyRef, useRef, useState } from "react";
 import "./ImageUploader.css";
-import iconImg from "../../assets/uploadiconBG.png";
+import iconImg from "../../assets/uploadiconNoBG.png";
 import bin from "../../assets/bin.svg";
 
 interface imageUploaderProps {
@@ -59,7 +59,14 @@ function ImageUploader({
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
-        <button className="file-btn" style={{ width: width, height: height }}>
+        <button
+          className="file-btn"
+          style={{
+            backgroundColor: "transparent",
+            width: width,
+            height: height,
+          }}
+        >
           <>
             {" "}
             <img src={iconImg} alt="iconImage" style={{ width: "40px" }} />
