@@ -1,0 +1,89 @@
+.Personal-Info-card{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10em;
+    width: 23%;
+    height: 70vh;
+    background-color: #FAFAFA;
+    border-radius: 30px;
+    margin-top: 0.5%;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.image-in-personalinfo-card {
+    width: 100%;
+    height: 35%;
+    overflow: hidden;
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+    border-radius: 30px;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-in-personal-info-card{
+    margin-left: 7%;
+    width: 80%;
+    margin-top: 9%;
+    display: flex;
+    flex-direction: column;
+}
+.text-in-personal-info-card{
+    margin-left: 7%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-header{
+    margin-left: 3%;
+}
+.info-header h5 {
+    margin-bottom: 20px; /* Adds space below each h5 */
+}
+
+.info-header h5:last-child {
+    margin-bottom: 0; /* Removes bottom margin from the last h5 to avoid extra space */
+}
+
+.my-profile-info p{
+    margin-bottom: 20px;
+}
+.my-profile-info{
+    text-align: center;
+}
+
+.probono-registeration-card {
+    background-color: #FAFAFA;
+    border-radius: 30px;
+    margin-top:0.5%;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 25vh;
+    margin-left: 3%;
+    margin-top: 2.5%;
+}
+
+.arrow-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#probono-image-container img{
+    width: 55%;
+    object-fit: cover;
+
+}
+#probono-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
