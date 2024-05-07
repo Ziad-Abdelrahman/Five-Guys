@@ -1,0 +1,47 @@
+.notifications-dropdown{
+    position: fixed;
+    top: 10%;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+
+.notification-container {
+    padding: 10px;
+    border-bottom: 0px solid #ccc;
+    border-radius: 10px; /* Add border radius to all notification containers */
+    display: flex;
+    margin-top: 7px;
+     
+  }
+  
+  .notification-container:last-child {
+    border-bottom:  0px solid #ccc;
+  }
+
+.envelope-icon {
+    font-size: 22px;
+    margin-right: 4px;
+}
+
+.org-notifications-dropdown {
+    position: absolute;
+    margin-top: 5px;
+    min-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    list-style-type: "none";
+    padding: 10px;
+    right: 90px;
+    z-index: 1000;
+}
+
+.org-notification-container-inside-dropdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Ensures vertical centering */
+    height:40%;
+}
+

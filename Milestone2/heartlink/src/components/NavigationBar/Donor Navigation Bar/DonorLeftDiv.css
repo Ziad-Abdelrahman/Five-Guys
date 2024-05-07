@@ -24,9 +24,7 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 12px;
-
     transition: opacity 1s ease;  /* Smooth transition for opacity */
-
 }
 
 /* Links inside the dropdown */
@@ -47,4 +45,40 @@
 .dropdown:hover .dropbtn {
     background-color: #f8f8f8; /* Light grey background on hover */
 
+}
+
+
+
+.tooltipText{
+    position: absolute;
+    left: 50%; /* Center the tooltip horizontally relative to its parent */
+    top: 90%; /* Position at the bottom of the parent element */
+    transform: translate(-50%, 10px); /* Center horizontally and move down 10px */
+    background-color:#01A95D;
+    color: #fff;
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius:9px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Added transform to the transition for smooth movement */
+    visibility: hidden; /* Initially hidden */
+    z-index: 2; /* Make sure it's above other content */
+}
+.tooltipText::before{
+    content: '';
+    position: absolute;
+    top: -20px; /* Position the arrow above the tooltip */
+    left: 50%;
+    margin-left: -15px; /* Center the arrow */
+    border-width: 10px; /* Size of the arrow */
+    border-style: solid;
+    border-color: transparent transparent #01A95D transparent; /* Arrow pointing upwards, matching tooltip */
+}
+
+
+.notification-container-inside-dropdown:hover .tooltipText{
+
+    visibility: visible;
+    opacity: 1;
 }

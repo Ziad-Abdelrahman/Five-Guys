@@ -12,6 +12,7 @@ import image5 from "../assets/Redcrescentnobg.png";
 import image6 from "../assets/Turinnobg.png";
 import image7 from "../assets/Resalanobg.png";
 import image8 from "../assets/magdiYacoubFoundationnobg.png";
+import image9 from "../assets/baheyanobg.png";
 import Login from "./Login.tsx";
 
 function Welcome() {
@@ -126,6 +127,7 @@ function Welcome() {
             <img src={image6} alt="partner" className="partner" />
             <img src={image7} alt="partner" className="partner" />
             <img src={image8} alt="partner" className="partner" />
+            <img src={image9} alt="partner" className="partner" />
 
             <img src={image1} alt="partner" className="partner" />
             <img src={image2} alt="partner" className="partner" />
@@ -135,6 +137,7 @@ function Welcome() {
             <img src={image6} alt="partner" className="partner" />
             <img src={image7} alt="partner" className="partner" />
             <img src={image8} alt="partner" className="partner" />
+            <img src={image9} alt="partner" className="partner" />
           </div>
         </div>
 

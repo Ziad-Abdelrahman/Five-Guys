@@ -14,7 +14,6 @@ function InputBox({ type, label, width, disabled = false }: InputBoxProps) {
         type={type}
         className="form-control"
         id="floatingInput"
-        placeholder="name@example.com"
         disabled={disabled}
       />
       <label>{label}</label>

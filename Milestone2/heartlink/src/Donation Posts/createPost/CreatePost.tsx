@@ -5,6 +5,8 @@ import Template1 from "../../components/Templates/Template1.tsx";
 import "./createPost.css";
 function CreatePost() {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedPath, setSelectedPath] = useState("");
+  const [selectedType, setSelectedType] = useState("");
 
   const categories = [
     "Blood donations",
@@ -16,14 +18,35 @@ function CreatePost() {
   ];
 
   const handleCategoryChange = (category: string) => {
+    setSelectedType("");
     setSelectedCategory(category);
+    if (category === "Blood donations") {
+      setSelectedPath("BloodDonation");
+    } else if (category === "Clothes") {
+      setSelectedPath("Clothes/1");
+    } else if (category === "Food") {
+      setSelectedPath("Food");
+    } else setSelectedPath("Toys/1");
+  };
+  const handleTypeChange = (type: string) => {
+    setSelectedType(type);
+    if (selectedCategory === "School supplies") {
+      if (type === "Books") setSelectedPath("Books/1");
+      else setSelectedPath("Stationary");
+    } else if (selectedCategory === "Medical supplies") {
+      if (type === "Medical tools") setSelectedPath("MedicalTools/1");
+      else if (type === "Medical equipment")
+        setSelectedPath("MedicalEquipment/1");
+      else setSelectedPath(selectedType + "/1");
+    }
   };
 
   return (
     <Template1
       leftPanelDiv={
         <div className="leftText">
-          <p /> 1 of 2<h2> Creating your post!</h2>
+          <br />
+          <h2> Creating your post!</h2>
           <p> Only few steps ahead .. </p>
         </div>
       }
@@ -50,8 +73,14 @@ function CreatePost() {
                 <br />
                 <h4>Do you need books or stationary?</h4>
                 <form className="radioButtons-form" method="get">
-                  <RadioButton text={"Books"} />
-                  <RadioButton text={"Stationary"} />
+                  <RadioButton
+                    text={"Books"}
+                    handleFilterChange={handleTypeChange}
+                  />
+                  <RadioButton
+                    text={"Stationary"}
+                    handleFilterChange={handleTypeChange}
+                  />
                 </form>
               </div>
             )}
@@ -63,10 +92,11 @@ function CreatePost() {
                   options={[
                     "Medications",
                     "Medical equipment",
-                    "Medical devices",
+                    "Medical tools",
                   ]}
                   selected={"Specify category"}
                   width={"280px"}
+                  onChange={handleTypeChange}
                 />
               </>
             )}
@@ -74,6 +104,7 @@ function CreatePost() {
         </>
       }
       rightPanelButtonText={"Next"}
+      forwardPath={selectedPath}
     />
   );
 }

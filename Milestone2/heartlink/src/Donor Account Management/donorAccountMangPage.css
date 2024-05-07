@@ -1,0 +1,14 @@
+.management-cards-container{
+    display:flex;
+    flex-direction: row;
+}
+
+.master-probono-container{
+    display:flex;
+    flex-direction: row;
+
+}
+
+#card-and-drop-down-container{
+    width: 400px;
+}
