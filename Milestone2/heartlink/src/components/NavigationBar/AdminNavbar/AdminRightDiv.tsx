@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import Profilecircle from "./Profilecircle";
 
 
@@ -28,7 +29,7 @@ function AdminRightDiv() {
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
             <li>
-              <a href="ChangePass">Change Password</a>
+              <a href="/admin/ChangePass">Change Password</a>
             </li>
             <li>
               <a href="/">Logout</a>

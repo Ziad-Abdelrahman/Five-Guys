@@ -124,14 +124,18 @@ const router = createBrowserRouter(
         </Route>
       </Route>
       <Route path="/Admin">
-        <Route index element={<AdminDashboard />} />
+        <Route index element={<AdminDahboard />} />
         <Route path="ViewDonors" element={<DeleteDonors />} />
         <Route path="ViewOrganizations" element={<DeleteOrganizations />} />
         <Route path="DonorSubmissions" element={<PendingDonors />} />
         <Route path="OrganizationSubmissions" element={<PendingOrganizations />} />
         <Route path="ChangePass" element={<ChangePass />} />
-        <Route path="/" element={<Welcome/>} />
+        <Route path="ChangePass" element={<ChangePass />} />
+        <Route path="ChangePass" element={<ChangePass />} />
+        <Route path="/" element={<HomePage/>} />
 
+
+        
       </Route>
     </Route>,
   ),

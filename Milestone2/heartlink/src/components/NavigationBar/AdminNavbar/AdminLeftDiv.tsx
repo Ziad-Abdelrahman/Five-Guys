@@ -10,8 +10,8 @@ function AdminLeftDiv() {
           <img className="arrow-in-button" src={arrow} alt="arrow" />
         </button>
         <div className="dropdown-content">
-          <a href="ViewOrganizations">View Registered Organizations</a>
-          <a href ="OrganizationSubmissions">Accept/Reject Submissions</a>
+          <a href="Admin/ViewOrganizations">View Registered Organizations</a>
+          <a href ="Admin/OrganizationSubmissions">Accept/Reject Submissions</a>
         </div>
       </div>
       <div className="dropdown">
@@ -20,8 +20,8 @@ function AdminLeftDiv() {
           <img className="arrow-in-button" src={arrow} alt="arrow" />
         </button>
         <div className="dropdown-content">
-          <a href="ViewDonors">View Donors List</a>
-          <a href="DonorSubmissions">Accept/Reject Requests</a>
+          <a href="Admin/ViewDonors">View Donors List</a>
+          <a href="Admin/DonorSubmissions">Accept/Reject Requests</a>
         </div>
       </div>
     </>
