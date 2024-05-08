@@ -5,10 +5,58 @@
 
 .master-probono-container{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 
-#card-and-drop-down-container{
+.card-and-drop-down-container{
     width: 400px;
+    margin-left: 2%;
+}
+
+.pro-bono-cards-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.probono-info-card{
+    width: 100%;
+    background-color: #FAFAFA;
+    height: 60%;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.probono-info-container{
+    background-color: #FAFAFA;
+    border-radius: 30px;
+    width: 100%;
+    height: 40vh;
+    padding: 20px;
+    display:flex;
+    margin-top: 3.5%;
+    margin-left: 3%;
+}
+
+
+.input-fields-container{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+}
+
+
+.Donor-file-uploader-container{
+    margin-left: 3%;
+    margin-top:3.5%;
+    text-align: center;
+
+
+
+
 }
