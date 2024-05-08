@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Welcome from "./Welcome/Welcome.tsx";
 import SignUp from "./SignUp/SignUp.tsx";
+import AdminDashboard from "./Admin/AdminDashboard.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -20,6 +21,8 @@ const router = createBrowserRouter(
       <Route path="Admin">
         {/* <Route path="Dashboard" element={<AdminDashboard />} />*/}
       </Route>
+
+      <Route path="test" element={<AdminDashboard />} />
     </Route>,
   ),
 );

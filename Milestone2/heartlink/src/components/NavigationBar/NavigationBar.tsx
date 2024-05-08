@@ -11,7 +11,7 @@ function NavigationBar({ leftDiv, rightDiv }: NavigationBarProps) {
     <nav className="navigation-bar">
       <div className="leftDiv">{leftDiv}</div>
       <div className="middleDiv">
-        <img src={img} draggable="false" className="logo" alt={"icon"} />
+        <img src={img} draggable="false" className="logonav" alt={"icon"} />
       </div>
       <div className="rightDiv">{rightDiv}</div>
     </nav>
