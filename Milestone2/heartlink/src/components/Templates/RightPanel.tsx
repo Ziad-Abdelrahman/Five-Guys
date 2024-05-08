@@ -10,6 +10,8 @@ interface RightPanelProps {
   backwardPath?: string;
   children: ReactNode;
   hasBackButton?: boolean;
+  handleClick?: () => void;
+
 }
 
 function RightPanel({
@@ -18,6 +20,7 @@ function RightPanel({
   hasBackButton,
   forwardPath,
   backwardPath,
+  handleClick,
 }: RightPanelProps) {
   return (
     <div className="rightPanel-container">
@@ -25,7 +28,7 @@ function RightPanel({
       <div className="footer">
         <div className="footerButtons-container">
           <Link to={forwardPath}>
-            <Button text={text} />{" "}
+            <Button text={text} handleClick={handleClick}/>{" "}
           </Link>
           {hasBackButton && backwardPath && (
             <Link to={backwardPath}>
