@@ -4,7 +4,7 @@ import MedicalSupplies from "../../components/MedicalSupplies/MedicalSupplies.ts
 import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
 
-function CreatePost() {
+function MedicalTools() {
   const [disabled, setDisabled] = useState(true);
 
   function handleToolChange(tool: string) {
@@ -14,8 +14,8 @@ function CreatePost() {
     <Template1
       leftPanelDiv={
         <div className="leftText">
-          <p /> 2 of 3<h2> Creating your post!</h2>
-          <p> Almost Done.. </p>
+          <p /> 1 of 2<h2> Creating your post!</h2>
+          <p> Almost.. </p>
         </div>
       }
       rightPanelDiv={
@@ -62,9 +62,12 @@ function CreatePost() {
           />
         </MedicalSupplies>
       }
-      rightPanelButtonText={"Post"}
+      rightPanelButtonText={"Next"}
+      hasButton={true}
+      forwardPath={"../2"}
+      backButtonPath={"../../"}
     />
   );
 }
 
-export default CreatePost;
+export default MedicalTools;

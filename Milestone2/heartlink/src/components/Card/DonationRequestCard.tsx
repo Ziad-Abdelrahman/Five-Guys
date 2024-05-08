@@ -1,6 +1,8 @@
 import RequestCard from "./RequestCard.tsx";
 import ViewButton from "../Buttons/ViewButton.tsx";
 import DonateButton from "../Buttons/DonateButton.tsx";
+import React from "react";
+import { Link } from "react-router-dom";
 
 interface DonationRequestPopUpProps {
   trigger?: boolean;
@@ -10,10 +12,14 @@ interface DonationRequestPopUpProps {
   postedby?: string;
   postdate?: string;
   handleClick?: (id: string) => void;
+  showDonateButton?: boolean;
+  donateButtonText?: string; // Optional prop to control the visibility of the Donate button
 }
 
 function DonationRequestCard(props: DonationRequestPopUpProps) {
   const shouldRender = props.trigger !== undefined ? props.trigger : true;
+  const showDonateButton =
+    props.showDonateButton !== undefined ? props.showDonateButton : true;
   return shouldRender ? (
     <RequestCard>
       <>
@@ -33,7 +39,11 @@ function DonationRequestCard(props: DonationRequestPopUpProps) {
             buttonID={props.buttonID}
             handleClick={props.handleClick}
           />
-          <DonateButton />
+          {showDonateButton && (
+            <Link to={"../Quantity/" + props.buttonID}>
+              <DonateButton text={props.donateButtonText} />{" "}
+            </Link>
+          )}
         </div>
       </>
     </RequestCard>

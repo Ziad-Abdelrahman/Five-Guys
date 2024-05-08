@@ -1,0 +1,559 @@
+{ "AllData" : [
+    {
+      "id": "1",
+      "typeOfRequest": "Book",
+      "datePosted": "20/04/2024",
+      "status": "Pending",
+      "bookname": "H is for Hope",
+      "authorname": "Elizabeth Kolbert",
+      "language": "English",
+      "edition": "First",
+      "copies": "1",
+      "use": "This book is for a child who is in need of hope and inspiration."
+    },
+    {
+      "id": "2",
+      "typeOfRequest": "Book",
+      "datePosted": "03/04/2024",
+      "status": "Pending",
+      "bookname": "Neighbors and Other Stories",
+      "authorname": "Diane Oliver",
+      "language": "English",
+      "edition": "First",
+      "copies": "2",
+      "use" : "These books are for children who are in need of a good read."
+    }
+ ,
+    {
+      "id": "3",
+      "typeOfRequest": "Medical Medical Equipment",
+      "datePosted": "19/04/2024",
+      "status": "Fulfilled",
+      "equipment": "Diagnostic Medical Equipment",
+      "quantity": "1",
+      "use": "This equipment is used to diagnose patients and is essential for the hospital."
+    },
+    {
+      "id": "4",
+      "typeOfRequest": "Medical Medical Equipment",
+      "datePosted": "23/04/2024",
+      "status": "Pending",
+      "equipment": "Imaging Medical Equipment",
+      "quantity": "2",
+      "use": "This equipment is used to take images of the body and is essential for the hospital."
+    }
+  ,
+    {
+      "id": "5",
+      "typeOfRequest": "Medical Medical Tools",
+      "datePosted": "23/04/2024",
+      "status": "Pending",
+      "tool": "Endoscope",
+      "quantity": "3",
+      "use": "This tool is used to look inside the body and is essential for the hospital."
+    },
+    {
+      "id": "6",
+      "typeOfRequest": "Medical Medical Tools",
+      "datePosted": "21/04/2024",
+      "status": "Pending",
+      "tool" : "Needles",
+      "quantity": "10",
+      "use": "These tools are used to inject medication and are essential for the hospital."
+    }
+  ,
+    {
+      "id": "7",
+      "typeOfRequest": "Blood",
+      "datePosted": "23/04/2024",
+      "status": "Fulfilled",
+      "bloodtype": "A+",
+      "patientname": "Just Ziad"
+    },
+    {
+      "id": "8",
+      "typeOfRequest": "Blood",
+      "datePosted": "21/04/2024",
+      "status": "Pending",
+      "bloodtype": "B-",
+      "patientname": "Mary Antoinette"
+    },
+    {
+      "id": "9",
+      "typeOfRequest": "Clothes",
+      "datePosted": "12/04/2024",
+      "status": "Fulfilled",
+      "clothesage": "Adults",
+      "clothesgender": "Male",
+      "kind": "Sweaters",
+      "season": "Winter",
+      "material": "Velvet",
+      "size": "Large",
+      "pieces": "2"
+    },
+    {
+      "id": "10",
+      "typeOfRequest": "Clothes",
+      "datePosted": "30/04/2024",
+      "clothesage": "Infants",
+      "clothesgender": "Female",
+      "kind": "Skirts",
+      "season": "Summer",
+      "material": "Linen",
+      "size": "Small",
+      "pieces": "1",
+      "status": "Fulfilled"
+    },
+    {
+      "id": "11",
+      "typeOfRequest": "Food",
+      "datePosted": "01/05/2024",
+      "status": "Pending",
+      "fcategory": "Bakery",
+      "item": "Muffins",
+      "fquantity": "3"
+    },
+    {
+      "id": "12",
+      "typeOfRequest": "Food",
+      "datePosted": "15/04/2024",
+      "status": "Fulfilled",
+      "fcategory": "Fruits",
+      "item": "Apples",
+      "fquantity": "4"
+    },
+    {
+      "id": "13",
+      "typeOfRequest": "Stationary",
+      "datePosted": "25/04/2024",
+      "status": "Fulfilled",
+      "stcategory": "Calculators and Math Supplies",
+      "supply": "Scientific Calculator",
+      "stquantity": "1"
+    },
+    {
+      "id": "14",
+      "typeOfRequest": "Stationary",
+      "datePosted": "23/01/2023",
+      "status": "Pending",
+      "stcategory": "Calculators and Math Supplies",
+      "supply": "Graphing Calculator",
+      "stquantity": "2"
+    },
+    {
+      "id": "15",
+      "typeOfRequest": "Toys Donation",
+      "datePosted": "29/04/2024",
+      "status": "Pending",
+      "toyage": "5-7 years",
+      "toycategory": "Dolls and Stuffed Animals",
+      "toygender": "Girls",
+      "toyname": "Barbie",
+      "toyquantity": "3"
+    },
+    {
+      "id" : "16",
+      "typeOfRequest": "Toys Donation",
+      "datePosted": "29/04/2024",
+      "status": "Pending",
+      "toyage": "13+ years",
+      "toycategory": "Puzzles and Brain Teasers",
+      "toygender": "Boys",
+      "toyname": "Crosswords",
+      "toyquantity": "2"
+    },
+    {
+      "id": "17",
+      "typeOfRequest": "Medication",
+      "datePosted": "10/04/2024",
+      "medcategory": "Antibiotics",
+      "medicationname": "Augmentin",
+      "medquantity": "3",
+      "status": "Fulfilled",
+      "use": "This medication is used to treat bacterial infections such as sinusitis, bronchitis, pneumonia, ear infections, urinary tract infections and more"
+    }
+  ],
+  "Requests_Data" : [
+
+      {
+        "id": "1",
+        "description": "Clothes Donation",
+        "quantity": "100"
+
+      },
+      {
+        "id": "2",
+        "description": "Clothes Donation",
+        "quantity": "90"
+
+      },
+      {
+        "id": "3",
+        "description": "Clothes Donation",
+        "quantity": "10"
+      },
+      {
+        "id": "4",
+        "description": "Clothes Donation",
+        "quantity": "30"
+
+      },
+      {
+        "id": "5",
+        "description": "Clothes Donation",
+        "quantity": "40"
+
+      },
+      {
+        "id": "6",
+        "description": "Clothes Donation",
+        "quantity": "70"
+
+      },
+      {
+        "id": "7",
+        "description": "Clothes Donation",
+        "quantity": "100"
+
+      },
+      {
+        "id": "8",
+        "description": "Clothes Donation",
+        "quantity": "20"
+
+      },
+      {
+        "id": "9",
+        "description": "Clothes Donation",
+        "quantity": "30"
+      },
+      {
+        "id": "10",
+        "description": "Clothes Donation",
+        "quantity": "20"
+
+      },
+      {
+        "id": "11",
+        "description": "Clothes Donation",
+        "quantity": "40"
+
+      },
+      {
+        "id": "12",
+        "description": "Clothes Donation",
+        "quantity": "20"
+
+      },
+      {
+        "id": "13",
+        "description": "Clothes Donation",
+        "quantity": "20"
+
+      },
+    {
+      "id": "14",
+      "description": "School Supplies",
+      "quantity": "100"
+
+
+    },
+    {
+      "id": "15",
+      "description": "Food Supplies",
+      "quantity": "100"
+
+
+    },
+    {
+      "id": "16",
+      "description": "Clothes Donation",
+      "quantity": "100"
+
+
+    },
+    {
+      "id": "17",
+      "description": "Medical Supplies",
+      "quantity": "1000"
+
+
+    },
+    {
+      "id": "18",
+      "description": "Toys Donation",
+      "quantity": "50"
+
+
+    },
+    {
+      "id": "19",
+      "description": "Food Supplies",
+      "quantity": "100"
+
+
+    },
+    {
+      "id": "20",
+      "description": "Clothes Donation",
+      "quantity": "10"
+
+
+    },
+    {
+      "id": "22",
+      "description": "Medical Supplies",
+      "quantity": "1000"
+
+
+    },
+    {
+      "id": "23",
+      "description": "Clothes Donation",
+      "quantity": "90"
+
+
+
+    },
+    {
+      "id": "24",
+      "description": "Food Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "25",
+      "description": "Food Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "26",
+      "description": "Food Donation",
+      "quantity": "200"
+    },
+    {
+      "id": "27",
+      "description": "Food Donation",
+      "quantity": "50 KG"
+    },
+    {
+      "id": "28",
+      "description": "Food Donation",
+      "quantity": "100 KG"
+    },
+    {
+      "id": "29",
+      "description": "Food Donation",
+      "quantity": "100 KG"
+    },
+    {
+      "id": "30",
+      "description": "Food Donation",
+      "quantity": "100 KG"
+    },
+    {
+      "id": "31",
+      "description": "Food Donation",
+      "quantity": "500"
+    },
+    {
+      "id": "32",
+      "description": "Food Donation",
+      "quantity": "300"
+    },
+    {
+      "id": "33",
+      "description": "Food Donation",
+      "quantity": "200"
+    },
+    {
+      "id": "34",
+      "description": "Food Donation",
+      "quantity": "160"
+    },
+    {
+      "id": "35",
+      "description": "Food Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "36",
+      "description": "Food Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "47",
+      "description": "Medical Tools Donation",
+      "quantity": "5"
+    },
+    {
+      "id": "48",
+      "description": "Medical Tools Donation",
+      "quantity": "3"
+    },
+    {
+      "id": "49",
+      "description": "Medical Tools Donation",
+      "quantity": "2"
+    },
+    {
+      "id": "50",
+      "description": "Medical Equipment Donation",
+      "quantity": "1000"
+    },
+    {
+      "id": "51",
+      "description": "Medical Equipment Donation",
+      "quantity": "500"
+    },
+    {
+      "id": "52",
+      "description": "Medical Equipment Donation",
+      "quantity": "1000"
+    },
+    {
+      "id": "53",
+      "description": "Medications Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "54",
+      "description": "Medications Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "55",
+      "description": "Medications Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "56",
+      "description": "Medications Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "57",
+      "description": "Medications Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "58",
+      "description": "Medications Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "59",
+      "description": "Medications Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "60",
+      "description": "School Supplies Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "61",
+      "description": "School Supplies Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "62",
+      "description": "School Supplies Donation",
+      "quantity": "200"
+    },
+    {
+      "id": "63",
+      "description": "School Supplies Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "64",
+      "description": "School Supplies Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "65",
+      "description": "School Supplies Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "66",
+      "description": "School Supplies Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "67",
+      "description": "School Supplies Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "68",
+      "description": "School Supplies Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "69",
+      "description": "School Supplies Donation",
+      "quantity": "100"
+    },
+    {
+      "id": "70",
+      "description": "Toys Donation",
+      "quantity": "50"
+    },
+    {
+      "id": "71",
+      "description": "Toys Donation",
+      "quantity": "30"
+    },
+    {
+      "id": "72",
+      "description": "Toys Donation",
+      "quantity": "40"
+    },
+    {
+      "id": "73",
+      "description": "Toys Donation",
+      "quantity": "25"
+    },
+    {
+      "id": "74",
+      "description": "Toys Donation",
+      "quantity": "20"
+    },
+    {
+      "id": "75",
+      "description": "Toys Donation",
+      "quantity": "35"
+    },
+    {
+      "id": "76",
+      "description": "Toys Donation",
+      "quantity": "15"
+    },
+    {
+      "id": "77",
+      "description": "Toys Donation",
+      "quantity": "22"
+    },
+    {
+      "id": "78",
+      "description": "Toys Donation",
+      "quantity": "18"
+    },
+    {
+      "id": "79",
+      "description": "Toys Donation",
+      "quantity": "12"
+    },
+    {
+      "id": "80",
+      "description": "Toys Donation",
+      "quantity": "30"
+    },
+    {
+      "id": "81",
+      "description": "Toys Donation",
+      "quantity": "24"
+    }
+  ]
+    }

@@ -1,3 +1,6 @@
+.orgDashboardHolder{
+
+}
 .organizationDashboard{
     padding: 5% 5%;
     background-color: rgb(248, 248, 248);
@@ -84,5 +87,3 @@
     font-size: 1em;
     color: gray;
 }
-
-

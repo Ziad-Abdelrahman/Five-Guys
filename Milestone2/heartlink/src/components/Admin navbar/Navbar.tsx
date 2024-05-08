@@ -1,3 +1,4 @@
+import React from "react";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import AcceptRejectButton from "../Buttons/AcceptRejectButton";
 import { Link } from "react-router-dom";
@@ -6,7 +7,7 @@ const left = (
   <div className="right">
     <div className="listItems">
       <Link to="/Donors">Donors</Link>
-      <Link to="/Organizations">Organizations</Link>
+      <Link to="/DeleteOrganizations">DeleteOrganizations</Link>
       <Link to="/Requests">Requests</Link>
     </div>
   </div>

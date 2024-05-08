@@ -1,9 +1,9 @@
 import "./DonorFilter.css";
 import filtericon from "../../assets/filter-icon.png";
 interface ToysDonationFilterProps {
-  handleAgeFilter?: (age: string) => void;
-  handleGender?: (gender: string) => void;
-  handleCategory?: (category: string) => void;
+  handleAgeFilter: (age: string) => void;
+  handleGender: (gender: string) => void;
+  handleCategory: (category: string) => void;
 }
 
 function ToysDonationFilter(props: ToysDonationFilterProps) {

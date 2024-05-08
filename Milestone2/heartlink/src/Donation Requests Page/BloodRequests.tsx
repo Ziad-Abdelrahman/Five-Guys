@@ -115,6 +115,21 @@ function BloodRequests() {
               <li>Area: {detailsList[selectedID][2]}</li>
             </ul>
           )}
+          <div style={{ marginLeft: "40px" }}>
+            <iframe
+              width="400"
+              height="120"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight={0}
+              marginWidth={0}
+              src="https://maps.google.com/maps?width=200&height=200&hl=en&q=57357%20hospital+(Children%20Cancer%20Hospital)&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+              title="Children Cancer Hospital Location"
+            >
+              {/* The content inside iframe will not display if the iframe loads properly */}
+              <a href="https://www.gps.ie/">gps tracker sport</a>
+            </iframe>
+          </div>
         </div>
       </ViewPopup>
       <Headerofsection title={"Blood Requests"} />
@@ -142,6 +157,7 @@ function BloodRequests() {
               description={card.description}
               postedby={card.postedby}
               postdate={card.postdate}
+              showDonateButton={false}
             />
           ))}
       </div>

@@ -17,7 +17,7 @@ const slideRightToLeft = (
   animationInProgress = true;
   var rightPanel = document.querySelector(".rightPanelSignUpA") as HTMLElement;
   var button = document.querySelector(
-    ".footerButtons-container button",
+    ".footerButtons-containerSignUp button",
   ) as HTMLButtonElement;
   if (rightPanel) {
     rightPanel.classList.add("animateRightToLeft");
@@ -43,7 +43,7 @@ const slideLeftToRight = (
   animationInProgress = true;
   var rightPanel = document.querySelector(".rightPanelSignUpA") as HTMLElement;
   var button = document.querySelector(
-    ".footerButtons-container button",
+    ".footerButtons-containerSignUp button",
   ) as HTMLButtonElement;
 
   if (rightPanel) {
@@ -253,8 +253,8 @@ function SignUp() {
               </div>
             </div>
           </div>
-          <div className="footer">
-            <div className="footerButtons-container">
+          <div className="footerSignUp">
+            <div className="footerButtons-containerSignUp">
               <Button
                 text={"Next"}
                 handleClick={() => {
@@ -281,8 +281,8 @@ function SignUp() {
               width={"430px"}
             />
           </div>
-          <div className="footer">
-            <div className="footerButtons-container">
+          <div className="footerSignUp">
+            <div className="footerButtons-containerSignUp">
               <Button text={"Sign Up"} />
               <BackButton
                 style={{ marginLeft: "5em" }}
@@ -338,8 +338,8 @@ function SignUp() {
               width={"430px"}
             />
           </div>
-          <div className="footer">
-            <div className="footerButtons-container">
+          <div className="footerSignUp">
+            <div className="footerButtons-containerSignUp">
               <Button text={"Sign Up"} />
               <BackButton style={{ marginLeft: "5em" }} handleClick={hideOrg} />
             </div>

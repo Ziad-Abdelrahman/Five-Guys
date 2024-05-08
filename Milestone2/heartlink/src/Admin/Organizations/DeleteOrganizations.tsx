@@ -8,13 +8,15 @@ import Org5 from "../../assets/Resala.png";
 import Org6 from "../../assets/Turin.jpg";
 import Org7 from "../../assets/MagdyYakoub.png";
 import Org8 from "../../assets/Redcrescent.png";
-import Org9 from "../../assets/EgyptianFoodBank.png";
-import "./organizations.css";
+import Org9 from "../../assets/baheya.png";
+import "./DeleteOrganizations.css";
 import "../../components/Search/searchbar.css";
-import Headerofsection from "../../components/Header/HeaderOfSection.tsx";
 import Search from "../../components/Search/Search.tsx";
+import OrganizationFilter from "../../components/DonorFilterCard/OrganizationFilter.tsx";
+import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
+import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 
-const Organizations = () => {
+const DeleteOrganizations = () => {
   const cardData = [
     {
       id: "1",
@@ -22,6 +24,10 @@ const Organizations = () => {
       img_alt: "57357 logo",
       title: "57357",
       text: "To Be the Unique Worldwide Icon of Change Towards a Cancer‐ Free Childhood",
+      type: "Cancer Institute",
+      city: "Cairo",
+      area: "El Saida Zeinab",
+      established: "2007",
     },
     {
       id: "2",
@@ -29,13 +35,21 @@ const Organizations = () => {
       img_alt: "Egyptian Food Bank logo",
       title: "Egyptian Food Bank",
       text: "Food is the basis of life",
+      type: "Food Charity",
+      city: "Zagazig",
+      Area: "Third District",
+      established: "2006",
     },
     {
       id: "3",
       image: Org3,
       img_alt: "Misr elkheir logo",
       title: "Misr elkheir",
-      text: "Misr El Kheir is established with the objective of developing the Egyptian individual in a comprehensive manner.",
+      text: "Misr El Kheir aims to develop the Egyptian individual in a comprehensive manner.",
+      type: "Human Development",
+      city: "Alexandria",
+      area: "Miami",
+      established: "2007",
     },
     {
       id: "4",
@@ -43,13 +57,21 @@ const Organizations = () => {
       img_alt: "Orman logo",
       title: "Orman",
       text: "Providing qualitative, non-traditional charitable services aimed, within a specific period of time.",
+      type: "Human Development",
+      city: "Cairo",
+      area: "Giza",
+      established: "2007",
     },
     {
       id: "5",
       image: Org5,
       img_alt: "Resala logo",
       title: "Resala",
-      text: "The goal of the founding team was to spread volunteerism and positivity in society, and cultivate belonging.",
+      text: "Spreading volunteerism and positivity in society, and cultivate belonging.",
+      type: "Humanitarian Aid",
+      city: "Cairo",
+      Area: "10th of Ramadan",
+      established: "1999",
     },
     {
       id: "6",
@@ -57,6 +79,10 @@ const Organizations = () => {
       img_alt: "Turin logo",
       title: "Turin",
       text: "Turin is a non-profit organization that aims to provide a decent life for the poor and needy.",
+      type: "Human Development",
+      city: "Giza",
+      area: "Sheikh Zayed",
+      established: "2018",
     },
     {
       id: "7",
@@ -64,25 +90,50 @@ const Organizations = () => {
       img_alt: "MagdyYakoub",
       title: "Magdy Yakoub",
       text: "Magdy Yakoub is a non-profit organization that aims to provide a decent life for the poor and needy.",
+      type: "Heart Diseases Institute",
+      city: "Cairo",
+      area: "Zamalek",
+      established: "2008",
     },
     {
       id: "8",
       image: Org8,
-      img_alt: "Red",
+      img_alt: "Red Cresent",
       title: "Red Cresent",
       text: "Red Cresent is a non-profit organization that aims to provide a decent life for the poor and needy.",
+      type: "Global Humanitarian Network",
+      city: "Cairo",
+      area: "Nasr City",
+      established: "1911",
     },
 
     {
       id: "9",
       image: Org9,
-      img_alt: "Red",
-      title: "Egyptian Food Bank",
-      text: "Food Bank is a non-profit organization that aims to provide a decent life for the poor and needy.",
+      img_alt: "Baheya",
+      title: "Baheya",
+      text: "Baheya  Foundation is breaking down the barriers by providing early detection and treatment services for breast cancer",
+      type: "Breast Cancer Institute",
+      city: "Cairo",
+      area: "El Haram",
+      established: "2017",
     },
   ];
 
   const [search, setSearch] = useState("");
+  const [type, setType] = useState("");
+  const [city, setCity] = useState("");
+  const [area, setArea] = useState("");
+
+  function handleType(chosenType: string) {
+    chosenType === "Type" ? setType("") : setType(chosenType);
+  }
+  function handleCity(chosenCity: string) {
+    chosenCity === "Government" ? setCity("") : setCity(chosenCity);
+  }
+  function handleArea(chosenArea: string) {
+    chosenArea === "Area" ? setArea("") : setArea(chosenArea);
+  }
 
   const handleSearch = (written: string) => {
     setSearch(written);
@@ -90,7 +141,8 @@ const Organizations = () => {
 
   return (
     <>
-      <Headerofsection
+      <AdminNavbar />
+      <HeaderOfSection
         title={"Registered Organization"}
         smallDivStyle={{
           display: "flex",
@@ -100,11 +152,21 @@ const Organizations = () => {
         style={{ marginLeft: "10em", width: "80%" }}
       >
         <Search handleSearch={handleSearch} />
-      </Headerofsection>
-
+      </HeaderOfSection>
+      <OrganizationFilter
+        handleTyoeFilter={handleType}
+        handleGovernmentFilter={handleCity}
+        handleAreaFilter={handleArea}
+      />
       <div className={"organizations-container"}>
         {cardData
-          .filter((cardData) => cardData.title.toLowerCase().includes(search))
+          .filter(
+            (cardData) =>
+              cardData.title.toLowerCase().includes(search) &&
+              (type === "" || type === cardData.type) &&
+              (city === "" || city === cardData.city) &&
+              (area === "" || area === cardData.area),
+          )
           .map((cardData) => (
             <ViewCards
               key={cardData.id}
@@ -112,6 +174,7 @@ const Organizations = () => {
               img_alt={cardData.img_alt}
               title={cardData.title}
               text={cardData.text}
+              height={"400px"}
             />
           ))}
       </div>
@@ -119,4 +182,4 @@ const Organizations = () => {
   );
 };
 
-export default Organizations;
+export default DeleteOrganizations;

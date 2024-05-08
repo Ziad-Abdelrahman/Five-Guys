@@ -78,7 +78,7 @@
 }
 
 
-.footer {
+.footerSignUp {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -122,14 +122,14 @@
     justify-content: center;
     width: 4em;
 }
-.footerButtons-container {
+.footerButtons-containerSignUp {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     padding: 22px;
 }
 
-.footerButtons-container button{
+.footerButtons-containerSignUp button{
     margin-right: 5em;
 }
 
@@ -158,12 +158,6 @@
 }
 .signUpDONO button{
     margin: 0;
-}
-.show{
-    animation: showDono 1s forwards;
-}
-.hide{
-    animation: hideDono 1s forwards;
 }
 .show{
     animation: showS 1s forwards;

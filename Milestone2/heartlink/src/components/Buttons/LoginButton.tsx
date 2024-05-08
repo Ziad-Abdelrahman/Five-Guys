@@ -7,10 +7,13 @@ const showLogin = () => {
   welcome.classList.add("shade");
   app.classList.add("shade");
 };
-function LoginButton() {
+interface LoginButtonProps {
+  text?: string;
+}
+function LoginButton({ text }: LoginButtonProps) {
   return (
     <button className="loginButton" onClick={showLogin}>
-      Login
+      {text ? text : "Login"}
     </button>
   );
 }

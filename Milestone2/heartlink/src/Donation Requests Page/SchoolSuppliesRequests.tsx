@@ -11,16 +11,16 @@ import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 function SchoolSuppliesRequests() {
   const detailsList: hashSet = {
-    "1": ["stationary", "Writing Tools", "Pens", "100"],
-    "2": ["books", "Textbooks", "Math", "50"],
-    "3": ["Stationary", "Writing Tools", "Pencils", "200"],
-    "4": ["Stationary", "Paper Products", "Copybooks", "100"],
-    "5": ["Stationary", "Paper Products", "Notebooks", "100"],
-    "6": ["Books", "Textbooks", "Science", "50"],
-    "7": ["Books", "Textbooks", "English", "50"],
-    "8": ["Stationary", "Writing Tools", "Erasers", "100"],
-    "9": ["Books", "Textbooks", "History", "50"],
-    "10": ["Stationary", "Paper Products", "Sticky Notes", "100"],
+    "60": ["stationary", "Writing Tools", "Pens", "100"],
+    "61": ["books", "Textbooks", "Math", "50"],
+    "62": ["Stationary", "Writing Tools", "Pencils", "200"],
+    "63": ["Stationary", "Paper Products", "Copybooks", "100"],
+    "64": ["Stationary", "Paper Products", "Notebooks", "100"],
+    "65": ["Books", "Textbooks", "Science", "50"],
+    "66": ["Books", "Textbooks", "English", "50"],
+    "67": ["Stationary", "Writing Tools", "Erasers", "100"],
+    "68": ["Books", "Textbooks", "History", "50"],
+    "69": ["Stationary", "Paper Products", "Sticky Notes", "100"],
   };
   //responsible for filtering the requests
   let [filter, setFilter] = useState("All");
@@ -84,7 +84,7 @@ function SchoolSuppliesRequests() {
           postedby="Egyptian Clothing Bank "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"1"}
+          buttonID={"60"}
           trigger={filter === "All" || filter === "Stationary"}
         />
         <DonationRequestCard
@@ -93,7 +93,7 @@ function SchoolSuppliesRequests() {
           postedby="Dar Al Orman "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"2"}
+          buttonID={"61"}
           trigger={filter === "All" || filter === "Books"}
         />
         <DonationRequestCard
@@ -102,7 +102,7 @@ function SchoolSuppliesRequests() {
           postedby="Turin "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"3"}
+          buttonID={"62"}
           trigger={filter === "All" || filter === "Stationary"}
         />
         <DonationRequestCard
@@ -111,7 +111,7 @@ function SchoolSuppliesRequests() {
           postedby="Resala"
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"4"}
+          buttonID={"63"}
           trigger={filter === "All" || filter === "Stationary"}
         />
         <DonationRequestCard
@@ -120,7 +120,7 @@ function SchoolSuppliesRequests() {
           postedby="Turin "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"5"}
+          buttonID={"64"}
           trigger={filter === "All" || filter === "Stationary"}
         />
         <DonationRequestCard
@@ -129,7 +129,7 @@ function SchoolSuppliesRequests() {
           postedby="Dar Al Orman "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"6"}
+          buttonID={"65"}
           trigger={filter === "All" || filter === "Books"}
         />
         <DonationRequestCard
@@ -138,7 +138,7 @@ function SchoolSuppliesRequests() {
           postedby="Dar Al Orman "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"7"}
+          buttonID={"66"}
           trigger={filter === "All" || filter === "Books"}
         />
         <DonationRequestCard
@@ -147,7 +147,7 @@ function SchoolSuppliesRequests() {
           postedby="Resala "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"8"}
+          buttonID={"67"}
           trigger={filter === "All" || filter === "Stationary"}
         />
         <DonationRequestCard
@@ -156,7 +156,7 @@ function SchoolSuppliesRequests() {
           postedby="Resala "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"9"}
+          buttonID={"68"}
           trigger={filter === "All" || filter === "Books"}
         />
         <DonationRequestCard
@@ -165,7 +165,7 @@ function SchoolSuppliesRequests() {
           postedby="Egyptian Clothing Bank "
           postdate={"5/1/2024"}
           handleClick={handleLearnMoreClick}
-          buttonID={"10"}
+          buttonID={"69"}
           trigger={filter === "All" || filter === "Stationary"}
         />
       </div>

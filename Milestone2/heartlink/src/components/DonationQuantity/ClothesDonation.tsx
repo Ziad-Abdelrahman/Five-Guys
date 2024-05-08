@@ -1,19 +1,17 @@
 import DonationParent from "./DonationParent.tsx";
-import './Donate.css';
-import DonationPic from "../../assets/DonationGeneral.jpeg";
-function ClothesDonation(){
 
-    return(
-        <>
-        <DonationParent>
-           <h1> You're helping Warmth and Wear</h1>
-           <p> Your contribution supports the Local Shelter Network</p>
-            <img src={DonationPic} alt="Donation box"/>
-        </DonationParent>
-        </>
-    );
-
-
+function ClothesDonation() {
+  return (
+    <>
+      <DonationParent
+        description={
+          "Your donation will bring warmth and comfort to someone in need."
+        }
+        type={"Clothes Donation"}
+        maxValue={200}
+      />
+    </>
+  );
 }
 
 export default ClothesDonation;
