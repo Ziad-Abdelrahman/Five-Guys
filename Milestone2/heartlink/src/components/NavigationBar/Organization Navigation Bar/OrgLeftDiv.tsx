@@ -30,14 +30,17 @@ function OrgLeftDiv() {
 
   return (
     <>
+      {showSubmit && (
+        <div className="org-backdrop" style={{ display: "block" }}></div>
+      )}
       <div className="dropdown">
         <button className="dropbtn">
           Posts
           <img className="arrow-in-button" src={arrow} alt="arrow" />
         </button>
         <div className="dropdown-content">
-          <Link to="ViewPosts">View All Posts</Link>
-          <Link to="CreateAPost">Create Post</Link>
+          <Link to="/Organization/ViewPosts">View All Posts</Link>
+          <Link to="/Organization/CreateAPost">Create Post</Link>
         </div>
       </div>
       <div className="dropdown">
@@ -55,9 +58,13 @@ function OrgLeftDiv() {
           <img className="arrow-in-button" src={arrow} alt="arrow" />
         </button>
         <div className="dropdown-content">
-          <a href="#">Request a Doctor</a>
-          <a href="#">Request a Teacher</a>
-          <a href="#">View Fulfilled Posts</a>
+          <Link to="/Organization/CreateMedicalRequest/1">
+            Request a Doctor
+          </Link>
+          <Link to="/Organization/CreateTeachingPost">Request a Teacher</Link>
+          <Link to="/Organization/FulfilledProboPosts">
+            View Fulfilled Posts
+          </Link>
         </div>
       </div>
       {showSubmit && (

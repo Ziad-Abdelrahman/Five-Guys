@@ -30,7 +30,7 @@ function OrganizationAccountInfo() {
                 }}
               />
               <div className="card-dropdown-content">
-                <Link to={"*"}>Edit Info</Link>
+                <Link to={"Edit"}>Edit Info</Link>
               </div>
             </div>
           </>

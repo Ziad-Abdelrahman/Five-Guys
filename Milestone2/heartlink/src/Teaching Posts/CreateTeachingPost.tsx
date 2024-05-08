@@ -30,6 +30,7 @@ function CreateTeachingPost() {
       }
       rightPanelButtonText={"Post"}
       hasButton={false}
+      forwardPath={"../"}
     />
   );
 }

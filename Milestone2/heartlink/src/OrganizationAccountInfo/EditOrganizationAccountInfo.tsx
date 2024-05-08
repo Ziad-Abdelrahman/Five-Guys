@@ -21,7 +21,11 @@ function EditOrganizationAccountInfo() {
           justifyContent: "space-between",
           width: "100%",
         }}
-        children={<LoginButton text={"Update"} />}
+        children={
+          <Link to={"../Updated"}>
+            <LoginButton text={"Update"} />{" "}
+          </Link>
+        }
       />
       <div className={"organization-account-info"}>
         <>

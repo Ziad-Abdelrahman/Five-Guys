@@ -6,19 +6,16 @@ import { Link } from "react-router-dom";
 
 interface RightPanelProps {
   text: string;
-  forwardPath: string;
   backwardPath?: string;
   children: ReactNode;
   hasBackButton?: boolean;
   handleClick?: () => void;
-
 }
 
 function RightPanel({
   children,
   text,
   hasBackButton,
-  forwardPath,
   backwardPath,
   handleClick,
 }: RightPanelProps) {
@@ -27,9 +24,7 @@ function RightPanel({
       {children}
       <div className="footer">
         <div className="footerButtons-container">
-          <Link to={forwardPath}>
-            <Button text={text} handleClick={handleClick}/>{" "}
-          </Link>
+          <Button text={text} handleClick={handleClick} />
           {hasBackButton && backwardPath && (
             <Link to={backwardPath}>
               <BackButton />{" "}

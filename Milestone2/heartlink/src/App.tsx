@@ -32,20 +32,32 @@ import {
   AllDataLoader,
 } from "./View Donation Posts/ViewDonationPostsWebpage.tsx";
 import EditorPt2 from "./View Donation Posts/Edit Donation Posts/EditorPt2.tsx";
-import OrgNavgBar from "./components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
-import DeleteDonors from "./Admin/Donors/DeleteDonors.tsx";
-import PendingDonors from "./Admin/Donors/PendingDonors.tsx";
-import HomePage from "./Admin/HomePage.tsx";
-import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
-import PendingOrganizations from "./Admin/Organizations/PendingOrganizations.tsx";
-import ChangePass from "./Admin/change password/ChangePass.tsx";
+import ClothesRequests from "./Donation Requests Page/ClothesRequests.tsx";
+import {
+  RequestLoader,
+  RequestQuantity,
+} from "./Donation Requests Page/Data_Extractor/RequestQuantity.tsx";
+import MedicalRequests from "./Donation Requests Page/MedicalRequests.tsx";
+import CreateMedicalPostPt2 from "./Medical Posts/CreateMedicalPostPt2.tsx";
+import CreateMedicalPost from "./Medical Posts/CreateMedicalPost.tsx";
+import ProBonos from "./Probonos/ProBonos.tsx";
+import CreateTeachingPost from "./Teaching Posts/CreateTeachingPost.tsx";
+import OrganizationAccountInfo from "./OrganizationAccountInfo/OrganizationAccountInfo.tsx";
+import EditOrganizationAccountInfo from "./OrganizationAccountInfo/EditOrganizationAccountInfo.tsx";
+import UpdatedOrganizationInfo from "./OrganizationAccountInfo/UpdatedOrganizationInfo.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index element={<Welcome />} />
       <Route path="Signup" element={<SignUp />} />
       <Route path="Donor">
-        {/* <Route path="Dashboard" element={<DonorDashboard />} />*/}
+        <Route
+          path="Quantity/:id"
+          element={<RequestQuantity />}
+          loader={RequestLoader}
+        />
+        <Route path={"ClothesDonation"} element={<ClothesRequests />} />
+        <Route path={"MedicalRequests"} element={<MedicalRequests />} />
       </Route>
       {/* <Route path="Dashboard" element={<RecipientDashboard />} />*/}
       <Route path="Organization">
@@ -93,17 +105,22 @@ const router = createBrowserRouter(
             <Route path="2" element={<MedicalToolsPt2 />} />
           </Route>
         </Route>
-        <Route path={"Admin"} >
-        <Route index element={<AdminDashboard />} />
-        <Route path ="/ViewDonors" element={<DeleteDonors/>}/>
-        <Route path ="/ViewOrganizations" element={<DeleteOrganizations/>}/>
-        <Route path ="/DonorSubmissions" element={<PendingDonors/>}/>
-        <Route path ="/OrganizationSubmissions" element={<PendingOrganizations/>}/>
-        <Route path ="/ChangePass" element={<ChangePass/>}/>
-        <Route path="/" element={<Welcome/>}/>      
+        <Route path="CreateMedicalRequest">
+          <Route path="1" element={<CreateMedicalPost />} />
+          <Route path="2" element={<CreateMedicalPostPt2 />} />
         </Route>
-        {/* <Route path="Dashboard" element={<OrganizationDashboard />} />*/}
+        <Route path="CreateTeachingPost" element={<CreateTeachingPost />} />
+        <Route path="FulfilledProboPosts" element={<ProBonos />} />
+        <Route path={"AccountInfo"}>
+          <Route index element={<OrganizationAccountInfo />} />
+          <Route path={"Edit"} element={<EditOrganizationAccountInfo />} />
+          <Route path={"Updated"} element={<UpdatedOrganizationInfo />} />
+        </Route>
       </Route>
+      {/*<Route path={"Admin"}>*/}
+      {/*  <Route index element={<AdminDashboard />} />*/}
+      {/*  //insert here rest of routes*/}
+      {/*</Route>*/}
     </Route>,
   ),
 );

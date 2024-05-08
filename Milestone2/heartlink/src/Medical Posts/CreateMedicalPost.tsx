@@ -30,6 +30,7 @@ function CreateMedicalPost() {
       }
       rightPanelButtonText={"Next"}
       hasButton={false}
+      forwardPath={"../2"}
     />
   );
 }

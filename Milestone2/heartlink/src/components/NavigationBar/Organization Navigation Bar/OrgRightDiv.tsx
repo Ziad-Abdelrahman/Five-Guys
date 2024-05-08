@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BsEnvelopeOpenHeart } from "react-icons/bs";
 
 import "./OrgRightDiv.css";
+import { Link } from "react-router-dom";
 
 function OrgRightDiv() {
   // State to manage the visibility of the notifications dropdown
@@ -107,13 +108,10 @@ function OrgRightDiv() {
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
             <li>
-              <a href="#">Account info</a>
+              <Link to="AccountInfo">Account info</Link>
             </li>
             <li>
-              <a href="#">Settings</a>
-            </li>
-            <li>
-              <a href="#">Logout</a>
+              <Link to="/">Logout</Link>
             </li>
           </ul>
         </div>
