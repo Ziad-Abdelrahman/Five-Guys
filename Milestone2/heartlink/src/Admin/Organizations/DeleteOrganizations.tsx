@@ -11,9 +11,10 @@ import Org8 from "../../assets/Redcrescent.png";
 import Org9 from "../../assets/baheya.png";
 import "./DeleteOrganizations.css";
 import "../../components/Search/searchbar.css";
-import Headerofsection from "../../components/Header/HeaderOfSection.tsx";
 import Search from "../../components/Search/Search.tsx";
 import OrganizationFilter from "../../components/DonorFilterCard/OrganizationFilter.tsx";
+import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
+import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 
 const DeleteOrganizations = () => {
   const cardData = [
@@ -140,7 +141,8 @@ const DeleteOrganizations = () => {
 
   return (
     <>
-      <Headerofsection
+      <AdminNavbar />
+      <HeaderOfSection
         title={"Registered Organization"}
         smallDivStyle={{
           display: "flex",
@@ -150,7 +152,7 @@ const DeleteOrganizations = () => {
         style={{ marginLeft: "10em", width: "80%" }}
       >
         <Search handleSearch={handleSearch} />
-      </Headerofsection>
+      </HeaderOfSection>
       <OrganizationFilter
         handleTyoeFilter={handleType}
         handleGovernmentFilter={handleCity}

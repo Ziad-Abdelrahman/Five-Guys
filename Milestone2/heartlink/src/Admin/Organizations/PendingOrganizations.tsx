@@ -7,6 +7,7 @@ import HeaderOfSection from "../../components/Header/HeaderOfSection";
 import AdminOrgRequestsCard from "../../components/Card/Admin Cards/AdminOrgRequestsCard.tsx";
 import Search from "../../components/Search/Search.tsx";
 import { useState } from "react";
+import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 
 const PendingOrganizations = () => {
   const cardData = [
@@ -56,6 +57,7 @@ const PendingOrganizations = () => {
   return (
     <>
       <div>
+        <AdminNavbar />
         <HeaderOfSection
           title={"Pending Organizations"}
           smallDivStyle={{
@@ -85,6 +87,7 @@ const PendingOrganizations = () => {
               image={cardData.image}
               name={cardData.title}
               text={cardData.text}
+              type={"Organization"}
             />
           ))}
       </div>
