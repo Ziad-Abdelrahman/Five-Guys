@@ -2,37 +2,34 @@ button:active {
   transform: scale(1.1);
 }
 .formContainer {
-    width: 600px;
+    position: relative;
+    width: 40%;
     height: 320px;
-    margin: 50px auto;
-    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(1, 169, 93, 0.4);
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
   }
 
-  .formContainer h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
   .passwordInput {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+      width:100%;
   }
   
   .passwordInput label {
-    flex: 0 0 40%;
     font-size: 16px;
+      width: 173px;
+      white-space: nowrap;
   }
   
   .passwordInput input {
@@ -41,12 +38,12 @@ button:active {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 400px;
+    width: 200px;
+      margin: 0 10px;
     height: 30px;
   }
   
   .passwordInput button {
-    width: 100px;
     height: 30px;
     font-size: 14px;
     background-color: transparent;
@@ -54,8 +51,8 @@ button:active {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 10px;
     border-radius: 15px;
+      text-decoration: underline;
   }
   .passwordInput button :hover{
     background-color: #018448;
@@ -75,6 +72,7 @@ button:active {
   
 .buttonContainer {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 }
@@ -98,8 +96,18 @@ button:active {
 }
 .last-div-in-change-password{
     display: flex;
+    padding: 4%;
     flex-direction: column-reverse;
     align-items: center;
-    margin-top: 20px;
-    height:38%
+    height: 40%;
+}
+
+.changePasswordContainer{
+    position: relative;
+    bottom: 0;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
