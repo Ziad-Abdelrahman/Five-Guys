@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./changePass.css";
+import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
+import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
 
 const ChangePasswordForm = () => {
   const [newPassword, setNewPassword] = useState("");
@@ -42,40 +44,48 @@ const ChangePasswordForm = () => {
   };
 
   return (
-    <form onSubmit={handleChangePassword} className="formContainer">
-      <h2>Change Password</h2>
-      <br />
-      <div className="passwordInput">
-        <label>New Password:</label>
-        <input
-          type={showNewPassword ? "text" : "password"}
-          value={newPassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-        />
-        <button type="button" onClick={toggleNewPasswordVisibility}>
-          {showNewPassword ? "Hide" : "Show"}
-        </button>
+    <>
+      <AdminNavbar />
+      <div>
+        <HeaderOfSection title={"Change Password"} />
       </div>
-      <div className="passwordInput">
-        <label>Confirm New Password:</label>
-        <input
-          type={showConfirmPassword ? "text" : "password"}
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <button type="button" onClick={toggleConfirmPasswordVisibility}>
-          {showConfirmPassword ? "Hide" : "Show"}
-        </button>
-      </div>
-      <div className="last-div-in-change-password">
-        <div className="buttonContainer">
-          <button className={"change-button"} type="submit">
-            Change Password
-          </button>
+      <form onSubmit={handleChangePassword} className="formContainer">
+        <div className="changePasswordContainer">
+          <div style={{ position: "relative", top: "25%" }}>
+            <div className="passwordInput">
+              <label>New Password:</label>
+              <input
+                type={showNewPassword ? "text" : "password"}
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
+              <button type="button" onClick={toggleNewPasswordVisibility}>
+                {showNewPassword ? "Hide" : "Show"}
+              </button>
+            </div>
+            <div className="passwordInput">
+              <label>Confirm New Password:</label>
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button type="button" onClick={toggleConfirmPasswordVisibility}>
+                {showConfirmPassword ? "Hide" : "Show"}
+              </button>
+            </div>
+          </div>
         </div>
-        {error && <p className="errorMessage">{error}</p>}
-      </div>
-    </form>
+        <div className="last-div-in-change-password">
+          <div className="buttonContainer">
+            <button className={"change-button"} type="submit">
+              Change Password
+            </button>
+          </div>
+          {error && <p className="errorMessage">{error}</p>}
+        </div>
+      </form>
+    </>
   );
 };
 
