@@ -45,6 +45,12 @@ import CreateTeachingPost from "./Teaching Posts/CreateTeachingPost.tsx";
 import OrganizationAccountInfo from "./OrganizationAccountInfo/OrganizationAccountInfo.tsx";
 import EditOrganizationAccountInfo from "./OrganizationAccountInfo/EditOrganizationAccountInfo.tsx";
 import UpdatedOrganizationInfo from "./OrganizationAccountInfo/UpdatedOrganizationInfo.tsx";
+import DeleteDonors from "./Admin/Donors/DeleteDonors.tsx";
+import PendingDonors from "./Admin/Donors/PendingDonors.tsx";
+import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
+import PendingOrganizations from "./Admin/Organizations/PendingOrganizations.tsx";
+import ChangePass from "./Admin/change password/ChangePass.tsx";
+import HomePage from "./Admin/HomePage.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -117,10 +123,16 @@ const router = createBrowserRouter(
           <Route path={"Updated"} element={<UpdatedOrganizationInfo />} />
         </Route>
       </Route>
-      {/*<Route path={"Admin"}>*/}
-      {/*  <Route index element={<AdminDashboard />} />*/}
-      {/*  //insert here rest of routes*/}
-      {/*</Route>*/}
+      <Route path="/Admin">
+        <Route index element={<HomePage />} />
+        <Route path="ViewDonors" element={<DeleteDonors />} />
+        <Route path="ViewOrganizations" element={<DeleteOrganizations />} />
+        <Route path="DonorSubmissions" element={<PendingDonors />} />
+        <Route path="OrganizationSubmissions" element={<PendingOrganizations />} />
+        <Route path="ChangePass" element={<ChangePass />} />
+        <Route path="/" element={<HomePage/>} />
+
+      </Route>
     </Route>,
   ),
 );
