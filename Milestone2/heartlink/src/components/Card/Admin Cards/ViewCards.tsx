@@ -9,6 +9,7 @@ interface ViewCardsProps {
   title: string;
   text: string;
   height?: string;
+  hideInfo?: boolean;
 }
 
 const ViewCards: React.FC<ViewCardsProps> = (props) => {
@@ -29,7 +30,7 @@ const ViewCards: React.FC<ViewCardsProps> = (props) => {
         <h4 className="title">{props.title}</h4>
         <p className="text">{props.text}</p>
       </div>
-      <AcceptRejectButton text={"View Info"} />
+      {!props.hideInfo && <AcceptRejectButton text={"View Info"} />}
       <div className="delete">
         <DeleteButton onClick={handleDeleteClick} />
       </div>
