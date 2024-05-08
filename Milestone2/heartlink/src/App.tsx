@@ -38,7 +38,14 @@ import {
   RequestQuantity,
 } from "./Donation Requests Page/Data_Extractor/RequestQuantity.tsx";
 import MedicalRequests from "./Donation Requests Page/MedicalRequests.tsx";
-import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
+import ChangePass from "./Admin/change password/ChangePass.tsx";
+import CreateMedicalPostPt2 from "./Medical Posts/CreateMedicalPostPt2.tsx";
+import CreateMedicalPost from "./Medical Posts/CreateMedicalPost.tsx";
+import ProBonos from "./Probonos/ProBonos.tsx";
+import CreateTeachingPost from "./Teaching Posts/CreateTeachingPost.tsx";
+import OrganizationAccountInfo from "./OrganizationAccountInfo/OrganizationAccountInfo.tsx";
+import EditOrganizationAccountInfo from "./OrganizationAccountInfo/EditOrganizationAccountInfo.tsx";
+import UpdatedOrganizationInfo from "./OrganizationAccountInfo/UpdatedOrganizationInfo.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -99,8 +106,22 @@ const router = createBrowserRouter(
             <Route path="2" element={<MedicalToolsPt2 />} />
           </Route>
         </Route>
+        <Route path="CreateMedicalRequest">
+          <Route path="1" element={<CreateMedicalPost />} />
+          <Route path="2" element={<CreateMedicalPostPt2 />} />
+        </Route>
+        <Route path="CreateTeachingPost" element={<CreateTeachingPost />} />
+        <Route path="FulfilledProboPosts" element={<ProBonos />} />
+        <Route path={"AccountInfo"}>
+          <Route index element={<OrganizationAccountInfo />} />
+          <Route path={"Edit"} element={<EditOrganizationAccountInfo />} />
+          <Route path={"Updated"} element={<UpdatedOrganizationInfo />} />
+        </Route>
       </Route>
-      <Route path={"test"} element={<DeleteOrganizations />} />
+      <Route path={"Admin"}>
+        <Route index element={<AdminDashboard />} />
+        //insert here rest of routes
+      </Route>
     </Route>,
   ),
 );

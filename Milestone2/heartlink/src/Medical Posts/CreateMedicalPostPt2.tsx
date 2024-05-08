@@ -72,17 +72,14 @@ function CreateMedicalPost() {
             </div>
             <div>
               <div className="mb-3" style={{ width: "600px" }}>
-                <label
-                  htmlFor="exampleFormControlTextarea1"
-                  className="form-label"
-                >
-                  Please write the details of the patient's medical case
-                </label>
+                <h5>Please write the details of the patient's medical case </h5>
                 <textarea
                   className="form-control"
-                  id="exampleFormControlTextarea1"
                   rows={9}
-                  style={{ height: "270px", borderColor: "#01A95D" }}
+                  style={{
+                    height: "270px",
+                    borderColor: "#01A95D",
+                  }}
                 ></textarea>
               </div>
             </div>
@@ -91,6 +88,7 @@ function CreateMedicalPost() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath={"../../"}
     />
   );
 }
