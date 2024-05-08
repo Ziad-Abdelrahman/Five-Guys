@@ -38,7 +38,6 @@ import {
   RequestQuantity,
 } from "./Donation Requests Page/Data_Extractor/RequestQuantity.tsx";
 import MedicalRequests from "./Donation Requests Page/MedicalRequests.tsx";
-import ChangePass from "./Admin/change password/ChangePass.tsx";
 import CreateMedicalPostPt2 from "./Medical Posts/CreateMedicalPostPt2.tsx";
 import CreateMedicalPost from "./Medical Posts/CreateMedicalPost.tsx";
 import ProBonos from "./Probonos/ProBonos.tsx";
@@ -118,10 +117,10 @@ const router = createBrowserRouter(
           <Route path={"Updated"} element={<UpdatedOrganizationInfo />} />
         </Route>
       </Route>
-      <Route path={"Admin"}>
-        <Route index element={<AdminDashboard />} />
-        //insert here rest of routes
-      </Route>
+      {/*<Route path={"Admin"}>*/}
+      {/*  <Route index element={<AdminDashboard />} />*/}
+      {/*  //insert here rest of routes*/}
+      {/*</Route>*/}
     </Route>,
   ),
 );
