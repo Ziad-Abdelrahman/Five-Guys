@@ -2,6 +2,7 @@ import "./Donate.css";
 import React, { useState } from "react";
 import DonateButton from "../Buttons/DonateButton.tsx";
 import DonationPic from "../../assets/DonationGeneral.jpeg";
+import BackButton from "../Buttons/BackButton.tsx";
 interface DonationQuantityProps {
   maxValue?: number;
   type?: String;
@@ -28,6 +29,17 @@ function DonationParent(props: DonationQuantityProps) {
 
   return (
     <div className="range-container">
+      <div className={"back-button-transp-container"}>
+        <BackButton
+          style={{
+            display: "flex",
+            paddingBottom: "10px",
+            width: "13%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        />
+      </div>
       <div className="header">
         <h1>{props.type}</h1>
         <p> {props.description}</p>
