@@ -11,7 +11,7 @@ function AdminLeftDiv() {
         </button>
         <div className="dropdown-content">
           <a href="ViewOrganizations">View Registered Organizations</a>
-          <a href ="DonorSubmissions">Accept/Reject Submissions</a>
+          <a href ="OrganizationSubmissions">Accept/Reject Submissions</a>
         </div>
       </div>
       <div className="dropdown">
@@ -21,7 +21,7 @@ function AdminLeftDiv() {
         </button>
         <div className="dropdown-content">
           <a href="ViewDonors">View Donors List</a>
-          <a href="OrganizationSubmissions">Accept/Reject Requests</a>
+          <a href="DonorSubmissions">Accept/Reject Requests</a>
         </div>
       </div>
     </>
