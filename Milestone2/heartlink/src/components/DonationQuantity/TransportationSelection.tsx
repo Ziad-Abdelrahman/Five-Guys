@@ -5,11 +5,15 @@ import delivery from "../../assets/deliveryGuy.png";
 import ScheduleSelection from "../../Donationdrop-off/ScheduleSelection.tsx";
 function TransportationSelection() {
   return (
-    <>
+    <div className={"beige-color-body"}>
       <div className="range-container">
         <div className="header">
           <h1>Pickup Info</h1>
-          <img style={{ width: "20%" }} src={delivery}></img>
+          <img
+            className="delivey-guy-img"
+            style={{ width: "20%" }}
+            src={delivery}
+          ></img>
           <div style={{ marginTop: "30px" }}>
             <h4>Choose Type Of Pickup Vehicle</h4>
           </div>
@@ -37,7 +41,7 @@ function TransportationSelection() {
           <DonateButton text={"Finish"} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

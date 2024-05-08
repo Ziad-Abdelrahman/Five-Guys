@@ -13,21 +13,13 @@ function OrganizationFilter({
   handleAreaFilter,
 }: OrganizationFilterProps) {
   const renderedOptions = [
-    "Animal welfare groups",
-    "Arts associations",
-    "Childcare organisations",
-    "Community sheds",
-    "Environmental groups",
-    "Health Promotion Charities",
-    "Hospitals and other healthcare providers",
-    "Housing providers",
-    "Medical research Institutions",
-    "Private and public ancillary funds",
-    "Public benevolent institutions",
-    "Social clubs",
-    "Sporting clubs and associations",
-    "Schools and other educational providers",
-    "Self-help groups",
+    "Cancer Institute",
+    "Food Charity",
+    "Human Development",
+    "Humanitarian Aid",
+    "Heart Diseases Institute",
+    "Global Humanitarian Network",
+    "Breast Cancer Institute",
   ];
   return (
     <>
@@ -43,7 +35,7 @@ function OrganizationFilter({
           onChange={(e) => handleTyoeFilter(e.target.value)}
         >
           <option selected value={"Type"}>
-            Hospital
+            Type
           </option>
           {renderedOptions.map((option) => (
             <option value={option}>{option}</option>
@@ -72,11 +64,14 @@ function OrganizationFilter({
           <option selected value={"Area"}>
             Area
           </option>
-          <option value="6th Of October">6th Of October</option>
-          <option value="Sheikh Zayed">Sheikh Zayed</option>
+          <option value="10th Of Ramadan">10th Of Ramadan</option>
+          <option value="El Saida Zeinab">El Saida Zeinab</option>
           <option value="Zagazig">Zagazig</option>
-          <option value="Maadi">Maadi</option>
+          <option value="El Haram">El Haram</option>
           <option value="Miami">Miami</option>
+          <option value="Sheikh Zayed">Sheikh Zayed</option>
+          <option value="Zamalek">Zamalek</option>
+          <option value="Nasr City">Nasr City</option>
         </select>
       </div>
     </>

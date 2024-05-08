@@ -12,7 +12,7 @@ import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 
 function MedicalCases() {
   const detailsList: hashSet = {
-    "1": [
+    "37": [
       "Ahmed Mahmoud",
       "45",
       "Male",
@@ -24,7 +24,7 @@ function MedicalCases() {
       "Cardiology",
       "Routine check-up for heart irregularities.",
     ],
-    "2": [
+    "38": [
       "Fatima Hassan",
       "34",
       "Female",
@@ -36,7 +36,7 @@ function MedicalCases() {
       "Pediatric",
       "Annual pediatric review and vaccination.",
     ],
-    "3": [
+    "39": [
       "Khaled Mohamed",
       "52",
       "Male",
@@ -48,7 +48,7 @@ function MedicalCases() {
       "Pediatric",
       "Follow-up treatment for lung cancer.",
     ],
-    "4": [
+    "40": [
       "Sara Ibrahim",
       "28",
       "Female",
@@ -60,7 +60,7 @@ function MedicalCases() {
       "Neurology",
       "Diagnosis of chronic migraines.",
     ],
-    "5": [
+    "41": [
       "Youssef Ali",
       "47",
       "Male",
@@ -72,7 +72,7 @@ function MedicalCases() {
       "Immunology",
       "Recovery from knee surgery.",
     ],
-    "6": [
+    "42": [
       "Amira Said",
       "37",
       "Female",
@@ -84,7 +84,7 @@ function MedicalCases() {
       "Immunology",
       "Assessment for possible thyroid issues.",
     ],
-    "7": [
+    "43": [
       "Omar Farouk",
       "40",
       "Male",
@@ -96,7 +96,7 @@ function MedicalCases() {
       "Psychiatry",
       "Treatment for severe eczema.",
     ],
-    "8": [
+    "44": [
       "Nour El-Din",
       "30",
       "Female",
@@ -108,7 +108,7 @@ function MedicalCases() {
       "Psychiatry",
       "Consultation for gastrointestinal disorders.",
     ],
-    "9": [
+    "45": [
       "Layla Fathi",
       "29",
       "Female",
@@ -120,7 +120,7 @@ function MedicalCases() {
       "Neurology",
       "Management of type 1 diabetes.",
     ],
-    "10": [
+    "46": [
       "Mohamed Salah",
       "43",
       "Male",
@@ -140,70 +140,70 @@ function MedicalCases() {
       description: "Medical Supplies",
       postedby: "57357 Hospital",
       postdate: "10/6/2023",
-      buttonID: "1",
+      buttonID: "37",
     },
     {
       image: ChildrenCancer,
       description: "Medical Supplies",
       postedby: "57357 Hospital",
       postdate: "5/1/2024",
-      buttonID: "2",
+      buttonID: "38",
     },
     {
       image: RedCresent,
       description: "Medical Supplies",
       postedby: "Red Cresent",
       postdate: "10/2/2024",
-      buttonID: "3",
+      buttonID: "39",
     },
     {
       image: ChildrenCancer,
       description: "Medical Supplies",
       postedby: "57357 Hospital",
       postdate: "25/4/2024",
-      buttonID: "4",
+      buttonID: "40",
     },
     {
       image: ChildrenCancer,
       description: "Medical Supplies",
       postedby: "57357 Hospital",
       postdate: "20/2/2024",
-      buttonID: "5",
+      buttonID: "41",
     },
     {
       image: MagdyYakoub,
       description: "Medical Supplies",
       postedby: "Magdi Yacoub Heart Foundation",
       postdate: "15/3/2024",
-      buttonID: "6",
+      buttonID: "42",
     },
     {
       image: MagdyYakoub,
       description: "Medical Supplies",
       postedby: "Magdi Yacoub Heart Foundation",
       postdate: "10/2/2024",
-      buttonID: "7",
+      buttonID: "43",
     },
     {
       image: RedCresent,
       description: "Medical Supplies",
       postedby: "Red Cresent",
       postdate: "12/2/2024",
-      buttonID: "8",
+      buttonID: "44",
     },
     {
       image: MagdyYakoub,
       description: "Medical Supplies",
       postedby: "Magdi Yacoub Heart Foundation",
       postdate: "12/3/2024",
-      buttonID: "9",
+      buttonID: "45",
     },
     {
       image: ChildrenCancer,
       description: "Medical Supplies",
       postedby: "57357 Hospital",
       postdate: "12/4/2024",
-      buttonID: "10",
+      buttonID: "46",
     },
   ];
   const [selectedID, setSelectedID] = useState("");

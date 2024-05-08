@@ -1,53 +1,73 @@
-import Org1 from "../../assets/Clothingbank.png";
-import Org2 from "../../assets/MagdyYakoub.png";
-import Org3 from "../../assets/baheya.png";
-import Org4 from "../../assets/Turin.jpg";
-import Org5 from "../../assets/Redcrescent.png";
+import Pic from "../../assets/profilepic.jpg";
 import HeaderOfSection from "../../components/Header/HeaderOfSection";
 import AdminOrgRequestsCard from "../../components/Card/Admin Cards/AdminOrgRequestsCard.tsx";
 import Search from "../../components/Search/Search.tsx";
 import { useState } from "react";
 import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 
-const PendingOrganizations = () => {
+function PendingDonors() {
   const cardData = [
     {
       id: "1",
-      image: Org1,
-      img_alt: "Clothing Bank logo",
-      title: "Clothing Bank",
-      text: "To be a sustainable role model for giving to provide the basic needs of clothes and blankets to those in need.",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "Robert Moore",
+      gender: "Male",
+      text: "Regular Donor",
+      phoneNumber: "+1234567890",
+      address: "123 Main St",
+      area: "Downtown",
+      Governorate: "City",
     },
     {
       id: "2",
-      image: Org2,
-      img_alt: "Magdy Yacoub Foundation logo",
-      title: "Magdy Yacoub Foundation",
-      text: "Expand access to world-class treatment",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "Jenna Clark",
+      gender: "Female",
+      text: "Teacher",
+      phoneNumber: "+1987654321",
+      address: "456 Elm St",
+      area: "Suburb",
+      Governorate: "Town",
     },
     {
       id: "3",
-      image: Org3,
-      img_alt: "Baheya logo",
-      title: "Baheya",
-      text: "Baheya Foundation is the first destination for women's health and safety",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "Amanda Anderson",
+      gender: "Female",
+      text: "Doctor",
+      phoneNumber: "+1122334455",
+      address: "789 Oak St",
+      area: "Rural",
+      Governorate: "County",
     },
     {
       id: "4",
-      image: Org4,
-      img_alt: "Turin logo",
-      title: "Turin",
-      text: "Together we could make a change.",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "Andrew Taylor",
+      gender: "Male",
+      text: "Teacher",
+      phoneNumber: "+1567890123",
+      address: "321 Pine St",
+      area: "Urban",
+      Governorate: "City",
     },
     {
       id: "5",
-      image: Org5,
-      img_alt: "Red Crescent logo",
-      title: "Red Crescent",
-      text: "Egyptian Red Crescent works to achieve the ultimate goal of alleviating humanitarian sufferings especially for those in crisis.",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "Nicole White",
+      gender: "Female",
+      text: "Regular Donor",
+      phoneNumber: "+1777888999",
+      address: "567 Maple St",
+      area: "Town",
+      Governorate: "District",
     },
   ];
-
   const [search, setSearch] = useState("");
 
   const handleSearch = (written: string) => {
@@ -87,12 +107,12 @@ const PendingOrganizations = () => {
               image={cardData.image}
               name={cardData.title}
               text={cardData.text}
-              type={"Organization"}
+              type={"Donor"}
             />
           ))}
       </div>
     </>
   );
-};
+}
 
-export default PendingOrganizations;
+export default PendingDonors;

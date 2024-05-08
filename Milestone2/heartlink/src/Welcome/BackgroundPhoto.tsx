@@ -12,7 +12,7 @@ function BackgroundPhoto() {
   return (
     <div className="backgroundphotoHolder" onClick={hideLogin}>
       <div className="welcome">
-        <h1 className="backgroundphotoText">
+        <h1>
           Fueling Hope
           <br /> Igniting Change
         </h1>
