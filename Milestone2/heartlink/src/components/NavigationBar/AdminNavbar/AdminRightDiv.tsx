@@ -29,7 +29,7 @@ function AdminRightDiv() {
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
             <li>
-              <a href="/admin/ChangePass">Change Password</a>
+              <a href="/Admin/ChangePass">Change Password</a>
             </li>
             <li>
               <a href="/">Logout</a>
