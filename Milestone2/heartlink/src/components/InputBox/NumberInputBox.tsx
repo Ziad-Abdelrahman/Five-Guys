@@ -6,6 +6,7 @@ interface InputBoxProps {
 }
 
 function NumberInputBox({ label, width }: InputBoxProps) {
+  
   return (
     <div className="form-floating mb-3" style={{ width: width }}>
       <input
@@ -14,6 +15,7 @@ function NumberInputBox({ label, width }: InputBoxProps) {
         id="floatingInput"
         placeholder="name@example.com"
         min="0"
+
       />
       <label>{label}</label>
     </div>

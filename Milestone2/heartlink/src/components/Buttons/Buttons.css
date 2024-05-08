@@ -42,23 +42,7 @@ button:focus {
     border-radius: 15px;
     font-size: 16px;
     margin: 10px;
-}
-.loginButton:hover {
-    background-color: #018448;
-}
-
-
-.accept, .reject{
-    height: 30px;
-    border-radius: 15px;
-    font-size: 16px;
-    margin: 5px;
-}
-
-.accept:hover{
-    background-color: #018448;
-}
-
+}    
 .signupButton{
     font-Size: 15px;
     background-Color: #A0A0A0;
@@ -122,23 +106,22 @@ button:focus {
 }
 
 
+
 /*-----------------------------------------------*/
 
-.delete-button {
-    background-color: transparent;
-    color: red;
-    border: 2px solid red;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.adminButton{
     height: 30px;
     border-radius: 15px;
     font-size: 16px;
     margin: 5px;
+    transition: transform 0.3s ease;
 }
-
-.delete-button:hover {
-    background-color: red;
-    color: white;
+button.adminButton:hover {
+    box-shadow: 0 0 10px #9ac481;
+}
+    
+button.adminButton:active {
+    transform: scale(1.3);
 }
 
 

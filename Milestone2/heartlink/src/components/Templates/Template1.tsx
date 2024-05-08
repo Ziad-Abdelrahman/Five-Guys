@@ -10,6 +10,8 @@ interface templateProps {
   hasButton?: boolean;
   forwardPath: string;
   backButtonPath?: string;
+  handleClick?: () => void;
+
 }
 
 function Template1({
@@ -19,6 +21,7 @@ function Template1({
   hasButton,
   forwardPath,
   backButtonPath,
+  handleClick,
 }: templateProps) {
   return (
     <div className="main">
@@ -28,6 +31,7 @@ function Template1({
         hasBackButton={hasButton}
         forwardPath={forwardPath}
         backwardPath={backButtonPath}
+        handleClick={handleClick}
       >
         {rightPanelDiv}
       </RightPanel>
