@@ -15,6 +15,7 @@ interface AdminOrgRequestsCardProps {
   text: string;
   name: string;
   handleClick?: () => void;
+  type: string;
 }
 
 function AdminOrgRequestsCard(props: AdminOrgRequestsCardProps) {
@@ -22,8 +23,8 @@ function AdminOrgRequestsCard(props: AdminOrgRequestsCardProps) {
 
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
-    doc.text("Organization Info: ", 80, 10);
-    doc.save("Organization_Submission.pdf");
+    doc.text(props.type + " Info: ", 80, 10);
+    doc.save(props.type + "_Submission.pdf");
   };
   const handleDeleteClick1 = () => {
     if (window.confirm("Are you sure you want to reject this request?")) {
