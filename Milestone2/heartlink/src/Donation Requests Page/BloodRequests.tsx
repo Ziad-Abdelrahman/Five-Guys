@@ -108,11 +108,15 @@ function BloodRequests() {
         <div>
           {detailsList[selectedID] && (
             <ul>
-              <li>Hospital: {detailsList[selectedID][0]}</li>
-              <br />
-              <li>Government: {detailsList[selectedID][1]}</li>
-              <br />
-              <li>Area: {detailsList[selectedID][2]}</li>
+              <li>Name: {detailsList[selectedID][0]}</li>
+
+              <li>Blood Type: {detailsList[selectedID][1]}</li>
+
+              <li>Hospital: {detailsList[selectedID][2]}</li>
+
+              <li>Government: {detailsList[selectedID][3]}</li>
+
+              <li>Area: {detailsList[selectedID][4]}</li>
             </ul>
           )}
           <div style={{ marginLeft: "40px" }}>

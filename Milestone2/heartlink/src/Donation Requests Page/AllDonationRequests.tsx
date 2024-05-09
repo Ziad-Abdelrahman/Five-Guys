@@ -194,6 +194,7 @@ function AllDonationRequests() {
               postedby={viewData.postedby}
               postdate={viewData.postdate}
               image={viewData.image}
+              showDonateButton={viewData.description != "Blood Donation"}
             />
           ))}
       </div>

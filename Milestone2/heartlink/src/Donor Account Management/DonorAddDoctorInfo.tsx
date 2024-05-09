@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import "./donorAccountMangPage.css";
 import InputBox from "../components/InputBox/InputBox.tsx";
 import FileUploader from "../components/FileUploader/FileUploader.tsx";
 import DonateButton from "../components/Buttons/DonateButton.tsx";
+import { useState } from "react";
 
-function donorAddTeacherInfo() {
+function DonorAddDoctorInfo() {
   const [specialization, setSpecialization] = useState("");
   const [numberOfCases, setNumberOfCases] = useState("");
   const [isUnderReview, setUnderReview] = useState(false);
@@ -18,18 +19,19 @@ function donorAddTeacherInfo() {
       setUnderReview(true); // Update review status
       setErrorMessage(""); // Clear any previous error messages
     }
-    console.log("After updating states:", {
-      specialization,
-      numberOfCases,
-      errorMessage,
-      isUnderReview,
-    });
   };
 
   return (
     <>
+      {/*main container for probono info*/}
       <div className="probono-info-container">
-        <div style={{ display: "flex", flexDirection: "column", width: "70%" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "70%",
+          }}
+        >
           <h2>Doctor Info</h2>
           <div style={{ padding: "0 4%" }}>
             <div
@@ -44,7 +46,6 @@ function donorAddTeacherInfo() {
                 width={"49%"}
                 label={"Enter Specialization"}
                 type={"string"}
-                value={specialization}
                 onChange={(e) => setSpecialization(e.target.value)}
               />
             </div>
@@ -62,7 +63,6 @@ function donorAddTeacherInfo() {
                 width={"49%"}
                 label={"Enter Quantity"}
                 type={"number"}
-                value={numberOfCases}
                 onChange={(e) => setNumberOfCases(e.target.value)}
               />
             </div>
@@ -107,4 +107,4 @@ function donorAddTeacherInfo() {
   );
 }
 
-export default donorAddTeacherInfo;
+export default DonorAddDoctorInfo;

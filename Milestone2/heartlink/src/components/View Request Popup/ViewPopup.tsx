@@ -6,6 +6,7 @@ interface ViewPopupProps {
   handleClick?: () => void;
   width?: string; // Optional width for the popup
   height?: string; // Optional height for the popup
+  borderRadius?: string; // Optional border radius for the popup
 }
 
 function viewPopup({
@@ -14,10 +15,14 @@ function viewPopup({
   handleClick,
   width,
   height,
+  borderRadius,
 }: ViewPopupProps) {
   return trigger ? (
     <div className="popup-container">
-      <div className="popup-inner" style={{ width: width, height: height }}>
+      <div
+        className="popup-inner"
+        style={{ width: width, height: height, borderRadius: borderRadius }}
+      >
         <button className="close-btn" onClick={handleClick}>
           <img src={close} />{" "}
         </button>

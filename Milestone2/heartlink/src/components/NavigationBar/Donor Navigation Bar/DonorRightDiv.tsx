@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { IoNotificationsOutline } from "react-icons/io5";
-import ProfileCircle from "./profileCircle";
 import { TbTruckDelivery } from "react-icons/tb";
 
 function DonorRightDiv() {
@@ -83,7 +82,7 @@ function DonorRightDiv() {
           />
           {/* Label for the checkbox, which will be the clickable area */}
           <label htmlFor="dropdownCheckbox" className="profileCircleContainer">
-            <ProfileCircle />
+            <ProfileCircle initials={"AA"} />
           </label>
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
@@ -91,7 +90,7 @@ function DonorRightDiv() {
               <a href="#">Account info</a>
             </li>
             <li>
-              <a href="#">Settings</a>
+              <Link to={"/"}> Logout</Link>
             </li>
             <li>
               <a href="#">Logout</a>

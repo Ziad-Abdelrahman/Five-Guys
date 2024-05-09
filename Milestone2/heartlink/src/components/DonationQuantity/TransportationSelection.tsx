@@ -4,20 +4,39 @@ import RadioButton from "../RadioButton/RadioButton.tsx";
 import delivery from "../../assets/deliveryGuy.png";
 import ScheduleSelection from "../../Donationdrop-off/ScheduleSelection.tsx";
 import BackButton from "../Buttons/BackButton.tsx";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 function TransportationSelection() {
+  const [selectedRadio, setSelectedRadio] = useState("");
+  const [selectedTiming, setselectedTiming] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleClick = () => {
+    if (!(selectedRadio && selectedTiming)) {
+      setErrorMessage("Please fill in all fields.");
+      return;
+    }
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+
+  const handleRadioButton = (value: string) => {
+    setSelectedRadio(value);
+  };
+  const handleScheduleSelection = (value: string) => {
+    setselectedTiming(value);
+  };
+
   return (
     <div className={"beige-color-body"}>
       <div className="range-container">
         <div className={"back-button-transp-container"}>
-          <BackButton
-            style={{
-              display: "flex",
-              paddingBottom: "10px",
-              width: "13%",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          />
+          <Link to="../">
+            <div>
+              <BackButton />
+            </div>
+          </Link>
         </div>
         <div className="header">
           <h1>Pickup Info</h1>
@@ -39,18 +58,23 @@ function TransportationSelection() {
               width: "100%",
             }}
           >
-            <RadioButton text={"Car"} />
-            <RadioButton text={"Truck"} />
-            <RadioButton text={"Motorcycle"} />
+            <RadioButton text={"Car"} handleFilterChange={handleRadioButton} />
+            <RadioButton
+              text={"Truck"}
+              handleFilterChange={handleRadioButton}
+            />
+            <RadioButton
+              text={"Motorcycle"}
+              handleFilterChange={handleRadioButton}
+            />
           </div>
         </div>
-
         <div className="Donor-TimeSelection-container">
           <ScheduleSelection text={"Schedule the Donation Pickup"} />
         </div>
 
         <div className="button-container">
-          <DonateButton text={"Finish"} />
+          <DonateButton text={"Finish"} onClick={handleClick} />
         </div>
       </div>
     </div>

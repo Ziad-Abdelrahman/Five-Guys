@@ -1,27 +1,29 @@
-import "./donorAccountMangPage.css";
+import { useState } from "react";
 import InputBox from "../components/InputBox/InputBox.tsx";
 import FileUploader from "../components/FileUploader/FileUploader.tsx";
 import DonateButton from "../components/Buttons/DonateButton.tsx";
-import { useState } from "react";
 
-function donorAddTeacherInfo() {
+function DonorAddTeacherInfo() {
+  const [subject, setSubject] = useState("");
+  const [numberOfStudents, setNumberOfStudents] = useState("");
   const [isUnderReview, setUnderReview] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleFinishClick = () => {
-    setUnderReview(true); // Update state to show the under review message
+    // Check if fields are empty and set error message accordingly
+    if (!subject.trim() || !numberOfStudents.trim()) {
+      setErrorMessage("Please fill in all fields & upload the certification."); // Set error message
+      setUnderReview(false); // Ensure review message doesn't show
+    } else {
+      setUnderReview(true); // Update review status
+      setErrorMessage(""); // Clear any previous error messages
+    }
   };
 
   return (
     <>
-      {/*main container for probono info*/}
       <div className="probono-info-container">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "70%",
-          }}
-        >
+        <div style={{ display: "flex", flexDirection: "column", width: "70%" }}>
           <h2>Doctor Info</h2>
           <div style={{ padding: "0 4%" }}>
             <div
@@ -31,11 +33,13 @@ function donorAddTeacherInfo() {
                 justifyContent: "space-between",
               }}
             >
-              <h5>Specify Specialization</h5>
+              <h5>Specify Subject</h5>
               <InputBox
                 width={"49%"}
-                label={"Enter Specialization"}
+                label={"Enter Subject"}
                 type={"string"}
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
               />
             </div>
             <div
@@ -46,12 +50,14 @@ function donorAddTeacherInfo() {
               }}
             >
               <h5 style={{ marginRight: "10%", width: "41%" }}>
-                Number of Cases
+                Number of Students
               </h5>
               <InputBox
                 width={"49%"}
                 label={"Enter Quantity"}
                 type={"number"}
+                value={numberOfStudents}
+                onChange={(e) => setNumberOfStudents(e.target.value)}
               />
             </div>
             <div
@@ -65,11 +71,17 @@ function donorAddTeacherInfo() {
                 <DonateButton text={"Finish"} />
               </div>
 
-              {isUnderReview && (
+              {errorMessage && (
+                <div style={{ color: "red", marginLeft: "10px" }}>
+                  {errorMessage}
+                </div>
+              )}
+
+              {isUnderReview && !errorMessage && (
                 <div
                   style={{
-                    justifyContent: "center", // Centers vertically in the flex container
-                    alignItems: "center", // Centers horizontally in the flex container
+                    justifyContent: "center",
+                    alignItems: "center",
                     textAlign: "center",
                   }}
                 >
@@ -82,11 +94,11 @@ function donorAddTeacherInfo() {
           </div>
         </div>
         <div className={"Donor-file-uploader-container"}>
-          <FileUploader text={"Upload Certication"} />
+          <FileUploader text={"Upload Certification"} />
         </div>
       </div>
     </>
   );
 }
 
-export default donorAddTeacherInfo;
+export default DonorAddTeacherInfo;

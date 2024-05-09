@@ -6,11 +6,13 @@ import bin from "../../assets/bin.svg";
 interface imageUploaderProps {
   width?: string;
   height?: string;
+  text?: string;
 }
 
 function ImageUploader({
   width = "250px",
   height = "150px",
+  text = "Upload File",
 }: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
@@ -70,7 +72,7 @@ function ImageUploader({
           <>
             {" "}
             <img src={iconImg} alt="iconImage" style={{ width: "40px" }} />
-            Upload File
+            {text}
           </>
         </button>
       </div>

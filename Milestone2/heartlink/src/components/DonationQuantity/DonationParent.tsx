@@ -2,6 +2,8 @@ import "./Donate.css";
 import React, { useState } from "react";
 import DonateButton from "../Buttons/DonateButton.tsx";
 import DonationPic from "../../assets/DonationGeneral.jpeg";
+import BackButton from "../Buttons/BackButton.tsx";
+import { Link } from "react-router-dom";
 interface DonationQuantityProps {
   maxValue?: number;
   type?: String;
@@ -30,6 +32,11 @@ function DonationParent(props: DonationQuantityProps) {
   return (
     <div className="beige-color-body">
       <div className="range-container">
+        <div className={"back-button-transp-container"}>
+          <Link to="../">
+            <BackButton />
+          </Link>
+        </div>
         <div className="header">
           <h1>{props.type}</h1>
           <p> {props.description}</p>
@@ -61,7 +68,9 @@ function DonationParent(props: DonationQuantityProps) {
           {/* Display the current value in a box */}
         </div>
         <div className="button-container">
-          <DonateButton text={"Next"} />
+          <Link to={"Transportation"}>
+            <DonateButton text={"Next"} />
+          </Link>
         </div>
       </div>
     </div>

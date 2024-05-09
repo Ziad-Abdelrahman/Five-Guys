@@ -10,13 +10,15 @@ function DonorDashboard() {
             className="organizationDetailsDashboard"
             style={{ width: "100%" }}
           >
-            <h4>Name: </h4>
-            <h6>Joined:</h6> {/* Organization's date of establishment */}
-            <h6>Job:</h6> {/* Organization's location */}
-            <h6>Email:</h6> {/* Organization's description */}
+            <h4>Name: Abdallah Ahmed</h4>
+            <h6>Joined: May 2024</h6>{" "}
+            {/* Organization's date of establishment */}
+            <h6>Job: Doctor</h6> {/* Organization's location */}
+            <h6>Email: abdallah22a92@gmail.com</h6>{" "}
+            {/* Organization's description */}
           </div>
         </div>
-        <div className="organizationCards">
+        <div className="organizationCards" style={{ margin: "8% 0" }}>
           <div className="organizationCard">
             <div>
               <h4>Volunteers</h4>

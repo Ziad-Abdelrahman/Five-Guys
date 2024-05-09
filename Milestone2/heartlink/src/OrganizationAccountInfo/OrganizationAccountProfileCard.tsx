@@ -3,9 +3,9 @@ import img from "../assets/baheya.png";
 interface OrganizationAccountProfileCardProps {
   name: string;
   type: string;
-  area: string;
-  city: string;
-  address: string;
+  email: string;
+  hotline: string;
+  working: string;
 }
 function OrganizationAccountProfileCard(
   props: OrganizationAccountProfileCardProps,
@@ -24,17 +24,17 @@ function OrganizationAccountProfileCard(
           <div className={"org-info-header"}>
             <h5>Name</h5>
             <h5>Type</h5>
-            <h5>Area</h5>
-            <h5>City</h5>
-            <h5>Address</h5>
+            <h5>Email</h5>
+            <h5>Hotline</h5>
+            <h5>Working hours</h5>
           </div>
 
           <div className={"my-profile-info"}>
             <p>{props.name}</p>
             <p>{props.type}</p>
-            <p>{props.area}</p>
-            <p>{props.city}</p>
-            <p>{props.address}</p>
+            <p>{props.email}</p>
+            <p>{props.hotline}</p>
+            <p>{props.working}</p>
           </div>
         </div>
       </div>

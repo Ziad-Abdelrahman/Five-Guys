@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import AcceptRejectButton from "../../Buttons/AcceptRejectButton.tsx";
 import "./cards.css";
 import DeleteButton from "../../Buttons/DeleteButton.tsx";
+import AdminViewInfoButton from "../../Buttons/AdminViewInfoButton.tsx";
 
 interface ViewCardsProps {
+  id: string;
   image: string;
   img_alt: string;
   title: string;
   text: string;
   height?: string;
   hideInfo?: boolean;
+  hideDelete?: boolean;
+  handleLearnMoreClick?: (id: string) => void;
 }
 
 const ViewCards: React.FC<ViewCardsProps> = (props) => {
@@ -30,10 +33,18 @@ const ViewCards: React.FC<ViewCardsProps> = (props) => {
         <h4 className="title">{props.title}</h4>
         <p className="text">{props.text}</p>
       </div>
-      {!props.hideInfo && <AcceptRejectButton text={"View Info"} />}
-      <div className="delete">
-        <DeleteButton onClick={handleDeleteClick} />
-      </div>
+      {!props.hideInfo && (
+        <AdminViewInfoButton
+          id={props.id}
+          text={"View Info"}
+          onClick={props.handleLearnMoreClick}
+        />
+      )}
+      {!props.hideDelete && (
+        <div className="delete">
+          <DeleteButton onClick={handleDeleteClick} />
+        </div>
+      )}
     </div>
   ) : null;
 };

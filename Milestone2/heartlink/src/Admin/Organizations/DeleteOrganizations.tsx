@@ -15,6 +15,7 @@ import Search from "../../components/Search/Search.tsx";
 import OrganizationFilter from "../../components/DonorFilterCard/OrganizationFilter.tsx";
 import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
 import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
+import ViewPopup from "../../components/View Request Popup/ViewPopup.tsx";
 
 const DeleteOrganizations = () => {
   const cardData = [
@@ -124,6 +125,15 @@ const DeleteOrganizations = () => {
   const [type, setType] = useState("");
   const [city, setCity] = useState("");
   const [area, setArea] = useState("");
+  const [selectedID, setSelectedID] = useState("");
+  //responsible for getting the id of the request to view its details
+  function handleLearnMoreClick(id: string) {
+    setSelectedID(id);
+  }
+  //responsible for closing the popup
+  function handleClosePopUp() {
+    setSelectedID("");
+  }
 
   function handleType(chosenType: string) {
     chosenType === "Type" ? setType("") : setType(chosenType);
@@ -142,6 +152,23 @@ const DeleteOrganizations = () => {
   return (
     <>
       <AdminNavbar />
+      <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
+        <div>
+          {cardData
+            .filter((cardData) => cardData.id === selectedID)
+            .map((cardData) => (
+              <ul>
+                <li>Category: {cardData.type}</li>
+                <br />
+                <li>City: {cardData.city}</li>
+                <br />
+                <li>Area: {cardData.area}</li>
+                <br />
+                <li>Established: {cardData.established}</li>
+              </ul>
+            ))}
+        </div>
+      </ViewPopup>
       <HeaderOfSection
         title={"Registered Organization"}
         smallDivStyle={{
@@ -158,7 +185,7 @@ const DeleteOrganizations = () => {
         handleGovernmentFilter={handleCity}
         handleAreaFilter={handleArea}
       />
-      <div className={"organizations-container"}>
+      <div className={"admin-organizations-container"}>
         {cardData
           .filter(
             (cardData) =>
@@ -169,12 +196,13 @@ const DeleteOrganizations = () => {
           )
           .map((cardData) => (
             <ViewCards
-              key={cardData.id}
+              id={cardData.id}
               image={cardData.image}
               img_alt={cardData.img_alt}
               title={cardData.title}
               text={cardData.text}
               height={"400px"}
+              handleLearnMoreClick={handleLearnMoreClick}
             />
           ))}
       </div>

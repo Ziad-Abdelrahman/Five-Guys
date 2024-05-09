@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import DropDown from "../components/DropDown/DropDown";
 interface ScheduleSelectionProps {
   text?: string; // Optional prop to set a default heading
+  onClick?: (selected: string) => void;
 }
 
-const ScheduleSelection: React.FC<ScheduleSelectionProps> = ({ text }) => {
+const ScheduleSelection: React.FC<ScheduleSelectionProps> = ({
+  text,
+  onClick,
+}) => {
   const [selectedSlot, setSelectedSlot] = useState<string>("");
 
   const timeSlots: string[] = [
@@ -17,6 +21,7 @@ const ScheduleSelection: React.FC<ScheduleSelectionProps> = ({ text }) => {
 
   const handleSlotSelection = (slot: string) => {
     setSelectedSlot(slot);
+    onClick && onClick(slot);
   };
 
   return (
@@ -25,7 +30,7 @@ const ScheduleSelection: React.FC<ScheduleSelectionProps> = ({ text }) => {
       <p>Select a time slot :</p>
       <DropDown
         options={timeSlots}
-        selected={selectedSlot}
+        selected={"Specify a time slot"}
         width="200px"
         onChange={handleSlotSelection}
       />

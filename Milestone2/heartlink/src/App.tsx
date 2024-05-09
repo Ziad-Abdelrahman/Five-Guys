@@ -52,6 +52,16 @@ import PendingOrganizations from "./Admin/Organizations/PendingOrganizations.tsx
 import ChangePass from "./Admin/change password/ChangePass.tsx";
 import AdminDashboard from "./Admin/AdminDashboard.tsx";
 import DonorDashboard from "./DonorDashboard/DonorDashboard.tsx";
+import CategoriesPage from "./Donor Categories Page/CategoriesPage.tsx";
+import BloodRequests from "./Donation Requests Page/BloodRequests.tsx";
+import FoodRequests from "./Donation Requests Page/FoodRequests.tsx";
+import SchoolSuppliesRequests from "./Donation Requests Page/SchoolSuppliesRequests.tsx";
+import ToysRequests from "./Donation Requests Page/ToysRequests.tsx";
+import MedicalCases from "./Donation Requests Page/MedicalCases.tsx";
+import TeacherPosts from "./Donation Requests Page/TeacherPosts.tsx";
+import TransportationSelection from "./components/DonationQuantity/TransportationSelection.tsx";
+import AllDonationRequests from "./Donation Requests Page/AllDonationRequests.tsx";
+import DonorAccountMangPage from "./Donor Account Management/DonorAccountMangPage.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -60,15 +70,104 @@ const router = createBrowserRouter(
       <Route path="Signup" element={<SignUp />} />
       <Route path="Donor">
         <Route index element={<DonorDashboard />} />
-        <Route
-          path="Quantity/:id"
-          element={<RequestQuantity />}
-          loader={RequestLoader}
-        />
-        <Route path={"ClothesDonation"} element={<ClothesRequests />} />
-        <Route path={"MedicalRequests"} element={<MedicalRequests />} />
+
+        <Route path={"AccountInfo"} element={<DonorAccountMangPage />} />
+
+        <Route path="ViewAllDonations">
+          <Route index element={<AllDonationRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"ViewCategories"} element={<CategoriesPage />}></Route>
+
+        {/*<Route path={"ViewCategories"} element={</>} />*/}
+        <Route path={"TeachingPosts"} element={<TeacherPosts />} />
+        <Route path={"MedicalPosts"} element={<MedicalCases />} />
+
+        <Route path={"ClothingRequests"}>
+          <Route index element={<ClothesRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"FoodRequests"}>
+          <Route index element={<FoodRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"ToysRequests"}>
+          <Route index element={<ToysRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"MedicationRequests"}>
+          <Route index element={<MedicalRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+        <Route path={"SchoolRequests"}>
+          <Route index element={<SchoolSuppliesRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"BloodRequests"} element={<BloodRequests />}></Route>
+
+        <Route path={"ClothesDonation"}>
+          <Route index element={<ClothesRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"MedicalRequests"}>
+          <Route index element={<MedicalRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
       </Route>
-      {/* <Route path="Dashboard" element={<RecipientDashboard />} />*/}
       <Route path="Organization">
         <Route index element={<OrganizationDashboard />} />
         <Route

@@ -4,21 +4,19 @@ import DonorAccountProfileCard from "../components/Card/DonorAccountProfileCard.
 import DonorProbonoCard from "../components/Card/DonorProbonoCard.tsx";
 
 import "./donorAccountMangPage.css";
-
 import Doctor from "../assets/doctor.png";
 import Teacher from "../assets/teachervector.png";
 import { useState } from "react";
+import DonorAddTeacherInfo from "./DonorAddTeacherInfo.tsx";
+import DonorAddDoctorInfo from "./DonorAddDoctorInfo.tsx";
 
-import DonorAddTeacherInfo from "./donorAddTeacherInfo.tsx";
-import DonorAddDoctorInfo from "./donorAddDoctorInfo.tsx"; // Ensure this component exists and is imported correctly
-
-function donorAccountMangPage() {
-  const [selectedProbono, setSelectedProbono] = useState(null);
+function DonorAccountMangPage() {
+  const [selectedProbono, setSelectedProbono] = useState("");
 
   // Function to toggle the visibility of the dropdown based on the card clicked
-  const toggleProbonoInfo = (probonoType) => {
+  const toggleProbonoInfo = (probonoType: string) => {
     if (selectedProbono === probonoType) {
-      setSelectedProbono(null); // If the same type is clicked again, it will hide
+      setSelectedProbono(""); // If the same type is clicked again, it will hide
     } else {
       setSelectedProbono(probonoType); // Set to the selected type
     }
@@ -54,4 +52,4 @@ function donorAccountMangPage() {
   );
 }
 
-export default donorAccountMangPage;
+export default DonorAccountMangPage;

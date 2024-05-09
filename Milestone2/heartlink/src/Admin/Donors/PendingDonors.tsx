@@ -4,6 +4,7 @@ import AdminOrgRequestsCard from "../../components/Card/Admin Cards/AdminOrgRequ
 import Search from "../../components/Search/Search.tsx";
 import { useState } from "react";
 import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
+import ViewPopup from "../../components/View Request Popup/ViewPopup.tsx";
 
 function PendingDonors() {
   const cardData = [
@@ -11,64 +12,111 @@ function PendingDonors() {
       id: "1",
       image: Pic,
       img_alt: "profile picture",
-      title: "Robert Moore",
+      title: "Ahmed Sherif",
       gender: "Male",
       text: "Regular Donor",
-      phoneNumber: "+1234567890",
-      address: "123 Main St",
-      area: "Downtown",
-      Governorate: "City",
+      phoneNumber: "01119997309",
+      address: "Mountain View Apartment 1",
+      area: "Fifth Settlement",
+      Governorate: "Cairo",
     },
     {
       id: "2",
       image: Pic,
       img_alt: "profile picture",
-      title: "Jenna Clark",
+      title: "Asmaa Mohamed",
       gender: "Female",
       text: "Teacher",
-      phoneNumber: "+1987654321",
-      address: "456 Elm St",
-      area: "Suburb",
-      Governorate: "Town",
+      phoneNumber: "01119997310",
+      address: "Tawfeek Street Building 11 Apartment 6",
+      area: "Nasr City",
+      Governorate: "Cairo",
     },
     {
       id: "3",
       image: Pic,
       img_alt: "profile picture",
-      title: "Amanda Anderson",
+      title: "Farida Ayman",
       gender: "Female",
       text: "Doctor",
-      phoneNumber: "+1122334455",
-      address: "789 Oak St",
-      area: "Rural",
-      Governorate: "County",
+      phoneNumber: "01119997412",
+      address: "El Hay el awel , Villa 3",
+      area: "Obour",
+      Governorate: "Cairo",
     },
     {
       id: "4",
       image: Pic,
       img_alt: "profile picture",
-      title: "Andrew Taylor",
+      title: "Malek Radwan",
       gender: "Male",
-      text: "Teacher",
-      phoneNumber: "+1567890123",
-      address: "321 Pine St",
-      area: "Urban",
-      Governorate: "City",
+      text: "Blood Donor",
+      phoneNumber: "01003450450",
+      address: "Mahmoud Selim St , Building 3 , Apartment 6",
+      area: "Mohandessin",
+      Governorate: "Cairo",
     },
     {
       id: "5",
       image: Pic,
       img_alt: "profile picture",
-      title: "Nicole White",
+      title: "Malak khaled",
+      gender: "Female",
+      text: "Blood Donor",
+      phoneNumber: "01000366671",
+      address: "Saba Basha St , Building 17 , Apartment 10",
+      area: "Miami",
+      Governorate: "Alexandria",
+    },
+    {
+      id: "6",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "Sara Ali",
       gender: "Female",
       text: "Regular Donor",
-      phoneNumber: "+1777888999",
-      address: "567 Maple St",
-      area: "Town",
-      Governorate: "District",
+      phoneNumber: "0122888719",
+      address: "El Horeya St , Villa 225",
+      area: "Sheraton",
+      Governorate: "Cairo",
+    },
+    {
+      id: "7",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "Mohamed Helmy",
+      gender: "Male",
+      text: "Doctor",
+      phoneNumber: "0155777900",
+      address: "Taha Hussein St , Villa 312",
+      area: "Shrouk",
+      Governorate: "Cairo",
+    },
+    {
+      id: "8",
+      image: Pic,
+      img_alt: "profile picture",
+      title: "George Adly",
+      gender: "Male",
+      text: "Teacher",
+      phoneNumber: "0100780780",
+      address: "Fouad St Villa 256",
+      area: "Miami",
+      Governorate: "Alexandria",
     },
   ];
+
   const [search, setSearch] = useState("");
+
+  const [selectedID, setSelectedID] = useState("");
+  //responsible for getting the id of the request to view its details
+  function handleLearnMoreClick(id: string) {
+    setSelectedID(id);
+  }
+  //responsible for closing the popup
+  function handleClosePopUp() {
+    setSelectedID("");
+  }
 
   const handleSearch = (written: string) => {
     setSearch(written);
@@ -78,6 +126,38 @@ function PendingDonors() {
     <>
       <div>
         <AdminNavbar />
+        <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
+          <div>
+            {cardData
+              .filter((cardData) => cardData.id === selectedID)
+              .map((cardData) => (
+                <ul>
+                  <li>
+                    <p>Name: {cardData.title}</p>
+                  </li>
+                  <li>
+                    <p>Gender: {cardData.gender}</p>
+                  </li>
+                  <li>
+                    <p>Type: {cardData.text}</p>
+                  </li>
+                  <li>
+                    <p>Phone number: {cardData.phoneNumber}</p>
+                  </li>
+                  <li>
+                    <p>City: {cardData.Governorate}</p>
+                  </li>
+                  <li>
+                    <p>Area: {cardData.area}</p>
+                  </li>
+                  <li>
+                    <p>Address: {cardData.address}</p>
+                  </li>
+                </ul>
+              ))}
+          </div>
+        </ViewPopup>
+
         <HeaderOfSection
           title={"Pending Organizations"}
           smallDivStyle={{
@@ -103,11 +183,13 @@ function PendingDonors() {
           .filter((cardData) => cardData.title.toLowerCase().includes(search))
           .map((cardData) => (
             <AdminOrgRequestsCard
+              buttonID={cardData.id}
               key={cardData.id}
               image={cardData.image}
               name={cardData.title}
               text={cardData.text}
               type={"Donor"}
+              handleClick={handleLearnMoreClick}
             />
           ))}
       </div>

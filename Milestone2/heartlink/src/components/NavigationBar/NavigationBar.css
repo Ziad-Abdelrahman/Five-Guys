@@ -72,7 +72,7 @@
     animation: notificationBounce 0.4s infinite; /* Runs every 15 seconds indefinitely */
 }
 
-.notifications-dropdown {
+.donor-notifications-dropdown {
     position: absolute;
     margin-top: 5px;
     min-width: 300px;
@@ -84,14 +84,15 @@
     padding: 10px;
     right: 90px;
     z-index: 1000;
+    border-radius: 10px;
 }
-.notification-container-inside-dropdown {
+.donor-notification-container-inside-dropdown {
     display: flex;
     flex-direction: row;
     align-items: center; /* Ensures vertical centering */
     height:40%;
 }
 
-.notification-container-inside-dropdown p {
+.donor-notification-container-inside-dropdown p {
     margin: 0; /* Removes default margins */
 }
