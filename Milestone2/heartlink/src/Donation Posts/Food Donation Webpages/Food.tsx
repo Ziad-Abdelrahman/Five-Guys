@@ -29,11 +29,29 @@ function Food() {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedFood, setSelectedFood] = useState("");
+  const[quantity, setQuantity] = useState("");
+  const [error, setError] = useState("");
+
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     setSelectedFood("");
+
   };
+
+  const handlleQuantityChange = (num: string) => {
+    setQuantity(num);
+  };
+
+  const handleClick = () => {
+    if( selectedCategory.trim()===""|| selectedFood.trim()==="" || quantity.trim() ===""){
+      setError("Please provide all the required information.");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  }
 
   return (
     <Template1
@@ -55,6 +73,7 @@ function Food() {
               selected={"Specify food category"}
               width={"280px"}
               onChange={handleCategoryChange}
+              
             />
             <br />
             <br />
@@ -66,9 +85,10 @@ function Food() {
               width={"280px"}
               onChange={(food) => setSelectedFood(food)}
               disabled={!selectedCategory}
+              
             />
-            <br />
-            <br />
+            {/* <br />
+            <br /> */}
             {selectedCategory === "Fruits" ||
             selectedCategory === "Vegetables" ? (
               <>
@@ -76,21 +96,28 @@ function Food() {
                 <NumberInputBox
                   label={"Quantity (in KG)"}
                   width={"280px"}
+                  handleChange={handlleQuantityChange}
                 />{" "}
               </>
             ) : (
               <>
                 <h4> How much food do you need?</h4>
-                <NumberInputBox label={"Quantity"} width={"280px"} />{" "}
+                <NumberInputBox label={"Quantity"} width={"280px"} handleChange={handlleQuantityChange}/>{" "}
+                {error && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+            )}
               </>
             )}
+
           </div>
+         
         </div>
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
       forwardPath={"/"}
       backButtonPath={"../"}
+      handleClick={handleClick}
     />
   );
 }
