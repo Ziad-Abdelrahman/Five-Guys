@@ -51,6 +51,8 @@ function AllDonationRequests() {
       "Quantity: 10",
     ],
     "21": [
+      "Name: Abdallah",
+      "Blood Type: B+",
       "Category: Charity Organization",
       "Organization: Red Crescent",
       "Location: Cairo, Maadi",

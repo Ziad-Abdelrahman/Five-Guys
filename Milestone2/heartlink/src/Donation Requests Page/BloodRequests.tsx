@@ -12,13 +12,13 @@ import { useState } from "react";
 
 function BloodRequests() {
   const detailsList: hashSet = {
-    "1": ["57357", "Cairo", "6th Of October"],
-    "2": ["Red Cresent", "Giza", "Sheikh Zayed"],
-    "3": ["57357", "Alexandria", "Miami"],
-    "4": ["57357", "Cairo", "Maadi"],
-    "5": ["Magdi Yacoub", "Sharkia", "Zagazig"],
-    "6": ["Magdi Yacoub", "Cairo", "Maadi"],
-    "7": ["Red Cresent", "Giza", "Sheikh Zayed"],
+    "1": ["Ahmed", "A+", "57357", "Cairo", "6th Of October"],
+    "2": ["Mohamed", "AB-", "Red Cresent", "Giza", "Sheikh Zayed"],
+    "3": ["Omar", "AB+", "57357", "Alexandria", "Miami"],
+    "4": ["Farah", "B+", "57357", "Cairo", "Maadi"],
+    "5": ["Yassin", "O-", "Magdi Yacoub", "Sharkia", "Zagazig"],
+    "6": ["Younis", "AB-", "Magdi Yacoub", "Cairo", "Maadi"],
+    "7": ["Abdallah", "B-", "Red Cresent", "Giza", "Sheikh Zayed"],
   };
 
   const cardData = [

@@ -11,10 +11,10 @@ function DonorLeftDiv() {
           <img className="arrow-in-button" src={arrow} alt="arrow" />
         </button>
         <div className="dropdown-content">
-          <a href="#">View All Donations</a>
-          <a href="#">View Categories</a>
-          <a href="#">Teaching posts</a>
-          <a href="#">Medical posts</a>
+          <Link to={"/Donor/ViewAllDonations"}>View All Donations</Link>
+          <Link to={"/Donor/ViewCategories"}>View Categories</Link>
+          <Link to={"/Donor/TeachingPosts"}>Teaching posts</Link>
+          <Link to={"/Donor/MedicalPosts"}>Medical posts</Link>
         </div>
       </div>
     </>

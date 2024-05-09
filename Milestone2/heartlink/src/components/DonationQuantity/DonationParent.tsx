@@ -14,17 +14,14 @@ interface DonationQuantityProps {
 function DonationParent(props: DonationQuantityProps) {
   const minValue = 1;
   const maxValue = props.maxValue || 100;
-  const [rangeValue, setRangeValue] = useState(0); // You can set an initial value as needed
+  const [rangeValue, setRangeValue] = useState(1); // You can set an initial value as needed
 
   // Handle changes in the range input
   const handleRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRangeValue(parseInt(event.target.value));
   };
   const getPercentage = () => {
-    if (maxValue - minValue === 0) {
-      return 0; // Prevent division by zero
-    }
-    return ((rangeValue - minValue) / (maxValue - minValue)) * 100;
+    return (rangeValue / maxValue) * 100;
   };
 
   const percentage = getPercentage();

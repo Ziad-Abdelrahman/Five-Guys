@@ -70,7 +70,18 @@ function TransportationSelection() {
           </div>
         </div>
         <div className="Donor-TimeSelection-container">
-          <ScheduleSelection text={"Schedule the Donation Pickup"} />
+          <ScheduleSelection
+            text={"Schedule the Donation Pickup"}
+            onClick={handleScheduleSelection}
+          />
+
+          {errorMessage && (
+            <div
+              style={{ color: "red", marginTop: "0.5rem", textAlign: "center" }}
+            >
+              {errorMessage}
+            </div>
+          )}
         </div>
 
         <div className="button-container">

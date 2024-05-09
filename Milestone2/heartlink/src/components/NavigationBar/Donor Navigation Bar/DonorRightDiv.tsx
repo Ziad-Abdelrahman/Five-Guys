@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { TbTruckDelivery } from "react-icons/tb";
+import { Link } from "react-router-dom";
+import ProfileCircle from "../ProfileCircle.tsx";
 
 function DonorRightDiv() {
   // State to manage the visibility of the notifications dropdown
@@ -23,8 +25,8 @@ function DonorRightDiv() {
             onClick={toggleDropdown}
           />
           {showNotifications && (
-            <div className="notifications-dropdown">
-              <div className="notification-container-inside-dropdown">
+            <div className="donor-notifications-dropdown">
+              <div className="donor-notification-container-inside-dropdown">
                 <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
                   <TbTruckDelivery style={{ fontSize: "30px" }} />
                   <p>Driver Arrived!</p>
@@ -41,7 +43,7 @@ function DonorRightDiv() {
               </div>
               <hr />
               <div
-                className="notification-container-inside-dropdown"
+                className="donor-notification-container-inside-dropdown"
                 style={{ cursor: "pointer" }}
               >
                 <div
@@ -87,13 +89,10 @@ function DonorRightDiv() {
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
             <li>
-              <a href="#">Account info</a>
+              <Link to={"AccountInfo"}>Account info</Link>
             </li>
             <li>
               <Link to={"/"}> Logout</Link>
-            </li>
-            <li>
-              <a href="#">Logout</a>
             </li>
           </ul>
         </div>
