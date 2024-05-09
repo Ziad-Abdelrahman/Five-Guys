@@ -8,7 +8,7 @@ function ClothesDonation() {
           "Your donation will bring warmth and comfort to someone in need."
         }
         type={"Clothes Donation"}
-        maxValue={200}
+        maxValue={50}
       />
     </>
   );
