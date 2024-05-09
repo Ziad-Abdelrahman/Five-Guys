@@ -60,10 +60,11 @@ function donorAddTeacherInfo() {
                 display: "flex",
                 flexDirection: "row",
               }}
-              onClick={handleFinishClick}
             >
-              {" "}
-              <DonateButton text={"Finish"} />
+              <div onClick={handleFinishClick}>
+                <DonateButton text={"Finish"} />
+              </div>
+
               {isUnderReview && (
                 <div
                   style={{
