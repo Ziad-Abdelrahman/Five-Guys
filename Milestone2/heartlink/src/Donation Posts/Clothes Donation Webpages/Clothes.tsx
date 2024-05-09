@@ -1,7 +1,40 @@
+import { useState } from "react";
 import DropDown from "../../components/DropDown/DropDown.tsx";
 import RadioButton from "../../components/RadioButton/RadioButton.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
 function Clothes() {
+  const[age, setAge] = useState(false);
+  const[gender, setGender] = useState(false);
+  const[type, setType] = useState(false);
+  const[season, setSeason] = useState(false);
+  const[material, setMaterial] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const handleAge = () => {
+    setAge(true);
+  };
+  const handleGender = () => {
+    setGender(true);
+  };
+  const handleType = () => {
+    setType(true);
+  };
+  const handleSeason = () => {
+    setSeason(true);
+  };
+  const handleMaterial = () => {
+    setMaterial(true);
+  };
+  const handleClick = () => {
+    if (!age || !gender || !type || !material || !season) {
+      setErrorMessage(
+        "Please provide all the needed data.",
+      );
+      return false;
+    }
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -21,11 +54,16 @@ function Clothes() {
               options={["Infants", "Kids", "Adults"]}
               selected={"Specify age group"}
               width={"280px"}
+              onChange={handleAge}
             />
             <p />
             <form className="radioButtons-form" method="get">
+              <div onClick={handleGender}>
               <RadioButton text={"Male"} />
+              </div>
+              <div onClick={handleGender}>
               <RadioButton text={"Female"} />
+              </div>
             </form>
             <p style={{ marginTop: "10px" }}></p>
             <h4 style={{ marginBottom: "15px" }}>
@@ -57,14 +95,24 @@ function Clothes() {
               ]}
               selected={"Specify category"}
               width={"280px"}
+              onChange={handleType}
+
             />
             <p />
             <h6>Please specify clothing season</h6>
             <form className="radioButtons-form" method="get">
+              <div onClick={handleSeason}>
               <RadioButton text={"Summer"} />
+              </div >
+              <div onClick={handleSeason}>
               <RadioButton text={"Spring"} />
+              </div>
+              <div onClick={handleSeason}>
               <RadioButton text={"Fall"} />
+              </div>
+              <div onClick={handleSeason}>
               <RadioButton text={"Winter"} />
+              </div>
             </form>
             <p />
             <h6 style={{ marginBottom: "15px" }}>
@@ -94,14 +142,22 @@ function Clothes() {
               ]}
               selected={"Specify a material"}
               width={"280px"}
+              onChange={handleMaterial}
             />
+             {errorMessage && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>
+                {errorMessage}
+              </div>
+            )}
           </div>
+         
         </div>
       }
       rightPanelButtonText={"Next"}
       hasButton={true}
       forwardPath={"../2"}
       backButtonPath={"../../"}
+      handleClick={handleClick}
     />
   );
 }
