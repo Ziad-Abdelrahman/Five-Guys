@@ -7,6 +7,7 @@ function CreatePost() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedPath, setSelectedPath] = useState("");
   const [selectedType, setSelectedType] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const categories = [
     "Blood donations",
@@ -39,6 +40,22 @@ function CreatePost() {
         setSelectedPath("MedicalEquipment/1");
       else setSelectedPath(selectedType + "/1");
     }
+  };
+
+  const handleNextButton = () => {
+    if (
+      selectedCategory === "" ||
+      ((selectedCategory === "School supplies" ||
+        selectedCategory === "Medical supplies") &&
+        selectedType === "")
+    ) {
+      console.log(selectedType);
+      setErrorMessage("Please select a category and type");
+      return false;
+    }
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
   };
 
   return (
@@ -100,10 +117,16 @@ function CreatePost() {
                 />
               </>
             )}
+            {errorMessage && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>
+                {errorMessage}
+              </div>
+            )}
           </div>
         </>
       }
       rightPanelButtonText={"Next"}
+      handleClick={handleNextButton}
       forwardPath={selectedPath}
     />
   );

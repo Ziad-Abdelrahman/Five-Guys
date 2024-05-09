@@ -20,11 +20,11 @@ function BloodDonation() {
       setErrorMessage(
         "Please select a blood group and provide a patient name.",
       );
-      return;
+      return false;
     }
     setErrorMessage("");
-    window.location.href = "/";
     console.log("Form submitted successfully!");
+    return true;
   };
 
   return (
@@ -88,6 +88,7 @@ function BloodDonation() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      forwardPath="/"
       backButtonPath="../"
       handleClick={handleClick}
     />
