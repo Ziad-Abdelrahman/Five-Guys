@@ -94,7 +94,11 @@ function Books() {
             </div>
             <p />
             <h4> How many copies do you need?</h4>
-            <NumberInputBox label={"Quantity"} width={"280px"} />
+            <NumberInputBox
+              label={"Quantity"}
+              width={"280px"}
+              handleChange={handlleQuantityChange}
+            />
             {error && (
               <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
             )}
