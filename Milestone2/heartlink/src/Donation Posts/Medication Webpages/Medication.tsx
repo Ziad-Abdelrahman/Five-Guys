@@ -1,7 +1,23 @@
 import RadioButton from "../../components/RadioButton/RadioButton.tsx";
 import "./Medication.css";
 import Template1 from "../../components/Templates/Template1.tsx";
+import { useState } from "react";
 function Medication() {
+  const [error, setError] = useState("");
+  const [category, setCategory] = useState(false);
+
+  const handleCategory = () => {
+    setCategory(true);
+  };
+  const handleClick = () => {
+    if (!category) {
+      setError("Please choose a category.");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -24,22 +40,55 @@ function Medication() {
               style={{ width: "800px" }}
               method="get"
             >
-              <RadioButton text={"Analgesics"} />
-              <RadioButton text={"Antibiotics"} />
-              <RadioButton text={"Anticoagulants"} />
-              <RadioButton text={"Antidepressants"} />
-              <RadioButton text={"Antidiabetics"} />
-              <RadioButton text={"Antiemetics"} />
-              <RadioButton text={"Antihistamines"} />
-              <RadioButton text={"Bronchodilators"} />
-              <RadioButton text={"Diuretics"} />
-              <RadioButton text={"Eye drops"} />
-              <RadioButton text={"Laxatives"} />
-              <RadioButton text={"Muscle relaxants"} />
-              <RadioButton text={"Topical medications"} />
-              <RadioButton text={"Vitamins"} />
-              <RadioButton text={"First Aid Kit"} />
+              <div onClick={handleCategory}>
+                <RadioButton text={"Analgesics"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Antibiotics"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Anticoagulants"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Antidepressants"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Antidiabetics"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Antiemetics"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Antihistamines"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Bronchodilators"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Diuretics"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Eye drops"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Laxatives"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Muscle relaxants"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Topical medications"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"Vitamins"} />
+              </div>
+              <div onClick={handleCategory}>
+                <RadioButton text={"First Aid Kit"} />
+              </div>
             </form>
+            {error && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+            )}
           </div>
         </div>
       }
@@ -47,6 +96,7 @@ function Medication() {
       hasButton={true}
       forwardPath={"../2"}
       backButtonPath={"../../"}
+      handleClick={handleClick}
     />
   );
 }

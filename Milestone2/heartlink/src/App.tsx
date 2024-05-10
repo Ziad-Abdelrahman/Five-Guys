@@ -200,7 +200,7 @@ const router = createBrowserRouter(
             <Route path="1" element={<Toys />} />
             <Route path="2" element={<ToysPt2 />} />
           </Route>
-          <Route path="Medication">
+          <Route path="Medications">
             <Route path="1" element={<Medication />} />
             <Route path="2" element={<MedicationPt2 />} />
           </Route>

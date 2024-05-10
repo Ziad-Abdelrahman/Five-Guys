@@ -6,11 +6,25 @@ import Template1 from "../../components/Templates/Template1.tsx";
 function Stationary() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSupply, setSelectedSupply] = useState("");
+  const[quantity, setQuantity] = useState("");
+  const [error, setError] = useState("");
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     setSelectedSupply("");
   };
+  const handlleQuantityChange = (num: string) => {
+    setQuantity(num);
+  };
+  const handleClick = () => {
+    if( selectedCategory.trim()===""|| selectedSupply.trim()==="" || quantity.trim() ===""){
+      setError("Please provide all the required information.");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  }
 
   const categoryExamples: hashSet = {
     "Art Supplies": [
@@ -70,6 +84,7 @@ function Stationary() {
       "Colored pencils",
     ],
   };
+
   return (
     <Template1
       leftPanelDiv={
@@ -112,7 +127,10 @@ function Stationary() {
             <br />
             <br />
             <h4> How many pieces do you need?</h4>
-            <NumberInputBox label={"Quantity"} width={"280px"} />
+            <NumberInputBox label={"Quantity"} width={"280px"} handleChange={handlleQuantityChange}/>
+            {error && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+            )}
           </div>
         </>
       }
@@ -120,6 +138,8 @@ function Stationary() {
       hasButton={true}
       forwardPath={"/"}
       backButtonPath={"../"}
+      handleClick={handleClick}
+
     />
   );
 }

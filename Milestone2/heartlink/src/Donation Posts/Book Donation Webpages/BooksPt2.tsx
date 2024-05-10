@@ -1,8 +1,27 @@
+import { ChangeEvent, useState } from "react";
 import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
 
 function BooksPt2() {
+  const [error, setError] = useState("");
+  const [text, setText] = useState("");
+
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.target.value);
+  };
+
+  const handleClick = () => {
+    if (text.trim() === "") {
+      setError("Please provide all the required information.");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+
   let shift = { top: "10em" };
+
   return (
     <Template1
       leftPanelDiv={
@@ -12,7 +31,7 @@ function BooksPt2() {
         </div>
       }
       rightPanelDiv={
-        <>
+        <div className="bloodDonation-container">
           <div className="header-container">
             <h1>Book Donation</h1>
           </div>
@@ -42,15 +61,20 @@ function BooksPt2() {
                 id="exampleFormControlTextarea1"
                 rows={9}
                 style={{ height: "270px", borderColor: "#01A95D" }}
+                onChange={handleChange}
               ></textarea>
+              {error && (
+                <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+              )}
             </div>
           </div>
-        </>
+        </div>
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
       forwardPath={"/"}
       backButtonPath={"../1"}
+      handleClick={handleClick}
     />
   );
 }

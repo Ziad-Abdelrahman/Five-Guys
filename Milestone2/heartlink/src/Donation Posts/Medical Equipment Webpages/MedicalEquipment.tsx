@@ -6,10 +6,31 @@ import { useState } from "react";
 
 function MedicalEquipment() {
   const [disabled, setDisabled] = useState(true);
+  const [quantity, setQuantity] = useState("");
+  const [input, setInput] = useState("");
+  const [error, setError] = useState("");
+  const [equipment, setEquipment] = useState(false);
 
   function handleEquipChange(equip: string) {
     setDisabled(!(equip === "Others"));
+    setEquipment(true);
   }
+  function handleQuantityChange(num: string) {
+    setQuantity(num);
+  }
+  function handleChange1(e: React.ChangeEvent<HTMLInputElement>) {
+    setInput(e.target.value);
+  }
+
+  const handleClick = () => {
+    if (!equipment || quantity === "" || (input === "" && !disabled)) {
+      setError("Please fill in all fields");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -23,6 +44,9 @@ function MedicalEquipment() {
           name={"equipment"}
           header={"Medical Equipment"}
           disabled={disabled}
+          onChange1={handleChange1}
+          onChange2={handleQuantityChange}
+          err={error}
         >
           <DropDown
             options={[
@@ -44,6 +68,7 @@ function MedicalEquipment() {
       hasButton={true}
       forwardPath={"../2"}
       backButtonPath={"../.."}
+      handleClick={handleClick}
     />
   );
 }

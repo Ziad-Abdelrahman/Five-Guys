@@ -1,3 +1,4 @@
+import { useState } from "react";
 import DropDown from "../../components/DropDown/DropDown.tsx";
 import RadioButton from "../../components/RadioButton/RadioButton.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
@@ -24,6 +25,31 @@ function Toys() {
     "Strategy Games",
     "Toy Vehicles",
   ];
+  const [age, setAge] = useState(false);
+  const [toys, setToys] = useState(false);
+  const [gender, setGender] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleAge = () => {
+    setAge(true);
+  }
+  const handleToys = () => {
+    setToys(true);
+  }
+  const handleGender = () => {
+    setGender(true);
+  }
+
+  const handleClick = () => {
+    if (!age || !toys || !gender) {
+      setError("Please provide all the required information.");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+
   return (
     <Template1
       leftPanelDiv={
@@ -52,6 +78,8 @@ function Toys() {
               ]}
               selected={"Specify age group"}
               width={"280px"}
+              onChange={handleAge}
+
             />
             <br />
             <br />
@@ -63,15 +91,23 @@ function Toys() {
               options={toysOptions}
               selected={"Specify a category"}
               width={"280px"}
+              onChange={handleToys}
             />
             <br />
             <br />
             <h4>Would you like toys for boys or girls?</h4>
             <form className="radioButtons-form" method="get">
-              <RadioButton text={"Boys"} />
+              <div onClick={handleGender}>
+              <RadioButton text={"Boys"}/>
+              </div>
+              <div onClick={handleGender}> 
               <RadioButton text={"Girls"} />
+              </div>
             </form>
+            {error && <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>}
+
             <br />
+
           </div>
         </div>
       }
@@ -79,6 +115,7 @@ function Toys() {
       backButtonPath={"../../"}
       rightPanelButtonText={"Next"}
       hasButton={true}
+      handleClick={handleClick} 
     />
   );
 }

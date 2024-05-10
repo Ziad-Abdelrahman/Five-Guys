@@ -7,16 +7,18 @@ interface imageUploaderProps {
   width?: string;
   height?: string;
   text?: string;
+  upload?: boolean;
 }
 
 function ImageUploader({
   width = "250px",
   height = "150px",
   text = "Upload File",
+  upload,
 }: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
-
+  let downloaded = false;
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     const target = e.target as HTMLInputElement & {
       files: FileList;
@@ -42,6 +44,18 @@ function ImageUploader({
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
   };
+
+  if (upload && selectedImage && !downloaded) {
+    const url = URL.createObjectURL(selectedImage);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = selectedImage.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    downloaded = true;
+  }
 
   return (
     <div>

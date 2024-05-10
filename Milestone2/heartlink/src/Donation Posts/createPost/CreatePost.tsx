@@ -38,7 +38,7 @@ function CreatePost() {
       if (type === "Medical tools") setSelectedPath("MedicalTools/1");
       else if (type === "Medical equipment")
         setSelectedPath("MedicalEquipment/1");
-      else setSelectedPath(selectedType + "/1");
+      else setSelectedPath(type + "/1");
     }
   };
 
