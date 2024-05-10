@@ -39,11 +39,20 @@ import {
 } from "./Donation Requests Page/Data_Extractor/RequestQuantity.tsx";
 import MedicalRequests from "./Donation Requests Page/MedicalRequests.tsx";
 import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
+import SignUpDonorP1 from "./SignUp/SignUpDonorP1.tsx";
+import SignUpOrgP1 from "./SignUp/SignUpOrgP1.tsx";
+import SignUpOrgP2 from "./SignUp/SignUpOrgP2.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index element={<Welcome />} />
-      <Route path="Signup" element={<SignUp />} />
+      <Route path="Signup">
+        <Route index element={<SignUp />} />
+        <Route path="Donor/1" element={<SignUpDonorP1 />} />
+
+        <Route path="Organization/1" element={<SignUpOrgP1 />} />
+        <Route path="Organization/2" element={<SignUpOrgP2 />} />
+      </Route>
       <Route path="Donor">
         <Route
           path="Quantity/:id"
