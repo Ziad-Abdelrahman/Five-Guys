@@ -65,6 +65,7 @@ import TeacherPosts from "./Donation Requests Page/TeacherPosts.tsx";
 import TransportationSelection from "./components/DonationQuantity/TransportationSelection.tsx";
 import AllDonationRequests from "./Donation Requests Page/AllDonationRequests.tsx";
 import DonorAccountMangPage from "./Donor Account Management/DonorAccountMangPage.tsx";
+import SignUpDonorP2 from "./SignUp/SignUpDonorP2.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -73,7 +74,7 @@ const router = createBrowserRouter(
       <Route path="Signup">
         <Route index element={<SignUp />} />
         <Route path="Donor/1" element={<SignUpDonorP1 />} />
-
+        <Route path="Donor/2" element={<SignUpDonorP2 />} />
         <Route path="Organization/1" element={<SignUpOrgP1 />} />
         <Route path="Organization/2" element={<SignUpOrgP2 />} />
       </Route>

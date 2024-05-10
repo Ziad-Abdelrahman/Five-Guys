@@ -28,13 +28,27 @@ function SignUpOrgP2() {
             <h2 style={{ position: "relative", bottom: "1em" }}>
               Verify entered details
             </h2>
-            <Map height={"30%"} width={"30%"} />
-            <FileUploader />
+            <div className="dataHolderJJ">
+              <div className="twoInputHolderS">
+                <div className="MapHolderJJ">
+                  <label>Organization Location</label>
+                  <Map height={"100%"} width={"200px"} />
+                </div>
+                <div className="MapHolderJJ">
+                  <label>Organization Documents</label>
+                  <FileUploader width={"200px"} />
+                </div>
+              </div>
+            </div>
           </div>
           <div className="footerSignUp">
             <div className="footerButtons-containerSignUpA">
-              <Button text={"Sign Up"} />
-              <BackButton style={{ marginLeft: "5em" }} />
+              <Link to="../../Organization">
+                <Button text={"Sign Up"} />{" "}
+              </Link>
+              <Link to="../Organization/1">
+                <BackButton style={{ marginLeft: "5em" }} />{" "}
+              </Link>
             </div>
           </div>
         </div>

@@ -105,10 +105,10 @@
     flex-direction: row;
     width: 100%;
     gap: 2em;
-    margin: 1em 0;
     justify-content: center;
     align-items: center;
 }
+
 
 .rightPanel-containerS{
    display: flex;
@@ -216,12 +216,15 @@
 }
 .dataHolderJJ{
    width:430px;
+    height: 58%;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 2%;
+    gap: 8%;
+    padding : 2% 0;
 }
 .dataHolderJJ select{
-    margin:0;
+    margin:0 !important;
 }
 .dataHolderJJ input{
     margin:0 !important;
@@ -231,4 +234,17 @@
 }
 .whyLink{
     margin-left: 8%!important;
+}
+.MapHolderJJ{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.MapHolderJJ label{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 3%;
 }
