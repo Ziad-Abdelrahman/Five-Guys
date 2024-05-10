@@ -26,7 +26,7 @@ function SignUpOrgP2() {
         <div className="rightPanelSignUpAB">
           <div className="rightPanel-containerS">
             <h2 style={{ position: "relative", bottom: "1em" }}>
-              Verify entered details
+              Verify details
             </h2>
             <div className="dataHolderJJ">
               <div className="twoInputHolderS">
