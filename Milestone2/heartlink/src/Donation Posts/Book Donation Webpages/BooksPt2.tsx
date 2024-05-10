@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
 

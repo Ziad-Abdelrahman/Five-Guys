@@ -36,7 +36,6 @@ function MedicalSupplies({
             label={FirstLetterUpper + " name"}
             width={"280px"}
             disabled={true}
-            value={""}
           />
         ) : (
           <InputBox

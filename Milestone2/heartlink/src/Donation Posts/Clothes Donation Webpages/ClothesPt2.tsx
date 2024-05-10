@@ -14,7 +14,7 @@ function ClothesPt2() {
   };
   const handleClick = () => {
     if(!size || quantity.trim()===''){
-      setError("Please provide all the required information.");
+      setError("Please enter the size and quantity.");
       return false;
     }
     setError("");

@@ -6,10 +6,23 @@ import { useState } from "react";
 
 function MedicalTools() {
   const [disabled, setDisabled] = useState(true);
+  const [error, setError] = useState("");
+  const [tools, setTools] = useState(false);
 
   function handleToolChange(tool: string) {
     setDisabled(!(tool === "Others"));
+    setTools(true);
   }
+
+  const handleClick = () => {
+    if (!tools) {
+      setError("Please choose a medical tools.");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -60,12 +73,17 @@ function MedicalTools() {
             width={"280px"}
             onChange={handleToolChange}
           />
+          {error && <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>}
+
         </MedicalSupplies>
+
       }
       rightPanelButtonText={"Next"}
       hasButton={true}
       forwardPath={"../2"}
       backButtonPath={"../../"}
+      handleClick={handleClick}
+
     />
   );
 }

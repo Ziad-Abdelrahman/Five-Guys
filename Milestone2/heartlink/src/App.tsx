@@ -51,6 +51,7 @@ import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
 import PendingOrganizations from "./Admin/Organizations/PendingOrganizations.tsx";
 import ChangePass from "./Admin/change password/ChangePass.tsx";
 import HomePage from "./Admin/HomePage.tsx";
+import AdminDashboard from "./Admin/AdminDashboard.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -124,7 +125,7 @@ const router = createBrowserRouter(
         </Route>
       </Route>
       <Route path="Admin">
-        <Route index element={<AdminDahboard />} />
+        <Route index element={<AdminDashboard />} />
         <Route path="ViewDonors" element={<DeleteDonors />} />
         <Route path="ViewOrganizations" element={<DeleteOrganizations />} />
         <Route path="DonorSubmissions" element={<PendingDonors />} />
