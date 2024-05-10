@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import RadioButton from "../../components/RadioButton/RadioButton.tsx";
 import InputBox from "../../components/InputBox/InputBox.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
+import Createcomp from "../../components/View Request Popup/Createcomp.tsx";
 
 function BloodDonation() {
   const [isBloodGroupSelected, setIsBloodGroupSelected] = useState(false);
   const [patientName, setPatientName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleBloodGroupSelection = () => {
     setIsBloodGroupSelected(true);
@@ -22,6 +24,7 @@ function BloodDonation() {
       );
       return false;
     }
+    setSuccess(true);
     setErrorMessage("");
     console.log("Form submitted successfully!");
     return true;
@@ -37,6 +40,7 @@ function BloodDonation() {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Created!"} show={success} />
           <div className="header-container">
             <h1>Blood Donation</h1>
           </div>
