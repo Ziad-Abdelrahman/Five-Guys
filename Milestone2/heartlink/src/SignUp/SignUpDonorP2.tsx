@@ -16,8 +16,9 @@ function SignUpDonorP2() {
         <div className="signUpMain">
           <div className="leftPartSignupB">
             <div className="logo-containerx">
-              <Link to="/">
+              <Link to="/" className="noLink">
                 <img src={logo} className="logo" alt="logo" />
+                <label className="logoText">Dashboard</label>
               </Link>
             </div>
             <div className="rightText">

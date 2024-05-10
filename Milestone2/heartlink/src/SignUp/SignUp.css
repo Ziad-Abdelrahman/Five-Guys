@@ -248,3 +248,16 @@
     font-weight: bold;
     margin-bottom: 3%;
 }
+.noLink{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.noLink label{
+    font-size: 1em;
+    position: absolute;
+    bottom: -30%;
+    color: black;
+    cursor: pointer;
+}
