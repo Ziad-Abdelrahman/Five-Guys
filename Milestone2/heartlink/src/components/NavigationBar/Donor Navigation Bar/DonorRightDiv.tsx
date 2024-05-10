@@ -89,7 +89,7 @@ function DonorRightDiv() {
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
             <li>
-              <Link to={"AccountInfo"}>Account info</Link>
+              <Link to={"/Donor/AccountInfo"}>Account info</Link>
             </li>
             <li>
               <Link to={"/"}> Logout</Link>
