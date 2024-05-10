@@ -2,6 +2,8 @@ import "./Donate.css";
 import React, { useState } from "react";
 import DonateButton from "../Buttons/DonateButton.tsx";
 import DonationPic from "../../assets/DonationGeneral.jpeg";
+import BackButton from "../Buttons/BackButton.tsx";
+import { Link } from "react-router-dom";
 interface DonationQuantityProps {
   maxValue?: number;
   type?: String;
@@ -12,17 +14,14 @@ interface DonationQuantityProps {
 function DonationParent(props: DonationQuantityProps) {
   const minValue = 1;
   const maxValue = props.maxValue || 100;
-  const [rangeValue, setRangeValue] = useState(0); // You can set an initial value as needed
+  const [rangeValue, setRangeValue] = useState(1); // You can set an initial value as needed
 
   // Handle changes in the range input
   const handleRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRangeValue(parseInt(event.target.value));
   };
   const getPercentage = () => {
-    if (maxValue - minValue === 0) {
-      return 0; // Prevent division by zero
-    }
-    return ((rangeValue - minValue) / (maxValue - minValue)) * 100;
+    return (rangeValue / maxValue) * 100;
   };
 
   const percentage = getPercentage();
@@ -30,6 +29,11 @@ function DonationParent(props: DonationQuantityProps) {
   return (
     <div className="beige-color-body">
       <div className="range-container">
+        <div className={"back-button-transp-container"}>
+          <Link to="../">
+            <BackButton />
+          </Link>
+        </div>
         <div className="header">
           <h1>{props.type}</h1>
           <p> {props.description}</p>
@@ -61,7 +65,9 @@ function DonationParent(props: DonationQuantityProps) {
           {/* Display the current value in a box */}
         </div>
         <div className="button-container">
-          <DonateButton text={"Next"} />
+          <Link to={"Transportation"}>
+            <DonateButton text={"Next"} />
+          </Link>
         </div>
       </div>
     </div>

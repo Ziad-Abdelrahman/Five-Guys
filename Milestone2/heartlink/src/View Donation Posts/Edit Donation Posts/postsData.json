@@ -26,7 +26,7 @@
  ,
     {
       "id": "3",
-      "typeOfRequest": "Medical Medical Equipment",
+      "typeOfRequest": "Medical Equipment",
       "datePosted": "19/04/2024",
       "status": "Fulfilled",
       "equipment": "Diagnostic Medical Equipment",
@@ -35,7 +35,7 @@
     },
     {
       "id": "4",
-      "typeOfRequest": "Medical Medical Equipment",
+      "typeOfRequest": "Medical Equipment",
       "datePosted": "23/04/2024",
       "status": "Pending",
       "equipment": "Imaging Medical Equipment",
@@ -45,7 +45,7 @@
   ,
     {
       "id": "5",
-      "typeOfRequest": "Medical Medical Tools",
+      "typeOfRequest": "Medical Tools",
       "datePosted": "23/04/2024",
       "status": "Pending",
       "tool": "Endoscope",
@@ -54,7 +54,7 @@
     },
     {
       "id": "6",
-      "typeOfRequest": "Medical Medical Tools",
+      "typeOfRequest": "Medical Tools",
       "datePosted": "21/04/2024",
       "status": "Pending",
       "tool" : "Needles",

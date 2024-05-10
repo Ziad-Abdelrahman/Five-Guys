@@ -8,7 +8,7 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import Navbar from "../components/NavigationBar/AdminNavbar/AdminNavbar";
+import AdminNavbar from "../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 
 Chart.register(LinearScale);
 Chart.register(LineController);
@@ -110,7 +110,7 @@ function AdminDashboard() {
 
   return (
     <>
-      <Navbar />
+      <AdminNavbar />
       <div className="organizationDashboard">
         <div className="organizationCards">
           <div

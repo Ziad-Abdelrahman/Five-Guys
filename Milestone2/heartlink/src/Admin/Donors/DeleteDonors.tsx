@@ -6,6 +6,7 @@ import Search from "../../components/Search/Search";
 import ViewCards from "../../components/Card/Admin Cards/ViewCards.tsx";
 import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
 import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
+import ViewPopup from "../../components/View Request Popup/ViewPopup.tsx";
 
 const DeleteDonors = () => {
   const cardData = [
@@ -13,76 +14,110 @@ const DeleteDonors = () => {
       id: "1",
       image: Pic,
       img_alt: "profile picture",
-      title: "Emily Johnson",
+      title: "Ahmed Sherif",
+      gender: "Male",
       text: "Regular Donor",
+      phoneNumber: "01119997309",
+      address: "Mountain View Apartment 1",
+      area: "Fifth Settlement",
+      Governorate: "Cairo",
     },
     {
       id: "2",
       image: Pic,
       img_alt: "profile picture",
-      title: "Christopher Martin",
+      title: "Asmaa Mohamed",
+      gender: "Female",
       text: "Teacher",
+      phoneNumber: "01119997310",
+      address: "Tawfeek Street Building 11 Apartment 6",
+      area: "Nasr City",
+      Governorate: "Cairo",
     },
     {
       id: "3",
       image: Pic,
       img_alt: "profile picture",
-      title: "Stephanie Wilson",
+      title: "Farida Ayman",
+      gender: "Female",
       text: "Doctor",
+      phoneNumber: "01119997412",
+      address: "El Hay el awel , Villa 3",
+      area: "Obour",
+      Governorate: "Cairo",
     },
     {
       id: "4",
       image: Pic,
       img_alt: "profile picture",
-      title: "Matthew Harris",
-      text: "Teacher",
+      title: "Malek Radwan",
+      gender: "Male",
+      text: "Blood Donor",
+      phoneNumber: "01003450450",
+      address: "Mahmoud Selim St , Building 3 , Apartment 6",
+      area: "Mohandessin",
+      Governorate: "Cairo",
     },
     {
       id: "5",
       image: Pic,
       img_alt: "profile picture",
-      title: "David Rodriguez",
-      text: "Regular Donor",
+      title: "Malak khaled",
+      gender: "Female",
+      text: "Blood Donor",
+      phoneNumber: "01000366671",
+      address: "Saba Basha St , Building 17 , Apartment 10",
+      area: "Miami",
+      Governorate: "Alexandria",
     },
     {
       id: "6",
       image: Pic,
       img_alt: "profile picture",
-      title: "Abdallah Ahmed",
-      text: "Doctor",
+      title: "Sara Ali",
+      gender: "Female",
+      text: "Regular Donor",
+      phoneNumber: "0122888719",
+      address: "El Horeya St , Villa 225",
+      area: "Sheraton",
+      Governorate: "Cairo",
     },
     {
       id: "7",
       image: Pic,
       img_alt: "profile picture",
-      title: "Farah Faisal ",
-      text: "Doctor ",
+      title: "Mohamed Helmy",
+      gender: "Male",
+      text: "Doctor",
+      phoneNumber: "0155777900",
+      address: "Taha Hussein St , Villa 312",
+      area: "Shrouk",
+      Governorate: "Cairo",
     },
     {
       id: "8",
       image: Pic,
       img_alt: "profile picture",
-      title: "Mennatallah Halawa ",
+      title: "George Adly",
+      gender: "Male",
       text: "Teacher",
-    },
-    {
-      id: "9",
-      image: Pic,
-      img_alt: "profile picture",
-      title: "Nour Ahmed ",
-      text: "Regular Donor",
-    },
-    {
-      id: "10",
-      image: Pic,
-      img_alt: "profile picture",
-      title: "Ziad Abdelrahman ",
-      text: "Teacher",
+      phoneNumber: "0100780780",
+      address: "Fouad St Villa 256",
+      area: "Miami",
+      Governorate: "Alexandria",
     },
   ];
 
   const [search, setSearch] = useState("");
-
+  const [selectedID, setSelectedID] = useState("");
+  //responsible for getting the id of the request to view its details
+  function handleLearnMoreClick(id: string) {
+    setSelectedID(id);
+  }
+  //responsible for closing the popup
+  function handleClosePopUp() {
+    setSelectedID("");
+  }
   const handleSearch = (written: string) => {
     setSearch(written);
   };
@@ -90,6 +125,34 @@ const DeleteDonors = () => {
   return (
     <>
       <AdminNavbar />
+      <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
+        <div>
+          {cardData
+            .filter((cardData) => cardData.id === selectedID)
+            .map((cardData) => (
+              <ul>
+                <li>
+                  <p>Name: {cardData.title}</p>
+                </li>
+                <li>
+                  <p>Gender: {cardData.gender}</p>
+                </li>
+                <li>
+                  <p>Phone number: {cardData.phoneNumber}</p>
+                </li>
+                <li>
+                  <p>City: {cardData.Governorate}</p>
+                </li>
+                <li>
+                  <p>Area: {cardData.area}</p>
+                </li>
+                <li>
+                  <p>Address: {cardData.address}</p>
+                </li>
+              </ul>
+            ))}
+        </div>
+      </ViewPopup>
       <HeaderOfSection
         title={"Registered Donors"}
         smallDivStyle={{
@@ -101,18 +164,19 @@ const DeleteDonors = () => {
       >
         <Search handleSearch={handleSearch} />
       </HeaderOfSection>
-      <div className={"organizations-container"}>
+      <div className={"admin-organizations-container"}>
         {cardData
           .filter((cardData) => cardData.title.toLowerCase().includes(search))
           .map((cardData) => (
             <ViewCards
+              id={cardData.id}
               key={cardData.id}
               image={cardData.image}
               img_alt={cardData.img_alt}
               title={cardData.title}
               text={cardData.text}
               height={"400px"}
-              hideInfo={true}
+              handleLearnMoreClick={handleLearnMoreClick}
             />
           ))}
       </div>

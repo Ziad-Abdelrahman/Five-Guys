@@ -6,15 +6,18 @@ interface RadioButtonProps {
   handleFilterChange?: (filter: string) => void;
   checked: boolean;
   setChecked: React.Dispatch<React.SetStateAction<string>>;
+  margin?: string;
 }
 function EditRadioButton({
   text,
   height,
   setChecked,
   checked,
+  margin,
 }: RadioButtonProps) {
   const customStyle = {
     height: height, // Apply the height to both the input and label if specified
+    margin: margin,
   };
   return (
     <>

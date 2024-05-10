@@ -2,6 +2,7 @@ import "./Buttons.css"; // This imports the styles
 interface DonateButtonProps {
   text?: string;
   color?: string;
+  onClick?: () => void;
 }
 
 function DonateButton(props: DonateButtonProps) {
@@ -12,7 +13,7 @@ function DonateButton(props: DonateButtonProps) {
   };
 
   return (
-    <button className="donation-button" style={styles}>
+    <button className="donation-button" style={styles} onClick={props.onClick}>
       {props.text ? props.text : "Donate"}
     </button>
   );

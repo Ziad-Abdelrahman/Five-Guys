@@ -14,7 +14,7 @@ interface AdminOrgRequestsCardProps {
   image: string;
   text: string;
   name: string;
-  handleClick?: () => void;
+  handleClick?: (id: string) => void;
   type: string;
 }
 

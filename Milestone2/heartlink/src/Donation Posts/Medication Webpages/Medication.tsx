@@ -5,9 +5,10 @@ import { useState } from "react";
 function Medication() {
   const [error, setError] = useState("");
   const [category, setCategory] = useState(false);
+
   const handleCategory = () => {
     setCategory(true);
-  }
+  };
   const handleClick = () => {
     if (!category) {
       setError("Please choose a category.");
@@ -17,7 +18,7 @@ function Medication() {
     console.log("Form submitted successfully!");
     return true;
   };
-    return (
+  return (
     <Template1
       leftPanelDiv={
         <div className="leftText">
@@ -84,10 +85,10 @@ function Medication() {
               <div onClick={handleCategory}>
                 <RadioButton text={"First Aid Kit"} />
               </div>
-              {error && <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>}
-
-
             </form>
+            {error && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+            )}
           </div>
         </div>
       }

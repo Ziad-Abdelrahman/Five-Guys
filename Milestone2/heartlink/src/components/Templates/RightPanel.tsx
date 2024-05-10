@@ -24,8 +24,10 @@ function RightPanel({
   let navigate = useNavigate();
   const routeChange = () => {
     if (handleClick && !handleClick()) return;
-    let path = forwardPath;
-    navigate(path);
+    if (text === "Next") {
+      let path = forwardPath;
+      navigate(path);
+    }
   };
 
   return (

@@ -1,7 +1,6 @@
 import RequestCard from "./RequestCard.tsx";
 import ViewButton from "../Buttons/ViewButton.tsx";
 import DonateButton from "../Buttons/DonateButton.tsx";
-import React from "react";
 import { Link } from "react-router-dom";
 
 interface DonationRequestPopUpProps {
@@ -14,34 +13,44 @@ interface DonationRequestPopUpProps {
   handleClick?: (id: string) => void;
   showDonateButton?: boolean;
   donateButtonText?: string; // Optional prop to control the visibility of the Donate button
+  isProbono?: boolean;
 }
 
-function DonationRequestCard(props: DonationRequestPopUpProps) {
-  const shouldRender = props.trigger !== undefined ? props.trigger : true;
-  const showDonateButton =
-    props.showDonateButton !== undefined ? props.showDonateButton : true;
+function DonationRequestCard({
+  trigger,
+  buttonID,
+  image,
+  description,
+  postedby,
+  postdate,
+  handleClick,
+  showDonateButton = true,
+  donateButtonText,
+  isProbono = false,
+}: DonationRequestPopUpProps) {
+  const shouldRender = trigger !== undefined ? trigger : true;
   return shouldRender ? (
     <RequestCard>
       <>
         <img
           className="request-card-image"
-          src={props.image}
-          alt={props.description}
+          src={image}
+          alt={description}
           style={{ width: "12%" }}
         />
         <div className="text-container">
-          <h2 style={{ fontSize: "22px" }}>{props.description}</h2>
-          <p>Posted By: {props.postedby}</p>
-          <p>Post Date: {props.postdate}</p>
+          <h2 style={{ fontSize: "22px" }}>{description}</h2>
+          <p>Posted By: {postedby}</p>
+          <p>Post Date: {postdate}</p>
         </div>
         <div className="two-buttons-holder">
-          <ViewButton
-            buttonID={props.buttonID}
-            handleClick={props.handleClick}
-          />
-          {showDonateButton && (
-            <Link to={"../Quantity/" + props.buttonID}>
-              <DonateButton text={props.donateButtonText} />{" "}
+          <ViewButton buttonID={buttonID} handleClick={handleClick} />
+          {showDonateButton && isProbono === true && (
+            <DonateButton text={donateButtonText} />
+          )}
+          {showDonateButton && isProbono === false && (
+            <Link to={"Quantity/" + buttonID}>
+              <DonateButton text={donateButtonText} />{" "}
             </Link>
           )}
         </div>

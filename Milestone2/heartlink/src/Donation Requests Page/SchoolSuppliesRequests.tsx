@@ -9,6 +9,9 @@ import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import SchoolSuppliesFilter from "../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
+import { useState } from "react";
+import hashSet from "../hashSet";
+
 function SchoolSuppliesRequests() {
   const detailsList: hashSet = {
     "60": ["stationary", "Writing Tools", "Pens", "100"],
@@ -23,7 +26,7 @@ function SchoolSuppliesRequests() {
     "69": ["Stationary", "Paper Products", "Sticky Notes", "100"],
   };
   //responsible for filtering the requests
-  let [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("All");
 
   //responsible for viewing the details of the request
   const [selectedID, setSelectedID] = useState("");
@@ -172,8 +175,5 @@ function SchoolSuppliesRequests() {
     </>
   );
 }
-import { useState } from "react";
-
-import hashSet from "../hashSet";
 
 export default SchoolSuppliesRequests;

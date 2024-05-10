@@ -25,13 +25,9 @@ function MedicalSuppliesPt2({ header }: medicalSuppliesProps) {
           <ImageUploader />
         </div>
         <div className="mb-3" style={{ width: "600px" }}>
-          <label
-            htmlFor="exampleFormControlTextarea1"
-            className="form-label"
-            style={{ marginTop: "7%" }}
-          >
+          <h5 style={{ marginTop: "10%" }}>
             Please write the use of the specified {header.toLowerCase()}
-          </label>
+          </h5>
           <textarea
             className="form-control"
             id="exampleFormControlTextarea1"

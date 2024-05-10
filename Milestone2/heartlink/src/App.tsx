@@ -48,25 +48,136 @@ import UpdatedOrganizationInfo from "./OrganizationAccountInfo/UpdatedOrganizati
 import DeleteDonors from "./Admin/Donors/DeleteDonors.tsx";
 import PendingDonors from "./Admin/Donors/PendingDonors.tsx";
 import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
+import SignUpDonorP1 from "./SignUp/SignUpDonorP1.tsx";
+import SignUpOrgP1 from "./SignUp/SignUpOrgP1.tsx";
+import SignUpOrgP2 from "./SignUp/SignUpOrgP2.tsx";
 import PendingOrganizations from "./Admin/Organizations/PendingOrganizations.tsx";
 import ChangePass from "./Admin/change password/ChangePass.tsx";
-import HomePage from "./Admin/HomePage.tsx";
 import AdminDashboard from "./Admin/AdminDashboard.tsx";
+import DonorDashboard from "./DonorDashboard/DonorDashboard.tsx";
+import CategoriesPage from "./Donor Categories Page/CategoriesPage.tsx";
+import BloodRequests from "./Donation Requests Page/BloodRequests.tsx";
+import FoodRequests from "./Donation Requests Page/FoodRequests.tsx";
+import SchoolSuppliesRequests from "./Donation Requests Page/SchoolSuppliesRequests.tsx";
+import ToysRequests from "./Donation Requests Page/ToysRequests.tsx";
+import MedicalCases from "./Donation Requests Page/MedicalCases.tsx";
+import TeacherPosts from "./Donation Requests Page/TeacherPosts.tsx";
+import TransportationSelection from "./components/DonationQuantity/TransportationSelection.tsx";
+import AllDonationRequests from "./Donation Requests Page/AllDonationRequests.tsx";
+import DonorAccountMangPage from "./Donor Account Management/DonorAccountMangPage.tsx";
+import SignUpDonorP2 from "./SignUp/SignUpDonorP2.tsx";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index element={<Welcome />} />
-      <Route path="Signup" element={<SignUp />} />
-      <Route path="Donor">
-        <Route
-          path="Quantity/:id"
-          element={<RequestQuantity />}
-          loader={RequestLoader}
-        />
-        <Route path={"ClothesDonation"} element={<ClothesRequests />} />
-        <Route path={"MedicalRequests"} element={<MedicalRequests />} />
+      <Route path="Signup">
+        <Route index element={<SignUp />} />
+        <Route path="Donor/1" element={<SignUpDonorP1 />} />
+        <Route path="Donor/2" element={<SignUpDonorP2 />} />
+        <Route path="Organization/1" element={<SignUpOrgP1 />} />
+        <Route path="Organization/2" element={<SignUpOrgP2 />} />
       </Route>
-      {/* <Route path="Dashboard" element={<RecipientDashboard />} />*/}
+      <Route path="Donor">
+        <Route index element={<DonorDashboard />} />
+
+        <Route path={"AccountInfo"} element={<DonorAccountMangPage />} />
+
+        <Route path="ViewAllDonations">
+          <Route index element={<AllDonationRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"ViewCategories"} element={<CategoriesPage />}></Route>
+
+        {/*<Route path={"ViewCategories"} element={</>} />*/}
+        <Route path={"TeachingPosts"} element={<TeacherPosts />} />
+        <Route path={"MedicalPosts"} element={<MedicalCases />} />
+
+        <Route path={"ClothingRequests"}>
+          <Route index element={<ClothesRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"FoodRequests"}>
+          <Route index element={<FoodRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"ToysRequests"}>
+          <Route index element={<ToysRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"MedicationRequests"}>
+          <Route index element={<MedicalRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+        <Route path={"SchoolRequests"}>
+          <Route index element={<SchoolSuppliesRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"BloodRequests"} element={<BloodRequests />}></Route>
+
+        <Route path={"ClothesDonation"}>
+          <Route index element={<ClothesRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+
+        <Route path={"MedicalRequests"}>
+          <Route index element={<MedicalRequests />} />
+          <Route path="Quantity/:id">
+            <Route index element={<RequestQuantity />} loader={RequestLoader} />
+            <Route
+              path="Transportation"
+              element={<TransportationSelection />}
+            />
+          </Route>
+        </Route>
+      </Route>
       <Route path="Organization">
         <Route index element={<OrganizationDashboard />} />
         <Route
@@ -99,7 +210,7 @@ const router = createBrowserRouter(
             <Route path="1" element={<Toys />} />
             <Route path="2" element={<ToysPt2 />} />
           </Route>
-          <Route path="Medication">
+          <Route path="Medications">
             <Route path="1" element={<Medication />} />
             <Route path="2" element={<MedicationPt2 />} />
           </Route>
@@ -129,11 +240,11 @@ const router = createBrowserRouter(
         <Route path="ViewDonors" element={<DeleteDonors />} />
         <Route path="ViewOrganizations" element={<DeleteOrganizations />} />
         <Route path="DonorSubmissions" element={<PendingDonors />} />
-        <Route path="OrganizationSubmissions" element={<PendingOrganizations />} />
+        <Route
+          path="OrganizationSubmissions"
+          element={<PendingOrganizations />}
+        />
         <Route path="ChangePass" element={<ChangePass />} />
-
-
-        
       </Route>
     </Route>,
   ),

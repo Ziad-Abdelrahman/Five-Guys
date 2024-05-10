@@ -9,10 +9,15 @@ const showLogin = () => {
 };
 interface LoginButtonProps {
   text?: string;
+  height?: string;
 }
-function LoginButton({ text }: LoginButtonProps) {
+function LoginButton({ text, height }: LoginButtonProps) {
   return (
-    <button className="loginButton" onClick={showLogin}>
+    <button
+      className="loginButton"
+      onClick={showLogin}
+      style={{ height: height }}
+    >
       {text ? text : "Login"}
     </button>
   );

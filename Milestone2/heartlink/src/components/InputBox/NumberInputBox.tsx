@@ -15,7 +15,7 @@ function NumberInputBox({ label, width, handleChange }: InputBoxProps) {
         id="floatingInput"
         placeholder="name@example.com"
         min="0"
-        onClick={(e) => {
+        onChange={(e) => {
           handleChange && handleChange(e.currentTarget.value);
         }}
       />

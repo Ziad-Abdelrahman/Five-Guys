@@ -6,6 +6,8 @@ import { useState } from "react";
 
 function MedicalTools() {
   const [disabled, setDisabled] = useState(true);
+  const [quantity, setQuantity] = useState("");
+  const [input, setInput] = useState("");
   const [error, setError] = useState("");
   const [tools, setTools] = useState(false);
 
@@ -13,10 +15,16 @@ function MedicalTools() {
     setDisabled(!(tool === "Others"));
     setTools(true);
   }
+  function handleQuantityChange(num: string) {
+    setQuantity(num);
+  }
+  function handleChange1(e: React.ChangeEvent<HTMLInputElement>) {
+    setInput(e.target.value);
+  }
 
   const handleClick = () => {
-    if (!tools) {
-      setError("Please choose a medical tools.");
+    if (!tools || quantity === "" || (input === "" && !disabled)) {
+      setError("Please fill in all fields.");
       return false;
     }
     setError("");
@@ -36,6 +44,9 @@ function MedicalTools() {
           name={"tool"}
           header={"Medical Tools"}
           disabled={disabled}
+          onChange1={handleChange1}
+          onChange2={handleQuantityChange}
+          err={error}
         >
           <DropDown
             options={[
@@ -73,17 +84,13 @@ function MedicalTools() {
             width={"280px"}
             onChange={handleToolChange}
           />
-          {error && <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>}
-
         </MedicalSupplies>
-
       }
       rightPanelButtonText={"Next"}
       hasButton={true}
       forwardPath={"../2"}
       backButtonPath={"../../"}
       handleClick={handleClick}
-
     />
   );
 }

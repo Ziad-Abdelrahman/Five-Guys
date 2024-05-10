@@ -115,5 +115,10 @@ margin-top: 50px;
     line-height: 35px;
 }
 
+.back-button-transp-container{
+    display: flex;
+    margin-top: 5%;
+align-items: flex-start;
+}
 
 

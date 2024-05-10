@@ -43,26 +43,6 @@ function ViewDonationPostsWebpage() {
       {allDataList
         .filter(
           (card) =>
-            (card.id === "1" || card.id === "2") &&
-            (selectedRadioButton === "" ||
-              card["status"] === selectedRadioButton),
-        )
-        .map((card) => (
-          <DonationPostCard
-            id={card.id}
-            typeOfRequest={card.typeOfRequest}
-            datePosted={card.datePosted}
-            status={card.status}
-            bookname={card.bookname}
-            authorname={card.authorname}
-            language={card.language}
-            edition={card.edition}
-            copies={card.copies}
-          ></DonationPostCard>
-        ))}
-      {allDataList
-        .filter(
-          (card) =>
             (card.id === "3" || card.id === "4") &&
             (selectedRadioButton === "" || card.status === selectedRadioButton),
         )
@@ -195,6 +175,26 @@ function ViewDonationPostsWebpage() {
             medcategory={card.medcategory}
             medicationname={card.medicationname}
             medquantity={card.medquantity}
+          ></DonationPostCard>
+        ))}
+      {allDataList
+        .filter(
+          (card) =>
+            (card.id === "1" || card.id === "2") &&
+            (selectedRadioButton === "" ||
+              card["status"] === selectedRadioButton),
+        )
+        .map((card) => (
+          <DonationPostCard
+            id={card.id}
+            typeOfRequest={card.typeOfRequest}
+            datePosted={card.datePosted}
+            status={card.status}
+            bookname={card.bookname}
+            authorname={card.authorname}
+            language={card.language}
+            edition={card.edition}
+            copies={card.copies}
           ></DonationPostCard>
         ))}
     </div>
