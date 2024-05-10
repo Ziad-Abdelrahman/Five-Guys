@@ -1,7 +1,7 @@
 
 
 
-.card {
+.category-card {
     background-color: #f8f8f8;
     border-radius: 10px;
     padding: 10px;
@@ -13,12 +13,12 @@
 
 }
 
-.card:hover {
+.category-card:hover {
     box-shadow: 0 0 15px rgba(1, 169, 93, 0.4);
     cursor: pointer;
 }
 
-.card .category-card-image{
+.category-card .category-card-image{
     width: 100%;
     border-radius: 10px;
     object-fit: contain; /* Ensures the image aspect ratio is preserved */

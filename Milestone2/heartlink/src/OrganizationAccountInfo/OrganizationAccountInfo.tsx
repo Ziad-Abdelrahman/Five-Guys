@@ -30,7 +30,7 @@ function OrganizationAccountInfo() {
                 }}
               />
               <div className="card-dropdown-content">
-                <Link to={"*"}>Edit Info</Link>
+                <Link to={"Edit"}>Edit Info</Link>
               </div>
             </div>
           </>
@@ -40,9 +40,9 @@ function OrganizationAccountInfo() {
         <OrganizationAccountProfileCard
           name={"Baheyya"}
           type={"Breast Cancer"}
-          area={"El Haram"}
-          address={"4 ش علوبة مدكور"}
-          city={"Cairo"}
+          email="baheya@baheya.org"
+          hotline={"16602"}
+          working={"9:00 AM - 5:00 PM"}
         />
         <div className={"two-card-upload-maps-holder"}>
           <RepresentativeDetailsCard

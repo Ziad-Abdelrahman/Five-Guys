@@ -77,8 +77,7 @@
 }
 
 
-.notification-container-inside-dropdown:hover .tooltipText{
-
+.donor-notification-container-inside-dropdown:hover .tooltipText{
     visibility: visible;
     opacity: 1;
 }

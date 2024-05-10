@@ -1,5 +1,5 @@
 import "./DonorAccountManagement.css";
-import Lalla from "../../assets/lallananna.jpeg";
+
 import Personal from "../../assets/personalpic.jpeg";
 
 function DonorAccountProfileCard() {

@@ -12,13 +12,13 @@ import { useState } from "react";
 
 function BloodRequests() {
   const detailsList: hashSet = {
-    "1": ["57357", "Cairo", "6th Of October"],
-    "2": ["Red Cresent", "Giza", "Sheikh Zayed"],
-    "3": ["57357", "Alexandria", "Miami"],
-    "4": ["57357", "Cairo", "Maadi"],
-    "5": ["Magdi Yacoub", "Sharkia", "Zagazig"],
-    "6": ["Magdi Yacoub", "Cairo", "Maadi"],
-    "7": ["Red Cresent", "Giza", "Sheikh Zayed"],
+    "1": ["Ahmed", "A+", "57357", "Cairo", "6th Of October"],
+    "2": ["Mohamed", "AB-", "Red Cresent", "Giza", "Sheikh Zayed"],
+    "3": ["Omar", "AB+", "57357", "Alexandria", "Miami"],
+    "4": ["Farah", "B+", "57357", "Cairo", "Maadi"],
+    "5": ["Yassin", "O-", "Magdi Yacoub", "Sharkia", "Zagazig"],
+    "6": ["Younis", "AB-", "Magdi Yacoub", "Cairo", "Maadi"],
+    "7": ["Abdallah", "B-", "Red Cresent", "Giza", "Sheikh Zayed"],
   };
 
   const cardData = [
@@ -108,11 +108,15 @@ function BloodRequests() {
         <div>
           {detailsList[selectedID] && (
             <ul>
-              <li>Hospital: {detailsList[selectedID][0]}</li>
-              <br />
-              <li>Government: {detailsList[selectedID][1]}</li>
-              <br />
-              <li>Area: {detailsList[selectedID][2]}</li>
+              <li>Name: {detailsList[selectedID][0]}</li>
+
+              <li>Blood Type: {detailsList[selectedID][1]}</li>
+
+              <li>Hospital: {detailsList[selectedID][2]}</li>
+
+              <li>Government: {detailsList[selectedID][3]}</li>
+
+              <li>Area: {detailsList[selectedID][4]}</li>
             </ul>
           )}
           <div style={{ marginLeft: "40px" }}>

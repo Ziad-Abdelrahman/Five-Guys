@@ -5,7 +5,6 @@ interface RadioButtonProps {
   height?: string;
   handleFilterChange?: (filter: string) => void;
   margin?: string;
-
 }
 function RadioButton({
   text,
@@ -25,6 +24,9 @@ function RadioButton({
         name="options-outlined"
         id={text}
         autoComplete="off"
+        onClick={(e) =>
+          handleFilterChange && handleFilterChange(e.currentTarget.id)
+        }
       />
       <label
         className="btn btn-outline-success"

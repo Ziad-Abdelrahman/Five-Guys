@@ -1,6 +1,5 @@
 import "./request.css";
 import "../Buttons/Buttons.css";
-import "./request.css";
 import { ReactNode } from "react";
 
 interface RequestCardProps {

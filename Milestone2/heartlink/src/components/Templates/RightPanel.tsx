@@ -2,37 +2,41 @@ import BackButton from "../Buttons/BackButton.tsx";
 import Button from "../Buttons/Button.tsx";
 import "./RightPanel.css";
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface RightPanelProps {
   text: string;
-  forwardPath: string;
   backwardPath?: string;
   children: ReactNode;
+  forwardPath: string;
   hasBackButton?: boolean;
-  handleClick?: () => void;
-
+  handleClick?: () => boolean;
 }
 
 function RightPanel({
   children,
   text,
   hasBackButton,
-  forwardPath,
   backwardPath,
+  forwardPath,
   handleClick,
 }: RightPanelProps) {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    if (handleClick && !handleClick()) return;
+    let path = forwardPath;
+    navigate(path);
+  };
+
   return (
     <div className="rightPanel-container">
       {children}
       <div className="footer">
         <div className="footerButtons-container">
-          <Link to={forwardPath}>
-            <Button text={text} handleClick={handleClick}/>{" "}
-          </Link>
+          <Button text={text} handleClick={routeChange} />
           {hasBackButton && backwardPath && (
             <Link to={backwardPath}>
-              <BackButton />{" "}
+              <BackButton />
             </Link>
           )}
         </div>

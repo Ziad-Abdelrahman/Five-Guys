@@ -1,10 +1,11 @@
-import Profilecircle from "./Profilecircle";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { TbTruckDelivery } from "react-icons/tb";
 import { useState } from "react";
 import { BsEnvelopeOpenHeart } from "react-icons/bs";
 
 import "./OrgRightDiv.css";
+import { Link } from "react-router-dom";
+import ProfileCircle from "../ProfileCircle.tsx";
 
 function OrgRightDiv() {
   // State to manage the visibility of the notifications dropdown
@@ -102,18 +103,15 @@ function OrgRightDiv() {
           />
           {/* Label for the checkbox, which will be the clickable area */}
           <label htmlFor="dropdownCheckbox" className="profileCircleContainer">
-            <Profilecircle />
+            <ProfileCircle initials={"NA"} />
           </label>
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
             <li>
-              <a href="#">Account info</a>
+              <Link to="/Organization/AccountInfo">Account info</Link>
             </li>
             <li>
-              <a href="#">Settings</a>
-            </li>
-            <li>
-              <a href="#">Logout</a>
+              <Link to="/">Logout</Link>
             </li>
           </ul>
         </div>

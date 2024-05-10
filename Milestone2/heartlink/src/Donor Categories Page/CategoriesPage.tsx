@@ -16,14 +16,38 @@ function CategoriesPage() {
       <HeadOfSection title="Donation Categories" />
       <div className="card-container">
         <div className="three-cards-holder">
-          <Category image={clothes} title="Clothing" />
-          <Category image={food} title="Food" />
-          <Category image={Toys} title="Toys" />
+          <Category
+            image={clothes}
+            title="Clothing"
+            forwardPath={"/Donor/ClothingRequests"}
+          />
+          <Category
+            image={food}
+            title="Food"
+            forwardPath={"/Donor/FoodRequests"}
+          />
+          <Category
+            image={Toys}
+            title="Toys"
+            forwardPath={"/Donor/ToysRequests"}
+          />
         </div>
         <div className="three-cards-holder">
-          <Category image={medication} title="Medications" />
-          <Category image={SchoolsSupplies} title="School Supplies" />
-          <Category image={blood} title="Blood Donation" />
+          <Category
+            image={medication}
+            title="Medications"
+            forwardPath={"/Donor/MedicationRequests"}
+          />
+          <Category
+            image={SchoolsSupplies}
+            title="School Supplies"
+            forwardPath={"/Donor/SchoolRequests"}
+          />
+          <Category
+            image={blood}
+            title="Blood Donation"
+            forwardPath={"/Donor/BloodRequests"}
+          />
         </div>
       </div>
     </>

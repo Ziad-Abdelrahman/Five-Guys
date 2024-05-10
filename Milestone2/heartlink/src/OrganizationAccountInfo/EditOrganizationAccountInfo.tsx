@@ -1,6 +1,5 @@
 import OrgNavgBar from "../components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
 import HeaderOfSection from "../components/Header/HeaderOfSection.tsx";
-import UploadMaps from "./UploadMaps.tsx";
 import "../components/Card/Organization Cards/DonationPostCard.css";
 import "./OrganizationAccountManagement.css";
 import { Link } from "react-router-dom";
@@ -8,6 +7,7 @@ import LoginButton from "../components/Buttons/LoginButton.tsx";
 import img from "../assets/baheya.png";
 import EditRadioButton from "../components/RadioButton/EditRadioButton.tsx";
 import { useState } from "react";
+import Map from "../components/map/Map.tsx";
 
 function EditOrganizationAccountInfo() {
   const [checked, setChecked] = useState("Female");
@@ -21,7 +21,11 @@ function EditOrganizationAccountInfo() {
           justifyContent: "space-between",
           width: "100%",
         }}
-        children={<LoginButton text={"Update"} />}
+        children={
+          <Link to={"../Updated"}>
+            <LoginButton text={"Update"} />{" "}
+          </Link>
+        }
       />
       <div className={"organization-account-info"}>
         <>
@@ -37,9 +41,9 @@ function EditOrganizationAccountInfo() {
               <div className={"edit-org-info-header"}>
                 <h5>Name</h5>
                 <h5>Type</h5>
-                <h5>Area</h5>
-                <h5>City</h5>
-                <h5>Address</h5>
+                <h5>Email</h5>
+                <h5>Hotline</h5>
+                <h5>Working hours</h5>
               </div>
 
               <div className={"my-profile-info"}>
@@ -61,21 +65,21 @@ function EditOrganizationAccountInfo() {
                   type="text"
                   className="form-control"
                   id="Area"
-                  defaultValue={"El Haram"}
+                  defaultValue={"baheya@baheya.org"}
                   style={{ marginBottom: "0.5em" }}
                 />
                 <input
                   type="text"
                   className="form-control"
                   id="City"
-                  defaultValue={"Cairo"}
+                  defaultValue={"16602"}
                   style={{ marginBottom: "0.5em" }}
                 />
                 <input
                   type="text"
                   className="form-control"
                   id="Address"
-                  defaultValue={"4 ش علوبة مدكور"}
+                  defaultValue={"9:00 AM - 5:00 PM"}
                   style={{ marginBottom: "0.5em" }}
                 />
               </div>
@@ -133,7 +137,51 @@ function EditOrganizationAccountInfo() {
               </div>
             </div>
           </div>
-          <UploadMaps />
+          <div className={"upload-doc-card"}>
+            <div style={{ width: "48%" }}>
+              <h2>Address Details</h2>
+              <hr />
+              <div
+                className={"text-in-personal-info-card"}
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  marginLeft: "4%:",
+                }}
+              >
+                <div className={"org-info-header"}>
+                  <h5>Area</h5>
+                  <h5>City</h5>
+                  <h5>Address</h5>
+                </div>
+
+                <div className={"my-profile-info"}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="Area"
+                    defaultValue={"El Haram"}
+                    style={{ marginBottom: "0.5em" }}
+                  />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="City"
+                    defaultValue={"Giza"}
+                    style={{ marginBottom: "0.5em" }}
+                  />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="Address"
+                    defaultValue={"4, Allouba St."}
+                    style={{ marginBottom: "0.5em" }}
+                  />
+                </div>
+              </div>
+            </div>
+            <Map height={"220px"} width={"300px"} />
+          </div>
         </div>
       </div>
     </div>

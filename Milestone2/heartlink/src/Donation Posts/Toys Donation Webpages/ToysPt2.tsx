@@ -1,3 +1,4 @@
+import { ChangeEvent, useState } from "react";
 import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
 import InputBox from "../../components/InputBox/InputBox.tsx";
 import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
@@ -8,6 +9,28 @@ function ToysPt2() {
     justifyContent: "space-between",
     width: "600px",
   };
+  const [error, setError] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [toy, setToy] = useState("");
+  
+
+  const handlleQuantityChange = (num: string) => {
+    setQuantity(num);
+  };
+  const handleClick = () => {
+    if(toy.trim()==='' || quantity.trim()===''){
+      setError("Please enter the toy name and the quantity");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  }
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setToy(e.target.value);
+  };
+
+
   return (
     <Template1
       leftPanelDiv={
@@ -26,13 +49,13 @@ function ToysPt2() {
               <h5 style={{ position: "relative", marginTop: "3%" }}>
                 What is the toy's name?
               </h5>
-              <InputBox type={"text"} label={"Specify toy"} width={"280px"} />
+              <InputBox type={"text"} label={"Specify toy"} width={"280px"} onChange={handleChange}/>
             </div>
             <div style={divStyle}>
               <h5 style={{ position: "relative", marginTop: "3%" }}>
                 How many toys do you need?
               </h5>
-              <NumberInputBox label={"Quantity"} width={"280px"} />
+              <NumberInputBox label={"Quantity"} width={"280px"} handleChange={handlleQuantityChange}/>
             </div>
             <div style={divStyle}>
               <h5 style={{ position: "relative", marginTop: "13%" }}>
@@ -41,6 +64,8 @@ function ToysPt2() {
               </h5>
               <ImageUploader width={"280px"} height={"180px"} />
             </div>
+            {error && <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>}
+
           </div>
         </>
       }
@@ -48,6 +73,7 @@ function ToysPt2() {
       backButtonPath={"../1"}
       rightPanelButtonText={"Post"}
       hasButton={true}
+      handleClick={handleClick}
     />
   );
 }

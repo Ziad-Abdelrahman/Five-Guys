@@ -175,6 +175,7 @@ function TeacherPosts() {
               postdate={card.postdate}
               showDonateButton={true}
               donateButtonText={"Fulfill"}
+              isProbono={true}
             />
           ))}
       </div>

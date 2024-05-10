@@ -10,8 +10,7 @@ interface templateProps {
   hasButton?: boolean;
   forwardPath: string;
   backButtonPath?: string;
-  handleClick?: () => void;
-
+  handleClick?: () => boolean;
 }
 
 function Template1({

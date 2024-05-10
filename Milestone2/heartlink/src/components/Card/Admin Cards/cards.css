@@ -1,70 +1,89 @@
-
 .card{
     background-color: #f8f8f8;
     border-radius: 10px;
     padding: 20px;
-    margin: 10px;
+    margin: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out;
-    width: 600px;
-    height:auto;
-    display: flex;
+    width: 250px;
+    height: 380px;
+    display: inline-block;
     text-align: center;
-    flex-direction: row; 
-    justify-content: space-between;
-    align-items: center;
-    display: block;
+    vertical-align: top;
+    flex-direction: column;
+    justify-content: center;
+
 }
 .card:hover {
     box-shadow: 0 0 15px rgba(1, 169, 93, 0.4);
-    cursor: pointer;
-}
-.card:active {
-    transform: translateY(2px); 
-    box-shadow: 0 0 10px rgba(1, 169, 93, 0.4);
 }
 
 .card .logo{
-   width: 60%;
-   height: auto;
-   border-radius: 50%;
-   display: block;
-   margin: 0 auto;
+    width: 60%;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
 
 }
 .card .title{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0;
-    color: #2F9A6A;
-    font-weight: bold;
+    margin: 10px 0;
+
 }
 .card .text{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #2F9A6A;
     margin: 10px 0;
 
 }
 
-.button{
+.card .admin-registered-organizations-logo-container{
+    display: flex;
     align-items: center;
-    height: 20%;
-
-
-}
-.card.accept,
-.card.reject,
-.card.delete{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    width: 208px;
+    height: 124.8px;
 }
 
-.deleteContainer {
-    margin-top: auto; /* Move delete button to the bottom */
+.card .view-cards-text-container{
+    width: 208px;
+    height: 155px;
 }
-  
 
+.upload-icon-admin-card{
+    height: 100%;
+    display: flex;
+    padding: 1.5% 2% 0 0 ;
+    justify-content: start;
+    cursor: pointer;
+}
+.approve-reject-buttons-div{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 
-
-
+}
+.three-buttons-holder{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.learnmorejholder{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 25%;
+}
+.learnmorejholder button{
+    margin: 0;
+    display: inline-flex;
+    font-Size: 1em;
+    font-Weight: bold;
+    background-Color: transparent;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition-duration: 0.8s;
+    transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    width: 125px;
+    height: 39px;
+}

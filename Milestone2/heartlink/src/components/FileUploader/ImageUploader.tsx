@@ -6,16 +6,18 @@ import bin from "../../assets/bin.svg";
 interface imageUploaderProps {
   width?: string;
   height?: string;
+  upload?: boolean;
 }
 
 function ImageUploader({
   width = "250px",
   height = "150px",
+  upload,
 }: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
   const [imagePreview, setImagePreview] = useState<string | undefined>();
-
+  let downloaded = false;
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     const target = e.target as HTMLInputElement & {
       files: FileList;
@@ -48,7 +50,17 @@ function ImageUploader({
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
   };
-
+  if (upload && selectedImage && !downloaded) {
+    const url = URL.createObjectURL(selectedImage);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = selectedImage.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    downloaded = true;
+  }
   return (
     <div>
       {/* Hidden file input element */}
