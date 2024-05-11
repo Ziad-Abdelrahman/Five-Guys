@@ -3,10 +3,17 @@ import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
 import InputBox from "../../components/InputBox/InputBox.tsx";
 import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
+import Createcomp from "../../components/View Request Popup/Createcomp.tsx";
 function MedicationPt2() {
   const [error, setError] = useState("");
   const [medicationName, setMedicationName] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [img, setImg] = useState("");
+  const handleImage = (x: boolean) => {
+    if (x) setImg("Image Uploaded");
+    else setImg("");
+  };
 
   const handlleQuantityChange = (num: string) => {
     setQuantity(num);
@@ -20,11 +27,13 @@ function MedicationPt2() {
     if (
       medicationName.trim() === "" ||
       quantity.trim() === "" ||
-      quantity.trim() === ""
+      quantity.trim() === "" ||
+      img.trim() === ""
     ) {
       setError("Please enter medication name and quantity");
       return false;
     }
+    setSuccess(true);
     setError("");
     console.log("Form submitted successfully!");
     return true;
@@ -45,6 +54,7 @@ function MedicationPt2() {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Created!"} show={success} />
           <div className="header-container">
             <h1>Medication</h1>
           </div>
@@ -75,7 +85,11 @@ function MedicationPt2() {
                 {" "}
                 Please upload the med's photo
               </h5>
-              <ImageUploader width={"280px"} height={"180px"} />
+              <ImageUploader
+                width={"280px"}
+                height={"180px"}
+                handleUpload={handleImage}
+              />
             </div>
             <br />
             {error && (

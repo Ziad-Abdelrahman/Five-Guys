@@ -7,12 +7,14 @@ interface imageUploaderProps {
   width?: string;
   height?: string;
   upload?: boolean;
+  handleUpload?: (x: boolean) => void;
 }
 
 function ImageUploader({
   width = "250px",
   height = "150px",
   upload,
+  handleUpload,
 }: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
@@ -25,6 +27,9 @@ function ImageUploader({
     setSelectedImage(target.files[0]);
     if (target.files[0]) {
       setImagePreview(URL.createObjectURL(target.files[0]));
+      if (handleUpload) {
+        handleUpload(true);
+      }
     }
   }
 
@@ -36,6 +41,9 @@ function ImageUploader({
   const removeFile = () => {
     setSelectedImage(null);
     setImagePreview(undefined);
+    if (handleUpload) {
+      handleUpload(false);
+    }
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {

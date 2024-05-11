@@ -9,10 +9,10 @@ function DonorAddTeacherInfo() {
   const [isUnderReview, setUnderReview] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isFileUploaded, setFileUploaded] = useState(false);
-
+  const [isFile, setFile] = useState("");
   const handleFinishClick = () => {
     // Check if fields are empty and set error message accordingly
-    if (!subject.trim() || !numberOfStudents.trim()) {
+    if (!subject.trim() || !numberOfStudents.trim() || !isFile.trim()) {
       setErrorMessage("Please fill in all fields & upload the certification."); // Set error message
       setUnderReview(false); // Ensure review message doesn't show
       setFileUploaded(false);
@@ -21,6 +21,10 @@ function DonorAddTeacherInfo() {
       setErrorMessage(""); // Clear any previous error messages
       setFileUploaded(true);
     }
+  };
+  const handleFile = (x: boolean) => {
+    if (x) setFile("Image Uploaded");
+    else setFile("");
   };
 
   return (
@@ -97,7 +101,11 @@ function DonorAddTeacherInfo() {
           </div>
         </div>
         <div className={"Donor-file-uploader-container"}>
-          <FileUploader text={"Upload Certification"} upload={isFileUploaded} />
+          <FileUploader
+            text={"Upload Certification"}
+            upload={isFileUploaded}
+            handleUpload={handleFile}
+          />
         </div>
       </div>
     </>

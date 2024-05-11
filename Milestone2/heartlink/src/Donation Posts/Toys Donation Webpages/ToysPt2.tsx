@@ -3,6 +3,7 @@ import ImageUploader from "../../components/FileUploader/ImageUploader.tsx";
 import InputBox from "../../components/InputBox/InputBox.tsx";
 import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
+import Createcomp from "../../components/View Request Popup/Createcomp.tsx";
 function ToysPt2() {
   const divStyle = {
     display: "flex",
@@ -12,24 +13,29 @@ function ToysPt2() {
   const [error, setError] = useState("");
   const [quantity, setQuantity] = useState("");
   const [toy, setToy] = useState("");
-  
+  const [success, setSuccess] = useState(false);
+  const [img, setImg] = useState("");
 
   const handlleQuantityChange = (num: string) => {
     setQuantity(num);
   };
+  const handleImage = (x: boolean) => {
+    if (x) setImg("Image Uploaded");
+    else setImg("");
+  };
   const handleClick = () => {
-    if(toy.trim()==='' || quantity.trim()===''){
+    if (toy.trim() === "" || quantity.trim() === "" || img.trim() === "") {
       setError("Please enter the toy name and the quantity");
       return false;
     }
+    setSuccess(true);
     setError("");
     console.log("Form submitted successfully!");
     return true;
-  }
+  };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setToy(e.target.value);
   };
-
 
   return (
     <Template1
@@ -41,6 +47,7 @@ function ToysPt2() {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Created!"} show={success} />
           <div className="header-container">
             <h1>Toys</h1>
           </div>
@@ -49,23 +56,37 @@ function ToysPt2() {
               <h5 style={{ position: "relative", marginTop: "3%" }}>
                 What is the toy's name?
               </h5>
-              <InputBox type={"text"} label={"Specify toy"} width={"280px"} onChange={handleChange}/>
+              <InputBox
+                type={"text"}
+                label={"Specify toy"}
+                width={"280px"}
+                onChange={handleChange}
+              />
             </div>
             <div style={divStyle}>
               <h5 style={{ position: "relative", marginTop: "3%" }}>
                 How many toys do you need?
               </h5>
-              <NumberInputBox label={"Quantity"} width={"280px"} handleChange={handlleQuantityChange}/>
+              <NumberInputBox
+                label={"Quantity"}
+                width={"280px"}
+                handleChange={handlleQuantityChange}
+              />
             </div>
             <div style={divStyle}>
               <h5 style={{ position: "relative", marginTop: "13%" }}>
                 {" "}
                 Please upload the toy's photo
               </h5>
-              <ImageUploader width={"280px"} height={"180px"} />
+              <ImageUploader
+                width={"280px"}
+                height={"180px"}
+                handleUpload={handleImage}
+              />
             </div>
-            {error && <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>}
-
+            {error && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+            )}
           </div>
         </>
       }
