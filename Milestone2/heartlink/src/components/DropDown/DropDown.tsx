@@ -5,6 +5,7 @@ interface DropDownProps {
   width: string;
   onChange?: (selectedOption: string) => void;
   disabled?: boolean;
+  required?: boolean;
 }
 
 function DropDown({
@@ -13,6 +14,7 @@ function DropDown({
   width,
   onChange,
   disabled = false,
+  required = false,
 }: DropDownProps) {
   const renderedOptions = options.map((option) => {
     return (
@@ -31,8 +33,9 @@ function DropDown({
         onChange && onChange(e.target.value);
       }}
       disabled={disabled}
+      required={required}
     >
-      <option selected disabled={true}>
+      <option selected disabled={true} value="">
         {selected}
       </option>
       {renderedOptions}

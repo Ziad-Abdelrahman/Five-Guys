@@ -5,7 +5,7 @@ interface OrganizationAccountProfileCardProps {
   type: string;
   email: string;
   hotline: string;
-  working: string;
+  telephone: string;
 }
 function OrganizationAccountProfileCard(
   props: OrganizationAccountProfileCardProps,
@@ -25,8 +25,7 @@ function OrganizationAccountProfileCard(
             <h5>Name</h5>
             <h5>Type</h5>
             <h5>Email</h5>
-            <h5>Hotline</h5>
-            <h5>Working hours</h5>
+            <h5>Telephone(s)</h5>
           </div>
 
           <div className={"my-profile-info"}>
@@ -34,7 +33,7 @@ function OrganizationAccountProfileCard(
             <p>{props.type}</p>
             <p>{props.email}</p>
             <p>{props.hotline}</p>
-            <p>{props.working}</p>
+            <p>{props.telephone}</p>
           </div>
         </div>
       </div>

@@ -10,7 +10,18 @@ import { useState } from "react";
 import DonorAddTeacherInfo from "./DonorAddTeacherInfo.tsx";
 import DonorAddDoctorInfo from "./DonorAddDoctorInfo.tsx";
 
-function DonorAccountMangPage() {
+interface DonorAccountMangPageProps {
+  name: string;
+  age: string;
+  gender: string;
+  governorate: string;
+  address: string;
+  tel1: string;
+  tel2: string;
+  setPage: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function DonorAccountMangPage(props: DonorAccountMangPageProps) {
   const [selectedProbono, setSelectedProbono] = useState("");
 
   // Function to toggle the visibility of the dropdown based on the card clicked
@@ -21,13 +32,21 @@ function DonorAccountMangPage() {
       setSelectedProbono(probonoType); // Set to the selected type
     }
   };
-
   return (
     <>
       <DonorNavigationBar />
       <HeaderOfSection title={"Account"} />
       <div className="management-cards-container">
-        <DonorAccountProfileCard />
+        <DonorAccountProfileCard
+          age={props.age}
+          address={props.address}
+          gender={props.gender}
+          governorate={props.governorate}
+          name={props.name}
+          tel1={props.tel1}
+          tel2={props.tel2}
+          setPage={props.setPage}
+        />
         <div className={"master-probono-container"}>
           <div className={"pro-bono-cards-container"}>
             <div

@@ -4,7 +4,7 @@ import logo from "../assets/minilogo.png";
 import "./SignUp.css";
 import Map from "../components/map/Map.tsx";
 import FileUploader from "../components/FileUploader/FileUploader.tsx";
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 function SignUpOrgP2() {
   return (
@@ -24,35 +24,35 @@ function SignUpOrgP2() {
           </div>
         </div>
 
-        <div className="rightPanelSignUpAB">
-          <div className="rightPanel-containerS">
-            <h2 style={{ position: "relative", bottom: "1em" }}>
-              Verify details
-            </h2>
-            <div className="dataHolderJJ">
-              <div className="twoInputHolderS">
-                <div className="MapHolderJJ">
-                  <label>Organization Location</label>
-                  <Map height={"100%"} width={"200px"} />
-                </div>
-                <div className="MapHolderJJ">
-                  <label>Organization Documents</label>
-                  <FileUploader width={"200px"} />
+        <Form action="../../Organization">
+          <div className="rightPanelSignUpAB">
+            <div className="rightPanel-containerS">
+              <h2 style={{ position: "relative", bottom: "1em" }}>
+                Verify details
+              </h2>
+              <div className="dataHolderJJ">
+                <div className="twoInputHolderS">
+                  <div className="MapHolderJJ">
+                    <label>Organization Location</label>
+                    <Map height={"100%"} width={"200px"} />
+                  </div>
+                  <div className="MapHolderJJ">
+                    <label>Organization Documents</label>
+                    <FileUploader width={"200px"} required={true} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="footerSignUp">
-            <div className="footerButtons-containerSignUpA">
-              <Link to="../../Organization">
-                <Button text={"Sign Up"} />{" "}
-              </Link>
-              <Link to="../Organization/1">
-                <BackButton style={{ marginLeft: "5em" }} />{" "}
-              </Link>
+            <div className="footerSignUp">
+              <div className="footerButtons-containerSignUpA">
+                <Button text={"Sign Up"} />
+                <Link to="../Organization/1">
+                  <BackButton style={{ marginLeft: "5em" }} />{" "}
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </Form>
       </div>
     </>
   );

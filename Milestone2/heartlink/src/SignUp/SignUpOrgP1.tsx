@@ -6,7 +6,7 @@ import logo from "../assets/minilogo.png";
 import "./SignUp.css";
 import hashSet from "../hashSet";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 const Alexandria = [
   "Amreya 1",
@@ -473,64 +473,69 @@ function SignUpOrgP1() {
           </div>
         </div>
 
-        <div className="rightPanelSignUpAB">
-          <div className="rightPanel-containerS">
-            <h2 style={{ position: "relative", bottom: "5%" }}>
-              Provide us with your organization details
-            </h2>
-            <div className="dataHolderJJ">
-              <div style={{ marginBottom: "3%" }}>
-                <DropDown
-                  options={[
-                    "Charity",
-                    "Hospital",
-                    "Orphanage",
-                    "School",
-                    "Mosque",
-                    "Church",
-                  ]}
-                  selected={"Specify Organization type"}
+        <Form action="../Organization/2">
+          <div className="rightPanelSignUpAB">
+            <div className="rightPanel-containerS">
+              <h2 style={{ position: "relative", bottom: "5%" }}>
+                Provide us with your organization details
+              </h2>
+              <div className="dataHolderJJ">
+                <div style={{ marginBottom: "3%" }}>
+                  <DropDown
+                    options={[
+                      "Charity",
+                      "Hospital",
+                      "Orphanage",
+                      "School",
+                      "Mosque",
+                      "Church",
+                    ]}
+                    selected={"Specify Organization type"}
+                    width={"430px"}
+                    required={true}
+                  />
+                </div>
+                <InputBox
+                  type={"text"}
+                  label={"Organization Name"}
                   width={"430px"}
+                  required={true}
+                />
+                <div className="twoInputHolderS">
+                  <DropDown
+                    options={Object.keys(areaOptions)}
+                    selected={"Governorate"}
+                    width={"200px"}
+                    onChange={handleGovChange}
+                    required={true}
+                  />
+                  <DropDown
+                    options={selectedGov ? areaOptions[selectedGov] : []}
+                    selected={selectedArea || "Select Area"}
+                    width={"200px"}
+                    onChange={(area) => setSelectedArea(area)}
+                    disabled={!selectedGov}
+                    required={true}
+                  />
+                </div>
+                <InputBox
+                  type={"text"}
+                  label={"Organization Address (Street Name,Home Number)"}
+                  width={"430px"}
+                  required={true}
                 />
               </div>
-              <InputBox
-                type={"text"}
-                label={"Organization Name"}
-                width={"430px"}
-              />
-              <div className="twoInputHolderS">
-                <DropDown
-                  options={Object.keys(areaOptions)}
-                  selected={"Governorate"}
-                  width={"200px"}
-                  onChange={handleGovChange}
-                />
-                <DropDown
-                  options={selectedGov ? areaOptions[selectedGov] : []}
-                  selected={selectedArea || "Select Area"}
-                  width={"200px"}
-                  onChange={(area) => setSelectedArea(area)}
-                  disabled={!selectedGov}
-                />
-              </div>
-              <InputBox
-                type={"text"}
-                label={"Organization Address (Street Name,Home Number)"}
-                width={"430px"}
-              />
             </div>
-          </div>
-          <div className="footerSignUp">
-            <div className="footerButtons-containerSignUpA">
-              <Link to="../Organization/2">
+            <div className="footerSignUp">
+              <div className="footerButtons-containerSignUpA">
                 <Button text={"Next"} />
-              </Link>
-              <Link to="../" className="whyLink">
-                <BackButton />
-              </Link>
+                <Link to="../" className="whyLink">
+                  <BackButton />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </Form>
       </div>
     </>
   );

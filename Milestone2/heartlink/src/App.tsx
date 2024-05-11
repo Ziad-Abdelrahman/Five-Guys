@@ -42,9 +42,6 @@ import CreateMedicalPostPt2 from "./Medical Posts/CreateMedicalPostPt2.tsx";
 import CreateMedicalPost from "./Medical Posts/CreateMedicalPost.tsx";
 import ProBonos from "./Probonos/ProBonos.tsx";
 import CreateTeachingPost from "./Teaching Posts/CreateTeachingPost.tsx";
-import OrganizationAccountInfo from "./OrganizationAccountInfo/OrganizationAccountInfo.tsx";
-import EditOrganizationAccountInfo from "./OrganizationAccountInfo/EditOrganizationAccountInfo.tsx";
-import UpdatedOrganizationInfo from "./OrganizationAccountInfo/UpdatedOrganizationInfo.tsx";
 import DeleteDonors from "./Admin/Donors/DeleteDonors.tsx";
 import PendingDonors from "./Admin/Donors/PendingDonors.tsx";
 import DeleteOrganizations from "./Admin/Organizations/DeleteOrganizations.tsx";
@@ -64,8 +61,12 @@ import MedicalCases from "./Donation Requests Page/MedicalCases.tsx";
 import TeacherPosts from "./Donation Requests Page/TeacherPosts.tsx";
 import TransportationSelection from "./components/DonationQuantity/TransportationSelection.tsx";
 import AllDonationRequests from "./Donation Requests Page/AllDonationRequests.tsx";
-import DonorAccountMangPage from "./Donor Account Management/DonorAccountMangPage.tsx";
 import SignUpDonorP2 from "./SignUp/SignUpDonorP2.tsx";
+import AdminNavbar from "./components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
+import DonorNavigationBar from "./components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
+import CompletedAccountManagement from "./OrganizationAccountInfo/CompletedAccountManagement.tsx";
+import UpdatedOrganizationInfo from "./OrganizationAccountInfo/UpdatedOrganizationInfo.tsx";
+import CompleteDonorAccountInfo from "./Donor Account Management/CompleteDonorAccountInfo.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -81,7 +82,18 @@ const router = createBrowserRouter(
       <Route path="Donor">
         <Route index element={<DonorDashboard />} />
 
-        <Route path={"AccountInfo"} element={<DonorAccountMangPage />} />
+        <Route
+          path="ViewOrganizationsDonor"
+          element={
+            <DeleteOrganizations
+              title={"Organizations"}
+              hideDelete={true}
+              children={<DonorNavigationBar />}
+            />
+          }
+        />
+
+        <Route path={"AccountInfo"} element={<CompleteDonorAccountInfo />} />
 
         <Route path="ViewAllDonations">
           <Route index element={<AllDonationRequests />} />
@@ -230,15 +242,21 @@ const router = createBrowserRouter(
         <Route path="CreateTeachingPost" element={<CreateTeachingPost />} />
         <Route path="FulfilledProboPosts" element={<ProBonos />} />
         <Route path={"AccountInfo"}>
-          <Route index element={<OrganizationAccountInfo />} />
-          <Route path={"Edit"} element={<EditOrganizationAccountInfo />} />
-          <Route path={"Updated"} element={<UpdatedOrganizationInfo />} />
+          <Route index element={<CompletedAccountManagement />} />
         </Route>
       </Route>
       <Route path="Admin">
         <Route index element={<AdminDashboard />} />
         <Route path="ViewDonors" element={<DeleteDonors />} />
-        <Route path="ViewOrganizations" element={<DeleteOrganizations />} />
+        <Route
+          path="ViewOrganizationsAdmin"
+          element={
+            <DeleteOrganizations
+              title={"Registered Organizations"}
+              children={<AdminNavbar />}
+            />
+          }
+        />
         <Route path="DonorSubmissions" element={<PendingDonors />} />
         <Route
           path="OrganizationSubmissions"
@@ -246,6 +264,7 @@ const router = createBrowserRouter(
         />
         <Route path="ChangePass" element={<ChangePass />} />
       </Route>
+      <Route path={"test"} element={<UpdatedOrganizationInfo />}></Route>
     </Route>,
   ),
 );

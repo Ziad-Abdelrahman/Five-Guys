@@ -6,18 +6,19 @@ import ScheduleSelection from "../../Donationdrop-off/ScheduleSelection.tsx";
 import BackButton from "../Buttons/BackButton.tsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import DonorThankYouCard from "../Card/DonorThankYouCard.tsx";
 function TransportationSelection() {
   const [selectedRadio, setSelectedRadio] = useState("");
   const [selectedTiming, setselectedTiming] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
+  const [thankYouCard, setThankYouCard] = useState(false);
   const handleClick = () => {
     if (!(selectedRadio && selectedTiming)) {
       setErrorMessage("Please fill in all fields.");
       return;
     }
     setErrorMessage("");
-    console.log("Form submitted successfully!");
+    setThankYouCard(true);
     return true;
   };
 
@@ -74,10 +75,13 @@ function TransportationSelection() {
             text={"Schedule the Donation Pickup"}
             onClick={handleScheduleSelection}
           />
-
           {errorMessage && (
             <div
-              style={{ color: "red", marginTop: "0.5rem", textAlign: "center" }}
+              style={{
+                marginTop: "2%",
+                color: "red",
+                textAlign: "center",
+              }}
             >
               {errorMessage}
             </div>
@@ -88,6 +92,7 @@ function TransportationSelection() {
           <DonateButton text={"Finish"} onClick={handleClick} />
         </div>
       </div>
+      {thankYouCard && <DonorThankYouCard />}
     </div>
   );
 }

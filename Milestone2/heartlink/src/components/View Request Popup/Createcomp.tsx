@@ -1,5 +1,6 @@
 import "./Createcomp.css";
 import LoginButton from "../Buttons/LoginButton.tsx";
+import { Link } from "react-router-dom";
 
 interface CreatecompProps {
   message?: string;
@@ -26,8 +27,12 @@ function Createcomp({ message, show }: CreatecompProps): JSX.Element {
         >
           <h1 style={{ fontSize: "40px", margin: "10% 0" }}>{message}</h1>
           <div className="button-container" style={{ marginTop: "10%" }}>
-            <LoginButton text="View Posts" height={"40px"} />
-            <LoginButton text="Dashboard" height={"40px"} />
+            <Link to={"/Organization/ViewPosts"}>
+              <LoginButton text="View Posts" height={"40px"} />
+            </Link>
+            <Link to={"/Organization"}>
+              <LoginButton text="Dashboard" height={"40px"} />
+            </Link>
           </div>
         </div>
       )}

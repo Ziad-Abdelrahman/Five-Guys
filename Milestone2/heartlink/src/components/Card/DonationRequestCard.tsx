@@ -2,6 +2,8 @@ import RequestCard from "./RequestCard.tsx";
 import ViewButton from "../Buttons/ViewButton.tsx";
 import DonateButton from "../Buttons/DonateButton.tsx";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import DonorThankYouCard from "./DonorThankYouCard.tsx";
 
 interface DonationRequestPopUpProps {
   trigger?: boolean;
@@ -29,6 +31,16 @@ function DonationRequestCard({
   isProbono = false,
 }: DonationRequestPopUpProps) {
   const shouldRender = trigger !== undefined ? trigger : true;
+  const [showThankYou, setShowThankYou] = useState(false);
+
+  const handleDonateClick = () => {
+    if (donateButtonText === "Fulfill") {
+      setShowThankYou(true);
+    }
+  };
+  const closeThankYouCard = () => {
+    setShowThankYou(false);
+  };
   return shouldRender ? (
     <RequestCard>
       <>
@@ -46,14 +58,21 @@ function DonationRequestCard({
         <div className="two-buttons-holder">
           <ViewButton buttonID={buttonID} handleClick={handleClick} />
           {showDonateButton && isProbono === true && (
-            <DonateButton text={donateButtonText} />
+            <DonateButton text={donateButtonText} onClick={handleDonateClick} />
           )}
           {showDonateButton && isProbono === false && (
             <Link to={"Quantity/" + buttonID}>
-              <DonateButton text={donateButtonText} />{" "}
+              <DonateButton text={donateButtonText} />
             </Link>
           )}
         </div>
+        {showThankYou && (
+          <DonorThankYouCard
+            Buttontext={"Done"}
+            width={"20%"}
+            handleClick={closeThankYouCard}
+          />
+        )}
       </>
     </RequestCard>
   ) : null;

@@ -2,7 +2,6 @@ import OrganizationAccountProfileCard from "./OrganizationAccountProfileCard.tsx
 import OrgNavgBar from "../components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
 import HeaderOfSection from "../components/Header/HeaderOfSection.tsx";
 import RepresentativeDetailsCard from "./RepresentativeDetailsCard.tsx";
-import UploadMaps from "./UploadMaps.tsx";
 import { BsThreeDots } from "react-icons/bs";
 import "../components/Card/Organization Cards/DonationPostCard.css";
 import { Link } from "react-router-dom";
@@ -42,7 +41,7 @@ function OrganizationAccountInfo() {
           type={"Breast Cancer"}
           email="baheya@baheya.org"
           hotline={"16602"}
-          working={"9:00 AM - 5:00 PM"}
+          telephone={"0225362211"}
         />
         <div className={"two-card-upload-maps-holder"}>
           <RepresentativeDetailsCard
@@ -51,7 +50,6 @@ function OrganizationAccountInfo() {
             gender={"Female"}
             contactNumber={"01113190357"}
           />
-          <UploadMaps />
         </div>
       </div>
     </div>

@@ -1,0 +1,14 @@
+.donor-return-to-dashboard-button{
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    transition-duration: 0.8s;
+    height: fit-content;
+    width: fit-content;
+    font-weight:normal;
+    transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out; /* Smooth transition */
+}
+
+.donor-return-to-dashboard-button:hover {
+    background-color: #018448;
+    transform: scale(1.05); /* Added transform effect on hover */
+}

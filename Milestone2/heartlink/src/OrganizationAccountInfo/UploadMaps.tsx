@@ -1,6 +1,12 @@
 import Map from "../components/map/Map.tsx";
 
-function UploadMaps() {
+interface UploadMapsProps {
+  area: string;
+  city: string;
+  address: string;
+}
+
+function UploadMaps(props: UploadMapsProps) {
   return (
     <div className={"upload-doc-card"}>
       <div style={{ width: "48%" }}>
@@ -14,9 +20,9 @@ function UploadMaps() {
           </div>
 
           <div className={"my-profile-info"}>
-            <p>El Haram</p>
-            <p>Giza</p>
-            <p>4, Allouba St.</p>
+            <p>{props.area}</p>
+            <p>{props.city}</p>
+            <p>{props.address}</p>
           </div>
         </div>
       </div>

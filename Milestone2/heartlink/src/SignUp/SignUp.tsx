@@ -4,7 +4,7 @@ import logo from "../assets/minilogo.png";
 import Button from "../components/Buttons/Button.tsx";
 import InputBox from "../components/InputBox/InputBox.tsx";
 import RadioButton from "../components/RadioButton/RadioButton.tsx";
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import { useState } from "react";
 
 function SignUp() {
@@ -62,7 +62,6 @@ function SignUp() {
       }, 1000);
     }
   };
-
   return (
     <>
       <div className="signUpMain">
@@ -101,20 +100,45 @@ function SignUp() {
         </div>
 
         <div className="rightPanelSignUpA">
-          <div className="rightPanel-containerS">
+          <Form className="rightPanel-containerS" action={path}>
             <h2 style={{ position: "relative", bottom: "5%" }}>
               Provide us with your account details
             </h2>
             <div className="twoInputHolderS">
-              <InputBox type={"text"} label={"First name"} width={"200px"} />
-              <InputBox type={"text"} label={"Last name"} width={"200px"} />
+              <InputBox
+                type={"text"}
+                label={"First name"}
+                width={"200px"}
+                required={true}
+              />
+              <InputBox
+                type={"text"}
+                label={"Last name"}
+                width={"200px"}
+                required={true}
+              />
             </div>
             <div className="twoInputHolderS">
-              <InputBox type={"email"} label={"Email"} width={"200px"} />
-              <InputBox type={"password"} label={"Password"} width={"200px"} />
+              <InputBox
+                type={"email"}
+                label={"Email"}
+                width={"200px"}
+                required={true}
+              />
+              <InputBox
+                type={"password"}
+                label={"Password"}
+                width={"200px"}
+                required={true}
+              />
             </div>
             <div className="twoInputHolderS">
-              <InputBox type={"text"} label={"Phone number"} width={"200px"} />
+              <InputBox
+                type={"text"}
+                label={"Phone number"}
+                width={"200px"}
+                required={true}
+              />
               <div className="radioss">
                 <div
                   style={{
@@ -136,20 +160,27 @@ function SignUp() {
                     <label style={{ marginBottom: "2%" }}>Specify gender</label>
                   </p>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <RadioButton text={"Male"} margin={"-6% 3%"} />
-                    <RadioButton text={"Female"} margin={"-6% 3%"} />
+                    <RadioButton
+                      text={"Male"}
+                      margin={"-6% 3%"}
+                      required={true}
+                    />
+                    <RadioButton
+                      text={"Female"}
+                      margin={"-6% 3%"}
+                      required={true}
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="footerSignUp">
-            <div className="footerButtons-containerSignUp">
-              <Link to={path}>
+
+            <div className="footerSignUp">
+              <div className="footerButtons-containerSignUp">
                 <Button text={"Next"} />
-              </Link>
+              </div>
             </div>
-          </div>
+          </Form>
         </div>
       </div>
     </>

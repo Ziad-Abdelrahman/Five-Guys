@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import logo from "../assets/minilogo.png";
 import Button from "../components/Buttons/Button.tsx";
 import BackButton from "../components/Buttons/BackButton.tsx";
@@ -27,102 +27,106 @@ function SignUpDonorP2() {
               <p className="leftTextSecond"> Only few steps ahead .. </p>
             </div>
           </div>
-
-          <div className="rightPanelSignUpA">
-            <div className="rightPanel-containerS">
-              <h2 style={{ position: "relative", bottom: "5%" }}>
-                Apply for probono
-              </h2>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <EditRadioButton
-                  text={"Doctor"}
-                  margin={"0 8%"}
-                  checked={specialization === "Doctor"}
-                  setChecked={setSpecialization}
-                />
-                <EditRadioButton
-                  text={"Teacher"}
-                  margin={"0 8%"}
-                  checked={specialization === "Teacher"}
-                  setChecked={setSpecialization}
-                />
-                <EditRadioButton
-                  text={"Later"}
-                  margin={"0 8%"}
-                  checked={specialization === "Later"}
-                  setChecked={setSpecialization}
-                />
+          <Form action="../../Donor/">
+            <div className="rightPanelSignUpA">
+              <div className="rightPanel-containerS">
+                <h2 style={{ position: "relative", bottom: "5%" }}>
+                  Apply for probono
+                </h2>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <EditRadioButton
+                    text={"Doctor"}
+                    margin={"0 8%"}
+                    checked={specialization === "Doctor"}
+                    setChecked={setSpecialization}
+                    required={true}
+                  />
+                  <EditRadioButton
+                    text={"Teacher"}
+                    margin={"0 8%"}
+                    checked={specialization === "Teacher"}
+                    setChecked={setSpecialization}
+                    required={true}
+                  />
+                  <EditRadioButton
+                    text={"Later"}
+                    margin={"0 8%"}
+                    checked={specialization === "Later"}
+                    setChecked={setSpecialization}
+                    required={true}
+                  />
+                </div>
+                <div className="dataHolderJJ">
+                  {specialization === "Doctor" ? (
+                    <>
+                      <div className="twoInputHolderS">
+                        <InputBox
+                          type={"text"}
+                          label={"Speciality"}
+                          width={"200px"}
+                          required={true}
+                        />
+                        <InputBox
+                          type={"text"}
+                          label={"Clinic"}
+                          width={"200px"}
+                          required={true}
+                        />
+                      </div>
+                      <div className="twoInputHolderS">
+                        <div className="MapHolderJJ">
+                          <label>Clinic Location</label>
+                          <Map height={"100%"} width={"200px"} />
+                        </div>
+                        <div className="MapHolderJJ">
+                          <label>Upload Certificate</label>
+                          <FileUploader width={"200px"} required={true} />
+                        </div>
+                      </div>
+                    </>
+                  ) : specialization === "Teacher" ? (
+                    <>
+                      <div className="twoInputHolderS">
+                        <InputBox
+                          type={"text"}
+                          label={"Subject"}
+                          width={"200px"}
+                          required={true}
+                        />
+                        <InputBox
+                          type={"text"}
+                          label={"School"}
+                          width={"200px"}
+                          required={true}
+                        />
+                      </div>
+                      <div className="twoInputHolderS">
+                        <div className="MapHolderJJ">
+                          <label>Upload Certificate</label>
+                          <FileUploader width={"200px"} required={true} />
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
               </div>
-              <div className="dataHolderJJ">
-                {specialization === "Doctor" ? (
-                  <>
-                    <div className="twoInputHolderS">
-                      <InputBox
-                        type={"text"}
-                        label={"Speciality"}
-                        width={"200px"}
-                      />
-                      <InputBox
-                        type={"text"}
-                        label={"Clinic"}
-                        width={"200px"}
-                      />
-                    </div>
-                    <div className="twoInputHolderS">
-                      <div className="MapHolderJJ">
-                        <label>Clinic Location</label>
-                        <Map height={"100%"} width={"200px"} />
-                      </div>
-                      <div className="MapHolderJJ">
-                        <label>Upload Certificate</label>
-                        <FileUploader width={"200px"} />
-                      </div>
-                    </div>
-                  </>
-                ) : specialization === "Teacher" ? (
-                  <>
-                    <div className="twoInputHolderS">
-                      <InputBox
-                        type={"text"}
-                        label={"Subject"}
-                        width={"200px"}
-                      />
-                      <InputBox
-                        type={"text"}
-                        label={"School"}
-                        width={"200px"}
-                      />
-                    </div>
-                    <div className="twoInputHolderS">
-                      <div className="MapHolderJJ">
-                        <label>Upload Certificate</label>
-                        <FileUploader width={"200px"} />
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="twoInputHolderS"></div>
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="footerSignUp">
-              <div className="footerButtons-containerSignUp">
-                <Link to="../../Donor/">
+              <div className="footerSignUp">
+                <div className="footerButtons-containerSignUp">
                   <Button text={"Next"} />
-                </Link>
-                <Link to="../Donor/1">
-                  <BackButton />
-                </Link>
+                  <Link to="../Donor/1">
+                    <BackButton />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </Form>
         </div>
       </>
     </div>

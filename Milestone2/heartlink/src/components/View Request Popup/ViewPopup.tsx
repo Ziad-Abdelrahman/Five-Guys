@@ -28,7 +28,7 @@ function viewPopup({
         </button>
 
         <div>
-          <h3>Info</h3>
+          <h2 style={{ textAlign: "center" }}>Info</h2>
         </div>
         <hr />
         <div className="info-container">{children}</div>

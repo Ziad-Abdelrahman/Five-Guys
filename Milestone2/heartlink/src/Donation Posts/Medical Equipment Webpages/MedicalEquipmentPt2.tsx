@@ -14,7 +14,7 @@ function MedicalEquipmentPt2() {
     setInput(e.target.value);
   }
     const handleClick = () => {
-      if(input.trim() === ""){
+      if(input.trim() ===""){
         setError("Please fill in all fields.");
         return false;
       }
