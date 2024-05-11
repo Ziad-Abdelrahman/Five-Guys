@@ -14,10 +14,19 @@ import "../../components/Search/searchbar.css";
 import Search from "../../components/Search/Search.tsx";
 import OrganizationFilter from "../../components/DonorFilterCard/OrganizationFilter.tsx";
 import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
-import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 import ViewPopup from "../../components/View Request Popup/ViewPopup.tsx";
 
-function DeleteOrganizations() {
+interface DeleteOrganizationsProps {
+  hideDelete?: boolean;
+  title: string;
+  children: React.ReactNode;
+}
+
+function DeleteOrganizations({
+  hideDelete = false,
+  title,
+  children,
+}: DeleteOrganizationsProps) {
   const cardData = [
     {
       id: "1",
@@ -151,7 +160,7 @@ function DeleteOrganizations() {
 
   return (
     <>
-      <AdminNavbar />
+      {children}
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {cardData
@@ -180,7 +189,7 @@ function DeleteOrganizations() {
         </div>
       </ViewPopup>
       <HeaderOfSection
-        title={"Registered Organization"}
+        title={title}
         smallDivStyle={{
           display: "flex",
           justifyContent: "space-between",
@@ -213,6 +222,7 @@ function DeleteOrganizations() {
               text={cardData.text}
               height={"400px"}
               handleLearnMoreClick={handleLearnMoreClick}
+              hideDelete={hideDelete}
             />
           ))}
       </div>
