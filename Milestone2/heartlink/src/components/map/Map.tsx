@@ -50,7 +50,7 @@ const Map: React.FC<MapProps> = ({ height, width }) => {
   initMap();
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div style={{ position: "relative", width: width, height: height }}>
       <input
         id="mapinput"
         required
