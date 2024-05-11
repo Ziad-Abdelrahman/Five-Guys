@@ -61,7 +61,7 @@ function SignUpDonorP2() {
                     required={true}
                   />
                 </div>
-                <div className="dataHolderJJ">
+                <div className="dataHolderJJ" style={{ height: "58%" }}>
                   {specialization === "Doctor" ? (
                     <>
                       <div className="twoInputHolderS">
