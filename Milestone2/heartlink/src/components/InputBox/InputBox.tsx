@@ -8,6 +8,7 @@ interface InputBoxProps {
   disabled?: boolean;
   value?: string; // Adding value prop for data binding
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
 }
 
 function InputBox({
@@ -17,6 +18,7 @@ function InputBox({
   disabled = false,
   onChange,
   value,
+  required = false,
 }: InputBoxProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -33,6 +35,7 @@ function InputBox({
         disabled={disabled}
         onChange={handleChange}
         value={value}
+        required={required}
       />
       <label htmlFor="floatingInput">{label}</label>
     </div>
