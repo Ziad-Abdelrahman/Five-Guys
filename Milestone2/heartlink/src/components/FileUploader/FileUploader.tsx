@@ -60,7 +60,7 @@ function ImageUploader({
   }
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       {/* Hidden file input element */}
       {inputRef && (
         <input
@@ -72,6 +72,10 @@ function ImageUploader({
             opacity: 0,
             position: "absolute",
             zIndex: -1,
+            bottom: "0",
+            left: "0",
+            width: "0",
+            height: "0",
           }}
           required={required}
         />
