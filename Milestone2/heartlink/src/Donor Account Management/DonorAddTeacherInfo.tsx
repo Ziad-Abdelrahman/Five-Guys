@@ -27,7 +27,7 @@ function DonorAddTeacherInfo() {
     <>
       <div className="probono-info-container">
         <div style={{ display: "flex", flexDirection: "column", width: "70%" }}>
-          <h2>Doctor Info</h2>
+          <h2>Teacher Info</h2>
           <div style={{ padding: "0 4%" }}>
             <div
               style={{
