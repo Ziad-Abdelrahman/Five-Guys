@@ -5,6 +5,8 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import "./probonoPageStyling.css";
 import NavigationBar from "../components/NavigationBar/NavigationBar.tsx";
+import OrganizationNavBar from "../components/NavigationBar/OrganizationNavigationBar/OrganizationNavBar.tsx";
+import OrgNavgBar from "../components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
 
 function ProBonos() {
   const proBonoData = [
@@ -91,7 +93,7 @@ function ProBonos() {
   ];
   return (
     <>
-      <NavigationBar />
+      <OrgNavgBar />
       <br />
       <Headerofsection title={"Probonos"} />
       <div

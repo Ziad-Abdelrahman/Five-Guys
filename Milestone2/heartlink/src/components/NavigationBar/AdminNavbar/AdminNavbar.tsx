@@ -5,7 +5,11 @@ import NavigationBar from "../NavigationBar.tsx";
 
 function AdminNavbar() {
   return (
-    <NavigationBar leftDiv={<AdminLeftDiv />} rightDiv={<AdminRightDiv />} />
+    <NavigationBar
+      leftDiv={<AdminLeftDiv />}
+      rightDiv={<AdminRightDiv />}
+      dashboard={"/Admin"}
+    />
   );
 }
 

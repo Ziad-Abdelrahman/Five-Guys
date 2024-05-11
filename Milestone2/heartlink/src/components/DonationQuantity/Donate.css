@@ -32,7 +32,8 @@ margin-top: 50px;
     display: block;  /* Makes the label take up the full width, aiding proper alignment */
     margin-top: 30px;
     outline: none; /* Removes default focus outline */
-
+    box-shadow: none;
+    border: none;
 
 
 }

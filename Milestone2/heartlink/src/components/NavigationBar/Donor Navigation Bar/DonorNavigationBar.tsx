@@ -5,7 +5,11 @@ import NavigationBar from "../NavigationBar.tsx";
 
 function DonorNavigationBar() {
   return (
-    <NavigationBar leftDiv={<DonorLeftDiv />} rightDiv={<DonorRightDiv />} />
+    <NavigationBar
+      leftDiv={<DonorLeftDiv />}
+      rightDiv={<DonorRightDiv />}
+      dashboard={"/Donor"}
+    />
   );
 }
 
