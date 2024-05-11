@@ -6,7 +6,7 @@ import "./SignUp.css";
 import hashSet from "../hashSet";
 import { useState } from "react";
 import DropDown from "../components/DropDown/DropDown.tsx";
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 const Alexandria = [
   "Amreya 1",
   "Amreya 2",
@@ -470,49 +470,52 @@ function SignUpDonorP1() {
             <p className="leftTextSecond"> Only few steps ahead .. </p>
           </div>
         </div>
+        <Form action="../Donor/2">
+          <div className="rightPanelSignUpA">
+            <div className="rightPanel-containerS">
+              <h2 style={{ position: "relative", bottom: "5%" }}>
+                Provide us with your address details
+              </h2>
 
-        <div className="rightPanelSignUpA">
-          <div className="rightPanel-containerS">
-            <h2 style={{ position: "relative", bottom: "5%" }}>
-              Provide us with your address details
-            </h2>
-            <div className="dataHolderJJ">
-              <div
-                className="twoInputHolderS"
-                style={{ marginBottom: "5%", width: "100%" }}
-              >
-                <DropDown
-                  options={Object.keys(areaOptions)}
-                  selected={"Governorate"}
-                  width={"200px"}
-                  onChange={handleGovChange}
-                />
-                <DropDown
-                  options={selectedGov ? areaOptions[selectedGov] : []}
-                  selected={selectedArea || "Select Area"}
-                  width={"200px"}
-                  onChange={(area) => setSelectedArea(area)}
-                  disabled={!selectedGov}
+              <div className="dataHolderJJ">
+                <div
+                  className="twoInputHolderS"
+                  style={{ marginBottom: "5%", width: "100%" }}
+                >
+                  <DropDown
+                    options={Object.keys(areaOptions)}
+                    selected={"Governorate"}
+                    width={"200px"}
+                    onChange={handleGovChange}
+                    required={true}
+                  />
+                  <DropDown
+                    options={selectedGov ? areaOptions[selectedGov] : []}
+                    selected={selectedArea || "Select Area"}
+                    width={"200px"}
+                    onChange={(area) => setSelectedArea(area)}
+                    disabled={!selectedGov}
+                    required={true}
+                  />
+                </div>
+                <InputBox
+                  type={"text"}
+                  label={"Address (Street Name,Home Number)"}
+                  width={"100%"}
+                  required={true}
                 />
               </div>
-              <InputBox
-                type={"text"}
-                label={"Address (Street Name,Home Number)"}
-                width={"100%"}
-              />
             </div>
-          </div>
-          <div className="footerSignUp">
-            <div className="footerButtons-containerSignUp">
-              <Link to="../Donor/2">
+            <div className="footerSignUp">
+              <div className="footerButtons-containerSignUp">
                 <Button text={"Next"} />
-              </Link>
-              <Link to="../">
-                <BackButton />
-              </Link>
+                <Link to="../">
+                  <BackButton />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </Form>
       </div>
     </>
   );

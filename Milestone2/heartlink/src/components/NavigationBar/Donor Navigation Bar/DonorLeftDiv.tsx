@@ -12,6 +12,11 @@ function DonorLeftDiv() {
           </button>
         </Link>
       </div>
+      <div className="dropdown" style={{ marginRight: "1em" }}>
+        <Link to={"/Donor/ViewOrganizationsDonor"}>
+          <button className="dropbtn">Organizations</button>
+        </Link>
+      </div>
       <div className="dropdown">
         <button className="dropbtn">
           Donations
@@ -23,11 +28,6 @@ function DonorLeftDiv() {
           <Link to={"/Donor/TeachingPosts"}>Teaching posts</Link>
           <Link to={"/Donor/MedicalPosts"}>Medical posts</Link>
         </div>
-      </div>
-      <div className="dropdown">
-        <Link to={"/Donor"}>
-          <button className="dropbtn">Dashboard</button>
-        </Link>
       </div>
     </>
   );

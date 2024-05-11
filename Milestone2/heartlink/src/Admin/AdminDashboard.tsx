@@ -117,7 +117,7 @@ function AdminDashboard() {
             className="organizationDetailsDashboard"
             style={{ width: "100%" }}
           >
-            <h1>Welcome back, Ziad</h1>
+            <h1>Welcome back, Menna</h1>
           </div>
         </div>
         <div className="organizationCards">

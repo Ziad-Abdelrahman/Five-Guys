@@ -14,10 +14,19 @@ import "../../components/Search/searchbar.css";
 import Search from "../../components/Search/Search.tsx";
 import OrganizationFilter from "../../components/DonorFilterCard/OrganizationFilter.tsx";
 import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
-import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 import ViewPopup from "../../components/View Request Popup/ViewPopup.tsx";
 
-const DeleteOrganizations = () => {
+interface DeleteOrganizationsProps {
+  hideDelete?: boolean;
+  title: string;
+  children: React.ReactNode;
+}
+
+function DeleteOrganizations({
+  hideDelete = false,
+  title,
+  children,
+}: DeleteOrganizationsProps) {
   const cardData = [
     {
       id: "1",
@@ -151,26 +160,36 @@ const DeleteOrganizations = () => {
 
   return (
     <>
-      <AdminNavbar />
+      {children}
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {cardData
             .filter((cardData) => cardData.id === selectedID)
             .map((cardData) => (
-              <ul>
-                <li>Category: {cardData.type}</li>
-                <br />
-                <li>City: {cardData.city}</li>
-                <br />
-                <li>Area: {cardData.area}</li>
-                <br />
-                <li>Established: {cardData.established}</li>
-              </ul>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div style={{ width: "240px" }}>
+                  <ul>
+                    <li>Category: {cardData.type}</li>
+                    <br />
+                    <li>City: {cardData.city}</li>
+                    <br />
+                    <li>Area: {cardData.area}</li>
+                    <br />
+                    <li>Established: {cardData.established}</li>
+                  </ul>
+                </div>
+                <iframe
+                  width="230"
+                  height="180"
+                  src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=Albashaer+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  title="Children Cancer Hospital Location"
+                />
+              </div>
             ))}
         </div>
       </ViewPopup>
       <HeaderOfSection
-        title={"Registered Organization"}
+        title={title}
         smallDivStyle={{
           display: "flex",
           justifyContent: "space-between",
@@ -189,7 +208,7 @@ const DeleteOrganizations = () => {
         {cardData
           .filter(
             (cardData) =>
-              cardData.title.toLowerCase().includes(search) &&
+              cardData.title.toLowerCase().includes(search.toLowerCase()) &&
               (type === "" || type === cardData.type) &&
               (city === "" || city === cardData.city) &&
               (area === "" || area === cardData.area),
@@ -203,11 +222,12 @@ const DeleteOrganizations = () => {
               text={cardData.text}
               height={"400px"}
               handleLearnMoreClick={handleLearnMoreClick}
+              hideDelete={hideDelete}
             />
           ))}
       </div>
     </>
   );
-};
+}
 
 export default DeleteOrganizations;

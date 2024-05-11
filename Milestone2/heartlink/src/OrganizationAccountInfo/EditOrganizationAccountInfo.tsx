@@ -1,16 +1,71 @@
 import OrgNavgBar from "../components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
 import HeaderOfSection from "../components/Header/HeaderOfSection.tsx";
-import "../components/Card/Organization Cards/DonationPostCard.css";
-import "./OrganizationAccountManagement.css";
-import { Link } from "react-router-dom";
 import LoginButton from "../components/Buttons/LoginButton.tsx";
 import img from "../assets/baheya.png";
 import EditRadioButton from "../components/RadioButton/EditRadioButton.tsx";
 import { useState } from "react";
 import Map from "../components/map/Map.tsx";
 
-function EditOrganizationAccountInfo() {
+interface EditOrganizationAccountInfoProps {
+  name: string;
+  type: string;
+  email: string;
+  area: string;
+  city: string;
+  address: string;
+  telephone1: string;
+  telephone2: string;
+  repName: string;
+  repEmail: string;
+  repGender: string;
+  repContactNumber: string;
+  setName: React.Dispatch<React.SetStateAction<string>>;
+  setType: React.Dispatch<React.SetStateAction<string>>;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  setTelephone1: React.Dispatch<React.SetStateAction<string>>;
+  setTelephone2: React.Dispatch<React.SetStateAction<string>>;
+  setArea: React.Dispatch<React.SetStateAction<string>>;
+  setCity: React.Dispatch<React.SetStateAction<string>>;
+  setAddress: React.Dispatch<React.SetStateAction<string>>;
+  setRepName: React.Dispatch<React.SetStateAction<string>>;
+  setRepEmail: React.Dispatch<React.SetStateAction<string>>;
+  setRepGender: React.Dispatch<React.SetStateAction<string>>;
+  setRepContactNumber: React.Dispatch<React.SetStateAction<string>>;
+  setPage: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
   const [checked, setChecked] = useState("Female");
+  const [tempName, setTempName] = useState(props.name);
+  const [tempType, setTempType] = useState(props.type);
+  const [tempEmail, setTempEmail] = useState(props.email);
+  const [tempTelephone1, setTempTelephone1] = useState(props.telephone1);
+  const [tempTelephone2, setTempTelephone2] = useState(props.telephone2);
+  const [tempArea, setTempArea] = useState(props.area);
+  const [tempCity, setTempCity] = useState(props.city);
+  const [tempAddress, setTempAddress] = useState(props.address);
+  const [tempRepName, setTempRepName] = useState(props.repName);
+  const [tempRepEmail, setTempRepEmail] = useState(props.repEmail);
+  const [tempRepContactNumber, setTempRepContactNumber] = useState(
+    props.repContactNumber,
+  );
+
+  const handleUpdate = () => {
+    props.setName(tempName);
+    props.setType(tempType);
+    props.setEmail(tempEmail);
+    props.setTelephone1(tempTelephone1);
+    props.setTelephone2(tempTelephone2);
+    props.setArea(tempArea);
+    props.setCity(tempCity);
+    props.setAddress(tempAddress);
+    props.setRepName(tempRepName);
+    props.setRepEmail(tempRepEmail);
+    props.setRepContactNumber(tempRepContactNumber);
+    props.setPage("Account Info");
+    props.setRepGender(checked);
+  };
+
   return (
     <div>
       <OrgNavgBar />
@@ -22,9 +77,9 @@ function EditOrganizationAccountInfo() {
           width: "100%",
         }}
         children={
-          <Link to={"../Updated"}>
-            <LoginButton text={"Update"} />{" "}
-          </Link>
+          <div onClick={handleUpdate}>
+            <LoginButton text={"Update"} />
+          </div>
         }
       />
       <div className={"organization-account-info"}>
@@ -42,8 +97,7 @@ function EditOrganizationAccountInfo() {
                 <h5>Name</h5>
                 <h5>Type</h5>
                 <h5>Email</h5>
-                <h5>Hotline</h5>
-                <h5>Working hours</h5>
+                <h5>Telephone(s)</h5>
               </div>
 
               <div className={"my-profile-info"}>
@@ -51,36 +105,41 @@ function EditOrganizationAccountInfo() {
                   type="text"
                   className="form-control"
                   id="name"
-                  defaultValue={"Baheyya"}
+                  defaultValue={tempName}
                   style={{ marginBottom: "0.5em" }}
+                  onChange={(e) => setTempName(e.target.value)}
                 />
                 <input
                   type="text"
                   className="form-control"
                   id="type"
-                  defaultValue={"Breast Cancer"}
+                  defaultValue={tempType}
                   style={{ marginBottom: "0.5em" }}
+                  onChange={(e) => setTempType(e.target.value)}
                 />
                 <input
                   type="text"
                   className="form-control"
-                  id="Area"
-                  defaultValue={"baheya@baheya.org"}
+                  id="email"
+                  defaultValue={tempEmail}
                   style={{ marginBottom: "0.5em" }}
+                  onChange={(e) => setTempEmail(e.target.value)}
                 />
                 <input
                   type="text"
                   className="form-control"
-                  id="City"
-                  defaultValue={"16602"}
+                  id="tel1"
+                  defaultValue={tempTelephone1}
                   style={{ marginBottom: "0.5em" }}
+                  onChange={(e) => setTempTelephone1(e.target.value)}
                 />
                 <input
                   type="text"
                   className="form-control"
-                  id="Address"
-                  defaultValue={"9:00 AM - 5:00 PM"}
+                  id="tel2"
+                  defaultValue={tempTelephone2}
                   style={{ marginBottom: "0.5em" }}
+                  onChange={(e) => setTempTelephone2(e.target.value)}
                 />
               </div>
             </div>
@@ -103,35 +162,38 @@ function EditOrganizationAccountInfo() {
                     type="text"
                     className="form-control"
                     id="repName"
-                    defaultValue={"Farah"}
+                    defaultValue={tempRepName}
+                    onChange={(e) => setTempRepName(e.target.value)}
                   />
                   <div style={{ display: "flex" }}>
                     <EditRadioButton
                       text={"Male"}
                       height={"25px"}
-                      checked={checked === "Male"}
+                      checked={checked === props.repGender}
                       setChecked={setChecked}
                     />
                     <EditRadioButton
                       text={"Female"}
                       height={"25px"}
-                      checked={checked === "Female"}
+                      checked={checked === props.repGender}
                       setChecked={setChecked}
                     />
                   </div>
                   <input
                     type="email"
                     className="form-control"
-                    id="repName"
-                    defaultValue={"farahh_faisall@hotmail.com"}
+                    id="repEmail"
+                    defaultValue={tempRepEmail}
                     style={{ marginBottom: "0.5em", width: "240px" }}
+                    onChange={(e) => setTempRepEmail(e.target.value)}
                   />
                   <input
                     type="tel"
                     className="form-control"
-                    id="repName"
-                    defaultValue={"01113190357"}
+                    id="repNumber"
+                    defaultValue={tempRepContactNumber}
                     style={{ marginBottom: "0.5em", width: "240px" }}
+                    onChange={(e) => setTempRepContactNumber(e.target.value)}
                   />
                 </div>
               </div>
@@ -160,22 +222,25 @@ function EditOrganizationAccountInfo() {
                     type="text"
                     className="form-control"
                     id="Area"
-                    defaultValue={"El Haram"}
+                    defaultValue={tempArea}
                     style={{ marginBottom: "0.5em" }}
+                    onChange={(e) => setTempArea(e.target.value)}
                   />
                   <input
                     type="text"
                     className="form-control"
                     id="City"
-                    defaultValue={"Giza"}
+                    defaultValue={tempCity}
                     style={{ marginBottom: "0.5em" }}
+                    onChange={(e) => setTempCity(e.target.value)}
                   />
                   <input
                     type="text"
                     className="form-control"
                     id="Address"
-                    defaultValue={"4, Allouba St."}
+                    defaultValue={tempAddress}
                     style={{ marginBottom: "0.5em" }}
+                    onChange={(e) => setTempAddress(e.target.value)}
                   />
                 </div>
               </div>
