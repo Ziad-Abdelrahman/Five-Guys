@@ -2,7 +2,11 @@ import { useState } from "react";
 import DonorAccountMangPage from "./DonorAccountMangPage.tsx";
 import EditProfileCard from "../components/Card/EditProfileCard.tsx";
 
-function CompleteDonorAccountInfo() {
+interface CompleteDonorAccountInfoProps {
+  type?: string;
+}
+
+function CompleteDonorAccountInfo({ type }: CompleteDonorAccountInfoProps) {
   const [name, setName] = useState("Nanna");
   const [age, setAge] = useState("20");
   const [gender, setGender] = useState("Male");
@@ -22,6 +26,7 @@ function CompleteDonorAccountInfo() {
       tel1={tel1}
       tel2={tel2}
       setPage={setPage}
+      type={type}
     />
   ) : (
     <EditProfileCard

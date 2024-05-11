@@ -11,7 +11,11 @@ import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 import { useState } from "react";
 import toy from "../assets/toyexample.png";
 
-function ToysRequests() {
+interface ToysRequestsProps {
+  type?: string;
+}
+
+function ToysRequests({ type }: ToysRequestsProps) {
   const detailsList: hashSet = {
     "70": ["Educational", "6-12", "Male", "Board Games", "50"],
     "71": ["Interactive", "0-2", "Unisex", "Stuffed Toys", "30"],
@@ -151,7 +155,7 @@ function ToysRequests() {
   };
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

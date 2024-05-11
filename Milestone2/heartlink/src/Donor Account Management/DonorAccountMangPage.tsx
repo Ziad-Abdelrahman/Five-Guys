@@ -19,6 +19,7 @@ interface DonorAccountMangPageProps {
   tel1: string;
   tel2: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
+  type?: string;
 }
 
 function DonorAccountMangPage(props: DonorAccountMangPageProps) {
@@ -34,7 +35,7 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
   };
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={props.type} />
       <HeaderOfSection title={"Account"} />
       <div className="management-cards-container">
         <DonorAccountProfileCard
@@ -49,19 +50,23 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
         />
         <div className={"master-probono-container"}>
           <div className={"pro-bono-cards-container"}>
-            <div
-              className={"card-and-drop-down-container"}
-              onClick={() => toggleProbonoInfo("doctor")}
-            >
-              <DonorProbonoCard image={Doctor} title={"Become a Doctor"} />
-            </div>
+            {props.type != "doctor" && (
+              <div
+                className={"card-and-drop-down-container"}
+                onClick={() => toggleProbonoInfo("doctor")}
+              >
+                <DonorProbonoCard image={Doctor} title={"Become a Doctor"} />
+              </div>
+            )}
 
-            <div
-              className={"card-and-drop-down-container"}
-              onClick={() => toggleProbonoInfo("teacher")}
-            >
-              <DonorProbonoCard image={Teacher} title={"Become a Teacher"} />
-            </div>
+            {props.type != "teacher" && (
+              <div
+                className={"card-and-drop-down-container"}
+                onClick={() => toggleProbonoInfo("teacher")}
+              >
+                <DonorProbonoCard image={Teacher} title={"Become a Teacher"} />
+              </div>
+            )}
           </div>
           {selectedProbono === "teacher" && <DonorAddTeacherInfo />}
           {selectedProbono === "doctor" && <DonorAddDoctorInfo />}

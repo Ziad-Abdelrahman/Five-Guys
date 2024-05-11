@@ -12,7 +12,11 @@ import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 import { useState } from "react";
 import HeaderOfSection from "../components/Header/HeaderOfSection.tsx";
 
-function ClothesRequests() {
+interface ClothesRequestsProps {
+  type?: string;
+}
+
+function ClothesRequests({ type }: ClothesRequestsProps) {
   const detailsList: hashSet = {
     "1": ["SwimSuit", "Adults", "Male", "Winter", "Cotton", "100"],
     "2": ["Dress", "Infants", "Male", "Fall", "Cotton", "90"],
@@ -148,7 +152,7 @@ function ClothesRequests() {
 
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

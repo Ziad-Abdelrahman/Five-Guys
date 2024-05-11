@@ -12,7 +12,11 @@ import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 import { useState } from "react";
 import hashSet from "../hashSet";
 
-function SchoolSuppliesRequests() {
+interface SchoolSuppliesRequestsProps {
+  type?: string;
+}
+
+function SchoolSuppliesRequests({ type }: SchoolSuppliesRequestsProps) {
   const detailsList: hashSet = {
     "60": ["stationary", "Writing Tools", "Pens", "100"],
     "61": ["books", "Textbooks", "Math", "50"],
@@ -48,7 +52,7 @@ function SchoolSuppliesRequests() {
 
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

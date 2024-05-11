@@ -1,9 +1,14 @@
 import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
 import "../Organization/Organization.css";
-function DonorDashboard() {
+
+interface DonorDashboardProps {
+  type?: string;
+}
+
+function DonorDashboard({ type }: DonorDashboardProps) {
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <div className="organizationDashboard">
         <div className="organizationCards">
           <div

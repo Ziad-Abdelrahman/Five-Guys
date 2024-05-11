@@ -11,7 +11,12 @@ import hashSet from "../hashSet";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 import { useState } from "react";
 import medicaltool from "../assets/medicaltool.png";
-function MedicalRequests() {
+
+interface MedicalRequestsProps {
+  type?: string;
+}
+
+function MedicalRequests({ type }: MedicalRequestsProps) {
   const detailsList: hashSet = {
     "47": ["Tools", "Ventilator", "5"],
     "48": ["Tools", "ECG Machine", "3"],
@@ -148,7 +153,7 @@ function MedicalRequests() {
   }
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

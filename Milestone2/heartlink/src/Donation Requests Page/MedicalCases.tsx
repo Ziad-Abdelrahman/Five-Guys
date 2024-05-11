@@ -241,7 +241,7 @@ function MedicalCases() {
   }
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={"doctor"} />
       <ViewPopup
         trigger={selectedID != ""}
         handleClick={handleClosePopUp}

@@ -18,7 +18,10 @@ import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 import Toy from "../assets/toyexample.png";
 import Ventilator from "../assets/medicaltool.png";
 
-function AllDonationRequests() {
+interface DonationProps {
+  type?: string;
+}
+function AllDonationRequests({ type }: DonationProps) {
   const detailsList: hashSet = {
     "14": [
       "Category: Stationary",
@@ -172,7 +175,7 @@ function AllDonationRequests() {
   }
   return (
     <>
-      <NavigationBar />
+      <NavigationBar type={type} />
       <ViewPopup trigger={selectedID !== ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

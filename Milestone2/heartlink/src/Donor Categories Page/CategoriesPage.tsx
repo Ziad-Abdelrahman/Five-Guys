@@ -9,10 +9,14 @@ import DonorNavigationBar from "../components/NavigationBar/Donor Navigation Bar
 import HeadOfSection from "../components/Header/HeaderOfSection.tsx";
 import "./DonorCategories.css";
 
-function CategoriesPage() {
+interface CategoriesPageProps {
+  type?: string;
+}
+
+function CategoriesPage({ type }: CategoriesPageProps) {
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <HeadOfSection title="Donation Categories" />
       <div className="card-container">
         <div className="three-cards-holder">

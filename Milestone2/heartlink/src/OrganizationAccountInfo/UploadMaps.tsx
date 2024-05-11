@@ -9,7 +9,7 @@ interface UploadMapsProps {
 function UploadMaps(props: UploadMapsProps) {
   return (
     <div className={"upload-doc-card"}>
-      <div style={{ width: "48%" }}>
+      <div style={{ width: "50%" }}>
         <h2>Address Details</h2>
         <hr />
         <div className={"text-in-personal-info-card"} style={{ marginLeft: 0 }}>
