@@ -9,6 +9,7 @@ interface imageUploaderProps {
   text?: string;
   upload?: boolean;
   required?: boolean;
+  handleUpload?: (x: boolean) => void;
 }
 
 function ImageUploader({
@@ -17,6 +18,7 @@ function ImageUploader({
   text = "Upload File",
   upload,
   required = false,
+  handleUpload,
 }: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
@@ -26,6 +28,9 @@ function ImageUploader({
       files: FileList;
     };
     setSelectedImage(target.files[0]);
+    if (handleUpload) {
+      handleUpload(true);
+    }
   }
 
   const onChooseFile = () => {
@@ -35,6 +40,9 @@ function ImageUploader({
 
   const removeFile = () => {
     setSelectedImage(null);
+    if (handleUpload) {
+      handleUpload(false);
+    }
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
