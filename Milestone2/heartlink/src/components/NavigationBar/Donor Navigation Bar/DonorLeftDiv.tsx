@@ -17,6 +17,11 @@ function DonorLeftDiv() {
           <Link to={"/Donor/MedicalPosts"}>Medical posts</Link>
         </div>
       </div>
+      <div className="dropdown">
+        <Link to={"/Donor"}>
+          <button className="dropbtn">Dashboard</button>
+        </Link>
+      </div>
     </>
   );
 }
