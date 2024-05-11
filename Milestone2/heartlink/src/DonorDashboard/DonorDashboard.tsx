@@ -25,7 +25,7 @@ function DonorDashboard() {
               <h6>Number of times volunteered for probonos</h6>
             </div>
             <div className="insideTheCard">
-              <h1>3</h1>
+              <h1 style={{ color: "#01A95D" }}>3</h1>
               <h6>volunteer(s)</h6>
             </div>
           </div>
@@ -35,7 +35,7 @@ function DonorDashboard() {
               <h6>Time spent by volunteering</h6>
             </div>
             <div className="insideTheCard">
-              <h1>63</h1>
+              <h1 style={{ color: "#01A95D" }}>63</h1>
               <h6>minute(s)</h6>
             </div>
           </div>
@@ -45,7 +45,7 @@ function DonorDashboard() {
               <h6>Number of organizations interacted with</h6>
             </div>
             <div className="insideTheCard">
-              <h1>2</h1>
+              <h1 style={{ color: "#01A95D" }}>2</h1>
               <h6>organization(s)</h6>
             </div>
           </div>
@@ -55,7 +55,7 @@ function DonorDashboard() {
               <h6>Number of items donated</h6>
             </div>
             <div className="insideTheCard">
-              <h1>13</h1>
+              <h1 style={{ color: "#01A95D" }}>13</h1>
               <h6>donation(s)</h6>
             </div>
           </div>
