@@ -1,9 +1,12 @@
+import { ChangeEventHandler } from "react";
 import ImageUploader from "../FileUploader/ImageUploader.tsx";
 
 interface medicalSuppliesProps {
   header: string;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement>;
+  err?: string;
 }
-function MedicalSuppliesPt2({ header }: medicalSuppliesProps) {
+function MedicalSuppliesPt2({ header, onChange, err }: medicalSuppliesProps) {
   let shift = { top: "12em" };
   return (
     <>
@@ -33,7 +36,9 @@ function MedicalSuppliesPt2({ header }: medicalSuppliesProps) {
             id="exampleFormControlTextarea1"
             rows={9}
             style={{ height: "150px", borderColor: "#01A95D" }}
+            onChange={onChange}
           ></textarea>
+          {err && <div style={{ color: "red", marginTop: "0.5rem" }}>{err}</div>}
         </div>
       </div>
     </>

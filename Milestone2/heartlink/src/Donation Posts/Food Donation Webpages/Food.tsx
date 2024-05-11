@@ -3,6 +3,7 @@ import DropDown from "../../components/DropDown/DropDown.tsx";
 import { useState } from "react";
 import hashSet from "../../hashSet";
 import Template1 from "../../components/Templates/Template1.tsx";
+import Createcomp from "../../components/View Request Popup/Createcomp.tsx";
 
 function Food() {
   const foodOptions: hashSet = {
@@ -31,6 +32,7 @@ function Food() {
   const [selectedFood, setSelectedFood] = useState("");
   const[quantity, setQuantity] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
 
   const handleCategoryChange = (category: string) => {
@@ -48,6 +50,7 @@ function Food() {
       setError("Please provide all the required information.");
       return false;
     }
+    setSuccess(true);
     setError("");
     console.log("Form submitted successfully!");
     return true;
@@ -63,6 +66,7 @@ function Food() {
       }
       rightPanelDiv={
         <div>
+          <Createcomp message={"Post Successfully Created!"} show={success} />
           <div className="header-container">
             <h1>Food</h1>
           </div>
