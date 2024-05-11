@@ -15,6 +15,8 @@ import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import { useState } from "react";
 import hashSet from "../hashSet";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
+import Toy from "../assets/toyexample.png";
+import Ventilator from "../assets/medicaltool.png";
 
 function AllDonationRequests() {
   const detailsList: hashSet = {
@@ -95,6 +97,7 @@ function AllDonationRequests() {
       description: "Medicine Supplies",
       postedby: "Red Cresent",
       postdate: "20/3/2024",
+      sampleimage: Ventilator,
     },
     {
       id: "18",
@@ -102,6 +105,7 @@ function AllDonationRequests() {
       description: "Toys ",
       postedby: "57357",
       postdate: "20/4/2024",
+      sampleimage: Toy,
     },
     {
       id: "19",
@@ -123,13 +127,25 @@ function AllDonationRequests() {
       description: "Blood Donation",
       postedby: "Red Cresent",
       postdate: "29/3/2024",
+      iframeSrc: (
+        <div style={{ width: "100%" }}>
+          <iframe
+            width="95%"
+            height="100"
+            src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=30.075198104444514,%2031.346477893798525+(Red%20Crescent)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          >
+            <a href="https://www.gps.ie/">gps vehicle tracker</a>
+          </iframe>
+        </div>
+      ),
     },
     {
       id: "22",
       image: MagdyYakoub,
-      description: "Medical Supplies",
+      description: "Medical Equipment",
       postedby: "Magdy Yakoub Heart Foundation",
       postdate: "29/3/2024",
+      sampleimage: Ventilator,
     },
     {
       id: "23",
@@ -169,6 +185,18 @@ function AllDonationRequests() {
                 return null; // Return null for empty or undefined items
               })}
             </ul>
+          )}
+          {viewData.find((item) => item.id === selectedID)?.iframeSrc && (
+            <div>
+              {viewData.find((item) => item.id === selectedID)?.iframeSrc}
+            </div>
+          )}
+          {viewData.find((item) => item.id === selectedID)?.sampleimage && (
+            <img
+              src={viewData.find((item) => item.id === selectedID)?.sampleimage}
+              alt="Example"
+              style={{ width: "30%" }}
+            />
           )}
         </div>
       </ViewPopup>

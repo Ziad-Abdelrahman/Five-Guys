@@ -1,12 +1,23 @@
 import "../View Request Popup/popup.css";
 import "./DonorThankYouCard.css";
+import { Link } from "react-router-dom";
 
 interface DonorThankYouCardProps {
   Buttontext?: string;
   handleClick?: () => void;
   width?: string;
 }
+
 function donorThankYouCard(props: DonorThankYouCardProps) {
+  const ButtonContent = (
+    <button
+      className={"donor-return-to-dashboard-button"}
+      onClick={props.handleClick}
+      style={{ width: props.width }}
+    >
+      {props.Buttontext}
+    </button>
+  );
   return (
     <>
       <div className="popup-container">
@@ -40,13 +51,11 @@ function donorThankYouCard(props: DonorThankYouCardProps) {
               marginTop: "10%",
             }}
           >
-            <button
-              className={"donor-return-to-dashboard-button"}
-              onClick={props.handleClick}
-              style={{ width: props.width }}
-            >
-              {props.Buttontext || "DashBoard"}
-            </button>
+            {props.Buttontext === "Dashboard" ? (
+              <Link to="/Donor">{ButtonContent}</Link>
+            ) : (
+              ButtonContent
+            )}
           </div>
         </div>
       </div>

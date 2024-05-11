@@ -24,7 +24,7 @@ function DonorLeftDiv() {
         </button>
         <div className="dropdown-content">
           <Link to={"/Donor/ViewAllDonations"}>View All Donations</Link>
-          <Link to={"/Donor/ViewCategories"}>View Categories</Link>
+          <Link to={"/Donor/ViewCategories"}>View Donation Categories</Link>
           <Link to={"/Donor/TeachingPosts"}>Teaching posts</Link>
           <Link to={"/Donor/MedicalPosts"}>Medical posts</Link>
         </div>
