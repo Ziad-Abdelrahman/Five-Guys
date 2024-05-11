@@ -8,6 +8,7 @@ interface imageUploaderProps {
   height?: string;
   text?: string;
   upload?: boolean;
+  required?: boolean;
 }
 
 function ImageUploader({
@@ -15,6 +16,7 @@ function ImageUploader({
   height = "150px",
   text = "Upload File",
   upload,
+  required = false,
 }: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
@@ -58,7 +60,7 @@ function ImageUploader({
   }
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       {/* Hidden file input element */}
       {inputRef && (
         <input
@@ -66,7 +68,16 @@ function ImageUploader({
           ref={inputRef as unknown as LegacyRef<HTMLInputElement>}
           onChange={handleOnChange}
           accept=".pdf"
-          style={{ display: "none" }}
+          style={{
+            opacity: 0,
+            position: "absolute",
+            zIndex: -1,
+            bottom: "0",
+            left: "0",
+            width: "0",
+            height: "0",
+          }}
+          required={required}
         />
       )}
       <div

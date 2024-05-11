@@ -7,6 +7,7 @@ interface RadioButtonProps {
   checked: boolean;
   setChecked: React.Dispatch<React.SetStateAction<string>>;
   margin?: string;
+  required?: boolean;
 }
 function EditRadioButton({
   text,
@@ -14,6 +15,7 @@ function EditRadioButton({
   setChecked,
   checked,
   margin,
+  required = false,
 }: RadioButtonProps) {
   const customStyle = {
     height: height, // Apply the height to both the input and label if specified
@@ -29,6 +31,7 @@ function EditRadioButton({
         autoComplete="off"
         onChange={() => setChecked(text)}
         checked={checked}
+        required={required}
       />
       <label
         className="btn btn-outline-success"

@@ -4,6 +4,7 @@ import "./DonorThankYouCard.css";
 interface DonorThankYouCardProps {
   Buttontext?: string;
   handleClick?: () => void;
+  width?: string;
 }
 function donorThankYouCard(props: DonorThankYouCardProps) {
   return (
@@ -42,6 +43,7 @@ function donorThankYouCard(props: DonorThankYouCardProps) {
             <button
               className={"donor-return-to-dashboard-button"}
               onClick={props.handleClick}
+              style={{ width: props.width }}
             >
               {props.Buttontext || "DashBoard"}
             </button>
