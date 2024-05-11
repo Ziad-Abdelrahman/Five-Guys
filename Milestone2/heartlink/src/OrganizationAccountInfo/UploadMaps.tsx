@@ -12,7 +12,7 @@ function UploadMaps(props: UploadMapsProps) {
       <div style={{ width: "48%" }}>
         <h2>Address Details</h2>
         <hr />
-        <div className={"text-in-personal-info-card"}>
+        <div className={"text-in-personal-info-card"} style={{ marginLeft: 0 }}>
           <div className={"org-info-header"}>
             <h5>Area</h5>
             <h5>City</h5>
