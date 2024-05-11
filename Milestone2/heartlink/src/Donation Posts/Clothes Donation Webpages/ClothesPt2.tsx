@@ -2,10 +2,12 @@ import { useState } from "react";
 import NumberInputBox from "../../components/InputBox/NumberInputBox.tsx";
 import RadioButton from "../../components/RadioButton/RadioButton.tsx";
 import Template1 from "../../components/Templates/Template1.tsx";
+import Createcomp from "../../components/View Request Popup/Createcomp.tsx";
 function ClothesPt2() {
   const [quantity, setQuantity] = useState("");
   const [size, setSize] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSize = (size: string) => {
     setSize(size);
@@ -18,6 +20,7 @@ function ClothesPt2() {
       setError("Please enter the size and quantity.");
       return false;
     }
+    setSuccess(true);
     setError("");
     console.log("Form submitted successfully!");
     return true;
@@ -32,6 +35,7 @@ function ClothesPt2() {
       }
       rightPanelDiv={
         <div className="bloodDonation-container">
+          <Createcomp message={"Post Successfully Created!"} show={success} />
           <div className="header-container">
             <h1>Clothes</h1>
           </div>
