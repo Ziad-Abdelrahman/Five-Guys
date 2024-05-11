@@ -7,14 +7,17 @@ function BooksPt2() {
   const [error, setError] = useState("");
   const [text, setText] = useState("");
   const [success, setSuccess] = useState(false);
-
+  const [img, setImg] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
-
+  const handleImage = (x: boolean) => {
+    if (x) setImg("Image Uploaded");
+    else setImg("");
+  };
   const handleClick = () => {
-    if (text.trim() === "") {
+    if (text.trim() === "" || img.trim() === "") {
       setError("Please provide all the required information.");
       return false;
     }
@@ -52,7 +55,7 @@ function BooksPt2() {
                 {" "}
                 Please upload the book's photo
               </h5>
-              <ImageUploader />
+              <ImageUploader handleUpload={handleImage} />
             </div>
             <div className="mb-3" style={{ width: "600px" }}>
               <label

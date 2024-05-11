@@ -3,6 +3,7 @@ import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
 import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
 import Template1 from "../../../components/Templates/Template1.tsx";
+import Createcomp from "../../../components/View Request Popup/Createcomp.tsx";
 
 interface EditMedicationPt2Props {
   id: string;
@@ -18,6 +19,39 @@ function EditMedicationPt2(props: EditMedicationPt2Props) {
     justifyContent: "space-between",
     width: "600px",
   };
+  const [error, setError] = useState("");
+  const [medicationName, setMedicationName] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [img, setImg] = useState("");
+  const handleImage = (x: boolean) => {
+    if (x) setImg("Image Uploaded");
+    else setImg("");
+  };
+
+  const handlleQuantityChange = (num: string) => {
+    setQuantity(num);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMedicationName(e.target.value);
+  };
+
+  const handleClick = () => {
+    if (
+      medicationName.trim() === "" ||
+      quantity.trim() === "" ||
+      quantity.trim() === "" ||
+      img.trim() === ""
+    ) {
+      setError("Please enter medication name and quantity");
+      return false;
+    }
+    setSuccess(true);
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+
   return (
     <Template1
       leftPanelDiv={
@@ -28,6 +62,7 @@ function EditMedicationPt2(props: EditMedicationPt2Props) {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Updated!"} show={success} />
           <div className="header-container">
             <h1>Medication</h1>
           </div>
@@ -62,7 +97,11 @@ function EditMedicationPt2(props: EditMedicationPt2Props) {
                 {" "}
                 Please upload the med's photo
               </h5>
-              <ImageUploader width={"280px"} height={"180px"} />
+              <ImageUploader
+                width={"280px"}
+                height={"180px"}
+                handleUpload={handleImage}
+              />
             </div>
           </div>
         </>

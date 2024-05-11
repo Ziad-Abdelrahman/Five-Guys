@@ -37,11 +37,13 @@ const Map: React.FC<MapProps> = ({ height, width }) => {
         position: event.latLng,
         title: "New Marker",
       });
-      (
-        document.getElementById("mapinput") as HTMLInputElement
-      ).setCustomValidity("");
-      setPinned(true);
       markers.push(marker);
+      if (markers.length > 1) {
+        (
+          document.getElementById("mapinput") as HTMLInputElement
+        ).setCustomValidity("");
+        setPinned(true);
+      }
     });
   }
 
