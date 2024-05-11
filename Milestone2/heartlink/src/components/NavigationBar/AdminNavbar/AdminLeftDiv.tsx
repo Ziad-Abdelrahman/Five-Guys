@@ -10,8 +10,10 @@ function AdminLeftDiv() {
           <img className="arrow-in-button" src={arrow} alt="arrow" />
         </button>
         <div className="dropdown-content">
-          <a href="/Admin/ViewOrganizations">View Registered Organizations</a>
-          <a href ="/Admin/OrganizationSubmissions">Accept/Reject Submissions</a>
+          <a href="/Admin/ViewOrganizationsAdmin">
+            View Registered Organizations
+          </a>
+          <a href="/Admin/OrganizationSubmissions">Accept/Reject Submissions</a>
         </div>
       </div>
       <div className="dropdown">
