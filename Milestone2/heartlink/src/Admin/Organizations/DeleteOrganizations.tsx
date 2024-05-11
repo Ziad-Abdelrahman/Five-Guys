@@ -17,7 +17,7 @@ import HeaderOfSection from "../../components/Header/HeaderOfSection.tsx";
 import AdminNavbar from "../../components/NavigationBar/AdminNavbar/AdminNavbar.tsx";
 import ViewPopup from "../../components/View Request Popup/ViewPopup.tsx";
 
-const DeleteOrganizations = () => {
+function DeleteOrganizations() {
   const cardData = [
     {
       id: "1",
@@ -157,15 +157,25 @@ const DeleteOrganizations = () => {
           {cardData
             .filter((cardData) => cardData.id === selectedID)
             .map((cardData) => (
-              <ul>
-                <li>Category: {cardData.type}</li>
-                <br />
-                <li>City: {cardData.city}</li>
-                <br />
-                <li>Area: {cardData.area}</li>
-                <br />
-                <li>Established: {cardData.established}</li>
-              </ul>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div style={{ width: "240px" }}>
+                  <ul>
+                    <li>Category: {cardData.type}</li>
+                    <br />
+                    <li>City: {cardData.city}</li>
+                    <br />
+                    <li>Area: {cardData.area}</li>
+                    <br />
+                    <li>Established: {cardData.established}</li>
+                  </ul>
+                </div>
+                <iframe
+                  width="230"
+                  height="180"
+                  src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=Albashaer+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  title="Children Cancer Hospital Location"
+                />
+              </div>
             ))}
         </div>
       </ViewPopup>
@@ -208,6 +218,6 @@ const DeleteOrganizations = () => {
       </div>
     </>
   );
-};
+}
 
 export default DeleteOrganizations;
