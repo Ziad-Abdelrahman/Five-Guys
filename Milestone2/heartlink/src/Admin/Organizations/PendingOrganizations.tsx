@@ -138,7 +138,9 @@ const PendingOrganizations = () => {
         }}
       >
         {cardData
-          .filter((cardData) => cardData.title.toLowerCase().includes(search))
+          .filter((cardData) =>
+            cardData.title.toLowerCase().includes(search.toLowerCase()),
+          )
           .map((cardData) => (
             <AdminOrgRequestsCard
               buttonID={cardData.id}

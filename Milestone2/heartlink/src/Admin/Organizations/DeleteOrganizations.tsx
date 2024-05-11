@@ -208,7 +208,7 @@ function DeleteOrganizations({
         {cardData
           .filter(
             (cardData) =>
-              cardData.title.toLowerCase().includes(search) &&
+              cardData.title.toLowerCase().includes(search.toLowerCase()) &&
               (type === "" || type === cardData.type) &&
               (city === "" || city === cardData.city) &&
               (area === "" || area === cardData.area),
