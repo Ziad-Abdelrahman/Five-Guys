@@ -5,8 +5,14 @@ interface medicalSuppliesProps {
   header: string;
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   err?: string;
+  onImage?: (x: boolean) => void;
 }
-function MedicalSuppliesPt2({ header, onChange, err }: medicalSuppliesProps) {
+function MedicalSuppliesPt2({
+  header,
+  onChange,
+  err,
+  onImage,
+}: medicalSuppliesProps) {
   let shift = { top: "12em" };
   return (
     <>
@@ -22,10 +28,9 @@ function MedicalSuppliesPt2({ header, onChange, err }: medicalSuppliesProps) {
           }}
         >
           <h4 style={{ position: "relative", marginTop: "7%" }}>
-            {" "}
             Please upload the {header.toLowerCase()}'s photo
           </h4>
-          <ImageUploader />
+          <ImageUploader handleUpload={onImage} />
         </div>
         <div className="mb-3" style={{ width: "600px" }}>
           <h5 style={{ marginTop: "10%" }}>
@@ -38,7 +43,9 @@ function MedicalSuppliesPt2({ header, onChange, err }: medicalSuppliesProps) {
             style={{ height: "150px", borderColor: "#01A95D" }}
             onChange={onChange}
           ></textarea>
-          {err && <div style={{ color: "red", marginTop: "0.5rem" }}>{err}</div>}
+          {err && (
+            <div style={{ color: "red", marginTop: "0.5rem" }}>{err}</div>
+          )}
         </div>
       </div>
     </>

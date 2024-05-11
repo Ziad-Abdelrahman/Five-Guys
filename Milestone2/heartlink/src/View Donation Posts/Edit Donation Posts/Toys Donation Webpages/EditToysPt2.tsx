@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
 import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
 import Template1 from "../../../components/Templates/Template1.tsx";
+import Createcomp from "../../../components/View Request Popup/Createcomp.tsx";
 
 interface ToysPt2Props {
   id: string;
@@ -18,6 +19,32 @@ function EditToysPt2(props: ToysPt2Props) {
     justifyContent: "space-between",
     width: "600px",
   };
+  const [error, setError] = useState("");
+
+  const [toy, setToy] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [img, setImg] = useState("");
+
+  const handlleQuantityChange = (num: string) => {
+    setQuantity(num);
+  };
+  const handleImage = (x: boolean) => {
+    if (x) setImg("Image Uploaded");
+    else setImg("");
+  };
+  const handleClick = () => {
+    if (toy.trim() === "" || quantity.trim() === "" || img.trim() === "") {
+      setError("Please enter the toy name and the quantity");
+      return false;
+    }
+    setSuccess(true);
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setToy(e.target.value);
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -28,6 +55,7 @@ function EditToysPt2(props: ToysPt2Props) {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Updated!"} show={success} />
           <div className="header-container">
             <h1>Toys</h1>
           </div>
@@ -62,7 +90,11 @@ function EditToysPt2(props: ToysPt2Props) {
                 {" "}
                 Please upload the toy's photo
               </h5>
-              <ImageUploader width={"280px"} height={"180px"} />
+              <ImageUploader
+                width={"280px"}
+                height={"180px"}
+                handleUpload={handleImage}
+              />
             </div>
           </div>
         </>

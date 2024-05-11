@@ -9,7 +9,11 @@ function MedicationPt2() {
   const [medicationName, setMedicationName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [success, setSuccess] = useState(false);
-
+  const [img, setImg] = useState("");
+  const handleImage = (x: boolean) => {
+    if (x) setImg("Image Uploaded");
+    else setImg("");
+  };
 
   const handlleQuantityChange = (num: string) => {
     setQuantity(num);
@@ -23,7 +27,8 @@ function MedicationPt2() {
     if (
       medicationName.trim() === "" ||
       quantity.trim() === "" ||
-      quantity.trim() === ""
+      quantity.trim() === "" ||
+      img.trim() === ""
     ) {
       setError("Please enter medication name and quantity");
       return false;
@@ -80,7 +85,11 @@ function MedicationPt2() {
                 {" "}
                 Please upload the med's photo
               </h5>
-              <ImageUploader width={"280px"} height={"180px"} />
+              <ImageUploader
+                width={"280px"}
+                height={"180px"}
+                handleUpload={handleImage}
+              />
             </div>
             <br />
             {error && (

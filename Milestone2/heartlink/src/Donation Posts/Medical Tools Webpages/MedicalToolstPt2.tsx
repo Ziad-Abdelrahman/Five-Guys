@@ -9,20 +9,24 @@ function MedicalToolsPt2() {
   const [success, setSuccess] = useState(false);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-
+  const [img, setImg] = useState("");
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setInput(e.target.value);
   }
-    const handleClick = () => {
-      if(input.trim() ===""){
-        setError("Please fill in all fields.");
-        return false;
-      }
-      setSuccess(true);
-      setError("");
-      console.log("Form submitted successfully!");
-      return true;
-  }
+  const handleImage = (x: boolean) => {
+    if (x) setImg("Image Uploaded");
+    else setImg("");
+  };
+  const handleClick = () => {
+    if (input.trim() === "" || img.trim() === "") {
+      setError("Please fill in all fields.");
+      return false;
+    }
+    setSuccess(true);
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -33,11 +37,16 @@ function MedicalToolsPt2() {
         </div>
       }
       rightPanelDiv={
-      <div>
-        <Createcomp message={"Post Successfully Created!"} show={success} />
-        <MedicalSuppliesPt2 header={"Medical Tools"} onChange={handleChange} err={error}/>
-      </div>  
-    }
+        <div>
+          <Createcomp message={"Post Successfully Created!"} show={success} />
+          <MedicalSuppliesPt2
+            header={"Medical Tools"}
+            onChange={handleChange}
+            onImage={handleImage}
+            err={error}
+          />
+        </div>
+      }
       rightPanelButtonText={"Post"}
       hasButton={true}
       forwardPath={"/"}
