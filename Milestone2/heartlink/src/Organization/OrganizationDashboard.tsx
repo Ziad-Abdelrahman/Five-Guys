@@ -114,16 +114,19 @@ function OrganizationDashboard() {
       <div className="organizationDashboard">
         <div className="organizationCards">
           <div className="organizationDetailsDashboard">
-            <h4>Organization: name</h4>
-            <h6>Established:</h6> {/* Organization's date of establishment */}
-            <h6>Location:</h6> {/* Organization's location */}
-            <h6>Type:</h6> {/* Organization's description */}
+            <h4>Organization: Baheyya</h4>
+            <h6>Established: February 2015</h6>{" "}
+            {/* Organization's date of establishment */}
+            <h6>Location: Al Haram</h6> {/* Organization's location */}
+            <h6>Type: Hospital</h6> {/* Organization's description */}
           </div>
           <div className="organizationDetailsDashboard">
-            <h4>Representative: name</h4>
-            <h6>Joined:</h6> {/* Organization's date of establishment */}
-            <h6>Position:</h6> {/* Organization's location */}
-            <h6>Email:</h6> {/* Organization's description */}
+            <h4>Representative: Farah Faisal</h4>
+            <h6>Joined: 23/2/2016</h6>{" "}
+            {/* Organization's date of establishment */}
+            <h6>Position: Doctor</h6> {/* Organization's location */}
+            <h6>Email: farahh_faisall@hotmail.com</h6>{" "}
+            {/* Organization's description */}
           </div>
         </div>
         <div className="organizationCards">

@@ -5,7 +5,11 @@ import NavigationBar from "../NavigationBar.tsx";
 
 function OrgNavgBar() {
   return (
-    <NavigationBar leftDiv={<OrgLeftDiv />} rightDiv={<OrgRightDiv />} />
+    <NavigationBar
+      leftDiv={<OrgLeftDiv />}
+      rightDiv={<OrgRightDiv />}
+      dashboard={"/Organization"}
+    />
   );
 }
 

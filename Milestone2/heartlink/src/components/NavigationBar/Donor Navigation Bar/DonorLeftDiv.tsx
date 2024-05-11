@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 function DonorLeftDiv() {
   return (
     <>
+      <div className={" dropdown "}>
+        <Link to={"/Donor"}>
+          <button style={{ marginRight: "1em" }} className={"dropbtn"}>
+            Dashboard
+          </button>
+        </Link>
+      </div>
       <div className="dropdown">
         <button className="dropbtn">
           Donations
