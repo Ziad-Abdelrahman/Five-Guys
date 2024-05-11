@@ -16,9 +16,9 @@ function Login() {
     if (e.target.value === "donor") setLoginTo("/Donor");
     else if (e.target.value === "org") setLoginTo("/Organization");
     else if (e.target.value === "admin") setLoginTo("/Admin");
-    else {
-      setLoginTo("");
-    }
+    else if (e.target.value === "teacher") setLoginTo("/Teacher");
+    else if (e.target.value === "doctor") setLoginTo("/Doctor");
+    else setLoginTo("");
   };
 
   const checkLogin = () => {
