@@ -9,6 +9,8 @@ import Teacher from "../assets/teachervector.png";
 import { useState } from "react";
 import DonorAddTeacherInfo from "./DonorAddTeacherInfo.tsx";
 import DonorAddDoctorInfo from "./DonorAddDoctorInfo.tsx";
+import DonorClinicAddress from "./DonorClinicAddress.tsx";
+import DonorClinicMapMarker from "./DonorClinicMapMarker.tsx";
 
 interface DonorAccountMangPageProps {
   name: string;
@@ -23,6 +25,8 @@ interface DonorAccountMangPageProps {
 }
 
 function DonorAccountMangPage(props: DonorAccountMangPageProps) {
+  const [currentStep, setCurrentStep] = useState(0);
+
   const [selectedProbono, setSelectedProbono] = useState("");
 
   // Function to toggle the visibility of the dropdown based on the card clicked
@@ -69,7 +73,15 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
             )}
           </div>
           {selectedProbono === "teacher" && <DonorAddTeacherInfo />}
-          {selectedProbono === "doctor" && <DonorAddDoctorInfo />}
+          {selectedProbono === "doctor" && currentStep === 0 && (
+            <DonorAddDoctorInfo setCurrentStep={setCurrentStep} />
+          )}
+          {selectedProbono === "doctor" && currentStep === 1 && (
+            <DonorClinicAddress setCurrentStep={setCurrentStep} />
+          )}
+          {selectedProbono === "doctor" && currentStep === 2 && (
+            <DonorClinicMapMarker setCurrentStep={setCurrentStep} />
+          )}
         </div>
       </div>
     </>

@@ -146,7 +146,7 @@ function EditProfileCard(props: EditProfileCardProps) {
                   onChange={(e) => setTempTel2(e.target.value)}
                   style={{ marginBottom: "0.3em", width: "240px" }}
                 />
-                <IoIosClose onClick={handleRemove2} />
+                <IoIosClose onClick={handleRemove2} fontSize={"35px"} />
               </div>
             )}
             {!tel2 && (

@@ -3,11 +3,14 @@ import InputBox from "../components/InputBox/InputBox.tsx";
 import FileUploader from "../components/FileUploader/FileUploader.tsx";
 import DonateButton from "../components/Buttons/DonateButton.tsx";
 import { useState } from "react";
+interface Props {
+  setCurrentStep: Function;
+}
 
-function DonorAddDoctorInfo() {
+function DonorAddDoctorInfo(props: Props) {
   const [specialization, setSpecialization] = useState("");
   const [numberOfCases, setNumberOfCases] = useState("");
-  const [isUnderReview, setUnderReview] = useState(false);
+
   const [errorMessage, setErrorMessage] = useState("");
   const [isFileUploaded, setFileUploaded] = useState(false);
   const [isFile, setFile] = useState("");
@@ -15,14 +18,14 @@ function DonorAddDoctorInfo() {
     // Check if fields are empty and set error message accordingly
     if (!specialization.trim() || !numberOfCases.trim() || !isFile.trim()) {
       setErrorMessage("Please fill in all fields & upload the certification."); // Set error message
-      setUnderReview(false); // Ensure review message doesn't show
       setFileUploaded(false);
     } else {
-      setUnderReview(true); // Update review status
       setErrorMessage(""); // Clear any previous error messages
       setFileUploaded(true);
+      props.setCurrentStep(1);
     }
   };
+
   const handleFile = (x: boolean) => {
     if (x) setFile("Image Uploaded");
     else setFile("");
@@ -81,26 +84,12 @@ function DonorAddDoctorInfo() {
               }}
             >
               <div onClick={handleFinishClick}>
-                <DonateButton text={"Finish"} />
+                <DonateButton text={"Next"} />
               </div>
 
               {errorMessage && (
                 <div style={{ color: "red", marginLeft: "10px" }}>
                   {errorMessage}
-                </div>
-              )}
-
-              {isUnderReview && !errorMessage && (
-                <div
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                    textAlign: "center",
-                  }}
-                >
-                  <h5 style={{ color: "#01A95D", marginLeft: "5%" }}>
-                    Your documents are under review!
-                  </h5>
                 </div>
               )}
             </div>
