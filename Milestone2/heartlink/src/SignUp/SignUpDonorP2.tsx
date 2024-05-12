@@ -13,10 +13,14 @@ function SignUpDonorP2() {
   const navigate = useNavigate();
   const [specialization, setSpecialization] = useState("");
   const [show, setShow] = useState(false);
+  const [isFileUploaded, setFileUploaded] = useState(false);
   function handleForm(event: { preventDefault: () => void }) {
     event.preventDefault();
     if (specialization === "Later") navigate("../../Donor");
-    else setShow(true);
+    else {
+      setShow(true);
+      setFileUploaded(true);
+    }
   }
   return (
     <div>
@@ -94,7 +98,11 @@ function SignUpDonorP2() {
                         </div>
                         <div className="MapHolderJJ">
                           <label>Upload Certificate</label>
-                          <FileUploader width={"200px"} required={true} />
+                          <FileUploader
+                            width={"200px"}
+                            required={true}
+                            upload={isFileUploaded}
+                          />
                         </div>
                       </div>
                     </>
@@ -117,7 +125,11 @@ function SignUpDonorP2() {
                       <div className="twoInputHolderS">
                         <div className="MapHolderJJ">
                           <label>Upload Certificate</label>
-                          <FileUploader width={"200px"} required={true} />
+                          <FileUploader
+                            width={"200px"}
+                            required={true}
+                            upload={isFileUploaded}
+                          />
                         </div>
                       </div>
                     </>

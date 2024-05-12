@@ -10,9 +10,10 @@ import CreateSignUp from "../components/View Request Popup/CreateSignUp.tsx";
 
 function SignUpOrgP2() {
   const [form, setForm] = useState(false);
-
+  const [isFileUploaded, setFileUploaded] = useState(false);
   function onHandleForm() {
     setForm(true);
+    setFileUploaded(true);
   }
 
   return (
@@ -47,7 +48,11 @@ function SignUpOrgP2() {
                   </div>
                   <div className="MapHolderJJ">
                     <label>Organization Documents</label>
-                    <FileUploader width={"200px"} required={true} />
+                    <FileUploader
+                      width={"200px"}
+                      required={true}
+                      upload={isFileUploaded}
+                    />
                   </div>
                 </div>
               </div>
