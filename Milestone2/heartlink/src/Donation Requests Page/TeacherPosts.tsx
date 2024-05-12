@@ -132,7 +132,7 @@ function TeacherPosts() {
               <li>Subject: {detailsList[selectedID][0]}</li>
               <li>Government: {detailsList[selectedID][1]}</li>
               <li>Area: {detailsList[selectedID][2]}</li>
-              <li>Quantity: {detailsList[selectedID][3]}</li>
+              <li>Number Of Students: {detailsList[selectedID][3]}</li>
             </ul>
           )}
           <div style={{ marginLeft: "40px" }}>
