@@ -16,6 +16,7 @@ interface DonationRequestPopUpProps {
   showDonateButton?: boolean;
   donateButtonText?: string; // Optional prop to control the visibility of the Donate button
   isProbono?: boolean;
+  quantity?: string;
 }
 
 function DonationRequestCard({
@@ -29,6 +30,7 @@ function DonationRequestCard({
   showDonateButton = true,
   donateButtonText,
   isProbono = false,
+  quantity,
 }: DonationRequestPopUpProps) {
   const shouldRender = trigger !== undefined ? trigger : true;
   const [showThankYou, setShowThankYou] = useState(false);
@@ -61,7 +63,13 @@ function DonationRequestCard({
             <DonateButton text={donateButtonText} onClick={handleDonateClick} />
           )}
           {showDonateButton && isProbono === false && (
-            <Link to={"Quantity/" + buttonID}>
+            <Link
+              to={
+                quantity === "1"
+                  ? "Quantity/" + buttonID + "/Transportation"
+                  : "Quantity/" + buttonID
+              }
+            >
               <DonateButton text={donateButtonText} />
             </Link>
           )}
