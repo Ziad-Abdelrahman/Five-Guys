@@ -14,10 +14,28 @@ interface EditMedicalEquipmentProps {
 
 function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
   const [disabled, setDisabled] = useState(props.category != "Others");
+  const [quantity, setQuantity] = useState(props.quantity);
+  const [input, setInput] = useState(props.value);
+  const [error, setError] = useState("");
 
   function handleToolChange(tool: string) {
     setDisabled(!(tool === "Others"));
   }
+  function handleQuantityChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setQuantity(e.target.value);
+  }
+  function handleChange1(e: React.ChangeEvent<HTMLInputElement>) {
+    setInput(e.target.value);
+  }
+  const handleClick = () => {
+    if (quantity.trim() === "" || (input === "" && !disabled)) {
+      setError("Please fill in all fields");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -30,9 +48,12 @@ function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
         <EditMedicalSupplies
           name={"equipment"}
           header={"Medical Equipment"}
-          val={props.value}
-          quantity={props.quantity}
+          val={input}
+          quantity={quantity}
           disabled={disabled}
+          onChange1={handleChange1}
+          onChange2={handleQuantityChange}
+          err={error}
         >
           <EditDropDown
             options={[
@@ -55,6 +76,7 @@ function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
       hasButton={true}
       forwardPath={"../cont/" + props.id}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
     />
   );
 }

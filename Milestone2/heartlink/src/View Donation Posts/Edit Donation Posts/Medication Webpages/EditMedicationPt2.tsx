@@ -14,35 +14,17 @@ interface EditMedicationPt2Props {
 function EditMedicationPt2(props: EditMedicationPt2Props) {
   const [medName, setMedName] = useState(props.medName);
   const [quantity, setQuantity] = useState(props.quantity);
+  const [success, setSuccess] = useState(false);
+  const [errorMessage, setError] = useState("");
   const divStyle = {
     display: "flex",
     justifyContent: "space-between",
     width: "600px",
   };
-  const [error, setError] = useState("");
-  const [medicationName, setMedicationName] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [img, setImg] = useState("");
-  const handleImage = (x: boolean) => {
-    if (x) setImg("Image Uploaded");
-    else setImg("");
-  };
-
-  const handlleQuantityChange = (num: string) => {
-    setQuantity(num);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMedicationName(e.target.value);
-  };
-
-  const handleClick = () => {
-    if (
-      medicationName.trim() === "" ||
-      quantity.trim() === "" ||
-      quantity.trim() === "" ||
-      img.trim() === ""
-    ) {
+  function handleClick() {
+    console.log("Medication Name: " + medName);
+    console.log("Quantity: " + quantity);
+    if (medName.trim() === "" || quantity.trim() === "") {
       setError("Please enter medication name and quantity");
       return false;
     }
@@ -50,7 +32,7 @@ function EditMedicationPt2(props: EditMedicationPt2Props) {
     setError("");
     console.log("Form submitted successfully!");
     return true;
-  };
+  }
 
   return (
     <Template1
@@ -97,12 +79,13 @@ function EditMedicationPt2(props: EditMedicationPt2Props) {
                 {" "}
                 Please upload the med's photo
               </h5>
-              <ImageUploader
-                width={"280px"}
-                height={"180px"}
-                handleUpload={handleImage}
-              />
+              <ImageUploader width={"280px"} height={"180px"} />
             </div>
+            {errorMessage && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>
+                {errorMessage}
+              </div>
+            )}
           </div>
         </>
       }
@@ -110,6 +93,7 @@ function EditMedicationPt2(props: EditMedicationPt2Props) {
       hasButton={true}
       forwardPath={"../../ViewPosts"}
       backButtonPath={"../" + props.id}
+      handleClick={handleClick}
     />
   );
 }

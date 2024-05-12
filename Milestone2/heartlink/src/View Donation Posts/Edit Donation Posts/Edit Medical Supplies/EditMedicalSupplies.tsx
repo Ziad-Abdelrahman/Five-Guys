@@ -11,7 +11,8 @@ interface medicalSuppliesProps {
   quantity: string;
   disabled?: boolean;
   onChange1?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onChange2?: (tool: string) => void;
+  onChange2?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+
   err?: string;
 }
 
@@ -23,13 +24,14 @@ function EditMedicalSupplies({
   val,
   disabled,
   onChange1,
+  onChange2,
   err,
 }: medicalSuppliesProps) {
   const [value, setValue] = useState(val);
   const [inputQuantity, setInputQuantity] = useState(quantity);
   const plural = name === "equipment" ? name : name + "s";
   const FirstLetterUpper = name.charAt(0).toUpperCase() + name.slice(1);
-  
+
   return (
     <div>
       <div className="header-container">
@@ -60,7 +62,6 @@ function EditMedicalSupplies({
             hasText={value !== ""}
             setChecked={setValue}
             onChange={onChange1}
-            
           />
         )}
         <h4 style={{ marginBottom: "15px" }}>
@@ -72,8 +73,9 @@ function EditMedicalSupplies({
           text={inputQuantity}
           hasText={true}
           setChecked={setInputQuantity}
+          onChange={onChange2}
         />
-          {err && (<div style={{ color: "red", marginTop: "0.5rem" }}>{err}</div>)}
+        {err && <div style={{ color: "red", marginTop: "0.5rem" }}>{err}</div>}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ interface EditBooksPt2Props {
 function EditBooksPt2(props: EditBooksPt2Props) {
   let shift = { top: "10em" };
   const [error, setError] = useState("");
-  const [text, setText] = useState("");
+  const [text, setText] = useState(props.use);
   const [success, setSuccess] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {

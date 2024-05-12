@@ -20,8 +20,7 @@ function EditInputBox({
   onChange,
 }: InputBoxProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setChecked(value);
+    setChecked(e.target.value);
     if (onChange) {
       onChange(e); // Call the onChange handler passed from parent component
     }
@@ -39,7 +38,12 @@ function EditInputBox({
     </div>
   ) : (
     <div className="form-floating mb-3" style={{ width: width }}>
-      <input type={type} className="form-control" id="floatingInput" />
+      <input
+        type={type}
+        className="form-control"
+        id="floatingInput"
+        onChange={handleChange}
+      />
       <label>{label}</label>
     </div>
   );

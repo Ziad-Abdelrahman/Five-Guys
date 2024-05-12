@@ -33,7 +33,7 @@ function Editor() {
           id={alldata.id}
           category={alldata.equipment}
           value=""
-          quantity={alldata.quantity}
+          quantity={alldata.medquantity}
         />
       );
     case "5":
