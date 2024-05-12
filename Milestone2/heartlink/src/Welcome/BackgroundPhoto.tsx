@@ -1,12 +1,10 @@
 import img from "../assets/dashBoard.png";
 import "./BackgroundPhoto.css";
 const hideLogin = () => {
-  var login = document.querySelector(".login") as HTMLElement;
-  var welcome = document.querySelector(".welcomeDashboard") as HTMLElement;
-  var app = document.querySelector(".app") as HTMLElement;
-  login.style.display = "none";
-  welcome.classList.remove("shade");
-  app.classList.remove("shade");
+  var login = document.querySelector(".login-container") as HTMLElement;
+  var howto = document.querySelector(".howto-container") as HTMLElement;
+  if (login) login.style.display = "none";
+  if (howto) howto.style.display = "none";
 };
 function BackgroundPhoto() {
   return (

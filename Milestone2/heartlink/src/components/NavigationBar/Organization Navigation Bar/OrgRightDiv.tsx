@@ -6,8 +6,10 @@ import { BsEnvelopeOpenHeart } from "react-icons/bs";
 import "./OrgRightDiv.css";
 import { Link } from "react-router-dom";
 import ProfileCircle from "../ProfileCircle.tsx";
-
-function OrgRightDiv() {
+interface OrgRightDivProps {
+  help?: () => void;
+}
+function OrgRightDiv({ help }: OrgRightDivProps) {
   // State to manage the visibility of the notifications dropdown
   const [showNotifications, setNotifications] = useState(false);
 
@@ -109,6 +111,9 @@ function OrgRightDiv() {
           <ul className="profiledropdownContent">
             <li>
               <Link to="/Organization/AccountInfo">Account info</Link>
+            </li>
+            <li>
+              <a onClick={help}>Help</a>
             </li>
             <li>
               <Link to="/">Logout</Link>

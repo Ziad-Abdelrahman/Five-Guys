@@ -3,17 +3,11 @@ import "./Buttons.css";
 interface LoginButtonProps {
   text?: string;
   height?: string;
-  handleClick?: () => void;
 }
-function LoginButton({ text, height, handleClick }: LoginButtonProps) {
+function LoginButton({ text, height }: LoginButtonProps) {
   const showLogin = () => {
-    var login = document.querySelector(".login") as HTMLElement;
-    var welcome = document.querySelector(".welcomeDashboard") as HTMLElement;
-    var app = document.querySelector(".app") as HTMLElement;
+    var login = document.querySelector(".login-container") as HTMLElement;
     login.style.display = "flex";
-    welcome.classList.add("shade");
-    app.classList.add("shade");
-    if (handleClick) handleClick();
   };
   return (
     <button

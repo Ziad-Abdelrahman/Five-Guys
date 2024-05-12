@@ -6,6 +6,9 @@
     background-color: rgb(248, 248, 248);
     min-height: 100vh;
 }
+.shade{
+    background-color: #00000040!important;
+}
 .organizationCards{
     display: flex;
     gap: 5%;
