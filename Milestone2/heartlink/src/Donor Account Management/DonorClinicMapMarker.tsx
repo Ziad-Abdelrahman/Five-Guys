@@ -7,6 +7,7 @@ import BackButton from "../components/Buttons/BackButton.tsx";
 
 interface Props {
   setCurrentStep: Function;
+  file?: File | undefined | null;
 }
 
 function DonorClinicAddress(props: Props) {
@@ -30,6 +31,16 @@ function DonorClinicAddress(props: Props) {
     } else {
       setErrorMessage("");
       setUnderReview(true);
+      if (props.file) {
+        const url = URL.createObjectURL(props.file);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = props.file.name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
     }
   }
 

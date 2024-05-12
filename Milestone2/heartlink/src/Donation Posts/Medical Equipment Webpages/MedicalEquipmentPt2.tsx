@@ -10,7 +10,7 @@ function MedicalEquipmentPt2() {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
   const [img, setImg] = useState("");
-
+  const [isFileUploaded, setFileUploaded] = useState(false);
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setInput(e.target.value);
   }
@@ -24,6 +24,7 @@ function MedicalEquipmentPt2() {
       return false;
     }
     setSuccess(true);
+    setFileUploaded(true);
     setError("");
     console.log("Form submitted successfully!");
     return true;
@@ -44,6 +45,7 @@ function MedicalEquipmentPt2() {
             onChange={handleChange}
             err={error}
             onImage={handleImage}
+            upload={isFileUploaded}
           />
         </div>
       }

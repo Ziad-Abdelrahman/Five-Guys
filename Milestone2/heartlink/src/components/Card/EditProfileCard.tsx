@@ -83,7 +83,13 @@ function EditProfileCard(props: EditProfileCardProps) {
               className="form-control"
               id="repName"
               value={tempName}
-              onChange={(e) => setTempName(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                const isAlpha = /^[a-zA-Z\s]+$/.test(value);
+                if (isAlpha || value === "") {
+                  setTempName(value);
+                }
+              }}
               defaultValue={"Nanna"}
               style={{ marginBottom: "0.3em", width: "240px" }}
             />
@@ -92,23 +98,36 @@ function EditProfileCard(props: EditProfileCardProps) {
               className="form-control"
               defaultValue={"20"}
               value={tempAge}
-              onChange={(e) => setTempAge(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                const isValid = /^[0-9]*$/.test(value);
+                if (isValid || value === "") {
+                  setTempAge(value);
+                }
+              }}
               style={{ marginBottom: "0.3em", width: "240px" }}
             />
-            <input
-              type="Gender"
+            <select
               className="form-control"
-              defaultValue={"Male"}
               value={tempGender}
               onChange={(e) => setTempGender(e.target.value)}
               style={{ marginBottom: "0.3em", width: "240px" }}
-            />
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
             <input
               type="Governorate"
               className="form-control"
               defaultValue={"Cairo"}
               value={tempGovernorate}
-              onChange={(e) => setTempGovernorate(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                const isAlpha = /^[a-zA-Z\s]+$/.test(value);
+                if (isAlpha || value === "") {
+                  setTempGovernorate(value);
+                }
+              }}
               style={{ marginBottom: "0.3em", width: "240px" }}
             />
             <input
@@ -123,30 +142,80 @@ function EditProfileCard(props: EditProfileCardProps) {
               className="telephoneHolder"
               style={{ display: "flex", flexDirection: "row" }}
             >
-              <input
-                type="tel"
-                className="form-control"
-                id="repName"
-                defaultValue={"01099224715"}
-                value={tempTel1}
-                onChange={(e) => setTempTel1(e.target.value)}
-                style={{ marginBottom: "0.3em", width: "240px" }}
-              />
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    padding: "0px 12px",
+                    border: "1px solid #ced4da",
+                    borderRadius: "4px 0 0 4px",
+                    backgroundColor: "#e9ecef",
+                    height: "40px",
+                    alignItems: "center",
+                  }}
+                >
+                  +20
+                </div>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="repName"
+                  defaultValue={"01099224715"}
+                  value={tempTel1}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    const isValid = /^[1-9][0-9]*$/.test(value);
+                    if (isValid || value === "") {
+                      setTempTel1(value);
+                    }
+                  }}
+                  style={{
+                    marginBottom: "0.3em",
+                    width: "200px",
+                    borderRadius: "0 4px 4px 0",
+                  }}
+                />
+              </div>
             </div>
             {tel2 && (
               <div
                 className="telephoneHolder"
                 style={{ display: "flex", flexDirection: "row" }}
               >
-                <input
-                  type="tel"
-                  className="form-control"
-                  id="repName"
-                  defaultValue={"01113190357"}
-                  value={tempTel2}
-                  onChange={(e) => setTempTel2(e.target.value)}
-                  style={{ marginBottom: "0.3em", width: "240px" }}
-                />
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      padding: "0px 12px",
+                      border: "1px solid #ced4da",
+                      borderRadius: "4px 0 0 4px",
+                      backgroundColor: "#e9ecef",
+                      height: "40px",
+                      alignItems: "center",
+                    }}
+                  >
+                    +20
+                  </div>
+                  <input
+                    type="tel"
+                    className="form-control"
+                    id="repName"
+                    defaultValue={"01113190357"}
+                    value={tempTel2}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const isValid = /^[1-9][0-9]*$/.test(value);
+                      if (isValid || value === "") {
+                        setTempTel2(value);
+                      }
+                    }}
+                    style={{
+                      marginBottom: "0.3em",
+                      width: "200px",
+                      borderRadius: "0 4px 4px 0",
+                    }}
+                  />
+                </div>
                 <IoIosClose
                   onClick={handleRemove2}
                   fontSize={"35px"}

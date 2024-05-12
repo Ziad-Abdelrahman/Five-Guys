@@ -29,6 +29,7 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
 
   const [selectedProbono, setSelectedProbono] = useState("");
 
+  const [file, setFile] = useState<File | undefined | null>();
   // Function to toggle the visibility of the dropdown based on the card clicked
   const toggleProbonoInfo = (probonoType: string) => {
     if (selectedProbono === probonoType) {
@@ -48,7 +49,7 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
           gender={props.gender}
           governorate={props.governorate}
           name={props.name}
-          tel1={props.tel1}
+          tel1={"+20 " + props.tel1}
           tel2={props.tel2}
           setPage={props.setPage}
         />
@@ -74,13 +75,16 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
           </div>
           {selectedProbono === "teacher" && <DonorAddTeacherInfo />}
           {selectedProbono === "doctor" && currentStep === 0 && (
-            <DonorAddDoctorInfo setCurrentStep={setCurrentStep} />
+            <DonorAddDoctorInfo
+              setCurrentStep={setCurrentStep}
+              setFile={setFile}
+            />
           )}
           {selectedProbono === "doctor" && currentStep === 1 && (
             <DonorClinicAddress setCurrentStep={setCurrentStep} />
           )}
           {selectedProbono === "doctor" && currentStep === 2 && (
-            <DonorClinicMapMarker setCurrentStep={setCurrentStep} />
+            <DonorClinicMapMarker setCurrentStep={setCurrentStep} file={file} />
           )}
         </div>
       </div>

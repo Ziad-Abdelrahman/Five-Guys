@@ -38,6 +38,7 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "El Saida Zeinab",
       established: "2007",
+      contact: "19057",
       iframe: (
         <iframe
           width="230"
@@ -57,6 +58,8 @@ function DeleteOrganizations({
       city: "Zagazig",
       Area: "Third District",
       established: "2006",
+      contact: "16060",
+
       iframe: (
         <iframe
           width="230"
@@ -76,6 +79,7 @@ function DeleteOrganizations({
       city: "Alexandria",
       area: "Miami",
       established: "2007",
+      contact: "16140",
       iframe: (
         <iframe
           width="230"
@@ -95,6 +99,8 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "Giza",
       established: "2007",
+      contact: "19057",
+
       iframe: (
         <iframe
           width="230"
@@ -114,6 +120,7 @@ function DeleteOrganizations({
       city: "Cairo",
       Area: "10th of Ramadan",
       established: "1999",
+      contact: "19455",
       iframe: (
         <iframe
           width="230"
@@ -133,6 +140,7 @@ function DeleteOrganizations({
       city: "Giza",
       area: "Sheikh Zayed",
       established: "2018",
+      contact: "17057",
       iframe: (
         <iframe
           width="230"
@@ -152,6 +160,8 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "Zamalek",
       established: "2008",
+      contact: "19731",
+
       iframe: (
         <iframe
           width="230"
@@ -171,6 +181,7 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "Nasr City",
       established: "1911",
+      contact: "11371",
       iframe: (
         <iframe
           width="230"
@@ -191,6 +202,7 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "El Haram",
       established: "2017",
+      contact: "16602",
       iframe: (
         <iframe
           width="230"
@@ -248,6 +260,8 @@ function DeleteOrganizations({
                     <li>Area: {cardData.area}</li>
                     <br />
                     <li>Established: {cardData.established}</li>
+                    <br />
+                    <li>Hotline: {cardData.contact}</li>
                   </ul>
                 </div>
                 {cardData.iframe}

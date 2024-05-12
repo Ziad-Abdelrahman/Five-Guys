@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
 import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
@@ -16,7 +16,6 @@ function EditToysPt2(props: ToysPt2Props) {
   const [quantity, setQuantity] = useState(props.quantity);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-  const [img, setImg] = useState("");
 
   const divStyle = {
     display: "flex",
@@ -24,13 +23,8 @@ function EditToysPt2(props: ToysPt2Props) {
     width: "600px",
   };
 
-
-  const handleImage = (x: boolean) => {
-    if (x) setImg("Image Uploaded");
-    else setImg("");
-  };
   const handleClick = () => {
-    if (toyName.trim() === "" || quantity.trim() === "" || img.trim() === "") {
+    if (toyName.trim() === "" || quantity.trim() === "") {
       setError("Please enter the toy name and the quantity");
       return false;
     }
@@ -39,6 +33,7 @@ function EditToysPt2(props: ToysPt2Props) {
     console.log("Form submitted successfully!");
     return true;
   };
+
   return (
     <Template1
       leftPanelDiv={
@@ -62,9 +57,9 @@ function EditToysPt2(props: ToysPt2Props) {
                 type={"text"}
                 label={"Specify toy"}
                 width={"280px"}
-                text={toyName}
                 setChecked={setToyName}
-                hasText={true}
+                text={toyName}
+                hasText={toyName != ""}
               />
             </div>
             <div style={divStyle}>
@@ -75,9 +70,8 @@ function EditToysPt2(props: ToysPt2Props) {
                 label={"Quantity"}
                 width={"280px"}
                 setChecked={setQuantity}
-                hasText={true}
+                hasText={quantity != ""}
                 text={quantity}
-                
               />
             </div>
             <div style={divStyle}>
@@ -85,14 +79,11 @@ function EditToysPt2(props: ToysPt2Props) {
                 {" "}
                 Please upload the toy's photo
               </h5>
-              <ImageUploader
-                width={"280px"}
-                height={"180px"}
-                handleUpload={handleImage}
-              />
+              <ImageUploader width={"280px"} height={"180px"} />
             </div>
-            {error && (<div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>)}
-
+            {error && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+            )}
           </div>
         </>
       }

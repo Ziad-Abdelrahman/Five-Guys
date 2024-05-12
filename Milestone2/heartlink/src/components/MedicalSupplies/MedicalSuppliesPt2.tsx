@@ -6,12 +6,14 @@ interface medicalSuppliesProps {
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   err?: string;
   onImage?: (x: boolean) => void;
+  upload?: boolean;
 }
 function MedicalSuppliesPt2({
   header,
   onChange,
   err,
   onImage,
+  upload,
 }: medicalSuppliesProps) {
   let shift = { top: "12em" };
   return (
@@ -30,7 +32,7 @@ function MedicalSuppliesPt2({
           <h4 style={{ position: "relative", marginTop: "7%" }}>
             Please upload the {header.toLowerCase()}'s photo
           </h4>
-          <ImageUploader handleUpload={onImage} />
+          <ImageUploader handleUpload={onImage} upload={upload} />
         </div>
         <div className="mb-3" style={{ width: "600px" }}>
           <h5 style={{ marginTop: "10%" }}>

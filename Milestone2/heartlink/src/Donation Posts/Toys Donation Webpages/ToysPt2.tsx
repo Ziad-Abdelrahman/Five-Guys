@@ -15,7 +15,7 @@ function ToysPt2() {
   const [toy, setToy] = useState("");
   const [success, setSuccess] = useState(false);
   const [img, setImg] = useState("");
-
+  const [isFileUploaded, setFileUploaded] = useState(false);
   const handlleQuantityChange = (num: string) => {
     setQuantity(num);
   };
@@ -28,6 +28,7 @@ function ToysPt2() {
       setError("Please enter the toy name and the quantity");
       return false;
     }
+    setFileUploaded(true);
     setSuccess(true);
     setError("");
     console.log("Form submitted successfully!");
@@ -82,6 +83,7 @@ function ToysPt2() {
                 width={"280px"}
                 height={"180px"}
                 handleUpload={handleImage}
+                upload={isFileUploaded}
               />
             </div>
             {error && (

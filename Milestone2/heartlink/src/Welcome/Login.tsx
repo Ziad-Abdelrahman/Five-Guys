@@ -20,7 +20,9 @@ function Login() {
     else if (e.target.value === "doctor") setLoginTo("/Doctor");
     else setLoginTo("");
   };
-
+  const stop = (e: any) => {
+    e.stopPropagation();
+  };
   const checkLogin = () => {
     if (loginTo === "") {
       setWrong(true);
@@ -37,31 +39,33 @@ function Login() {
   };
 
   return (
-    <div className="login">
-      <div className="topOfLogin">
-        <img src={minilogo} alt="logo" />
-        <IoClose className="xLogin" onClick={hideLogin} />
-      </div>
-      <h1>Login</h1>
+    <div className="login-container" onClick={hideLogin}>
+      <div className="login" onClick={stop}>
+        <div className="topOfLogin">
+          <img src={minilogo} alt="logo" />
+          <IoClose className="xLogin" onClick={hideLogin} />
+        </div>
+        <h1>Login</h1>
 
-      <Form onSubmit={checkLogin}>
-        {wrong && <WrongPassword />}
-        {correct && <CorrectPassword />}
-        <InputBox
-          type={"text"}
-          label={"Username"}
-          width={"370px"}
-          required={true}
-        />
-        <InputBox
-          type={"password"}
-          label={"Password"}
-          width={"370px"}
-          onChange={handleGo}
-          required={true}
-        />
-        <button type="submit">Login</button>
-      </Form>
+        <Form onSubmit={checkLogin}>
+          {wrong && <WrongPassword />}
+          {correct && <CorrectPassword />}
+          <InputBox
+            type={"text"}
+            label={"Username"}
+            width={"370px"}
+            required={true}
+          />
+          <InputBox
+            type={"password"}
+            label={"Password"}
+            width={"370px"}
+            onChange={handleGo}
+            required={true}
+          />
+          <button type="submit">Login</button>
+        </Form>
+      </div>
     </div>
   );
 }

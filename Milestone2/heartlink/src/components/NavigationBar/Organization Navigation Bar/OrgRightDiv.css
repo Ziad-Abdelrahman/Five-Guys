@@ -37,3 +37,7 @@
     height:40%;
 }
 
+.org-notification-container-inside-dropdown:hover .tooltipText{
+    visibility: visible;
+    opacity: 1;
+}

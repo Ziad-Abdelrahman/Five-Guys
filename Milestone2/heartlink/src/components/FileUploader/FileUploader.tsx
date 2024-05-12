@@ -10,6 +10,7 @@ interface imageUploaderProps {
   upload?: boolean;
   required?: boolean;
   handleUpload?: (x: boolean) => void;
+  setFile?: Function;
 }
 
 function ImageUploader({
@@ -19,15 +20,20 @@ function ImageUploader({
   upload,
   required = false,
   handleUpload,
+  setFile,
 }: imageUploaderProps) {
   const inputRef = useRef();
   const [selectedImage, setSelectedImage] = useState<File | undefined | null>();
   let downloaded = false;
+  if (setFile) {
+    setFile(selectedImage);
+  }
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     const target = e.target as HTMLInputElement & {
       files: FileList;
     };
     setSelectedImage(target.files[0]);
+
     if (handleUpload) {
       handleUpload(true);
     }

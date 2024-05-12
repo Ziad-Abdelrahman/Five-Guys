@@ -5,6 +5,7 @@ import DonateButton from "../components/Buttons/DonateButton.tsx";
 import { useState } from "react";
 interface Props {
   setCurrentStep: Function;
+  setFile?: Function;
 }
 
 function DonorAddDoctorInfo(props: Props) {
@@ -100,6 +101,7 @@ function DonorAddDoctorInfo(props: Props) {
             text={"Upload Certification"}
             upload={isFileUploaded}
             handleUpload={handleFile}
+            setFile={props.setFile}
           />
         </div>
       </div>

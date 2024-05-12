@@ -8,7 +8,7 @@ function BooksPt2() {
   const [text, setText] = useState("");
   const [success, setSuccess] = useState(false);
   const [img, setImg] = useState("");
-
+  const [isFileUploaded, setFileUploaded] = useState(false);
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
@@ -21,6 +21,7 @@ function BooksPt2() {
       setError("Please provide all the required information.");
       return false;
     }
+    setFileUploaded(true);
     setError("");
     setSuccess(true);
     console.log("Form submitted successfully!");
@@ -55,7 +56,10 @@ function BooksPt2() {
                 {" "}
                 Please upload the book's photo
               </h5>
-              <ImageUploader handleUpload={handleImage} />
+              <ImageUploader
+                handleUpload={handleImage}
+                upload={isFileUploaded}
+              />
             </div>
             <div className="mb-3" style={{ width: "600px" }}>
               <label

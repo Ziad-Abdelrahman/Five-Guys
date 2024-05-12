@@ -6,8 +6,10 @@ import { BsEnvelopeOpenHeart } from "react-icons/bs";
 import "./OrgRightDiv.css";
 import { Link } from "react-router-dom";
 import ProfileCircle from "../ProfileCircle.tsx";
-
-function OrgRightDiv() {
+interface OrgRightDivProps {
+  help?: () => void;
+}
+function OrgRightDiv({ help }: OrgRightDivProps) {
   // State to manage the visibility of the notifications dropdown
   const [showNotifications, setNotifications] = useState(false);
 
@@ -29,9 +31,19 @@ function OrgRightDiv() {
           {showNotifications && (
             <div className="org-notifications-dropdown">
               <div className="org-notification-container-inside-dropdown">
-                <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flex: 1,
+                    cursor: "pointer",
+                  }}
+                >
                   <BsEnvelopeOpenHeart className={"envelope-icon"} />
                   <p style={{ marginTop: "17px" }}>Toys Donation fulfilled!</p>
+                  <span className="tooltipText" style={{ top: "20%" }}>
+                    Drop Off Monday 2:00-4:00PM
+                  </span>
                 </div>
                 <div
                   style={{
@@ -45,16 +57,12 @@ function OrgRightDiv() {
                 </div>
               </div>
               <hr />
-              <div
-                className="org-notification-container-inside-dropdown"
-                style={{ cursor: "pointer" }}
-              >
+              <div className="org-notification-container-inside-dropdown">
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
                     flex: 1,
-                    cursor: "pointer",
                   }}
                 >
                   <TbTruckDelivery style={{ fontSize: "30px" }} />
@@ -72,10 +80,16 @@ function OrgRightDiv() {
                 </div>
               </div>
               <hr />
-              <div className="org-notification-container-inside-dropdown">
+              <div
+                className="org-notification-container-inside-dropdown"
+                style={{ cursor: "pointer" }}
+              >
                 <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
                   <BsEnvelopeOpenHeart className={"envelope-icon"} />
                   <p style={{ marginTop: "17px" }}>Blood Donation fulfilled!</p>
+                  <span className="tooltipText">
+                    Drop Off Monday 2:00-4:00PM
+                  </span>
                 </div>
                 <div
                   style={{
@@ -85,7 +99,7 @@ function OrgRightDiv() {
                     marginBottom: "10px",
                   }}
                 >
-                  Just Now
+                  30 min ago
                 </div>
               </div>
             </div>
@@ -109,6 +123,9 @@ function OrgRightDiv() {
           <ul className="profiledropdownContent">
             <li>
               <Link to="/Organization/AccountInfo">Account info</Link>
+            </li>
+            <li>
+              <a onClick={help}>Help</a>
             </li>
             <li>
               <Link to="/">Logout</Link>

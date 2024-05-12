@@ -6,8 +6,9 @@ import ProfileCircle from "../ProfileCircle.tsx";
 
 interface DonorRightDivProps {
   type?: string;
+  help?: () => void;
 }
-function DonorRightDiv({ type }: DonorRightDivProps) {
+function DonorRightDiv({ type, help }: DonorRightDivProps) {
   // State to manage the visibility of the notifications dropdown
   const [showNotifications, setNotifications] = useState(false);
 
@@ -93,6 +94,9 @@ function DonorRightDiv({ type }: DonorRightDivProps) {
           <ul className="profiledropdownContent">
             <li>
               <Link to={type + "/AccountInfo"}>Account info</Link>
+            </li>
+            <li>
+              <a onClick={help}>Help</a>
             </li>
             <li>
               <Link to={"/"}> Logout</Link>
