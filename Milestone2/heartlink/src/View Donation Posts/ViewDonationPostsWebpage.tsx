@@ -11,6 +11,10 @@ import book2 from "../assets/book2.jpeg";
 import medd from "../assets/medd.png";
 import toy1 from "../assets/toy1.png";
 import toy2 from "../assets/toy2.png";
+import medEg1 from "../assets/diagMedEquip.png";
+import medEg2 from "../assets/diagMedEquip2.png";
+import medT1 from "../assets/medTool.png";
+import medT2 from "../assets/medTool1.png";
 
 function ViewDonationPostsWebpage() {
   const [selectedRadioButton, setSelectedRadioButton] = useState("");
@@ -57,7 +61,9 @@ function ViewDonationPostsWebpage() {
             typeOfRequest={card.typeOfRequest}
             datePosted={card.datePosted}
             status={card.status}
-            equipment={card.Equipment}
+            equipment={card.equipment}
+            medquantity={card.medquantity}
+            medimage={card.id === "3" ? medEg1 : medEg2}
           ></DonationPostCard>
         ))}
       {allDataList
@@ -73,6 +79,7 @@ function ViewDonationPostsWebpage() {
             datePosted={card.datePosted}
             status={card.status}
             tool={card.tool}
+            medimage={card.id === "5" ? medT1 : medT2}
           ></DonationPostCard>
         ))}
 

@@ -3,6 +3,7 @@ import hashSet from "../../../hashSet";
 import EditDropDown from "../../../components/DropDown/EditDropDown.tsx";
 import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 import Template1 from "../../../components/Templates/Template1.tsx";
+import Createcomp from "../../../components/View Request Popup/Createcomp.tsx";
 
 interface StationaryProps {
   category: string;
@@ -14,10 +15,22 @@ function EditStationary(props: StationaryProps) {
   const [selectedCategory, setSelectedCategory] = useState(props.category);
   const [selectedSupply, setSelectedSupply] = useState(props.supply);
   const [quantity, setQuantity] = useState(props.quantity);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     setSelectedSupply("");
+  };
+  const handleClick = () => {
+    if (quantity.trim() === "") {
+      setErrorMessage("Please provide all required details. ");
+      return false;
+    }
+    setSuccess(true);
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
   };
 
   const categoryExamples: hashSet = {
@@ -88,6 +101,7 @@ function EditStationary(props: StationaryProps) {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Updated!"} show={success} />
           <div className="header-container">
             <h1>School Supplies</h1>
           </div>
@@ -96,9 +110,7 @@ function EditStationary(props: StationaryProps) {
               What category of school supplies do you need?
             </h4>
             <EditDropDown
-              options={["Specify category"].concat(
-                Object.keys(categoryExamples),
-              )}
+              options={Object.keys(categoryExamples)}
               selected={selectedCategory}
               width={"280px"}
               onChange={handleCategoryChange}
@@ -111,9 +123,7 @@ function EditStationary(props: StationaryProps) {
             </h6>
             <EditDropDown
               options={
-                selectedCategory
-                  ? ["Select supply"].concat(categoryExamples[selectedCategory])
-                  : []
+                selectedCategory ? categoryExamples[selectedCategory] : []
               }
               selected={selectedSupply}
               width={"280px"}
@@ -128,9 +138,14 @@ function EditStationary(props: StationaryProps) {
               label={"Quantity"}
               width={"280px"}
               text={quantity}
-              hasText={quantity != ""}
+              hasText={true}
               setChecked={setQuantity}
             />
+            {errorMessage && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>
+                {errorMessage}
+              </div>
+            )}
           </div>
         </>
       }
@@ -138,6 +153,7 @@ function EditStationary(props: StationaryProps) {
       hasButton={true}
       forwardPath={"../../ViewPosts"}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
     />
   );
 }

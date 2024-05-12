@@ -3,6 +3,7 @@ import hashSet from "../../../hashSet";
 import EditDropDown from "../../../components/DropDown/EditDropDown.tsx";
 import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 import Template1 from "../../../components/Templates/Template1.tsx";
+import Createcomp from "../../../components/View Request Popup/Createcomp.tsx";
 
 interface FoodProps {
   category: string;
@@ -35,9 +36,23 @@ function EditFood(props: FoodProps) {
 
   const [selectedCategory, setSelectedCategory] = useState(props.category);
   const [quantity, setQuantity] = useState(props.quantity);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
+  };
+  const handleClick = () => {
+    if (selectedCategory.trim() === "" || quantity.trim() === "") {
+      setErrorMessage(
+        "Please provide the quantity.",
+      );
+      return false;
+    }
+    setSuccess(true);
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
   };
 
   return (
@@ -50,6 +65,7 @@ function EditFood(props: FoodProps) {
       }
       rightPanelDiv={
         <div>
+          <Createcomp message={"Post Successfully Updated!"} show={success} />
           <div className="header-container">
             <h1>Food</h1>
           </div>
@@ -80,7 +96,7 @@ function EditFood(props: FoodProps) {
                   label={"Quantity (in KG)"}
                   width={"280px"}
                   text={quantity}
-                  hasText={quantity !== ""}
+                  hasText={true}
                   setChecked={setQuantity}
                 />{" "}
               </>
@@ -92,10 +108,12 @@ function EditFood(props: FoodProps) {
                   width={"280px"}
                   text={quantity}
                   setChecked={setQuantity}
-                  hasText={quantity !== ""}
+                  hasText={true}
                 />{" "}
               </>
             )}
+              {errorMessage && (<div style={{ color: "red", marginTop: "0.5rem" }}>{errorMessage}</div>)}
+
           </div>
         </div>
       }
@@ -103,6 +121,8 @@ function EditFood(props: FoodProps) {
       hasButton={true}
       forwardPath={"../../ViewPosts"}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
+
     />
   );
 }

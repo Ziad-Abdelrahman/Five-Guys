@@ -13,17 +13,12 @@ function EditBooksPt2(props: EditBooksPt2Props) {
   const [error, setError] = useState("");
   const [text, setText] = useState("");
   const [success, setSuccess] = useState(false);
-  const [img, setImg] = useState("");
+
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
-  const handleImage = (x: boolean) => {
-    if (x) setImg("Image Uploaded");
-    else setImg("");
-  };
-
   const handleClick = () => {
-    if (text.trim() === "" || img.trim() === "") {
+    if (text.trim() === "") {
       setError("Please provide all the required information.");
       return false;
     }
@@ -58,7 +53,7 @@ function EditBooksPt2(props: EditBooksPt2Props) {
                 {" "}
                 Please upload the book's photo
               </h5>
-              <ImageUploader handleUpload={handleImage} />
+              <ImageUploader />
             </div>
             <div className="mb-3" style={{ width: "600px" }}>
               <label
@@ -72,6 +67,7 @@ function EditBooksPt2(props: EditBooksPt2Props) {
                 id="exampleFormControlTextarea1"
                 rows={9}
                 style={{ height: "270px", borderColor: "#01A95D" }}
+                value={text}
                 onChange={handleChange}
               >
                 {props.use}

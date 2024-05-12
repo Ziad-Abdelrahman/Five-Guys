@@ -2,6 +2,7 @@ import { useState } from "react";
 import EditRadioButton from "../../../components/RadioButton/EditRadioButton.tsx";
 import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
 import Template1 from "../../../components/Templates/Template1.tsx";
+import Createcomp from "../../../components/View Request Popup/Createcomp.tsx";
 interface BloodProps {
   bloodType: string;
   patientName: string;
@@ -9,6 +10,24 @@ interface BloodProps {
 function EditBloodDonation(props: BloodProps) {
   const [bloodType, setBloodType] = useState(props.bloodType);
   const [patientName, setPatientName] = useState(props.patientName);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const handleClick = () => {
+    if (patientName.trim() === "" ) {
+      setErrorMessage(
+        "Please provide a patient name.",
+      );
+      return false;
+    }
+    setSuccess(true);
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+  
+
+
   return (
     <Template1
       leftPanelDiv={
@@ -19,6 +38,7 @@ function EditBloodDonation(props: BloodProps) {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Updated!"} show={success} />
           <div className="header-container">
             <h1>Blood Donation</h1>
           </div>
@@ -72,12 +92,13 @@ function EditBloodDonation(props: BloodProps) {
             <p />
             <EditInputBox
               type={"text"}
-              label={"Patient name"}
+              label={"Patient Name"}
               width={"280px"}
+              text={patientName}
               setChecked={setPatientName}
-              hasText={patientName != ""}
-              text={props.patientName}
+              hasText={true}
             />
+            {errorMessage && (<div style={{ color: "red", marginTop: "0.5rem" }}>{errorMessage}</div>)}
           </div>
         </>
       }
@@ -85,6 +106,7 @@ function EditBloodDonation(props: BloodProps) {
       hasButton={true}
       forwardPath={"../../ViewPosts"}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
     />
   );
 }

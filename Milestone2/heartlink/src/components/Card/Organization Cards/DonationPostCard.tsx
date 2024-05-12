@@ -105,7 +105,6 @@ function DonationPostCard(props: DonationPostCardProps) {
                   <p> Medication name: {props.medicationname}</p>
                 )}
                 {props.patientname && <p>Patient name: {props.patientname}</p>}
-                {props.medquantity && <p>Quantity: {props.medquantity}</p>}
                 {props.toyage && <p>Age Group: {props.toyage}</p>}
                 {props.toycategory && <p>Category: {props.toycategory}</p>}
                 {props.toygender && <p>Gender: {props.toygender}</p>}
@@ -119,6 +118,8 @@ function DonationPostCard(props: DonationPostCardProps) {
                 {props.fcategory && <p>Category: {props.fcategory}</p>}
                 {props.item && <p>Item: {props.item}</p>}
                 {props.fquantity && <p>Quantity: {props.fquantity}</p>}
+                {props.medquantity && <p>Quantity: {props.medquantity}</p>}
+
                 <p>Date Posted: {props.datePosted}</p>
                 <p>Status: {props.status}</p>
               </div>

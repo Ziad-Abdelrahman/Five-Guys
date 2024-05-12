@@ -10,6 +10,9 @@ interface medicalSuppliesProps {
   val: string;
   quantity: string;
   disabled?: boolean;
+  onChange1?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange2?: (tool: string) => void;
+  err?: string;
 }
 
 function EditMedicalSupplies({
@@ -19,11 +22,14 @@ function EditMedicalSupplies({
   quantity,
   val,
   disabled,
+  onChange1,
+  err,
 }: medicalSuppliesProps) {
   const [value, setValue] = useState(val);
   const [inputQuantity, setInputQuantity] = useState(quantity);
   const plural = name === "equipment" ? name : name + "s";
   const FirstLetterUpper = name.charAt(0).toUpperCase() + name.slice(1);
+  
   return (
     <div>
       <div className="header-container">
@@ -43,6 +49,7 @@ function EditMedicalSupplies({
             label={FirstLetterUpper + " name"}
             width={"280px"}
             disabled={true}
+            onChange={onChange1}
           />
         ) : (
           <EditInputBox
@@ -52,6 +59,8 @@ function EditMedicalSupplies({
             text={value}
             hasText={value !== ""}
             setChecked={setValue}
+            onChange={onChange1}
+            
           />
         )}
         <h4 style={{ marginBottom: "15px" }}>
@@ -61,9 +70,10 @@ function EditMedicalSupplies({
           label={"Quantity"}
           width={"280px"}
           text={inputQuantity}
-          hasText={inputQuantity != ""}
+          hasText={true}
           setChecked={setInputQuantity}
         />
+          {err && (<div style={{ color: "red", marginTop: "0.5rem" }}>{err}</div>)}
       </div>
     </div>
   );

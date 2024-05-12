@@ -18,6 +18,17 @@ function EditBooks(props: BooksProps) {
   const [language, setLanguage] = useState(props.language);
   const [edition, setEdition] = useState(props.edition);
   const [quantity, setQuantity] = useState(props.quantity);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleClick = () => {
+    if (bookName.trim() === "" || authorName.trim() === "" || language.trim() === "" || edition.trim() === "" || quantity.trim() === "") {
+      setErrorMessage("Please provide all required details. ");
+      return false;
+    }
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
 
   const divStyle = {
     display: "flex",
@@ -45,7 +56,7 @@ function EditBooks(props: BooksProps) {
                 label={"Book name"}
                 width={"280px"}
                 text={bookName}
-                hasText={bookName != ""}
+                hasText={true}
                 setChecked={setBookName}
               />
               <EditInputBox
@@ -53,7 +64,7 @@ function EditBooks(props: BooksProps) {
                 label={"Author name"}
                 width={"280px"}
                 text={authorName}
-                hasText={authorName != ""}
+                hasText={true}
                 setChecked={setAuthorName}
               />
             </div>
@@ -63,7 +74,7 @@ function EditBooks(props: BooksProps) {
                 label={"Language"}
                 width={"280px"}
                 text={language}
-                hasText={language != ""}
+                hasText={true}
                 setChecked={setLanguage}
               />
               <EditInputBox
@@ -71,7 +82,7 @@ function EditBooks(props: BooksProps) {
                 label={"Edition"}
                 width={"280px"}
                 text={edition}
-                hasText={edition != ""}
+                hasText={true}
                 setChecked={setEdition}
               />
             </div>
@@ -81,9 +92,10 @@ function EditBooks(props: BooksProps) {
               label={"Quantity"}
               width={"280px"}
               text={quantity}
-              hasText={quantity != ""}
+              hasText={true}
               setChecked={setQuantity}
             />
+            {errorMessage && (<div style={{ color: "red", marginTop: "0.5rem" }}>{errorMessage}</div>)}
           </div>
         </>
       }
@@ -91,6 +103,7 @@ function EditBooks(props: BooksProps) {
       hasButton={true}
       forwardPath={"../cont/" + props.id}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
     />
   );
 }

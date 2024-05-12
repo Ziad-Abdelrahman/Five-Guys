@@ -29,8 +29,8 @@
       "typeOfRequest": "Medical Equipment",
       "datePosted": "19/04/2024",
       "status": "Fulfilled",
-      "equipment": "Diagnostic Medical Equipment",
-      "quantity": "1",
+      "equipment": "Diagnostic Equipment",
+      "medquantity": "1",
       "use": "This equipment is used to diagnose patients and is essential for the hospital."
     },
     {
@@ -38,8 +38,8 @@
       "typeOfRequest": "Medical Equipment",
       "datePosted": "23/04/2024",
       "status": "Pending",
-      "equipment": "Imaging Medical Equipment",
-      "quantity": "2",
+      "equipment": "Imaging Equipment",
+      "medquantity": "2",
       "use": "This equipment is used to take images of the body and is essential for the hospital."
     }
   ,
