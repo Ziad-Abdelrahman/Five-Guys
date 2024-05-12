@@ -80,7 +80,7 @@ function BooksPt2() {
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
-      forwardPath={"/"}
+      forwardPath={"/Organization"}
       backButtonPath={"../1"}
       handleClick={handleClick}
     />
