@@ -10,6 +10,7 @@ function MedicationPt2() {
   const [quantity, setQuantity] = useState("");
   const [success, setSuccess] = useState(false);
   const [img, setImg] = useState("");
+  const [isFileUploaded, setFileUploaded] = useState(false);
   const handleImage = (x: boolean) => {
     if (x) setImg("Image Uploaded");
     else setImg("");
@@ -33,6 +34,7 @@ function MedicationPt2() {
       setError("Please enter medication name and quantity");
       return false;
     }
+    setFileUploaded(true);
     setSuccess(true);
     setError("");
     console.log("Form submitted successfully!");
@@ -89,6 +91,7 @@ function MedicationPt2() {
                 width={"280px"}
                 height={"180px"}
                 handleUpload={handleImage}
+                upload={isFileUploaded}
               />
             </div>
             <br />
