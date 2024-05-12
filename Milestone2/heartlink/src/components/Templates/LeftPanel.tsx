@@ -10,7 +10,10 @@ interface CreateProcessStepsProps {
 function LeftPanel({ children }: CreateProcessStepsProps) {
   return (
     <div className="leftPart">
-      <div className="logo-container">
+      <div
+        className="logo-container"
+        style={{ display: "flex", alignItems: "start" }}
+      >
         <Link to="/Organization" className="noLink">
           <img src={logo} className="logo" alt="logo" />
           <label className="logoText">Dashboard</label>

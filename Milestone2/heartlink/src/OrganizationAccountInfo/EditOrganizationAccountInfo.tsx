@@ -5,6 +5,9 @@ import img from "../assets/baheya.png";
 import EditRadioButton from "../components/RadioButton/EditRadioButton.tsx";
 import { useState } from "react";
 import Map from "../components/map/Map.tsx";
+import DeleteButton from "../components/Buttons/DeleteButton.tsx";
+import { IoIosClose } from "react-icons/io";
+import { FaPlus } from "react-icons/fa6";
 
 interface EditOrganizationAccountInfoProps {
   name: string;
@@ -49,6 +52,7 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
   const [tempRepContactNumber, setTempRepContactNumber] = useState(
     props.repContactNumber,
   );
+  const [tel2, setTel2] = useState(true);
 
   const handleUpdate = () => {
     props.setName(tempName);
@@ -62,9 +66,23 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
     props.setRepName(tempRepName);
     props.setRepEmail(tempRepEmail);
     props.setRepContactNumber(tempRepContactNumber);
-    props.setPage("Account Info");
     props.setRepGender(checked);
+    props.setPage("Account Info");
   };
+
+  function handleRemove2() {
+    setTempTelephone2("");
+    setTel2(false);
+  }
+  function handleAdd() {
+    if (!tel2) {
+      setTel2(true);
+    }
+  }
+
+  function handleCancel() {
+    props.setPage("Account Info");
+  }
 
   return (
     <div>
@@ -77,74 +95,116 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
           width: "100%",
         }}
         children={
-          <div onClick={handleUpdate}>
-            <LoginButton text={"Update"} />
+          <div style={{ display: "flex" }}>
+            <div
+              onClick={handleUpdate}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <LoginButton text={"Update"} />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <DeleteButton text={"Cancel"} onClick={handleCancel} />
+            </div>
           </div>
         }
       />
       <div className={"organization-account-info"}>
-        <>
-          <div className="Personal-Info-card">
-            <div className="image-in-personalinfo-card">
-              <img className={"profile-image"} src={img} />
+        <div className="Personal-Info-card">
+          <div className="image-in-personalinfo-card">
+            <img className={"profile-image"} src={img} />
+          </div>
+          <div className={"header-in-personal-info-card"}>
+            <h3>My Profile</h3>
+            <hr />
+          </div>
+          <div className={"text-in-personal-info-card"}>
+            <div
+              className={"edit-org-info-header"}
+              style={{ marginLeft: "2%" }}
+            >
+              <h5>Name</h5>
+              <h5>Type</h5>
+              <h5>Email</h5>
+              <h5>Telephone(s)</h5>
             </div>
-            <div className={"header-in-personal-info-card"}>
-              <h3>My Profile</h3>
-              <hr />
-            </div>
-            <div className={"text-in-personal-info-card"}>
-              <div className={"edit-org-info-header"}>
-                <h5>Name</h5>
-                <h5>Type</h5>
-                <h5>Email</h5>
-                <h5>Telephone(s)</h5>
-              </div>
 
-              <div className={"my-profile-info"}>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  defaultValue={tempName}
-                  style={{ marginBottom: "0.5em" }}
-                  onChange={(e) => setTempName(e.target.value)}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  id="type"
-                  defaultValue={tempType}
-                  style={{ marginBottom: "0.5em" }}
-                  onChange={(e) => setTempType(e.target.value)}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  id="email"
-                  defaultValue={tempEmail}
-                  style={{ marginBottom: "0.5em" }}
-                  onChange={(e) => setTempEmail(e.target.value)}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  id="tel1"
-                  defaultValue={tempTelephone1}
-                  style={{ marginBottom: "0.5em" }}
-                  onChange={(e) => setTempTelephone1(e.target.value)}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  id="tel2"
-                  defaultValue={tempTelephone2}
-                  style={{ marginBottom: "0.5em" }}
-                  onChange={(e) => setTempTelephone2(e.target.value)}
-                />
+            <div className={"my-profile-info"}>
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                defaultValue={tempName}
+                style={{ marginBottom: "0.5em" }}
+                onChange={(e) => setTempName(e.target.value)}
+              />
+              <input
+                type="text"
+                className="form-control"
+                id="type"
+                defaultValue={tempType}
+                style={{ marginBottom: "0.5em" }}
+                onChange={(e) => setTempType(e.target.value)}
+              />
+              <input
+                type="text"
+                className="form-control"
+                id="email"
+                defaultValue={tempEmail}
+                style={{ marginBottom: "0.5em" }}
+                onChange={(e) => setTempEmail(e.target.value)}
+              />
+              <div style={{ height: "94px" }}>
+                <div
+                  className="telephoneHolder"
+                  style={{ display: "flex", flexDirection: "row" }}
+                >
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="tel1"
+                    defaultValue={tempTelephone1}
+                    style={{ marginBottom: "0.5em" }}
+                    onChange={(e) => setTempTelephone1(e.target.value)}
+                  />
+                </div>
+                {tel2 && (
+                  <div
+                    className="telephoneHolder"
+                    style={{ display: "flex", flexDirection: "row" }}
+                  >
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="tel2"
+                      defaultValue={tempTelephone2}
+                      style={{ marginBottom: "0.5em" }}
+                      onChange={(e) => setTempTelephone2(e.target.value)}
+                    />
+                    <IoIosClose onClick={handleRemove2} />
+                  </div>
+                )}
+                {!tel2 && (
+                  <FaPlus
+                    size={"20px"}
+                    color={"#01A95D"}
+                    style={{ marginRight: "14%" }}
+                    onClick={handleAdd}
+                  />
+                )}
               </div>
             </div>
           </div>
-        </>
+        </div>
         <div className={"two-card-upload-maps-holder"}>
           <div className={"upload-doc-card"}>
             <div style={{ width: "100%" }}>
