@@ -48,7 +48,7 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
           gender={props.gender}
           governorate={props.governorate}
           name={props.name}
-          tel1={props.tel1}
+          tel1={"+20 " + props.tel1}
           tel2={props.tel2}
           setPage={props.setPage}
         />

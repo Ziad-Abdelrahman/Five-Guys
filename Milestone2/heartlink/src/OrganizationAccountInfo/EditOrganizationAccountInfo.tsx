@@ -145,6 +145,11 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                 id="name"
                 defaultValue={tempName}
                 style={{ marginBottom: "0.5em" }}
+                onKeyPress={(e) => {
+                  const keyCode = e.keyCode || e.which;
+                  const keyValue = String.fromCharCode(keyCode);
+                  if (!/^[a-zA-Z\s]*$/.test(keyValue)) e.preventDefault();
+                }}
                 onChange={(e) => setTempName(e.target.value)}
               />
               <input
@@ -153,6 +158,11 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                 id="type"
                 defaultValue={tempType}
                 style={{ marginBottom: "0.5em" }}
+                onKeyPress={(e) => {
+                  const keyCode = e.keyCode || e.which;
+                  const keyValue = String.fromCharCode(keyCode);
+                  if (!/^[a-zA-Z\s]*$/.test(keyValue)) e.preventDefault();
+                }}
                 onChange={(e) => setTempType(e.target.value)}
               />
               <input
@@ -174,6 +184,11 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                     id="tel1"
                     defaultValue={tempTelephone1}
                     style={{ marginBottom: "0.5em" }}
+                    onKeyPress={(e) => {
+                      const keyCode = e.keyCode || e.which;
+                      const keyValue = String.fromCharCode(keyCode);
+                      if (/^[a-zA-Z\s]*$/.test(keyValue)) e.preventDefault();
+                    }}
                     onChange={(e) => setTempTelephone1(e.target.value)}
                   />
                 </div>
@@ -188,6 +203,11 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                       id="tel2"
                       defaultValue={tempTelephone2}
                       style={{ marginBottom: "0.5em" }}
+                      onKeyPress={(e) => {
+                        const keyCode = e.keyCode || e.which;
+                        const keyValue = String.fromCharCode(keyCode);
+                        if (/^[a-zA-Z\s]*$/.test(keyValue)) e.preventDefault();
+                      }}
                       onChange={(e) => setTempTelephone2(e.target.value)}
                     />
                     <IoIosClose
@@ -232,6 +252,11 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                     className="form-control"
                     id="repName"
                     defaultValue={tempRepName}
+                    onKeyPress={(e) => {
+                      const keyCode = e.keyCode || e.which;
+                      const keyValue = String.fromCharCode(keyCode);
+                      if (!/^[a-zA-Z\s]*$/.test(keyValue)) e.preventDefault();
+                    }}
                     onChange={(e) => setTempRepName(e.target.value)}
                   />
                   <div style={{ display: "flex" }}>
@@ -262,6 +287,11 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                     id="repNumber"
                     defaultValue={tempRepContactNumber}
                     style={{ marginBottom: "0.5em", width: "240px" }}
+                    onKeyPress={(e) => {
+                      const keyCode = e.keyCode || e.which;
+                      const keyValue = String.fromCharCode(keyCode);
+                      if (/^[a-zA-Z\s]*$/.test(keyValue)) e.preventDefault();
+                    }}
                     onChange={(e) => setTempRepContactNumber(e.target.value)}
                   />
                 </div>

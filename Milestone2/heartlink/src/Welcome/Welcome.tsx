@@ -14,6 +14,8 @@ import image7 from "../assets/Resalanobg.png";
 import image8 from "../assets/magdiYacoubFoundationnobg.png";
 import image9 from "../assets/baheyanobg.png";
 import Login from "./Login.tsx";
+import { MdOutlineHelp } from "react-icons/md";
+import HowToUse from "./HowToUse.tsx";
 
 function Welcome() {
   useEffect(() => {
@@ -30,6 +32,10 @@ function Welcome() {
       }
     });
   }, []);
+  const showHowTo = () => {
+    var howto = document.querySelector(".howto-container") as HTMLElement;
+    howto.style.display = "flex";
+  };
 
   return (
     <div className="welcomeDashboard">
@@ -41,9 +47,43 @@ function Welcome() {
               <LoginButton />
             </>
           }
+          leftDiv={<MdOutlineHelp size={30} onClick={showHowTo} />}
+          dashboard="/"
         />
       </div>
       <Login />
+      <HowToUse
+        message={
+          <div className="howtoText">
+            <p>
+              Welcome to HeartLink! HeartLink is a platform that connects donors
+              with organizations in need. Here's how to use it:
+            </p>
+            <p>
+              1. Click on the "Sign Up" button to create an account. You can
+              sign up as a donor, organization, teacher, or doctor.
+            </p>
+            <p>
+              2. Click on the "Login" button to log in. You can log in as a
+              donor, organization, teacher, or doctor.
+            </p>
+            <p style={{ fontWeight: "bold" }}>
+              For testing purposes here are the passwords for each account type:
+              <br />
+              Donor: donor
+              <br />
+              Organization: org
+              <br />
+              Admin: admin
+              <br />
+              Teacher: teacher
+              <br />
+              Doctor: doctor
+            </p>
+          </div>
+        }
+        id={"hi"}
+      />
       <BackgroundPhoto />
       <div className="app" onClick={hideLogin}>
         <h1 id="about"> Connecting Hearts, Changing Lives</h1>

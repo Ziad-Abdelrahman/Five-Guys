@@ -12,7 +12,7 @@ function CompleteDonorAccountInfo({ type }: CompleteDonorAccountInfoProps) {
   const [gender, setGender] = useState("Male");
   const [governorate, setGovernorate] = useState("Cairo");
   const [address, setAddress] = useState("Villa88, Maadi");
-  const [tel1, setTel1] = useState("01099224715");
+  const [tel1, setTel1] = useState("1099224715");
   const [tel2, setTel2] = useState("01113190357");
   const [page, setPage] = useState("Account info");
 
