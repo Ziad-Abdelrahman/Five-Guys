@@ -1,9 +1,7 @@
-import "../../../Donation Posts/createPost/createPost.css";
-import EditMedicalSupplies from "../Edit Medical Supplies/EditMedicalSupplies.tsx";
-
-import { useState } from "react";
-import Template1 from "../../../components/Templates/Template1.tsx";
-import EditDropDown from "../../../components/DropDown/EditDropDown.tsx";
+import React, { useState } from "react";
+import EditMedicalSupplies from "../Edit Medical Supplies/EditMedicalSupplies";
+import Template1 from "../../../components/Templates/Template1";
+import EditDropDown from "../../../components/DropDown/EditDropDown";
 
 interface EditMedicalEquipmentProps {
   id: string;
@@ -13,11 +11,28 @@ interface EditMedicalEquipmentProps {
 }
 
 function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
-  const [disabled, setDisabled] = useState(props.category != "Others");
+  const [disabled, setDisabled] = useState(props.category !== "Others");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleToolChange(tool: string) {
-    setDisabled(!(tool === "Others"));
+    setDisabled(tool !== "Others");
   }
+
+  const handleClick = () => {
+    if (
+      props.value.trim() === "" ||
+      props.quantity.trim() === "" ||
+      props.category.trim() === "Specify equipment category"
+    ) {
+      setErrorMessage("Please fill in all fields.");
+      return false;
+    }
+
+    // Perform any other logic here (e.g., navigation, form submission)
+    console.log("Navigate to next step...");
+    return true;
+  };
+
   return (
     <Template1
       leftPanelDiv={
@@ -33,6 +48,7 @@ function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
           val={props.value}
           quantity={props.quantity}
           disabled={disabled}
+          err={errorMessage}
         >
           <EditDropDown
             options={[
@@ -55,8 +71,10 @@ function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
       hasButton={true}
       forwardPath={"../cont/" + props.id}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
     />
   );
 }
 
 export default EditMedicalEquipment;
+

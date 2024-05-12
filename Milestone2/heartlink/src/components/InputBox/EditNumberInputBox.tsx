@@ -15,10 +15,6 @@ function EditNumberInputBox({
   hasText,
   setChecked,
 }: InputBoxProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setChecked(value);
-  };
   return hasText ? (
     <div className="form-floating mb-3" style={{ width: width }}>
       <input
@@ -27,7 +23,7 @@ function EditNumberInputBox({
         id="floatingInput"
         min="0"
         value={text}
-        onChange={handleChange}
+        onChange={() => setChecked("")}
       />
       <label>{label}</label>
     </div>

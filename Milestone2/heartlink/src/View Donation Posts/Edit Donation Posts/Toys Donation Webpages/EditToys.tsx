@@ -12,6 +12,11 @@ interface ToysProps {
 
 function EditToys(props: ToysProps) {
   const [gender, setGender] = useState(props.gender);
+  const [age, setage] = useState(props.ageGroup);
+
+  const [errorMessage, setErrorMessage] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(props.category);
+
   const toysOptions = [
     "Specify a category",
     "Action Figures",
@@ -34,6 +39,22 @@ function EditToys(props: ToysProps) {
     "Strategy Games",
     "Toy Vehicles",
   ];
+  const handleClick = () => {
+    if (age.trim() === "Specify age group" || selectedCategory.trim() === "Specify a category") {
+      setErrorMessage("Please provide all required details. ");
+      return false;
+    }
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+  function handleAgeChange(selectedOption: string): void {
+    setage(selectedOption);
+    }
+    function handleCategoryChange(selectedOption: string): void {
+      setSelectedCategory(selectedOption);
+      }
+  
   return (
     <Template1
       leftPanelDiv={
@@ -63,6 +84,7 @@ function EditToys(props: ToysProps) {
               ]}
               selected={props.ageGroup}
               width={"280px"}
+              onChange={handleAgeChange}
             />
             <br />
             <br />
@@ -74,6 +96,7 @@ function EditToys(props: ToysProps) {
               options={toysOptions}
               selected={props.category}
               width={"280px"}
+              onChange={handleCategoryChange}
             />
             <br />
             <br />
@@ -90,6 +113,8 @@ function EditToys(props: ToysProps) {
                 checked={gender === "Girls"}
               />
             </form>
+            {errorMessage && (<div style={{ color: "red", marginTop: "0.5rem" }}>{errorMessage}</div>)}
+
             <br />
           </div>
         </div>
@@ -98,6 +123,8 @@ function EditToys(props: ToysProps) {
       hasButton={true}
       forwardPath={"../cont/" + props.id}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
+
     />
   );
 }

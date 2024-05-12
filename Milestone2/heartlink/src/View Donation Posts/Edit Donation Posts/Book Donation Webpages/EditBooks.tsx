@@ -19,14 +19,12 @@ function EditBooks(props: BooksProps) {
   const [edition, setEdition] = useState(props.edition);
   const [quantity, setQuantity] = useState(props.quantity);
   const [errorMessage, setErrorMessage] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const handleClick = () => {
     if (bookName.trim() === "" || authorName.trim() === "" || language.trim() === "" || edition.trim() === "" || quantity.trim() === "") {
       setErrorMessage("Please provide all required details. ");
       return false;
     }
-    setSuccess(true);
     setErrorMessage("");
     console.log("Form submitted successfully!");
     return true;

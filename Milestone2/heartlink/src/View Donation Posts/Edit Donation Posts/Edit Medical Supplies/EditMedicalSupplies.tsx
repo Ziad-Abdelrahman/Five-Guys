@@ -10,6 +10,7 @@ interface medicalSuppliesProps {
   val: string;
   quantity: string;
   disabled?: boolean;
+  err?: string;
 }
 
 function EditMedicalSupplies({
@@ -19,6 +20,7 @@ function EditMedicalSupplies({
   quantity,
   val,
   disabled,
+  err,
 }: medicalSuppliesProps) {
   const [value, setValue] = useState(val);
   const [inputQuantity, setInputQuantity] = useState(quantity);
@@ -50,7 +52,7 @@ function EditMedicalSupplies({
             label={FirstLetterUpper + " name"}
             width={"280px"}
             text={value}
-            hasText={value !== ""}
+            hasText={true}
             setChecked={setValue}
           />
         )}
@@ -61,9 +63,11 @@ function EditMedicalSupplies({
           label={"Quantity"}
           width={"280px"}
           text={inputQuantity}
-          hasText={inputQuantity != ""}
+          hasText={true}
           setChecked={setInputQuantity}
         />
+             {err && (<div style={{ color: "red", marginTop: "0.5rem" }}>{err}</div>)}
+       
       </div>
     </div>
   );

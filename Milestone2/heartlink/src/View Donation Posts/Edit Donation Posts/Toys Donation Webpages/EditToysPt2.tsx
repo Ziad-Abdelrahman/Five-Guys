@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import {useState } from "react";
 import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
 import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
@@ -14,26 +14,23 @@ interface ToysPt2Props {
 function EditToysPt2(props: ToysPt2Props) {
   const [toyName, setToyName] = useState(props.toyName);
   const [quantity, setQuantity] = useState(props.quantity);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [img, setImg] = useState("");
+
   const divStyle = {
     display: "flex",
     justifyContent: "space-between",
     width: "600px",
   };
-  const [error, setError] = useState("");
 
-  const [toy, setToy] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [img, setImg] = useState("");
 
-  const handlleQuantityChange = (num: string) => {
-    setQuantity(num);
-  };
   const handleImage = (x: boolean) => {
     if (x) setImg("Image Uploaded");
     else setImg("");
   };
   const handleClick = () => {
-    if (toy.trim() === "" || quantity.trim() === "" || img.trim() === "") {
+    if (toyName.trim() === "" || quantity.trim() === "" || img.trim() === "") {
       setError("Please enter the toy name and the quantity");
       return false;
     }
@@ -41,9 +38,6 @@ function EditToysPt2(props: ToysPt2Props) {
     setError("");
     console.log("Form submitted successfully!");
     return true;
-  };
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setToy(e.target.value);
   };
   return (
     <Template1
@@ -68,9 +62,9 @@ function EditToysPt2(props: ToysPt2Props) {
                 type={"text"}
                 label={"Specify toy"}
                 width={"280px"}
-                setChecked={setToyName}
                 text={toyName}
-                hasText={toyName != ""}
+                setChecked={setToyName}
+                hasText={true}
               />
             </div>
             <div style={divStyle}>
@@ -81,8 +75,9 @@ function EditToysPt2(props: ToysPt2Props) {
                 label={"Quantity"}
                 width={"280px"}
                 setChecked={setQuantity}
-                hasText={quantity != ""}
+                hasText={true}
                 text={quantity}
+                
               />
             </div>
             <div style={divStyle}>
@@ -96,6 +91,8 @@ function EditToysPt2(props: ToysPt2Props) {
                 handleUpload={handleImage}
               />
             </div>
+            {error && (<div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>)}
+
           </div>
         </>
       }
@@ -103,6 +100,7 @@ function EditToysPt2(props: ToysPt2Props) {
       hasButton={true}
       forwardPath={"../../ViewPosts"}
       backButtonPath={"../" + props.id}
+      handleClick={handleClick}
     />
   );
 }
