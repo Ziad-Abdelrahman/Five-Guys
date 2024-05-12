@@ -17,7 +17,7 @@ interface ToysRequestsProps {
 
 function ToysRequests({ type }: ToysRequestsProps) {
   const detailsList: hashSet = {
-    "70": ["Educational", "6-12", "Male", "Board Games", "50"],
+    "70": ["Educational", "6-12", "Male", "Board Games", "1"],
     "71": ["Interactive", "0-2", "Unisex", "Stuffed Toys", "30"],
     "72": ["Traditional", "2-6", "Female", "Dolls", "40"],
     "73": ["Musical", "0-2", "Unisex", "Stuffed Toys", "25"],
@@ -198,6 +198,7 @@ function ToysRequests({ type }: ToysRequestsProps) {
               description={card.description}
               postedby={card.postedby}
               postdate={card.postdate}
+              quantity={detailsList[card.buttonID][4]}
             />
           ))}
       </div>

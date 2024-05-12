@@ -10,8 +10,8 @@ const showHowTo = () => {
 const howtomsg = (
   <>
     <p>
-      As a organization, you can view all the requests you have made and the
-      donations you have received. You can also create a new request.
+      As a organization, you can view all the requests you have made. You can
+      also create a new request.
     </p>
     <p>
       1. Click on the "View All Posts" button to view all the requests you have
@@ -20,7 +20,9 @@ const howtomsg = (
     <p>2. Click on the "Create a New Post" button to create a new request.</p>
     <p>3. You could also specify the Drop-off time. </p>
     <p>4. You can also request for probono. </p>
-    <p>5. You can also view fulfilled probono requests.</p>
+    <p>
+      5. You can also view fulfilled probono requests, and thank them as well.
+    </p>
   </>
 );
 function OrgNavgBar() {

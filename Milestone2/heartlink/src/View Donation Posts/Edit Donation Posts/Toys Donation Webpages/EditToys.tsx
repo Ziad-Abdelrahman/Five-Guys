@@ -13,7 +13,6 @@ interface ToysProps {
 function EditToys(props: ToysProps) {
   const [gender, setGender] = useState(props.gender);
   const toysOptions = [
-    "Specify a category",
     "Action Figures",
     "Art Supplies",
     "Board Games",
@@ -53,7 +52,6 @@ function EditToys(props: ToysProps) {
             </h4>
             <EditDropDown
               options={[
-                "Specify age group",
                 "0-2 years",
                 "3-4 years",
                 "5-7 years",
