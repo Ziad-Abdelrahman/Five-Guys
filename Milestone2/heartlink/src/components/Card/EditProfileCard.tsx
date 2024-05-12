@@ -3,6 +3,7 @@ import "./DonorAccountManagement.css";
 import DonateButton from "../Buttons/DonateButton.tsx";
 import React, { useState } from "react";
 import { IoIosClose } from "react-icons/io";
+import { FaPlus } from "react-icons/fa6";
 
 interface EditProfileCardProps {
   name: string;
@@ -30,7 +31,6 @@ function EditProfileCard(props: EditProfileCardProps) {
   const [tempAddress, setTempAddress] = useState(props.address);
   const [tempTel1, setTempTel1] = useState(props.tel1);
   const [tempTel2, setTempTel2] = useState(props.tel2);
-  const [tel1, setTel1] = useState(true);
   const [tel2, setTel2] = useState(true);
   function handleSave() {
     props.setName(tempName);
@@ -42,15 +42,18 @@ function EditProfileCard(props: EditProfileCardProps) {
     props.setTel2(tempTel2);
     props.setPage("Account info");
   }
-  function handleRemove1() {
-    setTempTel1("");
-    setTel1(false);
-  }
 
   function handleRemove2() {
     setTempTel2("");
     setTel2(false);
   }
+
+  function handleAdd() {
+    if (!tel2) {
+      setTel2(true);
+    }
+  }
+
   return (
     <>
       <div className="donor-edit-Personal-Info-card">
@@ -115,23 +118,20 @@ function EditProfileCard(props: EditProfileCardProps) {
               onChange={(e) => setTempAddress(e.target.value)}
               style={{ marginBottom: "0.3em", width: "240px" }}
             />
-            {tel1 && (
-              <div
-                className="telephoneHolder"
-                style={{ display: "flex", flexDirection: "row" }}
-              >
-                <input
-                  type="tel"
-                  className="form-control"
-                  id="repName"
-                  defaultValue={"01099224715"}
-                  value={tempTel1}
-                  onChange={(e) => setTempTel1(e.target.value)}
-                  style={{ marginBottom: "0.3em", width: "240px" }}
-                />
-                <IoIosClose onClick={handleRemove1} />
-              </div>
-            )}
+            <div
+              className="telephoneHolder"
+              style={{ display: "flex", flexDirection: "row" }}
+            >
+              <input
+                type="tel"
+                className="form-control"
+                id="repName"
+                defaultValue={"01099224715"}
+                value={tempTel1}
+                onChange={(e) => setTempTel1(e.target.value)}
+                style={{ marginBottom: "0.3em", width: "240px" }}
+              />
+            </div>
             {tel2 && (
               <div
                 className="telephoneHolder"
@@ -148,6 +148,14 @@ function EditProfileCard(props: EditProfileCardProps) {
                 />
                 <IoIosClose onClick={handleRemove2} />
               </div>
+            )}
+            {!tel2 && (
+              <FaPlus
+                size={"20px"}
+                color={"#01A95D"}
+                style={{ marginRight: "14%" }}
+                onClick={handleAdd}
+              />
             )}
           </div>
         </div>

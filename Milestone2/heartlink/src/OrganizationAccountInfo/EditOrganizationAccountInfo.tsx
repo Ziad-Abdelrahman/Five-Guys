@@ -52,7 +52,6 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
   const [tempRepContactNumber, setTempRepContactNumber] = useState(
     props.repContactNumber,
   );
-  const [tel1, setTel1] = useState(true);
   const [tel2, setTel2] = useState(true);
 
   const handleUpdate = () => {
@@ -70,22 +69,17 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
     props.setRepGender(checked);
     props.setPage("Account Info");
   };
-  function handleRemove1() {
-    setTempTelephone1("");
-    setTel1(false);
-  }
 
   function handleRemove2() {
     setTempTelephone2("");
     setTel2(false);
   }
   function handleAdd() {
-    if (!tel1) {
-      setTel1(true);
-    } else if (!tel2) {
+    if (!tel2) {
       setTel2(true);
     }
   }
+
   function handleCancel() {
     props.setPage("Account Info");
   }
@@ -170,22 +164,19 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                 onChange={(e) => setTempEmail(e.target.value)}
               />
               <div style={{ height: "94px" }}>
-                {tel1 && (
-                  <div
-                    className="telephoneHolder"
-                    style={{ display: "flex", flexDirection: "row" }}
-                  >
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="tel1"
-                      defaultValue={tempTelephone1}
-                      style={{ marginBottom: "0.5em" }}
-                      onChange={(e) => setTempTelephone1(e.target.value)}
-                    />
-                    <IoIosClose onClick={handleRemove1} />
-                  </div>
-                )}
+                <div
+                  className="telephoneHolder"
+                  style={{ display: "flex", flexDirection: "row" }}
+                >
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="tel1"
+                    defaultValue={tempTelephone1}
+                    style={{ marginBottom: "0.5em" }}
+                    onChange={(e) => setTempTelephone1(e.target.value)}
+                  />
+                </div>
                 {tel2 && (
                   <div
                     className="telephoneHolder"
@@ -202,7 +193,7 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                     <IoIosClose onClick={handleRemove2} />
                   </div>
                 )}
-                {(!tel1 || !tel2) && (
+                {!tel2 && (
                   <FaPlus
                     size={"20px"}
                     color={"#01A95D"}
