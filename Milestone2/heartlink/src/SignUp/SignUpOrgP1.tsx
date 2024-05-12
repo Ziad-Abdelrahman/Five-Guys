@@ -480,7 +480,7 @@ function SignUpOrgP1() {
                 Provide us with your organization details
               </h2>
               <div className="dataHolderJJ">
-                <div style={{ marginBottom: "3%" }}>
+                <div>
                   <DropDown
                     options={[
                       "Charity",
