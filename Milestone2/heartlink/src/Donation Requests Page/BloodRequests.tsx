@@ -15,13 +15,62 @@ interface BloodRequestsProps {
 }
 function BloodRequests({ type }: BloodRequestsProps) {
   const detailsList: hashSet = {
-    "1": ["Ahmed", "A+", "57357", "Cairo", "6th Of October"],
-    "2": ["Mohamed", "AB-", "Red Cresent", "Giza", "Sheikh Zayed"],
-    "3": ["Omar", "AB+", "57357", "Alexandria", "Miami"],
-    "4": ["Farah", "B+", "57357", "Cairo", "Maadi"],
-    "5": ["Yassin", "O-", "Magdi Yacoub", "Sharkia", "Zagazig"],
-    "6": ["Younis", "AB-", "Magdi Yacoub", "Cairo", "Maadi"],
-    "7": ["Abdallah", "B-", "Red Cresent", "Giza", "Sheikh Zayed"],
+    "1": [
+      "Ahmed",
+      "A+",
+      "57357",
+      "Cairo",
+      "6th Of October",
+      "Sekat Hadid Al Mahger, Zeinhom, El Sayeda Zeinab",
+    ],
+    "2": [
+      "Mohamed",
+      "AB-",
+      "Red Cresent",
+      "Giza",
+      "Sheikh Zayed",
+      "Abd El Razak El Sanhouri St., Nasr City, Cairo",
+    ],
+    "3": [
+      "Omar",
+      "AB+",
+      "57357",
+      "Alexandria",
+      "Miami",
+      "Abd El Razak El Sanhouri St., Nasr City, Cairo",
+    ],
+    "4": [
+      "Farah",
+      "B+",
+      "57357",
+      "Cairo",
+      "Maadi",
+      "Abd El Razak El Sanhouri St., Nasr City, Cairo",
+    ],
+    "5": [
+      "Yassin",
+      "O-",
+      "Magdi Yacoub",
+      "Sharkia",
+      "Zagazig",
+      "Abd El Razak El Sanhouri St., Nasr City, Cairo",
+    ],
+    "6": [
+      "Younis",
+      "AB-",
+      "Magdi Yacoub",
+      "Cairo",
+      "Maadi",
+      "Sekat Hadid Al Mahger, Zeinhom, El Sayeda Zeinab",
+    ],
+    "7": [
+      "Abdallah",
+      "B-",
+      "Red Cresent",
+      "Giza",
+      "Sheikh Zayed",
+      "Sekat Hadid Al Mahger, Zeinhom, El Sayeda Zeinab",
+    ],
   };
 
   const cardData = [
@@ -120,12 +169,13 @@ function BloodRequests({ type }: BloodRequestsProps) {
               <li>Government: {detailsList[selectedID][3]}</li>
 
               <li>Area: {detailsList[selectedID][4]}</li>
+              <li>Address: {detailsList[selectedID][5]}</li>
             </ul>
           )}
           <div style={{ marginLeft: "40px" }}>
             <iframe
               width="400"
-              height="120"
+              height="110"
               frameBorder="0"
               scrolling="no"
               marginHeight={0}
