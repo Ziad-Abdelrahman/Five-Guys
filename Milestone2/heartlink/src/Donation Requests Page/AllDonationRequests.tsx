@@ -59,8 +59,10 @@ function AllDonationRequests({ type }: DonationProps) {
       "Name: Abdallah",
       "Blood Type: B+",
       "Category: Charity Organization",
-      "Organization: Red Crescent",
-      "Location: Cairo, Maadi",
+      "Hospital name: Red Crescent",
+      "Governerate: Cairo",
+      "Area: Maadi",
+      "Address:Sekat Hadid Al Mahger, Zeinhom, El Sayeda Zeinab",
     ],
     "22": ["Category: Medical Equipment", "Item: Masks", "Quantity: 1000"],
     "23": [
