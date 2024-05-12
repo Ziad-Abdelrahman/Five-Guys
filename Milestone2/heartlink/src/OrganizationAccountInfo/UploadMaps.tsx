@@ -1,5 +1,3 @@
-import Map from "../components/map/Map.tsx";
-
 interface UploadMapsProps {
   area: string;
   city: string;
@@ -26,7 +24,12 @@ function UploadMaps(props: UploadMapsProps) {
           </div>
         </div>
       </div>
-      <Map height={"220px"} width={"300px"} />
+      <iframe
+        width="300"
+        height="220"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=4%20Alouba%20Street%20,%20Off%20Haram%20Street%20,%20Giza%20Egypt+(Baheya%20Foundation)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        title="Children Cancer Hospital Location"
+      />
     </div>
   );
 }
