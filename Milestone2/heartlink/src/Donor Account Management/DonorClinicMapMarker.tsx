@@ -2,12 +2,27 @@ import InputBox from "../components/InputBox/InputBox.tsx";
 import DonateButton from "../components/Buttons/DonateButton.tsx";
 import "./donorAccountMangPage.css";
 import Map from "../components/map/Map.tsx";
-import { useState } from "react";
-function DonorClinicAddress() {
+import { useEffect, useState } from "react";
+
+interface Props {
+  setCurrentStep: Function;
+}
+
+function DonorClinicAddress(props: Props) {
   const [address, setAddress] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isUnderReview, setUnderReview] = useState(false);
-
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isUnderReview) {
+      timer = setTimeout(() => {
+        props.setCurrentStep(0);
+      }, 5000);
+    }
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [isUnderReview]);
   function handleFinishClick() {
     if (!address.trim()) {
       setErrorMessage("Please fill in the Address field.");
@@ -74,7 +89,7 @@ function DonorClinicAddress() {
               )}
               {isUnderReview && (
                 <h3 style={{ marginLeft: "10px", color: "#01A95D" }}>
-                  Your Data Are Under Review!
+                  Your Data is Under Review!
                 </h3>
               )}
             </div>

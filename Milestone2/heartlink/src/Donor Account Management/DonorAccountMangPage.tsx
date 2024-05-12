@@ -80,7 +80,7 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
             <DonorClinicAddress setCurrentStep={setCurrentStep} />
           )}
           {selectedProbono === "doctor" && currentStep === 2 && (
-            <DonorClinicMapMarker />
+            <DonorClinicMapMarker setCurrentStep={setCurrentStep} />
           )}
         </div>
       </div>
