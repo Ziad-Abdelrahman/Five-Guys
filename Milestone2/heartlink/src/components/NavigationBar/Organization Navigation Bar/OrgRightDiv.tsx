@@ -103,7 +103,7 @@ function OrgRightDiv() {
           />
           {/* Label for the checkbox, which will be the clickable area */}
           <label htmlFor="dropdownCheckbox" className="profileCircleContainer">
-            <ProfileCircle initials={"NA"} />
+            <ProfileCircle initials={"FF"} />
           </label>
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
