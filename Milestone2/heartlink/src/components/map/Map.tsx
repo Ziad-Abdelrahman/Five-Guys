@@ -27,7 +27,7 @@ const Map: React.FC<MapProps> = ({ height, width }) => {
     });
     const markers: google.maps.marker.AdvancedMarkerElement[] = [];
     // Add a click event listener to the map
-    map.addListener("click", (event) => {
+    map.addListener("click", (event: { latLng: any }) => {
       markers.forEach((marker) => {
         marker.map = null;
       });
