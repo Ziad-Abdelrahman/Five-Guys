@@ -3,6 +3,7 @@ import DonateButton from "../components/Buttons/DonateButton.tsx";
 import "./donorAccountMangPage.css";
 import Map from "../components/map/Map.tsx";
 import { useEffect, useState } from "react";
+import BackButton from "../components/Buttons/BackButton.tsx";
 
 interface Props {
   setCurrentStep: Function;
@@ -64,22 +65,35 @@ function DonorClinicAddress(props: Props) {
               />
             </div>
 
+            {/*div that holds button and error message*/}
             <div
               style={{
-                marginTop: "10%",
+                marginTop: "5%",
                 display: "flex",
                 flexDirection: "row",
               }}
             >
-              <div onClick={handleFinishClick}>
-                <DonateButton text={"Finish"} />
+              <div>
+                <div onClick={handleFinishClick}>
+                  <DonateButton text={"Finish"} />
+                </div>
+                <div>
+                  <BackButton
+                    style={{
+                      height: "30px",
+                      marginTop: "10px",
+                      width: "100%",
+                    }}
+                    handleClick={() => props.setCurrentStep(1)}
+                  />
+                </div>
               </div>
               {errorMessage && (
                 <div
                   style={{
                     display: "flex",
                     color: "red",
-                    marginLeft: "10px",
+                    marginLeft: "15%",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
@@ -88,7 +102,7 @@ function DonorClinicAddress(props: Props) {
                 </div>
               )}
               {isUnderReview && (
-                <h3 style={{ marginLeft: "10px", color: "#01A95D" }}>
+                <h3 style={{ marginLeft: "15%", color: "#01A95D" }}>
                   Your Data is Under Review!
                 </h3>
               )}
