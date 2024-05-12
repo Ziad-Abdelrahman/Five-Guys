@@ -15,6 +15,21 @@ interface ClothesProps {
 function EditClothes(props: ClothesProps) {
   const [gender, setGender] = useState(props.gender);
   const [season, setSeason] = useState(props.season);
+  const [material, setMaterial] = useState(props.material);
+  const [category, setCategory] = useState(props.category);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleClick = () => {
+    if (category === "Specify category"|| material === "Specify category") {
+      setErrorMessage(
+        "Please select a material and a category. "
+      );
+      return false;
+    }
+    setErrorMessage("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
   return (
     <Template1
       leftPanelDiv={
@@ -79,6 +94,8 @@ function EditClothes(props: ClothesProps) {
               ]}
               selected={props.category}
               width={"280px"}
+
+              
             />
             <p />
             <h6>Please specify clothing season</h6>
@@ -134,6 +151,7 @@ function EditClothes(props: ClothesProps) {
               selected={props.material}
               width={"280px"}
             />
+            {errorMessage && (<div style={{ color: "red", marginTop: "0.5rem" }}>{errorMessage}</div>)}
           </div>
         </div>
       }
@@ -141,6 +159,7 @@ function EditClothes(props: ClothesProps) {
       hasButton={true}
       forwardPath={"../cont/" + props.id}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
     />
   );
 }
