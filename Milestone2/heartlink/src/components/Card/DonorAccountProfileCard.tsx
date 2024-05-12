@@ -38,7 +38,9 @@ function DonorAccountProfileCard(props: DonorAccountProfileCardProps) {
               }}
             />
             <div className="card-dropdown-content">
-              <div onClick={handleClick}>Edit Info</div>
+              <div onClick={handleClick}>
+                <a>Edit Info</a>{" "}
+              </div>
             </div>
           </div>
         </div>
