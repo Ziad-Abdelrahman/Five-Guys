@@ -5,7 +5,8 @@ interface InputBoxProps {
   label: string;
   width: string;
   text: string;
-  hasText: boolean;
+  hasText?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   setChecked: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -16,7 +17,15 @@ function EditInputBox({
   text,
   hasText,
   setChecked,
+  onChange,
 }: InputBoxProps) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setChecked(value);
+    if (onChange) {
+      onChange(e); // Call the onChange handler passed from parent component
+    }
+  };
   return hasText ? (
     <div className="form-floating mb-3" style={{ width: width }}>
       <input
@@ -24,7 +33,7 @@ function EditInputBox({
         className="form-control"
         id="floatingInput"
         value={text}
-        onChange={() => setChecked("")}
+        onChange={handleChange}
       />
       <label>{label}</label>
     </div>
