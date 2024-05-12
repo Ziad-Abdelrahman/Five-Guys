@@ -2,6 +2,7 @@ import InputBox from "../components/InputBox/InputBox.tsx";
 import DonateButton from "../components/Buttons/DonateButton.tsx";
 import "./donorAccountMangPage.css";
 import { useState } from "react";
+import BackButton from "../components/Buttons/BackButton.tsx";
 interface Props {
   setCurrentStep: Function;
 }
@@ -63,6 +64,7 @@ function DonorClinicAddress(props: Props) {
                 onChange={(e) => setArea(e.target.value)}
               />
             </div>
+            {/*div that holds button and error message*/}
             <div
               style={{
                 marginTop: "0%",
@@ -70,15 +72,28 @@ function DonorClinicAddress(props: Props) {
                 flexDirection: "row",
               }}
             >
-              <div onClick={handleNextClick}>
-                <DonateButton text={"Next"} />
+              {/*div that holds 2 buttons*/}
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div onClick={handleNextClick}>
+                  <DonateButton text={"Next"} />
+                </div>
+                <div>
+                  <BackButton
+                    style={{
+                      height: "30px",
+                      marginTop: "10px",
+                      width: "100%",
+                    }}
+                    handleClick={() => props.setCurrentStep(0)}
+                  />
+                </div>
               </div>
               {errorMessage && (
                 <div
                   style={{
                     display: "flex",
                     color: "red",
-                    marginLeft: "10px",
+                    marginLeft: "15%",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
