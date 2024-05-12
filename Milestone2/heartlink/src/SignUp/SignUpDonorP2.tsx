@@ -1,4 +1,4 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import logo from "../assets/minilogo.png";
 import Button from "../components/Buttons/Button.tsx";
 import BackButton from "../components/Buttons/BackButton.tsx";
@@ -7,12 +7,21 @@ import Map from "../components/map/Map.tsx";
 import FileUploader from "../components/FileUploader/FileUploader.tsx";
 import EditRadioButton from "../components/RadioButton/EditRadioButton.tsx";
 import { useState } from "react";
+import CreateSignUp from "../components/View Request Popup/CreateSignUp.tsx";
 
 function SignUpDonorP2() {
+  const navigate = useNavigate();
   const [specialization, setSpecialization] = useState("");
+  const [show, setShow] = useState(false);
+  function handleForm(event: { preventDefault: () => void }) {
+    event.preventDefault();
+    if (specialization === "Later") navigate("../../Donor");
+    else setShow(true);
+  }
   return (
     <div>
       <>
+        {show && <CreateSignUp />}
         <div className="signUpMain">
           <div className="leftPartSignupB">
             <div className="logo-containerx">
@@ -27,7 +36,7 @@ function SignUpDonorP2() {
               <p className="leftTextSecond"> Only few steps ahead .. </p>
             </div>
           </div>
-          <Form action="../../Donor/">
+          <Form onSubmit={handleForm}>
             <div className="rightPanelSignUpA">
               <div className="rightPanel-containerS">
                 <h2 style={{ position: "relative", bottom: "5%" }}>

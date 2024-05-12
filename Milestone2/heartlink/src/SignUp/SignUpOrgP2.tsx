@@ -5,10 +5,19 @@ import "./SignUp.css";
 import Map from "../components/map/Map.tsx";
 import FileUploader from "../components/FileUploader/FileUploader.tsx";
 import { Form, Link } from "react-router-dom";
+import { useState } from "react";
+import CreateSignUp from "../components/View Request Popup/CreateSignUp.tsx";
 
 function SignUpOrgP2() {
+  const [form, setForm] = useState(false);
+
+  function onHandleForm() {
+    setForm(true);
+  }
+
   return (
     <>
+      {form && <CreateSignUp />}
       <div className="signUpMain" style={{ flexDirection: "row-reverse" }}>
         <div className="rightPartSignupB">
           <div className="logo-containerx">
@@ -24,7 +33,7 @@ function SignUpOrgP2() {
           </div>
         </div>
 
-        <Form action="../../Organization">
+        <Form onSubmit={onHandleForm}>
           <div className="rightPanelSignUpAB">
             <div className="rightPanel-containerS">
               <h2 style={{ position: "relative", bottom: "1em" }}>
