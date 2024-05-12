@@ -6,6 +6,11 @@ import "../Donation Requests Page/AllDonationRequests.css";
 import { useState } from "react";
 import OrgNavgBar from "../components/NavigationBar/Organization Navigation Bar/OrgNavgBar.tsx";
 import { useLoaderData } from "react-router-dom";
+import book1 from "../assets/book1.jpeg";
+import book2 from "../assets/book2.jpeg";
+import medd from "../assets/medd.png";
+import toy1 from "../assets/toy1.png";
+import toy2 from "../assets/toy2.png";
 
 function ViewDonationPostsWebpage() {
   const [selectedRadioButton, setSelectedRadioButton] = useState("");
@@ -70,43 +75,7 @@ function ViewDonationPostsWebpage() {
             tool={card.tool}
           ></DonationPostCard>
         ))}
-      {allDataList
-        .filter(
-          (card) =>
-            (card.id === "7" || card.id === "8") &&
-            (selectedRadioButton === "" || card.status === selectedRadioButton),
-        )
-        .map((card) => (
-          <DonationPostCard
-            id={card.id}
-            typeOfRequest={card.typeOfRequest}
-            datePosted={card.datePosted}
-            status={card.status}
-            bloodtype={card.bloodtype}
-            patientname={card.patientname}
-          ></DonationPostCard>
-        ))}
-      {allDataList
-        .filter(
-          (card) =>
-            (card.id === "9" || card.id === "10") &&
-            (selectedRadioButton === "" || card.status === selectedRadioButton),
-        )
-        .map((card) => (
-          <DonationPostCard
-            id={card.id}
-            typeOfRequest={card.typeOfRequest}
-            datePosted={card.datePosted}
-            status={card.status}
-            clothesage={card.clothesage}
-            clothesgender={card.clothesgender}
-            kind={card.kind}
-            season={card.season}
-            material={card.material}
-            size={card.size}
-            pieces={card.pieces}
-          ></DonationPostCard>
-        ))}
+
       {allDataList
         .filter(
           (card) =>
@@ -158,6 +127,7 @@ function ViewDonationPostsWebpage() {
             toygender={card.toygender}
             toyname={card.toyname}
             toyquantity={card.toyquantity}
+            toyimage={card.id === "15" ? toy1 : toy2}
           ></DonationPostCard>
         ))}
       {allDataList
@@ -175,6 +145,7 @@ function ViewDonationPostsWebpage() {
             medcategory={card.medcategory}
             medicationname={card.medicationname}
             medquantity={card.medquantity}
+            medimage={medd}
           ></DonationPostCard>
         ))}
       {allDataList
@@ -195,6 +166,44 @@ function ViewDonationPostsWebpage() {
             language={card.language}
             edition={card.edition}
             copies={card.copies}
+            bookimage={card.id === "1" ? book1 : book2}
+          ></DonationPostCard>
+        ))}
+      {allDataList
+        .filter(
+          (card) =>
+            (card.id === "7" || card.id === "8") &&
+            (selectedRadioButton === "" || card.status === selectedRadioButton),
+        )
+        .map((card) => (
+          <DonationPostCard
+            id={card.id}
+            typeOfRequest={card.typeOfRequest}
+            datePosted={card.datePosted}
+            status={card.status}
+            bloodtype={card.bloodtype}
+            patientname={card.patientname}
+          ></DonationPostCard>
+        ))}
+      {allDataList
+        .filter(
+          (card) =>
+            (card.id === "9" || card.id === "10") &&
+            (selectedRadioButton === "" || card.status === selectedRadioButton),
+        )
+        .map((card) => (
+          <DonationPostCard
+            id={card.id}
+            typeOfRequest={card.typeOfRequest}
+            datePosted={card.datePosted}
+            status={card.status}
+            clothesage={card.clothesage}
+            clothesgender={card.clothesgender}
+            kind={card.kind}
+            season={card.season}
+            material={card.material}
+            size={card.size}
+            pieces={card.pieces}
           ></DonationPostCard>
         ))}
     </div>
