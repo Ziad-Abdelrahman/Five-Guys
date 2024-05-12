@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import EditInputBox from "../../../components/InputBox/EditInputBox.tsx";
 import EditNumberInputBox from "../../../components/InputBox/EditNumberInputBox.tsx";
 import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
@@ -14,26 +14,17 @@ interface ToysPt2Props {
 function EditToysPt2(props: ToysPt2Props) {
   const [toyName, setToyName] = useState(props.toyName);
   const [quantity, setQuantity] = useState(props.quantity);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
   const divStyle = {
     display: "flex",
     justifyContent: "space-between",
     width: "600px",
   };
-  const [error, setError] = useState("");
 
-  const [toy, setToy] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [img, setImg] = useState("");
-
-  const handlleQuantityChange = (num: string) => {
-    setQuantity(num);
-  };
-  const handleImage = (x: boolean) => {
-    if (x) setImg("Image Uploaded");
-    else setImg("");
-  };
   const handleClick = () => {
-    if (toy.trim() === "" || quantity.trim() === "" || img.trim() === "") {
+    if (toyName.trim() === "" || quantity.trim() === "") {
       setError("Please enter the toy name and the quantity");
       return false;
     }
@@ -42,9 +33,7 @@ function EditToysPt2(props: ToysPt2Props) {
     console.log("Form submitted successfully!");
     return true;
   };
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setToy(e.target.value);
-  };
+
   return (
     <Template1
       leftPanelDiv={
@@ -90,12 +79,11 @@ function EditToysPt2(props: ToysPt2Props) {
                 {" "}
                 Please upload the toy's photo
               </h5>
-              <ImageUploader
-                width={"280px"}
-                height={"180px"}
-                handleUpload={handleImage}
-              />
+              <ImageUploader width={"280px"} height={"180px"} />
             </div>
+            {error && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>{error}</div>
+            )}
           </div>
         </>
       }
@@ -103,6 +91,7 @@ function EditToysPt2(props: ToysPt2Props) {
       hasButton={true}
       forwardPath={"../../ViewPosts"}
       backButtonPath={"../" + props.id}
+      handleClick={handleClick}
     />
   );
 }

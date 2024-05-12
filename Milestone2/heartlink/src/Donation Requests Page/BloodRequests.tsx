@@ -149,11 +149,11 @@ function BloodRequests({ type }: BloodRequestsProps) {
         {cardData
           .filter(
             (card) =>
-              (detailsList[card.buttonID][0] === selectedHospital ||
+              (detailsList[card.buttonID][2] === selectedHospital ||
                 selectedHospital === "") &&
-              (detailsList[card.buttonID][1] === selectedGovernment ||
+              (detailsList[card.buttonID][3] === selectedGovernment ||
                 selectedGovernment === "") &&
-              (detailsList[card.buttonID][2] === selectedArea ||
+              (detailsList[card.buttonID][4] === selectedArea ||
                 selectedArea === ""),
           )
           .map((card) => (

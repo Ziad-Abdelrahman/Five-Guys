@@ -9,6 +9,10 @@ import Headerofsection from "../components/Header/HeaderOfSection.tsx";
 import SchoolSuppliesFilter from "../components/DonorFilterCard/SchoolSuppliesFilter.tsx";
 import DonationRequestCard from "../components/Card/DonationRequestCard.tsx";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
+import GreatGatsby from "../assets/the_great_gatspy.jpg";
+import DataBase from "../assets/DatabaseBook1.jpeg";
+import HforHope from "../assets/book1.jpeg";
+import Mocking from "../assets/toKillMockingBird.webp";
 import { useState } from "react";
 import hashSet from "../hashSet";
 
@@ -18,15 +22,47 @@ interface SchoolSuppliesRequestsProps {
 
 function SchoolSuppliesRequests({ type }: SchoolSuppliesRequestsProps) {
   const detailsList: hashSet = {
-    "60": ["stationary", "Writing Tools", "Pens", "100"],
-    "61": ["books", "Textbooks", "Math", "50"],
+    "60": ["Stationary", "Writing Tools", "Pens", "100"],
+    "61": [
+      "Books",
+      "H for hope",
+      "Elizabeth Kolbert",
+      "English",
+      "First",
+      "This book is for a child who is in need of hope and inspiration.",
+      "50",
+    ],
     "62": ["Stationary", "Writing Tools", "Pencils", "200"],
     "63": ["Stationary", "Paper Products", "Copybooks", "100"],
     "64": ["Stationary", "Paper Products", "Notebooks", "100"],
-    "65": ["Books", "Textbooks", "Science", "50"],
-    "66": ["Books", "Textbooks", "English", "50"],
+    "65": [
+      "Books",
+      "To Kill a Mockingbird",
+      "Harper Lee",
+      "English",
+      "First",
+      "A powerful story of racial injustice and moral growth in the American South.",
+      "50",
+    ],
+    "66": [
+      "Books",
+      "The Great Gatsby",
+      "F. Scott Fitzgerald",
+      "English",
+      "1st",
+      "A classic novel depicting the roaring twenties in America.",
+      "50",
+    ],
     "67": ["Stationary", "Writing Tools", "Erasers", "100"],
-    "68": ["Books", "Textbooks", "History", "50"],
+    "68": [
+      "Books",
+      "DATABASE SYSTEMS",
+      "Ullman",
+      "English",
+      "Second",
+      "This books explains dbms",
+      "50",
+    ],
     "69": ["Stationary", "Paper Products", "Sticky Notes", "100"],
   };
   //responsible for filtering the requests
@@ -53,21 +89,67 @@ function SchoolSuppliesRequests({ type }: SchoolSuppliesRequestsProps) {
   return (
     <>
       <DonorNavigationBar type={type} />
-      <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
-        <div>
-          {detailsList[selectedID] && (
-            <ul>
-              <li>Type: {detailsList[selectedID][0]}</li>
-              <br />
-              <li>Category: {detailsList[selectedID][1]}</li>
-              <br />
-              <li>Item: {detailsList[selectedID][2]}</li>
-              <br />
-              <li>Quantity: {detailsList[selectedID][3]}</li>
-            </ul>
+      {selectedID != "" && (
+        <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
+          {detailsList[selectedID][0] == "Stationary" && (
+            <div>
+              {detailsList[selectedID] && (
+                <ul>
+                  <li>Type: {detailsList[selectedID][0]}</li>
+                  <br />
+                  <li>Category: {detailsList[selectedID][1]}</li>
+                  <br />
+                  <li>Item: {detailsList[selectedID][2]}</li>
+                  <br />
+                  <li>Quantity: {detailsList[selectedID][3]}</li>
+                </ul>
+              )}
+            </div>
           )}
-        </div>
-      </ViewPopup>
+          {detailsList[selectedID][0] == "Books" && (
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              {detailsList[selectedID] && (
+                <ul style={{ width: "340px" }}>
+                  <li>Type: {detailsList[selectedID][0]}</li>
+                  <li>Book name: {detailsList[selectedID][1]}</li>
+                  <li>Author name: {detailsList[selectedID][2]}</li>
+                  <li>language: {detailsList[selectedID][3]}</li>
+                  <li>edition: {detailsList[selectedID][4]}</li>
+                  <li>summary: {detailsList[selectedID][5]}</li>
+                </ul>
+              )}
+              {selectedID == "61" && (
+                <img
+                  style={{ width: "20%", height: "14%" }}
+                  src={HforHope}
+                  alt="H for hope"
+                />
+              )}
+              {selectedID == "65" && (
+                <img
+                  style={{ width: "20%", height: "14%" }}
+                  src={Mocking}
+                  alt="Mocking"
+                />
+              )}
+              {selectedID == "66" && (
+                <img
+                  style={{ width: "20%", height: "14%" }}
+                  src={GreatGatsby}
+                  alt="The Great Gatsby"
+                />
+              )}
+              {selectedID == "68" && (
+                <img
+                  style={{ width: "20%", height: "14%" }}
+                  src={DataBase}
+                  alt={"DataBase"}
+                />
+              )}
+            </div>
+          )}
+        </ViewPopup>
+      )}
       <Headerofsection title={"School Supplies Requests"} />
       <div className="filters-container">
         <div className="filters-label">
