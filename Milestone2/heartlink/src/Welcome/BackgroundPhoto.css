@@ -1,9 +1,11 @@
 .welcome{
     top:30%;
-    position: absolute;
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: -1;
+
 }
 .welcome h1{
     font-size: 3.5em;
@@ -17,9 +19,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
+    z-index: -2;
+    /* The image used */
+    background-image: url("../assets/dashBoard.png");
 
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .backgroundphotoHolder{
     height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
 }

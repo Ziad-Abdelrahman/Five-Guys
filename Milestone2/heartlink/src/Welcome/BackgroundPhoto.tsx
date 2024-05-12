@@ -1,4 +1,3 @@
-import img from "../assets/dashBoard.png";
 import "./BackgroundPhoto.css";
 const hideLogin = () => {
   var login = document.querySelector(".login-container") as HTMLElement;
@@ -8,19 +7,14 @@ const hideLogin = () => {
 };
 function BackgroundPhoto() {
   return (
-    <div className="backgroundphotoHolder" onClick={hideLogin}>
+    <div className="backgroundphotoHolder">
       <div className="welcome">
         <h1>
           Fueling Hope
           <br /> Igniting Change
         </h1>
       </div>
-      <img
-        className="backgroundphoto"
-        draggable="false"
-        src={img}
-        alt="placeholder"
-      />
+      <div className="backgroundphoto"></div>
     </div>
   );
 }
