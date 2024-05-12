@@ -33,7 +33,7 @@ function OrganizationAccountProfileCard(
             <p>{props.type}</p>
             <p>{props.email}</p>
             <p>{props.hotline}</p>
-            <p>{props.telephone}</p>
+            {props.telephone && <p>{props.telephone}</p>}
           </div>
         </div>
       </div>
