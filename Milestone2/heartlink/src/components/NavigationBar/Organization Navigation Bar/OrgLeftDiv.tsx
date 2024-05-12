@@ -34,6 +34,9 @@ function OrgLeftDiv() {
         <div className="org-backdrop" style={{ display: "block" }}></div>
       )}
       <div className="dropdown">
+        <button className="dropbtn">Dashboard</button>
+      </div>
+      <div className="dropdown">
         <button className="dropbtn">
           Posts
           <img className="arrow-in-button" src={arrow} alt="arrow" />
