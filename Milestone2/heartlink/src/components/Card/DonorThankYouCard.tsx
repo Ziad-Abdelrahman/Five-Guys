@@ -6,9 +6,16 @@ interface DonorThankYouCardProps {
   Buttontext?: string;
   handleClick?: () => void;
   width?: string;
+  type?: string;
 }
 
 function donorThankYouCard(props: DonorThankYouCardProps) {
+  const navigatTo =
+    props.type === "teacher"
+      ? "/Teacher"
+      : props.type === "doctor"
+        ? "/Doctor"
+        : "/Donor";
   const ButtonContent = (
     <button
       className={"donor-return-to-dashboard-button"}
@@ -52,7 +59,7 @@ function donorThankYouCard(props: DonorThankYouCardProps) {
             }}
           >
             {props.Buttontext === "Dashboard" ? (
-              <Link to="/Donor">{ButtonContent}</Link>
+              <Link to={navigatTo}>{ButtonContent}</Link>
             ) : (
               ButtonContent
             )}

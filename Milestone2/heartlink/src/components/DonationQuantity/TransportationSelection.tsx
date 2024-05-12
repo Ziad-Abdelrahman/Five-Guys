@@ -7,7 +7,12 @@ import BackButton from "../Buttons/BackButton.tsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DonorThankYouCard from "../Card/DonorThankYouCard.tsx";
-function TransportationSelection() {
+
+interface Props {
+  type: string;
+}
+
+function TransportationSelection({ type }: Props) {
   const [selectedRadio, setSelectedRadio] = useState("");
   const [selectedTiming, setselectedTiming] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -92,7 +97,13 @@ function TransportationSelection() {
           <DonateButton text={"Finish"} onClick={handleClick} />
         </div>
       </div>
-      {thankYouCard && <DonorThankYouCard Buttontext={"Dashboard"} />}
+      {thankYouCard && (
+        <DonorThankYouCard
+          Buttontext={"Dashboard"}
+          type={type}
+          width={"120px"}
+        />
+      )}
     </div>
   );
 }
