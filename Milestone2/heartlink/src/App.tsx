@@ -66,7 +66,6 @@ import AdminNavbar from "./components/NavigationBar/AdminNavbar/AdminNavbar.tsx"
 import DonorNavigationBar from "./components/NavigationBar/Donor Navigation Bar/DonorNavigationBar.tsx";
 import CompletedAccountManagement from "./OrganizationAccountInfo/CompletedAccountManagement.tsx";
 import CompleteDonorAccountInfo from "./Donor Account Management/CompleteDonorAccountInfo.tsx";
-import UpdatedOrganizationInfo from "./OrganizationAccountInfo/UpdatedOrganizationInfo.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -499,7 +498,6 @@ const router = createBrowserRouter(
         />
         <Route path="ChangePass" element={<ChangePass />} />
       </Route>
-      <Route path={"test"} element={<UpdatedOrganizationInfo />}></Route>
     </Route>,
   ),
 );
