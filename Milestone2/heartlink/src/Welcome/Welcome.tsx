@@ -47,7 +47,13 @@ function Welcome() {
               <LoginButton />
             </>
           }
-          leftDiv={<MdOutlineHelp size={30} onClick={showHowTo} />}
+          leftDiv={
+            <MdOutlineHelp
+              size={30}
+              onClick={showHowTo}
+              style={{ cursor: "pointer" }}
+            />
+          }
           dashboard="/"
         />
       </div>
