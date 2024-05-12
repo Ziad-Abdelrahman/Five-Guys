@@ -14,6 +14,8 @@ interface CategoriesPageProps {
 }
 
 function CategoriesPage({ type }: CategoriesPageProps) {
+  const donorType =
+    type === "teacher" ? "/Teacher" : type === "doctor" ? "/Doctor" : "/Donor";
   return (
     <>
       <DonorNavigationBar type={type} />
@@ -23,34 +25,34 @@ function CategoriesPage({ type }: CategoriesPageProps) {
           <Category
             image={clothes}
             title="Clothing"
-            forwardPath={"/Donor/ClothingRequests"}
+            forwardPath={donorType + "/ClothingRequests"}
           />
           <Category
             image={food}
             title="Food"
-            forwardPath={"/Donor/FoodRequests"}
+            forwardPath={donorType + "/FoodRequests"}
           />
           <Category
             image={Toys}
             title="Toys"
-            forwardPath={"/Donor/ToysRequests"}
+            forwardPath={donorType + "/ToysRequests"}
           />
         </div>
         <div className="three-cards-holder">
           <Category
             image={medication}
             title="Medications"
-            forwardPath={"/Donor/MedicationRequests"}
+            forwardPath={donorType + "/MedicationRequests"}
           />
           <Category
             image={SchoolsSupplies}
             title="School Supplies"
-            forwardPath={"/Donor/SchoolRequests"}
+            forwardPath={donorType + "/SchoolRequests"}
           />
           <Category
             image={blood}
             title="Blood Donation"
-            forwardPath={"/Donor/BloodRequests"}
+            forwardPath={donorType + "/BloodRequests"}
           />
         </div>
       </div>
