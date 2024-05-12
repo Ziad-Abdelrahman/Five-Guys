@@ -1,6 +1,6 @@
 import ImageUploader from "../../../components/FileUploader/ImageUploader.tsx";
 import Template1 from "../../../components/Templates/Template1.tsx";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import Createcomp from "../../../components/View Request Popup/Createcomp.tsx";
 
 interface EditBooksPt2Props {
@@ -14,8 +14,12 @@ function EditBooksPt2(props: EditBooksPt2Props) {
   const [text, setText] = useState("");
   const [success, setSuccess] = useState(false);
   const [img, setImg] = useState("");
+
+
+
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
+
   };
   const handleImage = (x: boolean) => {
     if (x) setImg("Image Uploaded");
@@ -72,6 +76,7 @@ function EditBooksPt2(props: EditBooksPt2Props) {
                 id="exampleFormControlTextarea1"
                 rows={9}
                 style={{ height: "270px", borderColor: "#01A95D" }}
+                value = {text}
                 onChange={handleChange}
               >
                 {props.use}
