@@ -9,6 +9,8 @@ import Teacher from "../assets/teachervector.png";
 import { useState } from "react";
 import DonorAddTeacherInfo from "./DonorAddTeacherInfo.tsx";
 import DonorAddDoctorInfo from "./DonorAddDoctorInfo.tsx";
+import DonorClinicAddress from "./DonorClinicAddress.tsx";
+import DonorClinicMapMarker from "./DonorClinicMapMarker.tsx";
 
 interface DonorAccountMangPageProps {
   name: string;
@@ -19,9 +21,12 @@ interface DonorAccountMangPageProps {
   tel1: string;
   tel2: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
+  type?: string;
 }
 
 function DonorAccountMangPage(props: DonorAccountMangPageProps) {
+  const [currentStep, setCurrentStep] = useState(0);
+
   const [selectedProbono, setSelectedProbono] = useState("");
 
   // Function to toggle the visibility of the dropdown based on the card clicked
@@ -34,7 +39,7 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
   };
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={props.type} />
       <HeaderOfSection title={"Account"} />
       <div className="management-cards-container">
         <DonorAccountProfileCard
@@ -49,22 +54,34 @@ function DonorAccountMangPage(props: DonorAccountMangPageProps) {
         />
         <div className={"master-probono-container"}>
           <div className={"pro-bono-cards-container"}>
-            <div
-              className={"card-and-drop-down-container"}
-              onClick={() => toggleProbonoInfo("doctor")}
-            >
-              <DonorProbonoCard image={Doctor} title={"Become a Doctor"} />
-            </div>
+            {props.type != "doctor" && (
+              <div
+                className={"card-and-drop-down-container"}
+                onClick={() => toggleProbonoInfo("doctor")}
+              >
+                <DonorProbonoCard image={Doctor} title={"Become a Doctor"} />
+              </div>
+            )}
 
-            <div
-              className={"card-and-drop-down-container"}
-              onClick={() => toggleProbonoInfo("teacher")}
-            >
-              <DonorProbonoCard image={Teacher} title={"Become a Teacher"} />
-            </div>
+            {props.type != "teacher" && (
+              <div
+                className={"card-and-drop-down-container"}
+                onClick={() => toggleProbonoInfo("teacher")}
+              >
+                <DonorProbonoCard image={Teacher} title={"Become a Teacher"} />
+              </div>
+            )}
           </div>
           {selectedProbono === "teacher" && <DonorAddTeacherInfo />}
-          {selectedProbono === "doctor" && <DonorAddDoctorInfo />}
+          {selectedProbono === "doctor" && currentStep === 0 && (
+            <DonorAddDoctorInfo setCurrentStep={setCurrentStep} />
+          )}
+          {selectedProbono === "doctor" && currentStep === 1 && (
+            <DonorClinicAddress setCurrentStep={setCurrentStep} />
+          )}
+          {selectedProbono === "doctor" && currentStep === 2 && (
+            <DonorClinicMapMarker setCurrentStep={setCurrentStep} />
+          )}
         </div>
       </div>
     </>

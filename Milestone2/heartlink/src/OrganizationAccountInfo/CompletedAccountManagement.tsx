@@ -12,7 +12,7 @@ function CompletedAccountManagement() {
   const [telephone2, setTelephone2] = useState("+225362211");
   const [area, setArea] = useState("El Haram");
   const [city, setCity] = useState("Giza");
-  const [address, setAddress] = useState("4, Allouba St. off El Haram");
+  const [address, setAddress] = useState("4, Allouba St");
   const [repName, setRepName] = useState("Farah");
   const [repEmail, setRepEmail] = useState("farahh_faisall@hotmail");
   const [repGender, setRepGender] = useState("Female");

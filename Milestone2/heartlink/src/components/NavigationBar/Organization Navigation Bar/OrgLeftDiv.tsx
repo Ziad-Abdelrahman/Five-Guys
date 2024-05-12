@@ -34,6 +34,16 @@ function OrgLeftDiv() {
         <div className="org-backdrop" style={{ display: "block" }}></div>
       )}
       <div className="dropdown">
+        <Link to={"/Organization"}>
+          <button className="dropbtn">Dashboard</button>{" "}
+        </Link>
+      </div>
+      <div className="dropdown">
+        <button className="dropbtn" onClick={() => setShowSubmit(true)}>
+          Drop-off Time
+        </button>
+      </div>
+      <div className="dropdown">
         <button className="dropbtn">
           Posts
           <img className="arrow-in-button" src={arrow} alt="arrow" />
@@ -41,15 +51,6 @@ function OrgLeftDiv() {
         <div className="dropdown-content">
           <Link to="/Organization/ViewPosts">View All Posts</Link>
           <Link to="/Organization/CreateAPost">Create Post</Link>
-        </div>
-      </div>
-      <div className="dropdown">
-        <button className="dropbtn">
-          Drop-off Time
-          <img className="arrow-in-button" src={arrow} alt="arrow" />
-        </button>
-        <div className="dropdown-content">
-          <a onClick={() => setShowSubmit(true)}>Specify Drop-off timing </a>
         </div>
       </div>
       <div className="dropdown">

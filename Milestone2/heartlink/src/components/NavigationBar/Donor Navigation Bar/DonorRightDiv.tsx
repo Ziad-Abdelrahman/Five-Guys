@@ -4,7 +4,10 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import ProfileCircle from "../ProfileCircle.tsx";
 
-function DonorRightDiv() {
+interface DonorRightDivProps {
+  type?: string;
+}
+function DonorRightDiv({ type }: DonorRightDivProps) {
   // State to manage the visibility of the notifications dropdown
   const [showNotifications, setNotifications] = useState(false);
 
@@ -89,7 +92,7 @@ function DonorRightDiv() {
           {/* Dropdown content that shows up when checkbox is checked */}
           <ul className="profiledropdownContent">
             <li>
-              <Link to={"/Donor/AccountInfo"}>Account info</Link>
+              <Link to={type + "/AccountInfo"}>Account info</Link>
             </li>
             <li>
               <Link to={"/"}> Logout</Link>

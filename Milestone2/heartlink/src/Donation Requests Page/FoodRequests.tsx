@@ -10,7 +10,10 @@ import FoodDonationFilter from "../components/DonorFilterCard/FoodDonationFilter
 import hashSet from "../hashSet";
 import { useState } from "react";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
-function FoodRequests() {
+interface FoodRequestsProps {
+  type?: string;
+}
+function FoodRequests({ type }: FoodRequestsProps) {
   const detailsList: hashSet = {
     "24": ["Canned Food", "Beans", "100"],
     "25": ["Canned Food", "Tomato Paste", "50"],
@@ -45,7 +48,7 @@ function FoodRequests() {
   }
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

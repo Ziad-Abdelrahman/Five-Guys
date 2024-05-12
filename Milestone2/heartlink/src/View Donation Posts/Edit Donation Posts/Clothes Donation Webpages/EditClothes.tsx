@@ -127,7 +127,6 @@ function EditClothes(props: ClothesProps) {
             </h6>
             <EditDropDown
               options={[
-                "Specify a material",
                 "Cashmere",
                 "Chiffon",
                 "Corduroy",

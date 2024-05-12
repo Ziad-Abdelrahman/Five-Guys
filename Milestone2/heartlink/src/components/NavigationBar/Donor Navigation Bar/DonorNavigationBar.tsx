@@ -3,12 +3,18 @@ import DonorLeftDiv from "./DonorLeftDiv";
 import DonorRightDiv from "./DonorRightDiv";
 import NavigationBar from "../NavigationBar.tsx";
 
-function DonorNavigationBar() {
+interface DonorNavigationBarProps {
+  type?: string;
+}
+
+function DonorNavigationBar({ type }: DonorNavigationBarProps) {
+  const donorType =
+    type === "teacher" ? "/Teacher" : type === "doctor" ? "/Doctor" : "/Donor";
   return (
     <NavigationBar
-      leftDiv={<DonorLeftDiv />}
-      rightDiv={<DonorRightDiv />}
-      dashboard={"/Donor"}
+      leftDiv={<DonorLeftDiv type={type} />}
+      rightDiv={<DonorRightDiv type={donorType} />}
+      dashboard={donorType}
     />
   );
 }

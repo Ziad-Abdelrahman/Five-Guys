@@ -124,7 +124,7 @@ function TeacherPosts() {
   }
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={"teacher"} />
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

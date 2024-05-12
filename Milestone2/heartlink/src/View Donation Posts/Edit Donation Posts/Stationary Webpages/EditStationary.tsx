@@ -23,16 +23,15 @@ function EditStationary(props: StationaryProps) {
     setSelectedSupply("");
   };
   const handleClick = () => {
-    if (quantity.trim() === "" || selectedCategory.trim() === "" || selectedSupply.trim() === "" ) {
+    if (quantity.trim() === "") {
       setErrorMessage("Please provide all required details. ");
       return false;
     }
-    setErrorMessage("");
     setSuccess(true);
+    setErrorMessage("");
     console.log("Form submitted successfully!");
     return true;
   };
-
 
   const categoryExamples: hashSet = {
     "Art Supplies": [
@@ -111,9 +110,7 @@ function EditStationary(props: StationaryProps) {
               What category of school supplies do you need?
             </h4>
             <EditDropDown
-              options={["Specify category"].concat(
-                Object.keys(categoryExamples),
-              )}
+              options={Object.keys(categoryExamples)}
               selected={selectedCategory}
               width={"280px"}
               onChange={handleCategoryChange}
@@ -126,9 +123,7 @@ function EditStationary(props: StationaryProps) {
             </h6>
             <EditDropDown
               options={
-                selectedCategory
-                  ? ["Select supply"].concat(categoryExamples[selectedCategory])
-                  : []
+                selectedCategory ? categoryExamples[selectedCategory] : []
               }
               selected={selectedSupply}
               width={"280px"}
@@ -146,9 +141,12 @@ function EditStationary(props: StationaryProps) {
               hasText={true}
               setChecked={setQuantity}
             />
-            {errorMessage && (<div style={{ color: "red", marginTop: "0.5rem" }}>{errorMessage}</div>)}
+            {errorMessage && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>
+                {errorMessage}
+              </div>
+            )}
           </div>
-
         </>
       }
       rightPanelButtonText={"Update"}

@@ -1,9 +1,15 @@
 import "../../Buttons/Buttons.css";
 import arrow from "../../../assets/right-arrow.png";
 import "./AdminLeftDiv.css";
+import { Link } from "react-router-dom";
 function AdminLeftDiv() {
   return (
     <>
+      <div className="dropdown">
+        <Link to={"/Admin"}>
+          <button className="dropbtn">Dashboard</button>{" "}
+        </Link>
+      </div>
       <div className="dropdown">
         <button className="dropbtn">
           Organizations

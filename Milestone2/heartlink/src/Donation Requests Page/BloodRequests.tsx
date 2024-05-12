@@ -10,7 +10,10 @@ import hashSet from "../hashSet";
 import ViewPopup from "../components/View Request Popup/ViewPopup.tsx";
 import { useState } from "react";
 
-function BloodRequests() {
+interface BloodRequestsProps {
+  type?: string;
+}
+function BloodRequests({ type }: BloodRequestsProps) {
   const detailsList: hashSet = {
     "1": ["Ahmed", "A+", "57357", "Cairo", "6th Of October"],
     "2": ["Mohamed", "AB-", "Red Cresent", "Giza", "Sheikh Zayed"],
@@ -103,7 +106,7 @@ function BloodRequests() {
 
   return (
     <>
-      <DonorNavigationBar />
+      <DonorNavigationBar type={type} />
       <ViewPopup trigger={selectedID != ""} handleClick={handleClosePopUp}>
         <div>
           {detailsList[selectedID] && (

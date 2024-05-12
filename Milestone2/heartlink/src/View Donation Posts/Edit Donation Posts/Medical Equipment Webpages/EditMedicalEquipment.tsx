@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import EditMedicalSupplies from "../Edit Medical Supplies/EditMedicalSupplies";
-import Template1 from "../../../components/Templates/Template1";
-import EditDropDown from "../../../components/DropDown/EditDropDown";
+import "../../../Donation Posts/createPost/createPost.css";
+import EditMedicalSupplies from "../Edit Medical Supplies/EditMedicalSupplies.tsx";
+
+import { useState } from "react";
+import Template1 from "../../../components/Templates/Template1.tsx";
+import EditDropDown from "../../../components/DropDown/EditDropDown.tsx";
 
 interface EditMedicalEquipmentProps {
   id: string;
@@ -11,28 +13,29 @@ interface EditMedicalEquipmentProps {
 }
 
 function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
-  const [disabled, setDisabled] = useState(props.category !== "Others");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [disabled, setDisabled] = useState(props.category != "Others");
+  const [quantity, setQuantity] = useState(props.quantity);
+  const [input, setInput] = useState(props.value);
+  const [error, setError] = useState("");
 
   function handleToolChange(tool: string) {
-    setDisabled(tool !== "Others");
+    setDisabled(!(tool === "Others"));
   }
-
+  function handleQuantityChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setQuantity(e.target.value);
+  }
+  function handleChange1(e: React.ChangeEvent<HTMLInputElement>) {
+    setInput(e.target.value);
+  }
   const handleClick = () => {
-    if (
-      props.value.trim() === "" ||
-      props.quantity.trim() === "" ||
-      props.category.trim() === "Specify equipment category"
-    ) {
-      setErrorMessage("Please fill in all fields.");
+    if (quantity.trim() === "" || (input === "" && !disabled)) {
+      setError("Please fill in all fields");
       return false;
     }
-
-    // Perform any other logic here (e.g., navigation, form submission)
-    console.log("Navigate to next step...");
+    setError("");
+    console.log("Form submitted successfully!");
     return true;
   };
-
   return (
     <Template1
       leftPanelDiv={
@@ -45,10 +48,12 @@ function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
         <EditMedicalSupplies
           name={"equipment"}
           header={"Medical Equipment"}
-          val={props.value}
-          quantity={props.quantity}
+          val={input}
+          quantity={quantity}
           disabled={disabled}
-          err={errorMessage}
+          onChange1={handleChange1}
+          onChange2={handleQuantityChange}
+          err={error}
         >
           <EditDropDown
             options={[
@@ -77,4 +82,3 @@ function EditMedicalEquipment(props: EditMedicalEquipmentProps) {
 }
 
 export default EditMedicalEquipment;
-

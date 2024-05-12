@@ -111,13 +111,13 @@
 
 
 .rightPanel-containerS{
-   display: flex;
+    position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    position: relative;
     bottom: 1em;
 }
 .radioss{
@@ -216,11 +216,10 @@
 }
 .dataHolderJJ{
    width:430px;
-    height: 58%;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 8%;
+    gap: 20px;
     padding : 2% 0;
 }
 .dataHolderJJ select{

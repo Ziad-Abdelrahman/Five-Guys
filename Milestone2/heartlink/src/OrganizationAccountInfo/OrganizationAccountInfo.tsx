@@ -48,21 +48,19 @@ function OrganizationAccountInfo(props: OrganizationAccountInfoProps) {
           width: "100%",
         }}
         children={
-          <>
-            <div className="card-dropdown" style={{ margin: "0 2%" }}>
-              <BsThreeDots
-                size={"30px"}
-                style={{
-                  display: "flex",
-                  marginTop: "10px",
-                  cursor: "pointer",
-                }}
-              />
-              <div className="card-dropdown-content" onClick={handleClick}>
-                Edit Info
-              </div>
+          <div className="card-dropdown" style={{ margin: "0 2%" }}>
+            <BsThreeDots
+              size={"30px"}
+              style={{
+                display: "flex",
+                marginTop: "10px",
+                cursor: "pointer",
+              }}
+            />
+            <div className="card-dropdown-content" onClick={handleClick}>
+              <a>Edit Info</a>
             </div>
-          </>
+          </div>
         }
       />
       <div className={"organization-account-info"}>

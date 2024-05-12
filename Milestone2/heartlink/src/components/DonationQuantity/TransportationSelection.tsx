@@ -92,7 +92,7 @@ function TransportationSelection() {
           <DonateButton text={"Finish"} onClick={handleClick} />
         </div>
       </div>
-      {thankYouCard && <DonorThankYouCard />}
+      {thankYouCard && <DonorThankYouCard Buttontext={"Dashboard"} />}
     </div>
   );
 }

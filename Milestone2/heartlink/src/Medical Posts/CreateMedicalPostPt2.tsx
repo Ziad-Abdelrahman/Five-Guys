@@ -1,8 +1,32 @@
 import Template1 from "../components/Templates/Template1.tsx";
 import "../Donation Posts/createPost/createPost.css";
 import DropDown from "../components/DropDown/DropDown.tsx";
+import { ChangeEvent, useState } from "react";
+import Createcomp from "../components/View Request Popup/Createcomp.tsx";
 
 function CreateMedicalPost() {
+  const [error, setError] = useState("");
+  const [text, setText] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [areaOfConcern, setAreaOfConcern] = useState("");
+
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.target.value);
+  };
+  const handleAreaOfConcern = (x: string) => {
+    setAreaOfConcern(x);
+  };
+  const handleClick = () => {
+    if (text.trim() === "" || areaOfConcern.trim() === "") {
+      setError("Please provide all the required information.");
+      return false;
+    }
+    setError("");
+    setSuccess(true);
+    console.log("Form submitted successfully!");
+    return true;
+  };
+
   return (
     <Template1
       leftPanelDiv={
@@ -13,6 +37,7 @@ function CreateMedicalPost() {
       }
       rightPanelDiv={
         <>
+          <Createcomp message={"Post Successfully Created!"} show={success} />
           <div className="header-container">
             <h2> Medical Post</h2>
           </div>
@@ -68,6 +93,7 @@ function CreateMedicalPost() {
                 ]}
                 selected={"Select medical speciality"}
                 width={"280px"}
+                onChange={handleAreaOfConcern}
               />
             </div>
             <div>
@@ -80,15 +106,29 @@ function CreateMedicalPost() {
                     height: "270px",
                     borderColor: "#01A95D",
                   }}
+                  onChange={handleChange}
                 ></textarea>
               </div>
+              {error && (
+                <div
+                  style={{
+                    color: "red",
+                    marginTop: "0.5rem",
+                    textAlign: "center",
+                  }}
+                >
+                  {error}
+                </div>
+              )}
             </div>
           </div>
         </>
       }
       rightPanelButtonText={"Post"}
       hasButton={true}
+      backButtonPath={"../1"}
       forwardPath={"../../"}
+      handleClick={handleClick}
     />
   );
 }

@@ -12,23 +12,20 @@ interface ClothesPt2Props {
 
 function EditClothesPt2(props: ClothesPt2Props) {
   const [size, setSize] = useState(props.size);
-  const [quantity, setQuantity] = useState(props.quantity);
+  const [errorMessage, setError] = useState("");
   const [success, setSuccess] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [quantity, setQuantity] = useState(props.quantity);
 
   const handleClick = () => {
     if (quantity.trim() === "") {
-      setErrorMessage(
-        "Please provide the quantity.",
-      );
+      setError("Please enter a quantity.");
       return false;
     }
+    setError("");
     setSuccess(true);
-    setErrorMessage("");
     console.log("Form submitted successfully!");
     return true;
   };
-
   return (
     <Template1
       leftPanelDiv={
@@ -40,6 +37,7 @@ function EditClothesPt2(props: ClothesPt2Props) {
       rightPanelDiv={
         <div className="bloodDonation-container">
           <Createcomp message={"Post Successfully Updated!"} show={success} />
+
           <div className="header-container">
             <h1>Clothes</h1>
           </div>
@@ -67,11 +65,15 @@ function EditClothesPt2(props: ClothesPt2Props) {
             <EditNumberInputBox
               label={"Quantity"}
               width={"280px"}
-              text={quantity}
-              hasText={true}
+              text={props.quantity}
+              hasText={size !== ""}
               setChecked={setQuantity}
             />
-              {errorMessage && (<div style={{ color: "red", marginTop: "0.5rem" }}>{errorMessage}</div>)}
+            {errorMessage && (
+              <div style={{ color: "red", marginTop: "0.5rem" }}>
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
       }

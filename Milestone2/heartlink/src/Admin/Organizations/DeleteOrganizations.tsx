@@ -38,6 +38,14 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "El Saida Zeinab",
       established: "2007",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=57357&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
     {
       id: "2",
@@ -49,6 +57,14 @@ function DeleteOrganizations({
       city: "Zagazig",
       Area: "Third District",
       established: "2006",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=44%20Gamal%20Abd%20Al%20Naser%20Axis%20,%20New%20Cairo%203%20,%20Cairo%20Governorate%204713311+(Egyptian%20Food%20Bank)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
     {
       id: "3",
@@ -60,6 +76,14 @@ function DeleteOrganizations({
       city: "Alexandria",
       area: "Miami",
       established: "2007",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Atef%20Madkour%20Street%20,%20Al%20Abageyah%20,%20El%20Khalifa%20,%20Cairo%20Governorate%204411164+(Egyptian%20Clothing%20Bank)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
     {
       id: "4",
@@ -71,6 +95,14 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "Giza",
       established: "2007",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=57357&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
     {
       id: "5",
@@ -82,6 +114,14 @@ function DeleteOrganizations({
       city: "Cairo",
       Area: "10th of Ramadan",
       established: "1999",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=2%20Zaki%20Rostom%20,%20Al%20Mintaqah%20as%20Sadisah%20,%20Nasr%20City,%20Cairo%20,4450321+(Resala%20Organization%20)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
     {
       id: "6",
@@ -93,6 +133,14 @@ function DeleteOrganizations({
       city: "Giza",
       area: "Sheikh Zayed",
       established: "2018",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=57357&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
     {
       id: "7",
@@ -104,6 +152,14 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "Zamalek",
       established: "2008",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=St.%20off%20,%207%20Aziz%20Abaza%20,%2026%20July%20St%20,%20Zamalek%20,%20Cairo%20Governorate+(Magdi%20Yacoub%20Foundation)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
     {
       id: "8",
@@ -115,6 +171,14 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "Nasr City",
       established: "1911",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Abd%20El%20Razak%20El%20Sanhouri%20St.%20,%20Nasr%20city%20,%20Cairo%20,11371+(Egyptian%20Red%20Crescent)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
 
     {
@@ -127,6 +191,14 @@ function DeleteOrganizations({
       city: "Cairo",
       area: "El Haram",
       established: "2017",
+      iframe: (
+        <iframe
+          width="230"
+          height="180"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=4%20Alouba%20Street%20,%20Off%20Haram%20Street%20,%20Giza%20Egypt+(Baheya%20Foundation)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="Children Cancer Hospital Location"
+        />
+      ),
     },
   ];
 
@@ -178,12 +250,7 @@ function DeleteOrganizations({
                     <li>Established: {cardData.established}</li>
                   </ul>
                 </div>
-                <iframe
-                  width="230"
-                  height="180"
-                  src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=Albashaer+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                  title="Children Cancer Hospital Location"
-                />
+                {cardData.iframe}
               </div>
             ))}
         </div>

@@ -13,10 +13,29 @@ interface EditMedicalToolsProps {
 
 function EditMedicalTools(props: EditMedicalToolsProps) {
   const [disabled, setDisabled] = useState(props.category != "Others");
+  const [quantity, setQuantity] = useState(props.quantity);
+  const [input, setInput] = useState(props.value);
+  const [error, setError] = useState("");
 
   function handleToolChange(tool: string) {
     setDisabled(!(tool === "Others"));
   }
+  function handleQuantityChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setQuantity(e.target.value);
+  }
+  function handleChange1(e: React.ChangeEvent<HTMLInputElement>) {
+    setInput(e.target.value);
+  }
+  const handleClick = () => {
+    if (quantity.trim() === "" || (input === "" && !disabled)) {
+      setError("Please fill in all fields");
+      return false;
+    }
+    setError("");
+    console.log("Form submitted successfully!");
+    return true;
+  };
+
   return (
     <Template1
       leftPanelDiv={
@@ -32,6 +51,9 @@ function EditMedicalTools(props: EditMedicalToolsProps) {
           quantity={props.quantity}
           val={props.value}
           disabled={disabled}
+          onChange1={handleChange1}
+          onChange2={handleQuantityChange}
+          err={error}
         >
           <EditDropDown
             options={[
@@ -76,6 +98,7 @@ function EditMedicalTools(props: EditMedicalToolsProps) {
       hasButton={true}
       forwardPath={"../cont/" + props.id}
       backButtonPath={"../../ViewPosts"}
+      handleClick={handleClick}
     />
   );
 }
