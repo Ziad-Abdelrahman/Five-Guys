@@ -38,7 +38,7 @@ const Map: React.FC<MapProps> = ({ height, width }) => {
         title: "New Marker",
       });
       markers.push(marker);
-      if (markers.length > 1) {
+      if (markers.length >= 1) {
         (
           document.getElementById("mapinput") as HTMLInputElement
         ).setCustomValidity("");
