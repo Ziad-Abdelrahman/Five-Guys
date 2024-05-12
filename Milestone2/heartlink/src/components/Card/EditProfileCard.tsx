@@ -1,9 +1,10 @@
 import Personal from "../../assets/personalpic.jpeg";
 import "./DonorAccountManagement.css";
-import DonateButton from "../Buttons/DonateButton.tsx";
 import React, { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
+import LoginButton from "../Buttons/LoginButton.tsx";
+import DeleteButton from "../Buttons/DeleteButton.tsx";
 
 interface EditProfileCardProps {
   name: string;
@@ -146,14 +147,18 @@ function EditProfileCard(props: EditProfileCardProps) {
                   onChange={(e) => setTempTel2(e.target.value)}
                   style={{ marginBottom: "0.3em", width: "240px" }}
                 />
-                <IoIosClose onClick={handleRemove2} fontSize={"35px"} />
+                <IoIosClose
+                  onClick={handleRemove2}
+                  fontSize={"35px"}
+                  style={{ cursor: "pointer" }}
+                />
               </div>
             )}
             {!tel2 && (
               <FaPlus
                 size={"20px"}
                 color={"#01A95D"}
-                style={{ marginRight: "14%" }}
+                style={{ cursor: "pointer" }}
                 onClick={handleAdd}
               />
             )}
@@ -166,7 +171,21 @@ function EditProfileCard(props: EditProfileCardProps) {
             marginTop: "2%",
           }}
         >
-          <DonateButton text={"Save"} onClick={handleSave} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <DeleteButton
+              text={"Cancel"}
+              onClick={() => props.setPage("Account info")}
+            />
+          </div>
+          <div onClick={handleSave}>
+            <LoginButton text={"Save"} />
+          </div>
         </div>
       </div>
     </>

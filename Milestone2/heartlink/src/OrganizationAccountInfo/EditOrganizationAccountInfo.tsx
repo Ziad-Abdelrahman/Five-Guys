@@ -97,6 +97,15 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
         children={
           <div style={{ display: "flex" }}>
             <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <DeleteButton text={"Cancel"} onClick={handleCancel} />
+            </div>
+            <div
               onClick={handleUpdate}
               style={{
                 display: "flex",
@@ -105,15 +114,6 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
               }}
             >
               <LoginButton text={"Update"} />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <DeleteButton text={"Cancel"} onClick={handleCancel} />
             </div>
           </div>
         }
@@ -190,14 +190,23 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                       style={{ marginBottom: "0.5em" }}
                       onChange={(e) => setTempTelephone2(e.target.value)}
                     />
-                    <IoIosClose onClick={handleRemove2} />
+                    <IoIosClose
+                      onClick={handleRemove2}
+                      size={"35px"}
+                      style={{
+                        position: "absolute",
+                        marginLeft: "10.5%",
+                        marginTop: "0.2%",
+                        cursor: "pointer",
+                      }}
+                    />
                   </div>
                 )}
                 {!tel2 && (
                   <FaPlus
                     size={"20px"}
                     color={"#01A95D"}
-                    style={{ marginRight: "14%" }}
+                    style={{ marginRight: "14%", cursor: "pointer" }}
                     onClick={handleAdd}
                   />
                 )}
@@ -276,7 +285,6 @@ function EditOrganizationAccountInfo(props: EditOrganizationAccountInfoProps) {
                   <h5>City</h5>
                   <h5>Address</h5>
                 </div>
-
                 <div className={"my-profile-info"}>
                   <input
                     type="text"
