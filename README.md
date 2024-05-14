@@ -14,7 +14,7 @@ A TypeScript-based web application designed to manage donation activities involv
   - [Admin User Journey](#admin-user-journey)
   - [Organization Representative User Journey](#organization-representative-user-journey)
   - [Donor User Journey](#donor-user-journey)
--[ScreenShots](#screenshot)
+- [ScreenShots](#screenshot)
 - [Contributors](#contributors)
 
 
@@ -23,7 +23,7 @@ A TypeScript-based web application designed to manage donation activities involv
 This project facilitates the management of donations through a structured platform that connects donors, organizations, and administrators. Each stakeholder has specific functionalities to enhance the donation process and ensure efficient management.
 
 
-### Admin
+## Admin
 - Login and secure access
 - View and manage organizations and donors
 - Review and approve/reject submissions
@@ -31,7 +31,7 @@ This project facilitates the management of donations through a structured platfo
 - Password management
 - Delete accounts of organizations or donors
 
-### Organization Representative
+## Organization Representative
 - Registration and verification
 - Create and manage donation posts
 - Receive notifications for chosen donation posts
@@ -52,8 +52,8 @@ This project facilitates the management of donations through a structured platfo
   </a>
 </p>
 
-##Screenshots
 
+##Screenshots
 
 <img width="1439" alt="Screenshot 2024-05-14 at 8 51 35 PM 1" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/a02f0144-427a-4fea-966f-e50c263049c5">
 <img width="1439" alt="Screenshot 2024-05-14 at 8 51 45 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/a220566f-e3d2-4d35-aa64-250d08b3db89">
