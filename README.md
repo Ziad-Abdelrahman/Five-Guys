@@ -14,7 +14,7 @@ A TypeScript-based web application designed to manage donation activities involv
   - [Admin User Journey](#admin-user-journey)
   - [Organization Representative User Journey](#organization-representative-user-journey)
   - [Donor User Journey](#donor-user-journey)
-- [ScreenShots](#screenshot)
+- [ScreenShots](#Screenshots)
 - [Contributors](#contributors)
 
 
@@ -38,7 +38,7 @@ This project facilitates the management of donations through a structured platfo
 - View details of fulfilled donation posts
 - Acknowledge donor contributions
 
-### Donor
+## Donor
 - Registration and verification
 - Browse and filter donation requests
 - Select items to donate and schedule pickups
