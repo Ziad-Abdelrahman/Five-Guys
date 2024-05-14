@@ -73,7 +73,6 @@ This project facilitates the management of donations through a structured platfo
 <img width="1439" alt="Screenshot 2024-05-14 at 8 53 47 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/ca46999c-a68f-4fa1-982c-4398b26c875a">
 <img width="1439" alt="Screenshot 2024-05-14 at 8 53 51 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/d95fcdab-bf7c-4423-b7f9-0f44c560dfcb">
 <img width="1439" alt="Screenshot 2024-05-14 at 8 54 24 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/4119abf0-3f84-4275-a36a-38900f89d8eb">
-<img width="1439" alt="Screenshot 2024-05-14 at 8 54 29 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/5e3a2746-10af-4861-a9e4-b162f5638255">
 <img width="1439" alt="Screenshot 2024-05-14 at 8 54 34 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/61a9c52a-036f-480b-a4bb-51b8cfa9a801">
 <img width="1439" alt="Screenshot 2024-05-14 at 8 54 43 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/625b3b89-101c-4ca1-b790-2451082d1b10">
 <img width="1439" alt="Screenshot 2024-05-14 at 8 55 06 PM" src="https://github.com/AbdallahAhmadd/Five-Guys/assets/101679255/e3646646-4459-4af6-aabf-a2b7f9b3d4b2">
