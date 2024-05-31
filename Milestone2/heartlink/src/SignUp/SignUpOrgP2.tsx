@@ -24,7 +24,6 @@ function SignUpOrgP2() {
           <div className="logo-containerx">
             <Link to="/" className="noLink">
               <img src={logo} className="logo" alt="logo" />
-              <label className="logoText">Dashboard</label>
             </Link>
           </div>
           <div className="rightText">
