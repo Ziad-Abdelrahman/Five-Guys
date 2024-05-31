@@ -120,19 +120,10 @@ To set up the project locally, follow these steps:
 3. Install dependancies
    ```sh
    npm install
-
-   npm install -g json-server
-
+   
 4. Run the development server:
    ```sh
    npm run dev
-
-5. To run a mock server with JSON Server, use the following command:
-
-   ```sh
-   json-server -p 4000 -w "./src/View Donation Posts/Edit Donation Posts/postsData.json"
-
-
 
 ## Contributors
 
