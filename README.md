@@ -111,11 +111,7 @@ To set up the project locally, follow these steps:
 
 2. Navigate to the project directory:
    ```sh
-   cd Five-Guys
-
-   cd Milestone2
-
-   cd heartlink
+   cd Five-Guys/Milestone2/heartlink
 
 3. Install dependancies
    ```sh
