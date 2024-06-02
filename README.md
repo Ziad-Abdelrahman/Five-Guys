@@ -7,6 +7,7 @@
 A TypeScript-based web application designed to manage donation activities involving organizations, donors, and administrators.
 
 ## Table of Contents
+- [Demo Website](#demo-website)
 - [Project Overview](#project-overview)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
@@ -14,8 +15,15 @@ A TypeScript-based web application designed to manage donation activities involv
   - [Admin User Journey](#admin-user-journey)
   - [Organization Representative User Journey](#organization-representative-user-journey)
   - [Donor User Journey](#donor-user-journey)
-- [ScreenShots](#Screenshots)
+- [Screenshots](#Screenshots)
 - [Contributors](#contributors)
+
+
+## Demo Website
+
+We have deployed a live demo of this app on Vercel for you to easily try it out.
+
+https://heart-link.vercel.app/
 
 
 ## Project Overview
