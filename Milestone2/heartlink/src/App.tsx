@@ -23,6 +23,7 @@ import MedicalEquipmentPt2 from "./Donation Posts/Medical Equipment Webpages/Med
 import MedicalTools from "./Donation Posts/Medical Tools Webpages/MedicalTools.tsx";
 import MedicalToolsPt2 from "./Donation Posts/Medical Tools Webpages/MedicalToolstPt2.tsx";
 import OrganizationDashboard from "./Organization/OrganizationDashboard.tsx";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Editor,
   EditorLoader,
@@ -503,7 +504,12 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Analytics />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;
